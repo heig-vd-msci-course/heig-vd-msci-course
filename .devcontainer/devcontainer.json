@@ -1,0 +1,8 @@
+{
+	"name": "HEIG-VD MSCI Course Development Container",
+	"image": "mcr.microsoft.com/devcontainers/python:3-3.14-trixie",
+
+
+	// Execute the post-create.sh script once the container is created
+	"postCreateCommand": ".devcontainer/post-create.sh"
+}
