@@ -26,8 +26,22 @@ sudo apt install --yes ghostscript
 # Create virtual environment
 python3 -m venv .venv
 
-# Activate virtual environment and install zensical
+# Activate virtual environment and install dependencies
 source .venv/bin/activate
 pip install --upgrade pip
-pip install zensical
+
+# Install from requirements.txt if it exists, otherwise install zensical directly
+if [ -f requirements.txt ]; then
+    pip install -r requirements.txt
+else
+    pip install zensical
+fi
+
+# Display helpful message
+echo ""
+echo "=============================================="
+echo "  🚀 Development environment ready!"
+echo "  Run 'zensical serve' to start the dev server"
+echo "  Site will be available at http://localhost:8000"
+echo "=============================================="
 

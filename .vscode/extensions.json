@@ -1,0 +1,10 @@
+{
+	"recommendations": [
+		"ms-python.python",
+		"yzhang.markdown-all-in-one",
+		"bierner.markdown-preview-github-styles",
+		"DavidAnson.vscode-markdownlint",
+		"marp-team.marp-vscode",
+		"ms-vscode-remote.remote-containers"
+	]
+}

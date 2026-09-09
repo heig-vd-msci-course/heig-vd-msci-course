@@ -1,0 +1,3 @@
+# Zensical - Static site generator for documentation
+# https://pypi.org/project/zensical/
+zensical>=0.1.0
