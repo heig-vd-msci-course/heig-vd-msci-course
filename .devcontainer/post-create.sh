@@ -30,12 +30,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 
-# Install from requirements.txt if it exists, otherwise install zensical directly
-if [ -f requirements.txt ]; then
-    pip install -r requirements.txt
-else
-    pip install zensical
-fi
+pip install -r requirements.txt
 
 # Display helpful message
 echo ""
