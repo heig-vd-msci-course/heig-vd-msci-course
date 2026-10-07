@@ -2,7 +2,7 @@
 icon: lucide/cpu
 ---
 
-# Jour 3 - Mercredi
+# Mercredi
 
 ## micro:bit et programmation physique
 
@@ -75,5 +75,5 @@ Le jeu des allumettes devient un objet physique :
 
 ## Navigation
 
-- [Retour au jour 2 - Web](jour2.md)
-- [Jour 4 - Travail libre](jour4.md)
+- [Retour au Mardi - Web](mardi.md)
+- [Jeudi - Travail libre](jeudi.md)

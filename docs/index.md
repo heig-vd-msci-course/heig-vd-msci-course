@@ -28,11 +28,11 @@ L'équipe pédagogique accompagne le groupe tout au long de la semaine.
 
 | Jour | Thème | Réalisations |
 |------|-------|--------------|
-| [Lundi](programme/jour1.md) | Introduction et algorithmique | Premiers algorithmes, jeu des allumettes en programmation visuelle |
-| [Mardi](programme/jour2.md) | HTML/CSS et publication web | Création et publication d'un site web personnel |
-| [Mercredi](programme/jour3.md) | micro:bit et programmation physique | Objet interactif avec capteurs et LEDs |
-| Jeudi | Travail autonome à domicile | Consolidation des acquis, préparation du projet final |
-| [Vendredi](programme/jour5.md) | Projet créatif et clôture | Projet final personnalisé, présentations |
+| [Lundi](programme/lundi.md) | Introduction et algorithmique | Premiers algorithmes, jeu des allumettes en programmation visuelle |
+| [Mardi](programme/mardi.md) | HTML/CSS et publication web | Création et publication d'un site web personnel |
+| [Mercredi](programme/mercredi.md) | micro:bit et programmation physique | Objet interactif avec capteurs et LEDs |
+| [Jeudi](programme/jeudi.md) | Travail autonome à domicile | Consolidation des acquis, préparation du projet final |
+| [Vendredi](programme/vendredi.md) | Projet créatif et clôture | Projet final personnalisé, présentations |
 
 ---
 
@@ -97,4 +97,4 @@ Aucune installation n'est requise. Les outils suivants fonctionnent directement 
 
     Ce cours privilégie l'expérimentation et l'apprentissage par la pratique. Les erreurs font partie intégrante du processus d'apprentissage en programmation.
 
-Pour commencer, consulter [le programme du lundi](programme/jour1.md).
+Pour commencer, consulter [le programme du lundi](programme/lundi.md).

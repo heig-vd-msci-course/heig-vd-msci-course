@@ -1,4 +1,4 @@
-# Wooclap Jour 1 - Algorithmique
+# Wooclap Lundi - Algorithmique
 
 > *Quiz de fin de journée pour récapituler les concepts*
 
@@ -20,7 +20,7 @@
 1. Accéder à [app.wooclap.com](https://app.wooclap.com)
 2. Se connecter ou créer un compte
 3. Cliquer sur **"Créer un événement"**
-4. Titre : **"Algorithmique et programmation - Jour 1"**
+4. Titre : **"Algorithmique et programmation - Lundi"**
 5. Description : **"Quiz de fin de journée - Concepts de base et jeu des allumettes"**
 6. Ajouter chaque question ci-dessous avec le type approprié (QCM, Vrai/Faux, etc.)
 

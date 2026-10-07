@@ -2,9 +2,9 @@
 icon: lucide/play
 ---
 
-# Jour 1 - Lundi
+# Lundi
 
-## De l'instruction à l'algorithme
+## Introduction
 
 > *Introduction aux bases de la programmation à travers le jeu des allumettes.*
 
@@ -49,13 +49,19 @@ icon: lucide/play
 
 ## Ressources
 
+### Présentation
+
+!!! tip "Slides du jour"
+
+    - [Présentation : Introduction à l'algorithmique (HTML)](../slides/lundi-introduction-algorithmique.html)
+    - [Présentation : Introduction à l'algorithmique (PDF)](../slides/lundi-introduction-algorithmique.pdf)
+
 ### Supports pédagogiques
 
 !!! info "Documents de référence"
 
     - [Guide du Jeu des Allumettes](../supports/guide-jeu-allumettes.md) - Règles et stratégie
     - [Fiche Concepts Algorithmiques](../supports/cheatsheet-concepts-algo.md) - Variable, condition, boucle
-    - [Template Charte de Comportement](../supports/template-charte-comportement.md) - Document collaboratif
 
 ### Activités
 
@@ -202,7 +208,7 @@ L'opérateur `%` (modulo) retourne le reste de la division entière.
 
 ## Navigation
 
-- [Jour 2 - Web](jour2.md)
+- [Mardi - Web](mardi.md)
 
 ## Suite du programme
 

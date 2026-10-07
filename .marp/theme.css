@@ -1,0 +1,372 @@
+/*
+ * Thème Marp personnalisé pour le cours MSCI - ERACOM
+ *
+ * Basé sur le thème de heig-vd-upinfo-course
+ * Police: Atkinson Hyperlegible (optimisée pour la lisibilité)
+ *
+ * @theme msci-eracom
+ * @author Clarisse & Vincent
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */
+
+@import "https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,700|Roboto+Mono:400,700";
+@import "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css";
+
+/* Couleurs MSCI */
+:root {
+	--color-primary: #ff6b6b;
+	--color-secondary: #4ecdc4;
+	--color-normal: #333;
+	--color-dimmed: #666;
+	--color-background: #fff;
+	--color-code-background: #f6f8fa;
+	--color-code-foreground: #1f2328;
+	--color-table-stripe: #f6f8fa;
+	--color-table-border: #d1d9e0;
+}
+
+/* Titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--color-secondary);
+	margin: 0.4em 0 0;
+	font-size: 1.3rem;
+}
+
+h1 {
+	font-size: 1.6em;
+	color: var(--color-primary);
+}
+
+h2 {
+	font-size: 1.2em;
+}
+
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong {
+	font-weight: inherit;
+	color: var(--color-primary);
+}
+
+h1::part(auto-scaling),
+h2::part(auto-scaling),
+h3::part(auto-scaling),
+h4::part(auto-scaling),
+h5::part(auto-scaling),
+h6::part(auto-scaling) {
+	max-height: 580px;
+}
+
+h1 a:link,
+h2 a:link,
+h3 a:link,
+h4 a:link,
+h5 a:link,
+h6 a:link {
+	text-decoration: none;
+}
+
+/* Header et footer - TOUJOURS VISIBLES */
+header,
+footer {
+	box-sizing: border-box;
+	font-size: 50%;
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	padding: 0 30px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	color: var(--color-dimmed);
+}
+
+header {
+	top: 0;
+}
+
+footer {
+	bottom: 0;
+}
+
+header a,
+footer a {
+	color: var(--color-dimmed);
+	text-decoration: none;
+}
+
+/* Paragraphes et listes */
+p,
+blockquote {
+	margin: 0.6em 0 0;
+}
+
+ul > li,
+ol > li {
+	margin: 0.2em 0 0;
+}
+ul > li > p,
+ol > li > p {
+	margin: 0.4em 0 0;
+}
+
+/* Code */
+code {
+	display: inline-block;
+	font-family: "Roboto Mono", monospace;
+	font-size: 0.75em;
+	letter-spacing: 0;
+	margin: -0.1em 0.1em;
+	padding: 0.1em 0.2em;
+	vertical-align: baseline;
+}
+
+pre {
+	display: block;
+	margin: 0.8em 0 0;
+	overflow: visible;
+}
+pre code {
+	box-sizing: border-box;
+	margin: 0;
+	min-width: 100%;
+	padding: 0.4em;
+	font-size: 0.65em;
+}
+pre::part(auto-scaling) {
+	max-height: calc(580px - 1em);
+}
+
+mark {
+	background: transparent;
+}
+
+section code {
+	background-color: var(--color-code-background);
+	color: var(--color-code-foreground);
+}
+
+section pre {
+	background-color: var(--color-code-background);
+	padding: 0.2em;
+	border-radius: 6px;
+}
+
+section pre > code {
+	background: transparent;
+}
+
+/* Tableaux - plus compacts */
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	margin: 0.6em 0 0;
+	width: auto;
+	font-size: 0.85em;
+}
+
+table th,
+table td {
+	padding: 0.15em 0.5em;
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--color-table-border);
+}
+
+section table th,
+section table td {
+	border-color: var(--color-normal);
+}
+section table thead th {
+	background: var(--color-secondary);
+	color: var(--color-background);
+}
+section table tbody > tr:nth-child(even) td,
+section table tbody > tr:nth-child(even) th {
+	background: var(--color-table-stripe, transparent);
+}
+
+/* Section principale - plus compact */
+section {
+	background-color: var(--color-background);
+	color: var(--color-normal);
+	font-size: 26px;
+	font-family: "Atkinson Hyperlegible", sans-serif;
+	height: 720px;
+	line-height: 1.4;
+	letter-spacing: 0.5px;
+	padding: 50px 50px 45px 50px;
+	width: 1280px;
+	word-wrap: break-word;
+}
+
+section a,
+section mark {
+	color: var(--color-primary);
+}
+
+/* Slide de titre (centré) */
+section.lead {
+	place-content: safe center center;
+	flex-flow: column nowrap;
+	align-items: stretch;
+}
+
+section.lead h1,
+section.lead h2,
+section.lead h3,
+section.lead h4,
+section.lead h5,
+section.lead h6,
+section.lead p {
+	text-align: center;
+}
+
+section.lead blockquote > h1,
+section.lead blockquote > h2,
+section.lead blockquote > h3,
+section.lead blockquote > h4,
+section.lead blockquote > h5,
+section.lead blockquote > h6,
+section.lead blockquote > p,
+section.lead ul > li > p,
+section.lead ol > li > p {
+	text-align: left;
+}
+
+section.lead table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Pagination en bas à droite */
+section::after {
+	font-size: 50%;
+	color: var(--color-dimmed);
+	position: absolute;
+	bottom: 10px;
+	right: 30px;
+}
+
+section > *:first-child,
+section > header:first-child + * {
+	margin-top: 0;
+}
+
+/* Slide inversée (fond sombre) */
+section.invert {
+	background-color: #2d3436;
+	color: #fff;
+}
+
+section.invert h1,
+section.invert h2,
+section.invert h3 {
+	color: var(--color-primary);
+}
+
+section.invert header,
+section.invert footer {
+	color: #aaa;
+}
+
+/* Citations */
+blockquote {
+	font-style: italic;
+	margin: 0.8em 0 0;
+	padding: 0 1em;
+	position: relative;
+	border-left: 3px solid var(--color-secondary);
+}
+
+blockquote > *:first-child {
+	margin-top: 0;
+}
+
+/* Classes utilitaires pour les colonnes */
+.two-columns,
+.three-columns,
+.four-columns,
+.one-third-two-thirds-columns,
+.two-thirds-one-third-columns {
+	display: grid;
+	gap: 1rem;
+}
+
+.two-columns {
+	grid-template-columns: 1fr 1fr;
+}
+
+.three-columns {
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.four-columns {
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.one-third-two-thirds-columns {
+	grid-template-columns: 1fr 2fr;
+}
+
+.two-thirds-one-third-columns {
+	grid-template-columns: 2fr 1fr;
+}
+
+/* Classes utilitaires */
+.center {
+	text-align: center;
+}
+
+.rounded,
+.rounded img {
+	border-radius: 50%;
+}
+
+.rounded {
+	margin: 0.8em 0 0;
+}
+
+.small {
+	font-size: 0.85em;
+}
+
+.smaller {
+	font-size: 0.7em;
+}
+
+/* Admonitions / encadrés */
+.info,
+.warning,
+.success {
+	padding: 0.4em 0.8em;
+	border-radius: 6px;
+	margin: 0.8em 0;
+	font-size: 0.9em;
+}
+
+.info {
+	background-color: #e3f2fd;
+	border-left: 3px solid var(--color-secondary);
+}
+
+.warning {
+	background-color: #fff3e0;
+	border-left: 3px solid #ff9800;
+}
+
+.success {
+	background-color: #e8f5e9;
+	border-left: 3px solid #4caf50;
+}

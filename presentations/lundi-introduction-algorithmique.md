@@ -1,37 +1,16 @@
 ---
 marp: true
-theme: default
+theme: msci-eracom
 paginate: true
-header: 'MSCI 2026 - Jour 1'
+header: 'MSCI 2026 - Lundi'
 footer: 'ERACOM - Semaine 43'
-style: |
-  section {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-  }
-  h1 {
-    color: #ff6b6b;
-  }
-  h2 {
-    color: #4ecdc4;
-  }
-  code {
-    background-color: #2d2d2d;
-    color: #f8f8f2;
-    padding: 2px 8px;
-    border-radius: 4px;
-  }
-  .columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
 ---
 
-# Jour 1 : De l'instruction à l'algorithme
+# Lundi : Introduction
 
-## Bienvenue au cours MSCI !
+## Bienvenue au cours Algorithmique et programmation
 
-**Semaine 43 - Lundi 20 octobre 2026**
+**Lundi 20 octobre 2026**
 
 ---
 
@@ -39,16 +18,14 @@ style: |
 
 ## L'équipe enseignante
 
-- **Clarisse** - ...
+- **Clarisse Fleurimont** - Ingénieure logiciel, formatrice, assistante de recherche HEIG-VD
 - **Vincent** - ...
-
-*Vos guides pour cette semaine de découverte !*
 
 ---
 
-# Cette semaine, on va...
+# Cette semaine
 
-## Créer un jeu vidéo ensemble !
+## Créer un jeu vidéo ensemble
 
 - **Lundi** : Découvrir l'algorithmique
 - **Mardi** : Créer une page web
@@ -59,111 +36,34 @@ style: |
 
 ---
 
-# Tour de table
+# Planning du jour
 
-## Présentez-vous en 10 secondes
+## Matin : Introduction
 
-1. Votre **prénom**
-2. Une **passion créative**
-
-*On commence par ici* 👉
-
----
-
-# Prise de température
-
-## Scannez le QR code
-
-![Mentimeter QR](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=menti.com)
-
-**menti.com** → Code : _______
+| Horaire | Activité |
+|---------|----------|
+| 08h30 - 09h00 | Accueil et prise de contact |
+| 09h00 - 09h45 | Élaboration de la charte et formation des équipes |
+| 09h45 - 10h00 | Pause |
+| 10h00 - 10h45 | Activité : Donner des instructions |
+| 10h45 - 11h00 | Pause |
+| 11h00 - 11h45 | Découverte du jeu des allumettes |
+| 11h45 - 12h00 | Introduction à la programmation |
 
 ---
 
-# Vos attentes ?
+# Planning du jour
 
-## Qu'espérez-vous apprendre cette semaine ?
+## Après-midi : Programmation visuelle
 
-*Réponses en temps réel...*
-
----
-
-# Vos craintes ?
-
-## Qu'est-ce qui vous inquiète par rapport à la programmation ?
-
-*Réponses en temps réel...*
-
----
-
-# Spoiler
-
-## On va démystifier tout ça !
-
-La programmation, c'est **donner des instructions précises**.
-
-Vous le faites déjà tous les jours.
-
----
-
-# Notre charte
-
-## Co-construisons nos règles ensemble
-
-*Document à compléter collectivement*
-
----
-
-# Charte : Respect mutuel
-
-## Qu'est-ce que ça veut dire pour nous ?
-
-*Vos propositions...*
-
----
-
-# Charte : Entraide
-
-## On apprend ensemble, pas les unes contre les autres
-
-*Vos propositions...*
-
----
-
-# Charte : Téléphones
-
-## Outils ou distractions ?
-
-*Votre règle collective...*
-
----
-
-# Charte : Droit à l'erreur
-
-## Se tromper = apprendre
-
-Un bug n'est pas un échec, c'est une opportunité !
-
----
-
-# Le projet de la semaine
-
-## Le Jeu des Allumettes 🔥
-
-*Un fil rouge qui traverse toute la semaine*
-
----
-
-# Formation des équipes
-
-## ~20 équipes de 4 personnes
-
-Chaque équipe porte un **nom de fruit** :
-- 🍎 Apple, 🍐 Pear, 🍌 Banana...
-
-Et aura son **URL personnalisée** :
-- `apple.msci.heig-vd.ch`
-- `pear.msci.heig-vd.ch`
+| Horaire | Activité |
+|---------|----------|
+| 13h00 - 13h15 | Introduction à la programmation sans code |
+| 13h15 - 14h00 | Découverte de MakeCode Arcade |
+| 14h00 - 14h45 | Atelier : Jeu des allumettes en blocs - Partie 1 |
+| 14h45 - 15h00 | Pause |
+| 15h00 - 15h45 | Atelier : Jeu des allumettes en blocs - Partie 2 |
+| 15h45 - 16h15 | Synthèse et quiz Wooclap |
 
 ---
 
@@ -171,13 +71,71 @@ Et aura son **URL personnalisée** :
 
 ## À la fin de la journée, vous saurez :
 
-1. Pourquoi les **instructions précises** sont la base
+1. Pourquoi les **instructions précises** sont la base de la programmation
 2. La **stratégie gagnante** du jeu des allumettes
-3. Créer un **jeu en blocs visuels**
+3. Créer un **jeu en blocs visuels** avec MakeCode Arcade
 
 ---
 
-# ☕ PAUSE
+<!-- _class: invert -->
+
+# Accueil et prise de contact
+
+## 08h30 - 09h00
+
+---
+
+# Prise de température
+
+## Scannez le QR code
+
+![Wooclap QR](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=wooclap.com)
+
+**wooclap.com** → Code : _______
+
+---
+
+# Le projet de la semaine
+
+## Le Jeu des Allumettes
+
+Un fil rouge qui traverse toute la semaine
+
+---
+
+<!-- _class: invert -->
+
+# Élaboration de la charte et formation des équipes
+
+## 09h00 - 09h45
+
+---
+
+# Co-construction de la charte
+
+## Vos attentes et engagements
+
+Rendez-vous sur **Wooclap** pour participer :
+
+1. **Nuage de mots** : Quelles sont vos attentes pour cette semaine ?
+2. **Question ouverte** : Quelles règles proposez-vous pour bien travailler ensemble ?
+
+---
+
+# Formation des équipes
+
+## Environ 20 équipes de 3-4 personnes
+
+Chaque équipe porte un **nom de fruit** :
+- Apple, Pear, Banana, Cherry, Mango...
+
+Et aura son **URL personnalisée** :
+- `apple.msci.heig-vd.ch`
+- `pear.msci.heig-vd.ch`
+
+---
+
+# PAUSE
 
 ## 15 minutes
 
@@ -189,17 +147,19 @@ Et aura son **URL personnalisée** :
 
 # Activité : Donner des instructions
 
-## 👁️ Le jeu du binôme aveugle
+## 10h00 - 10h45
 
 ---
 
-# Les règles
+# Le jeu du binôme aveugle
 
 ## Une personne guide, l'autre exécute
 
-1. L'**exécutrice** ne pose AUCUNE question
-2. L'**instructrice** utilise UNIQUEMENT les mots autorisés
-3. Pas de gestes !
+**Règles :**
+
+1. La personne qui exécute ne pose AUCUNE question
+2. La personne qui guide utilise UNIQUEMENT les mots autorisés
+3. Pas de gestes
 4. **4 minutes** par essai
 
 ---
@@ -210,29 +170,25 @@ Et aura son **URL personnalisée** :
 |----------|---------------|
 | `AVANCE X` | Fait X pas en avant |
 | `RECULE X` | Fait X pas en arrière |
-| `TOURNE GAUCHE` | Pivote 90° à gauche |
-| `TOURNE DROITE` | Pivote 90° à droite |
+| `TOURNE GAUCHE` | Pivote 90 degrés à gauche |
+| `TOURNE DROITE` | Pivote 90 degrés à droite |
 | `STOP` | Arrête-toi |
 
 ---
 
-# C'est parti !
+# C'est parti
 
 ## Formez des binômes
 
-⏱️ **4 minutes** - Premier essai
-
-*GO !*
+**4 minutes** - Premier essai
 
 ---
 
-# On inverse !
+# On inverse
 
 ## L'autre personne guide maintenant
 
-⏱️ **4 minutes** - Deuxième essai
-
-*GO !*
+**4 minutes** - Deuxième essai
 
 ---
 
@@ -256,11 +212,11 @@ Pas d'interprétation.
 Pas de "bon sens".
 Pas de questions.
 
-**C'est pour ça que la précision compte !**
+**C'est pour cela que la précision compte.**
 
 ---
 
-# ☕ PAUSE
+# PAUSE
 
 ## 15 minutes
 
@@ -270,13 +226,13 @@ Pas de questions.
 
 <!-- _class: invert -->
 
-# Le Jeu des Allumettes
+# Découverte du jeu des allumettes
 
-## 🔥 Découverte
+## 11h00 - 11h45
 
 ---
 
-# Les règles
+# Les règles du jeu
 
 ```
 | | | | | | | | | | | | | | | | | | | | |
@@ -284,28 +240,26 @@ Pas de questions.
 ```
 
 - **21 allumettes** au départ
-- À tour de rôle, retirer **1, 2 ou 3**
-- Celle qui prend la **dernière** a **PERDU**
+- À tour de rôle, retirer **1, 2 ou 3** allumettes
+- La personne qui prend la **dernière** a **PERDU**
 
 ---
 
-# Jouons !
+# Jouons
 
 ## En équipes de 4
 
-1. Prenez vos allumettes/cure-dents
+1. Prenez vos allumettes ou cure-dents
 2. Jouez plusieurs parties
 3. Cherchez une stratégie...
 
-⏱️ **15 minutes**
+**15 minutes**
 
 ---
 
 # Qui a trouvé une stratégie ?
 
-## Partagez vos découvertes !
-
-*Levez la main...*
+## Partagez vos découvertes
 
 ---
 
@@ -314,26 +268,34 @@ Pas de questions.
 ## Les positions gagnantes
 
 ```
-21 → 17 → 13 → 9 → 5 → 1 → GAGNÉ !
+21 → 17 → 13 → 9 → 5 → 1 → GAGNÉ
 ```
 
 *Multiples de 4 + 1*
 
 ---
 
-# Pourquoi ça marche ?
+# Pourquoi cela fonctionne ?
 
 ## La règle du complément à 4
 
-Quoi que l'adversaire joue, tu peux compléter pour faire 4 :
+Quoi que l'adversaire joue, on peut compléter pour faire 4 :
 
-- Elle prend **1** → tu prends **3** (1+3=4)
-- Elle prend **2** → tu prends **2** (2+2=4)
-- Elle prend **3** → tu prends **1** (3+1=4)
+- Adversaire prend **1** → on prend **3** (1+3=4)
+- Adversaire prend **2** → on prend **2** (2+2=4)
+- Adversaire prend **3** → on prend **1** (3+1=4)
 
 ---
 
-# La formule magique
+<!-- _class: invert -->
+
+# Introduction à la programmation
+
+## 11h45 - 12h00
+
+---
+
+# La formule mathématique
 
 ```
 allumettes_à_retirer = (restantes - 1) % 4
@@ -343,7 +305,7 @@ Le `%` (modulo) donne le **reste de la division**.
 
 ---
 
-# C'est un algorithme !
+# C'est un algorithme
 
 ## Les ingrédients d'un programme
 
@@ -353,14 +315,6 @@ Le `%` (modulo) donne le **reste de la division**.
 | **Condition** | "Si reste 1..." |
 | **Boucle** | Répéter les tours |
 | **Fonction** | La stratégie |
-
----
-
-# Démystifier le code
-
-## En 20 lignes, on peut faire un jeu !
-
-*Démonstration live sur JSFiddle...*
 
 ---
 
@@ -376,9 +330,9 @@ Le `%` (modulo) donne le **reste de la division**.
 
 ---
 
-# 🍽️ REPAS
+# REPAS
 
-## Bon appétit !
+## Bon appétit
 
 *Retour à 13h00*
 
@@ -386,9 +340,9 @@ Le `%` (modulo) donne le **reste de la division**.
 
 <!-- _class: invert -->
 
-# Création sans code
+# Introduction à la programmation sans code
 
-## Premiers pas dans l'interactivité
+## 13h00 - 13h15
 
 ---
 
@@ -397,12 +351,12 @@ Le `%` (modulo) donne le **reste de la division**.
 ## Programmer sans écrire de texte
 
 - Des **blocs** qu'on assemble
-- Comme des Lego !
+- Comme des Lego
 - Les mêmes concepts qu'en "vrai" code
 
 ---
 
-# Pourquoi commencer par ça ?
+# Pourquoi commencer par cela ?
 
 ## Se concentrer sur la logique
 
@@ -410,7 +364,15 @@ Le `%` (modulo) donne le **reste de la division**.
 - Pas de fautes de frappe
 - Visualisation immédiate
 
-*Demain, on passera au "vrai" code !*
+*Demain, on passera au "vrai" code*
+
+---
+
+<!-- _class: invert -->
+
+# Découverte de MakeCode Arcade
+
+## 13h15 - 14h00
 
 ---
 
@@ -418,7 +380,7 @@ Le `%` (modulo) donne le **reste de la division**.
 
 ## arcade.makecode.com
 
-Un outil pour créer des **jeux 2D rétro** !
+Un outil pour créer des **jeux 2D rétro**
 
 ---
 
@@ -438,7 +400,7 @@ Un outil pour créer des **jeux 2D rétro** !
 
 # Live coding
 
-## Suivez sur vos écrans !
+## Suivez sur vos écrans
 
 1. Ouvrez **arcade.makecode.com**
 2. Cliquez sur **"New Project"**
@@ -448,7 +410,7 @@ Un outil pour créer des **jeux 2D rétro** !
 
 # Étape 1 : La variable
 
-## Créer notre compteur
+## Créer le compteur
 
 1. **Variables** → **Make a Variable**
 2. Nom : `allumettes`
@@ -490,11 +452,11 @@ splash "21 allumettes"
 
 ---
 
-# ☕ PAUSE
+<!-- _class: invert -->
 
-## 15 minutes
+# Atelier : Jeu des allumettes en blocs - Partie 1
 
-*Retour à 15h00*
+## 14h00 - 14h45
 
 ---
 
@@ -505,7 +467,7 @@ splash "21 allumettes"
 ```
 ┌────────────────────────────────────┐
 │ if allumettes <= 0 then            │
-│   splash "Tu as perdu !"           │
+│   splash "Perdu !"                 │
 │   game over LOSE                   │
 └────────────────────────────────────┘
 ```
@@ -529,13 +491,42 @@ else
 
 # Travail en équipe
 
-## Personnalisez votre jeu !
+## Implémentez les fonctionnalités de base
+
+- Variable pour le nombre d'allumettes
+- Boutons pour retirer 1, 2 ou 3
+- Détection de fin de partie
+
+**45 minutes**
+
+---
+
+# PAUSE
+
+## 15 minutes
+
+*Retour à 15h00*
+
+---
+
+<!-- _class: invert -->
+
+# Atelier : Jeu des allumettes en blocs - Partie 2
+
+## 15h00 - 15h45
+
+---
+
+# Personnalisez votre jeu
+
+## Ajoutez vos touches personnelles
 
 - Graphismes
 - Sons
 - Messages personnalisés
+- Variantes de règles
 
-⏱️ **30 minutes**
+**45 minutes**
 
 ---
 
@@ -549,9 +540,9 @@ else
 
 <!-- _class: invert -->
 
-# Quiz Wooclap
+# Synthèse et quiz Wooclap
 
-## Récapitulatif de la journée
+## 15h45 - 16h15
 
 ---
 
@@ -563,14 +554,14 @@ else
 
 ---
 
-# Récap de la journée
+# Récapitulatif de la journée
 
 ## Vous avez appris...
 
-1. ✅ L'importance des **instructions précises**
-2. ✅ La **stratégie gagnante** (multiples de 4 + 1)
-3. ✅ Les concepts : **variable, condition, boucle**
-4. ✅ Créer un jeu avec **MakeCode Arcade**
+1. L'importance des **instructions précises**
+2. La **stratégie gagnante** (multiples de 4 + 1)
+3. Les concepts : **variable, condition, boucle**
+4. Créer un jeu avec **MakeCode Arcade**
 
 ---
 
@@ -578,15 +569,15 @@ else
 
 ## HTML, CSS et JavaScript
 
-On crée la **page web** du jeu des allumettes !
+On crée la **page web** du jeu des allumettes
 
-Avec du **vrai code** cette fois 😎
+Avec du **vrai code** cette fois
 
 ---
 
 # Devoirs (optionnel)
 
-## Réfléchissez au design !
+## Réfléchissez au design
 
 - Quelle couleur pour votre équipe ?
 - Quel style voulez-vous ?
@@ -594,11 +585,11 @@ Avec du **vrai code** cette fois 😎
 
 ---
 
-# À demain !
+# À demain
 
 ## 8h30 - Salle X
 
-**Merci pour cette première journée !** 🎉
+**Merci pour cette première journée**
 
 ---
 
@@ -617,7 +608,7 @@ Avec du **vrai code** cette fois 😎
 Le jeu fonctionne très bien avec :
 - Cure-dents
 - Papier et crayon
-- Doigts !
+- Doigts
 
 ---
 
@@ -641,6 +632,6 @@ Le jeu fonctionne très bien avec :
 
 ## MSCI 2026 - ERACOM
 
-Cours créé avec ❤️ pour les créatives de demain.
+Cours créé pour les personnes créatives de demain.
 
 *Semaine 43 - Octobre 2026*

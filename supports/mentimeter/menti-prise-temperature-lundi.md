@@ -1,4 +1,4 @@
-# Prise de température - Jour 1 Matin
+# Prise de température - Lundi Matin
 
 ## Objectif
 
@@ -205,7 +205,7 @@ Ce sondage Mentimeter permet de :
 
 1. Connecte-toi sur [mentimeter.com](https://www.mentimeter.com)
 2. Clique sur "New presentation"
-3. Nomme-la : "MSCI 2026 - Prise de température Jour 1"
+3. Nomme-la : "MSCI 2026 - Prise de température Lundi"
 4. Ajoute les 4 slides dans l'ordre
 
 ### Configuration générale

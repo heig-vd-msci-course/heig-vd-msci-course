@@ -2,7 +2,7 @@
 icon: lucide/code
 ---
 
-# Jour 2 - Mardi
+# Mardi
 
 ## HTML, CSS et publication web
 
@@ -74,5 +74,5 @@ Le jeu des allumettes prend forme sur le web :
 
 ## Navigation
 
-- [Retour au jour 1 - Introduction](jour1.md)
-- [Jour 3 - micro:bit](jour3.md)
+- [Retour au lundi - Introduction](lundi.md)
+- [Mercredi - micro:bit](mercredi.md)

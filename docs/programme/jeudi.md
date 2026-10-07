@@ -2,7 +2,7 @@
 icon: lucide/home
 ---
 
-# Jour 4 - Jeudi
+# Jeudi
 
 ## Travail libre à domicile
 
@@ -85,5 +85,5 @@ Si des questions surgissent pendant cette journée de travail autonome :
 
 ## Navigation
 
-- [Retour au jour 3 - micro:bit](jour3.md)
-- [Jour 5 - Projet final](jour5.md)
+- [Retour au Mercredi - micro:bit](mercredi.md)
+- [Vendredi - Projet final](vendredi.md)

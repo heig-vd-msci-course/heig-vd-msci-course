@@ -14,16 +14,18 @@ nav = [
   { "Accueil" = "index.md" },
   { "Équipe enseignante" = "equipe.md" },
   { "Programme" = [
-    { "Lundi - Introduction" = "programme/jour1.md" },
+    { "Lundi - Introduction" = "programme/lundi.md" },
     { "Mardi - Web" = "programme/jour2.md" },
     { "Mercredi - micro:bit" = "programme/jour3.md" },
     { "Jeudi - Travail libre" = "programme/jour4.md" },
     { "Vendredi - Projet" = "programme/jour5.md" },
   ]},
+  { "Présentations" = [
+    { "Lundi - Introduction (HTML)" = "slides/lundi-introduction-algorithmique.html" },
+  ]},
   { "Ressources" = [
     { "Guide du jeu des allumettes" = "supports/guide-jeu-allumettes.md" },
     { "Concepts algorithmiques" = "supports/cheatsheet-concepts-algo.md" },
-    { "Charte de comportement" = "supports/template-charte-comportement.md" },
     { "Activité : Donner des instructions" = "supports/activities/activite-donner-instructions.md" },
     { "Template MakeCode Arcade" = "code-templates/makecode/jeu-allumettes-arcade.md" },
   ]},

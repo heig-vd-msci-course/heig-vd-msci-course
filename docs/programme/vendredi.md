@@ -2,7 +2,7 @@
 icon: lucide/rocket
 ---
 
-# Jour 5 - Vendredi
+# Vendredi
 
 ## Projet créatif et clôture
 
@@ -88,5 +88,5 @@ Chaque présentation inclut :
 
 ## Navigation
 
-- [Retour au jour 4 - Travail libre](jour4.md)
+- [Retour au Jeudi - Travail libre](jeudi.md)
 - [Retour à l'accueil](../index.md)
