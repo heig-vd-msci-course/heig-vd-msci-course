@@ -1,5 +1,5 @@
 {
-	"name": "HEIG-VD MSCI Course Development Container",
+	"name": "Algorithmique et programmation (MSCI - ERACOM) Development Container",
 	"image": "mcr.microsoft.com/devcontainers/python:3-3.14-trixie",
 	// Forward Zensical dev server port to host
 	"forwardPorts": [
