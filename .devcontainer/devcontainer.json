@@ -1,8 +1,29 @@
 {
-	"name": "HEIG-VD MSCI Course Development Container",
+	"name": "Algorithmique et programmation (MSCI - ERACOM) Development Container",
 	"image": "mcr.microsoft.com/devcontainers/python:3-3.14-trixie",
-
-
+	// Forward Zensical dev server port to host
+	"forwardPorts": [
+		8000
+	],
+	"portsAttributes": {
+		"8000": {
+			"label": "Zensical Dev Server",
+			"onAutoForward": "openBrowser"
+		}
+	},
 	// Execute the post-create.sh script once the container is created
-	"postCreateCommand": ".devcontainer/post-create.sh"
+	"postCreateCommand": ".devcontainer/post-create.sh",
+	// Start the dev server when the container starts (optional - can be manual)
+	// "postStartCommand": "source .venv/bin/activate && zensical serve",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"yzhang.markdown-all-in-one",
+				"bierner.markdown-preview-github-styles",
+				"DavidAnson.vscode-markdownlint",
+				"marp-team.marp-vscode"
+			]
+		}
+	}
 }

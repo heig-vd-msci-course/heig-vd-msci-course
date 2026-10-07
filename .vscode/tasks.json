@@ -1,0 +1,32 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Zensical: Serve (Dev Server)",
+			"type": "shell",
+			"command": "source .venv/bin/activate && zensical serve",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "new"
+			},
+			"problemMatcher": [],
+			"detail": "Start local development server at http://localhost:8000"
+		},
+		{
+			"label": "Zensical: Build",
+			"type": "shell",
+			"command": "source .venv/bin/activate && zensical build --clean",
+			"group": "build",
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			},
+			"problemMatcher": [],
+			"detail": "Build the static site for production"
+		}
+	]
+}
