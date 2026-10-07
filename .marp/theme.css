@@ -20,7 +20,7 @@
 	--color-primary: #ff6b6b;
 	--color-secondary: #4ecdc4;
 	--color-normal: #333;
-	--color-dimmed: #666;
+	--color-dimmed: #888;
 	--color-background: #fff;
 	--color-code-background: #f6f8fa;
 	--color-code-foreground: #1f2328;
@@ -28,7 +28,7 @@
 	--color-table-border: #d1d9e0;
 }
 
-/* Titres */
+/* Headings */
 h1,
 h2,
 h3,
@@ -36,17 +36,13 @@ h4,
 h5,
 h6 {
 	color: var(--color-secondary);
-	margin: 0.4em 0 0;
-	font-size: 1.3rem;
+	margin: 0.5em 0 0;
+	font-size: 1.5rem;
 }
 
 h1 {
-	font-size: 1.6em;
+	font-size: 1.8em;
 	color: var(--color-primary);
-}
-
-h2 {
-	font-size: 1.2em;
 }
 
 h1 strong,
@@ -77,19 +73,31 @@ h6 a:link {
 	text-decoration: none;
 }
 
-/* Header et footer - TOUJOURS VISIBLES */
+/* Header and footer */
+header,
+footer,
+section::after {
+	box-sizing: border-box;
+	font-size: 66%;
+	height: 70px;
+	line-height: 50px;
+	overflow: hidden;
+	padding: 10px 25px;
+	position: absolute;
+}
+
+header,
+footer,
+section::after,
+blockquote::before,
+blockquote::after {
+	color: var(--color-dimmed);
+}
+
 header,
 footer {
-	box-sizing: border-box;
-	font-size: 50%;
-	height: 40px;
-	line-height: 40px;
-	overflow: hidden;
-	padding: 0 30px;
-	position: absolute;
 	left: 0;
 	right: 0;
-	color: var(--color-dimmed);
 }
 
 header {
@@ -106,43 +114,43 @@ footer a {
 	text-decoration: none;
 }
 
-/* Paragraphes et listes */
+/* Paragraphs and lists */
 p,
 blockquote {
-	margin: 0.6em 0 0;
+	margin: 1em 0 0;
 }
 
 ul > li,
 ol > li {
-	margin: 0.2em 0 0;
+	margin: 0.3em 0 0;
 }
 ul > li > p,
 ol > li > p {
-	margin: 0.4em 0 0;
+	margin: 0.6em 0 0;
 }
 
 /* Code */
 code {
 	display: inline-block;
 	font-family: "Roboto Mono", monospace;
-	font-size: 0.75em;
+	font-size: 0.8em;
 	letter-spacing: 0;
-	margin: -0.1em 0.1em;
+	margin: -0.1em 0.15em;
 	padding: 0.1em 0.2em;
 	vertical-align: baseline;
 }
 
 pre {
 	display: block;
-	margin: 0.8em 0 0;
+	margin: 1em 0 0;
 	overflow: visible;
 }
 pre code {
 	box-sizing: border-box;
 	margin: 0;
 	min-width: 100%;
-	padding: 0.4em;
-	font-size: 0.65em;
+	padding: 0.5em;
+	font-size: 0.7em;
 }
 pre::part(auto-scaling) {
 	max-height: calc(580px - 1em);
@@ -167,18 +175,17 @@ section pre > code {
 	background: transparent;
 }
 
-/* Tableaux - plus compacts */
+/* Table */
 table {
 	border-spacing: 0;
 	border-collapse: collapse;
-	margin: 0.6em 0 0;
-	width: auto;
-	font-size: 0.85em;
+	margin: 1em 0 0;
+	width: 100%;
 }
 
 table th,
 table td {
-	padding: 0.15em 0.5em;
+	padding: 0.2em 0.4em;
 	border-width: 1px;
 	border-style: solid;
 	border-color: var(--color-table-border);
@@ -197,18 +204,26 @@ section table tbody > tr:nth-child(even) th {
 	background: var(--color-table-stripe, transparent);
 }
 
-/* Section principale - plus compact */
+/* Section */
 section {
 	background-color: var(--color-background);
 	color: var(--color-normal);
-	font-size: 26px;
+	font-size: 35px;
 	font-family: "Atkinson Hyperlegible", sans-serif;
 	height: 720px;
-	line-height: 1.4;
-	letter-spacing: 0.5px;
-	padding: 50px 50px 45px 50px;
+	line-height: 1.35;
+	letter-spacing: 1.25px;
+	padding: 70px;
 	width: 1280px;
 	word-wrap: break-word;
+}
+
+section:has(h1) {
+	padding: 50px;
+}
+
+section:has(h1) a:link {
+	text-decoration: none;
 }
 
 section a,
@@ -216,7 +231,14 @@ section mark {
 	color: var(--color-primary);
 }
 
-/* Slide de titre (centré) */
+section:has(h1) > header {
+	display: none;
+}
+
+section > header {
+	font-size: 66%;
+}
+
 section.lead {
 	place-content: safe center center;
 	flex-flow: column nowrap;
@@ -250,13 +272,9 @@ section.lead table {
 	margin-right: auto;
 }
 
-/* Pagination en bas à droite */
 section::after {
-	font-size: 50%;
-	color: var(--color-dimmed);
-	position: absolute;
-	bottom: 10px;
-	right: 30px;
+	/* (Un)comment the following line to show pagination in the footer as 'current slide/total slides'. */
+	/* content: attr(data-marpit-pagination) "/" attr(data-marpit-pagination-total); */
 }
 
 section > *:first-child,
@@ -281,25 +299,45 @@ section.invert footer {
 	color: #aaa;
 }
 
-/* Citations */
+/* Blockquote */
 blockquote {
 	font-style: italic;
-	margin: 0.8em 0 0;
+	margin: 1em 0 0;
 	padding: 0 1em;
 	position: relative;
-	border-left: 3px solid var(--color-secondary);
+}
+
+blockquote::before,
+blockquote::after {
+	content: '"';
+	display: block;
+	font-family: "Atkinson Hyperlegible", serif;
+	font-weight: bold;
+	position: absolute;
+}
+
+blockquote::before {
+	top: 0;
+	left: 0;
+}
+
+blockquote::after {
+	right: 0;
+	bottom: 0;
+	transform: rotate(180deg);
 }
 
 blockquote > *:first-child {
 	margin-top: 0;
 }
 
-/* Classes utilitaires pour les colonnes */
+/* Custom classes */
 .two-columns,
 .three-columns,
 .four-columns,
 .one-third-two-thirds-columns,
-.two-thirds-one-third-columns {
+.two-thirds-one-third-columns,
+.forty-sixty-columns {
 	display: grid;
 	gap: 1rem;
 }
@@ -324,7 +362,10 @@ blockquote > *:first-child {
 	grid-template-columns: 2fr 1fr;
 }
 
-/* Classes utilitaires */
+.forty-sixty-columns {
+	grid-template-columns: 2fr 3fr;
+}
+
 .center {
 	text-align: center;
 }
@@ -335,7 +376,11 @@ blockquote > *:first-child {
 }
 
 .rounded {
-	margin: 0.8em 0 0;
+	margin: 1em 0 0;
+}
+
+.margin-0 {
+	margin: 0;
 }
 
 .small {
@@ -369,4 +414,18 @@ blockquote > *:first-child {
 .success {
 	background-color: #e8f5e9;
 	border-left: 3px solid #4caf50;
+}
+
+.thumbnail {
+	position: absolute;
+	bottom: 40px;
+	right: 40px;
+	color: white;
+	-webkit-text-stroke: 0.5px black;
+	font-weight: bold;
+}
+
+.thumbnail a {
+	color: white;
+	text-decoration: none;
 }
