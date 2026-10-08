@@ -1,6 +1,6 @@
 [project]
 site_url = "https://heig-vd-msci-course.github.io/heig-vd-msci-course/"
-site_name = "HEIG-VD MSCI Course"
+site_name = "Algorithmique et programmation (MSCI - ERACOM)"
 # site_description = "Le dépôt du cours d'introduction à la programmation pour la maturité."
 # site_author = "Fleurimont C. & Guidoux V."
 
@@ -11,8 +11,24 @@ site_name = "HEIG-VD MSCI Course"
 # edit_uri = "edit/main/docs/"
 
 nav = [
-  { "Get started" = "index.md" },
-  { "Markdown in 5min" = "markdown.md" },
+  { "Accueil" = "index.md" },
+  { "Équipe enseignante" = "equipe.md" },
+  { "Programme" = [
+    { "Lundi - Introduction" = "programme/lundi.md" },
+    { "Mardi - Web" = "programme/jour2.md" },
+    { "Mercredi - micro:bit" = "programme/jour3.md" },
+    { "Jeudi - Travail libre" = "programme/jour4.md" },
+    { "Vendredi - Projet" = "programme/jour5.md" },
+  ]},
+  { "Présentations" = [
+    { "Lundi - Introduction (HTML)" = "slides/lundi-introduction-algorithmique.html" },
+  ]},
+  { "Ressources" = [
+    { "Guide du jeu des allumettes" = "supports/guide-jeu-allumettes.md" },
+    { "Concepts algorithmiques" = "supports/cheatsheet-concepts-algo.md" },
+    { "Activité : Donner des instructions" = "supports/activities/activite-donner-instructions.md" },
+    { "Template MakeCode Arcade" = "code-templates/makecode/jeu-allumettes-arcade.md" },
+  ]},
 ]
 
 # extra_css = ["stylesheets/extra.css"]
@@ -22,7 +38,7 @@ nav = [
 # variant = "classic"
 # custom_dir = "overrides"
 # favicon = "images/favicon.png"
-language = "en"
+language = "fr"
 features = [
   "announce.dismiss",
   # "content.action.edit",

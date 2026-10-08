@@ -1,173 +1,100 @@
 ---
-icon: lucide/rocket
+icon: lucide/book-open
 ---
 
-# Get started
+# Algorithmique et programmation
 
-For full documentation visit [zensical.org](https://zensical.org/docs/).
+**Semaine 43 | 20-24 octobre 2026 | ERACOM**
 
-## Commands
+Ce cours d'introduction à la programmation et à l'ingénierie des médias propose une approche pratique centrée sur la création de projets concrets.
 
-* [`zensical new`][new] - Create a new project
-* [`zensical serve`][serve] - Start local web server
-* [`zensical build`][build] - Build your site
+!!! info "Objectif du cours"
 
-  [new]: https://zensical.org/docs/usage/new/
-  [serve]: https://zensical.org/docs/usage/preview/
-  [build]: https://zensical.org/docs/usage/build/
+    Démystifier la programmation à travers des projets créatifs : sites web, animations et objets interactifs. Aucune expérience préalable en programmation n'est requise.
 
-## Examples
+---
 
-### Admonitions
+## Équipe enseignante
 
-> Go to [documentation](https://zensical.org/docs/authoring/admonitions/)
+L'équipe pédagogique accompagne le groupe tout au long de la semaine.
 
-!!! note
+!!! note "Présentation de l'équipe"
 
-    This is a **note** admonition. Use it to provide helpful information.
+    Consulter la page [Équipe enseignante](equipe.md) pour découvrir les membres de l'équipe en charge du cours.
 
-!!! warning
+---
 
-    This is a **warning** admonition. Be careful!
+## Programme de la semaine
 
-### Details
+| Jour | Thème | Réalisations |
+|------|-------|--------------|
+| [Lundi](programme/lundi.md) | Introduction et algorithmique | Premiers algorithmes, jeu des allumettes en programmation visuelle |
+| [Mardi](programme/mardi.md) | HTML/CSS et publication web | Création et publication d'un site web personnel |
+| [Mercredi](programme/mercredi.md) | micro:bit et programmation physique | Objet interactif avec capteurs et LEDs |
+| [Jeudi](programme/jeudi.md) | Travail autonome à domicile | Consolidation des acquis, préparation du projet final |
+| [Vendredi](programme/vendredi.md) | Projet créatif et clôture | Projet final personnalisé, présentations |
 
-> Go to [documentation](https://zensical.org/docs/authoring/admonitions/#collapsible-blocks)
+---
 
-??? info "Click to expand for more info"
+## Navigation sur ce site
 
-    This content is hidden until you click to expand it.
-    Great for FAQs or long explanations.
+Ce site rassemble l'ensemble des ressources du cours. Voici comment naviguer :
 
-## Code Blocks
+| Section | Contenu |
+|---------|---------|
+| **Équipe enseignante** | Présentation des membres de l'équipe |
+| **Programme** | Détail de chaque journée : horaires, activités, objectifs |
+| **Ressources** | Guides, fiches de référence, activités et templates de code |
 
-> Go to [documentation](https://zensical.org/docs/authoring/code-blocks/)
+!!! tip "Conseil de navigation"
 
-``` python hl_lines="2" title="Code blocks"
-def greet(name):
-    print(f"Hello, {name}!") # (1)!
+    Chaque page de journée contient les liens vers les ressources correspondantes. Commencer par la page du jour en cours pour accéder aux documents nécessaires.
 
-greet("Python")
-```
+---
 
-1.  > Go to [documentation](https://zensical.org/docs/authoring/code-blocks/#code-annotations)
+## Fil rouge : le jeu des allumettes
 
-    Code annotations allow to attach notes to lines of code.
+Un projet unique accompagne le groupe tout au long de la semaine, decliné sous différentes formes :
 
-Code can also be highlighted inline: `#!python print("Hello, Python!")`.
+1. **Lundi** : Analyse des règles et élaboration de la stratégie gagnante sur papier, puis en programmation visuelle
+2. **Mardi** : Développement de l'interface web en HTML/CSS
+3. **Mercredi** : Création d'une version physique avec micro:bit
+4. **Vendredi** : Intégration finale et personnalisation créative
 
-## Content tabs
+!!! example "Principe du jeu des allumettes"
 
-> Go to [documentation](https://zensical.org/docs/authoring/content-tabs/)
+    Deux personnes retirent alternativement 1, 2 ou 3 allumettes d'un tas de 21. La personne qui retire la dernière allumette perd la partie. Une stratégie mathématique permet de garantir la victoire.
 
-=== "Python"
+    [:octicons-arrow-right-24: Consulter le guide complet](supports/guide-jeu-allumettes.md)
 
-    ``` python
-    print("Hello from Python!")
-    ```
+Ce projet permet d'aborder progressivement les concepts fondamentaux : variables, conditions, boucles et événements.
 
-=== "Rust"
+---
 
-    ``` rs
-    println!("Hello from Rust!");
-    ```
+## Compétences visées
 
-## Diagrams
+- **Pensée algorithmique** : décomposition d'un problème en étapes logiques
+- **Développement web** : HTML, CSS et notions de JavaScript
+- **Programmation physique** : utilisation de capteurs et d'actionneurs
+- **Présentation orale** : présentation de projets et de réalisations
 
-> Go to [documentation](https://zensical.org/docs/authoring/diagrams/)
+---
 
-``` mermaid
-graph LR
-  A[Start] --> B{Error?};
-  B -->|Yes| C[Hmm...];
-  C --> D[Debug];
-  D --> B;
-  B ---->|No| E[Yay!];
-```
+## Outils utilisés
 
-## Footnotes
+Aucune installation n'est requise. Les outils suivants fonctionnent directement dans le navigateur :
 
-> Go to [documentation](https://zensical.org/docs/authoring/footnotes/)
+| Outil | Usage |
+|-------|-------|
+| **MakeCode Arcade** | Programmation visuelle par blocs |
+| **JSFiddle** | Expérimentation HTML/CSS/JavaScript |
+| **MakeCode micro:bit** | Programmation du micro:bit |
+| **Wooclap** | Questions interactives, quiz, sondages |
 
-Here's a sentence with a footnote.[^1]
+---
 
-Hover it, to see a tooltip.
+!!! note "Approche pédagogique"
 
-[^1]: This is the footnote.
+    Ce cours privilégie l'expérimentation et l'apprentissage par la pratique. Les erreurs font partie intégrante du processus d'apprentissage en programmation.
 
-
-## Formatting
-
-> Go to [documentation](https://zensical.org/docs/authoring/formatting/)
-
-- ==This was marked (highlight)==
-- ^^This was inserted (underline)^^
-- ~~This was deleted (strikethrough)~~
-- H~2~O
-- A^T^A
-- ++ctrl+alt+del++
-
-## Icons, Emojis
-
-> Go to [documentation](https://zensical.org/docs/authoring/icons-emojis/)
-
-* :sparkles: `:sparkles:`
-* :rocket: `:rocket:`
-* :tada: `:tada:`
-* :memo: `:memo:`
-* :eyes: `:eyes:`
-
-## Maths
-
-> Go to [documentation](https://zensical.org/docs/authoring/math/)
-
-$$
-\cos x=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k)!}x^{2k}
-$$
-
-!!! warning "Needs configuration"
-    Note that MathJax is included via a `script` tag on this page and is not
-    configured in the generated default configuration to avoid including it
-    in a pages that do not need it. See the documentation for details on how
-    to configure it on all your pages if they are more Maths-heavy than these
-    simple starter pages.
-
-<script id="MathJax-script" src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [["\\(", "\\)"]],
-      displayMath: [["\\[", "\\]"]],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      ignoreHtmlClass: ".*|",
-      processHtmlClass: "arithmatex"
-    }
-  };
-
-  document$.subscribe(() => {
-    MathJax.startup.output.clearCache()
-    MathJax.typesetClear()
-    MathJax.texReset()
-    MathJax.typesetPromise()
-  })
-</script>
-
-## Task Lists
-
-> Go to [documentation](https://zensical.org/docs/authoring/lists/#using-task-lists)
-
-* [x] Install Zensical
-* [x] Configure `zensical.toml`
-* [x] Write amazing documentation
-* [ ] Deploy anywhere
-
-## Tooltips
-
-> Go to [documentation](https://zensical.org/docs/authoring/tooltips/)
-
-[Hover me][example]
-
-  [example]: https://example.com "I'm a tooltip!"
+Pour commencer, consulter [le programme du lundi](programme/lundi.md).
