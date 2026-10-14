@@ -185,11 +185,18 @@ Exemple : Préparation de pâtes
 
 ---
 
+<!-- _class: invert -->
+<!-- _paginate: false -->
+
+<div class="center">
+
 # PAUSE
 
 ## 30 minutes
 
 *Retour à 10h30 · Salles T155 et T157*
+
+</div>
 
 ---
 
