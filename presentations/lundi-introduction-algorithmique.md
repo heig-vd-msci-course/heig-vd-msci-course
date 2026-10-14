@@ -18,7 +18,7 @@ footer: 'ERACOM - Semaine 43'
 
 ## L'équipe enseignante
 
-- **Clarisse Fleurimont** - Ingénieure logiciel, formatrice, assistante de recherche HEIG-VD
+- **Clarisse Estelle Fleurimont** - Ingénieure logiciel, formatrice, assistante de recherche HEIG-VD
 - **Vincent** - ...
 
 ---
@@ -42,13 +42,12 @@ footer: 'ERACOM - Semaine 43'
 
 | Horaire | Activité |
 |---------|----------|
-| 08h30 - 09h00 | Accueil et prise de contact |
-| 09h00 - 09h45 | Élaboration de la charte et formation des équipes |
-| 09h45 - 10h00 | Pause |
-| 10h00 - 10h45 | Activité : Donner des instructions |
-| 10h45 - 11h00 | Pause |
-| 11h00 - 11h45 | Découverte du jeu des allumettes |
-| 11h45 - 12h00 | Introduction à la programmation |
+| 08h30 | Accueil et prise de contact |
+| 09h00 | Élaboration de la charte et formation des équipes |
+| 09h45 | Introduction à la programmation |
+| 10h00 | Pause |
+| 10h30 | Activité : Donner des instructions |
+| 11h15 | Découverte du jeu des allumettes |
 
 ---
 
@@ -58,12 +57,12 @@ footer: 'ERACOM - Semaine 43'
 
 | Horaire | Activité |
 |---------|----------|
-| 13h00 - 13h15 | Introduction à la programmation sans code |
-| 13h15 - 14h00 | Découverte de MakeCode Arcade |
-| 14h00 - 14h45 | Atelier : Jeu des allumettes en blocs - Partie 1 |
-| 14h45 - 15h00 | Pause |
-| 15h00 - 15h45 | Atelier : Jeu des allumettes en blocs - Partie 2 |
-| 15h45 - 16h15 | Synthèse et quiz Wooclap |
+| 13h00 | Introduction à la programmation sans code |
+| 13h15 | Découverte de MakeCode Arcade |
+| 14h00 | Atelier : Jeu des allumettes en blocs - Partie 1 |
+| 14h45 | Pause |
+| 15h00 | Atelier : Jeu des allumettes en blocs - Partie 2 |
+| 15h45 | Synthèse et quiz Wooclap |
 
 ---
 
@@ -77,29 +76,16 @@ footer: 'ERACOM - Semaine 43'
 
 ---
 
-<!-- _class: invert -->
-
-# Accueil et prise de contact
-
-## 08h30 - 09h00
-
----
-
-# Prise de température
-
-## Scannez le QR code
-
-![Wooclap QR](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=wooclap.com)
-
-**wooclap.com** → Code : _______
-
----
-
 # Le projet de la semaine
 
 ## Le Jeu des Allumettes
 
-Un fil rouge qui traverse toute la semaine
+Un fil rouge qui traverse toute la semaine :
+
+- **Lundi** : Comprendre les règles et la stratégie
+- **Mardi** : Créer l'interface web
+- **Mercredi** : Version physique avec micro:bit
+- **Vendredi** : Présentation finale
 
 ---
 
@@ -107,18 +93,23 @@ Un fil rouge qui traverse toute la semaine
 
 # Élaboration de la charte et formation des équipes
 
-## 09h00 - 09h45
+## 09h00 - 09h45 · Salle R102
 
 ---
 
-# Co-construction de la charte
+# Wooclap : Construisons ensemble
 
-## Vos attentes et engagements
+## Scannez le QR code
 
-Rendez-vous sur **Wooclap** pour participer :
+<div class="center">
 
-1. **Nuage de mots** : Quelles sont vos attentes pour cette semaine ?
-2. **Question ouverte** : Quelles règles proposez-vous pour bien travailler ensemble ?
+![Wooclap QR](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://app.wooclap.com/SLNZGPB?from=instruction-slide)
+
+</div>
+
+**wooclap.com** → Code : <b class="secondary"> SLNZGPB </b>
+
+Répondez aux questions en un ou deux mots, ou par un mot-clé, nous en ferons la synthèse pour créer notre charte de fonctionnement.
 
 ---
 
@@ -126,20 +117,59 @@ Rendez-vous sur **Wooclap** pour participer :
 
 ## Environ 20 équipes de 3-4 personnes
 
-Chaque équipe porte un **nom de fruit** :
-- Apple, Pear, Banana, Cherry, Mango...
+Chaque équipe porte un **nom de fruit** (ex. : Pomme, Poire, Banane, Kiwi, etc.).
 
-Et aura son **URL personnalisée** :
-- `apple.msci.heig-vd.ch`
-- `pear.msci.heig-vd.ch`
+Choissez votre nom d'équipe et notez-le sur cette Google Sheet : [https://tinylink.net/YeCH0](https://tinylink.net/YeCH0) (ou scannez le QR code ci-dessous).
+
+<div class="center">
+
+![Wooclap QR](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://tinylink.net/YeCH0)
+
+</div>
+
+---
+
+<!-- _class: invert -->
+
+# Introduction à la programmation
+
+## 09h45 - 10h00 · Salle R102
+
+---
+
+# C'est quoi un algorithme ?
+
+## Une suite d'instructions ordonnées
+
+```
+Exemple : Préparation de pâtes
+─────────────────────────────
+1. Remplir une casserole d'eau
+2. Porter à ébullition
+3. Ajouter les pâtes
+4. Attendre 10 minutes
+5. Égoutter
+6. Servir
+```
+
+---
+
+# Les ingrédients d'un programme
+
+| Concept | Exemple |
+|---------|---------|
+| **Variable** | Nombre d'allumettes |
+| **Condition** | "Si reste 1..." |
+| **Boucle** | Répéter les tours |
+| **Fonction** | La stratégie |
 
 ---
 
 # PAUSE
 
-## 15 minutes
+## 30 minutes
 
-*Retour à 10h00*
+*Retour à 10h30 · Salles T155 et T157*
 
 ---
 
@@ -147,7 +177,7 @@ Et aura son **URL personnalisée** :
 
 # Activité : Donner des instructions
 
-## 10h00 - 10h45
+## 10h30 - 11h15 · Salles T155 / T157
 
 ---
 
@@ -216,19 +246,11 @@ Pas de questions.
 
 ---
 
-# PAUSE
-
-## 15 minutes
-
-*Retour à 11h00*
-
----
-
 <!-- _class: invert -->
 
 # Découverte du jeu des allumettes
 
-## 11h00 - 11h45
+## 11h15 - 12h00 · Salles T155 / T157
 
 ---
 
@@ -287,14 +309,6 @@ Quoi que l'adversaire joue, on peut compléter pour faire 4 :
 
 ---
 
-<!-- _class: invert -->
-
-# Introduction à la programmation
-
-## 11h45 - 12h00
-
----
-
 # La formule mathématique
 
 ```
@@ -315,18 +329,6 @@ Le `%` (modulo) donne le **reste de la division**.
 | **Condition** | "Si reste 1..." |
 | **Boucle** | Répéter les tours |
 | **Fonction** | La stratégie |
-
----
-
-# Le web en 3 langages
-
-## HTML + CSS + JavaScript
-
-| Langage | Rôle | Analogie |
-|---------|------|----------|
-| **HTML** | Structure | Le squelette |
-| **CSS** | Style | La décoration |
-| **JavaScript** | Interaction | L'électricité |
 
 ---
 

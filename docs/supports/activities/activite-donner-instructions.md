@@ -4,353 +4,397 @@
 
 | Durée | Format | Matériel |
 |-------|--------|----------|
-| 45 min | Binômes | Voir préparation selon option |
+| 45 min | Binômes | Labyrinthes imprimés, baguettes/allumettes, feuilles et crayons |
 
 ## Objectifs pédagogiques
 
 - Comprendre qu'un ordinateur exécute exactement ce qui lui est indiqué
 - Expérimenter la difficulté de formuler des instructions précises
-- Découvrir l'importance d'un vocabulaire limité et structuré
+- **Découvrir les différents niveaux d'abstraction des langages de programmation**
 - Faire le lien entre instructions humaines et code informatique
 
 ## Concept clé
 
-> Un ordinateur fonctionne comme la personne partenaire dans cette activité : il exécute EXACTEMENT ce qui lui est dit, rien de plus, rien de moins. Il ne devine pas, il n'interprète pas, il ne pose pas de questions.
+!!! quote "Le fil rouge de l'activité"
+
+    Cette activité se déroule en **trois niveaux progressifs** avec un vocabulaire de plus en plus riche :
+
+    - **Niveau 1** : 4 mots seulement (très limité)
+    - **Niveau 2** : Plus de mots, mais pas de raccourcis
+    - **Niveau 3** : Des raccourcis puissants (formes, tailles)
+
+    Plus le vocabulaire est riche, moins il faut d'instructions — mais l'ordinateur doit toujours tout décomposer en opérations simples.
 
 ---
 
-## Trois options au choix
+## Vue d'ensemble des trois niveaux
 
-La personne enseignante choisit UNE option selon le matériel disponible et l'espace.
+| Niveau | Activité | Ce qu'on peut dire |
+|--------|----------|-------------------|
+| **1. Labyrinthe** | Guider dans un labyrinthe | 4 mots seulement |
+| **2. Baguettes** | Former un dessin avec des baguettes | Placements, mais pas de formes |
+| **3. Dessin** | Dessiner au crayon | Formes, tailles, positions |
+
+**Principe** : plus le vocabulaire est riche, moins il faut d'instructions pour arriver au même résultat.
 
 ---
 
-## Option A - Labyrinthe
+## Niveau 1 — Le labyrinthe
 
 ### Description
-Une personne ferme les yeux (ou tourne le dos). Sa partenaire la guide à travers un parcours simple dans la salle en utilisant uniquement des commandes prédéfinies.
+
+Une personne ferme les yeux (ou tourne le dos). Sa partenaire la guide à travers un labyrinthe dessiné sur papier en utilisant **uniquement** des commandes de direction très basiques.
+
+### Pourquoi ce niveau ?
+
+!!! info "Vocabulaire minimal"
+
+    Avec seulement 4 mots possibles, chaque action doit être décomposée au maximum. C'est exactement ce que fait un ordinateur au plus bas niveau : des opérations très simples, une par une.
 
 ### Matériel nécessaire
-- [ ] Espace dégagé dans la salle (ou couloir)
-- [ ] Obstacles simples : chaises, sacs, cônes (optionnel)
-- [ ] Bandeaux pour les yeux (optionnel, plus immersif)
-- [ ] Chronomètre ou téléphone
 
-### Vocabulaire autorisé (à afficher)
-
-| Commande | Signification |
-|----------|---------------|
-| `AVANCE X` | Faire X pas en avant (X = 1, 2, 3...) |
-| `RECULE X` | Faire X pas en arrière |
-| `TOURNE GAUCHE` | Pivoter de 90 degrés à gauche |
-| `TOURNE DROITE` | Pivoter de 90 degrés à droite |
-| `STOP` | S'arrêter immédiatement |
-| `DEMI-TOUR` | Pivoter de 180 degrés |
-
-**Interdit** : "un peu", "là-bas", "attention", "non pas comme ça", "vers la fenêtre", etc.
-
-### Mise en place du parcours
-- Définir un point de départ et un point d'arrivée
-- Placer 2-3 obstacles simples entre les deux
-- Le parcours doit être réalisable en 8-10 commandes maximum
-
----
-
-## Option B - Dessin aveugle
-
-### Description
-Une personne a un dessin simple devant elle. Elle doit le décrire pour que sa partenaire le reproduise sans voir l'original. Aucune question n'est autorisée.
-
-### Matériel nécessaire
-- [ ] Dessins modèles imprimés (voir annexe ou en créer)
-- [ ] Feuilles blanches A4 (une par tentative)
-- [ ] Crayons ou feutres
-- [ ] Séparation visuelle (dos à dos, ou carton entre les deux)
+- [ ] Labyrinthes imprimés (un par binôme, voir annexe)
+- [ ] Crayon pour tracer le parcours
 - [ ] Chronomètre
 
 ### Vocabulaire autorisé (à afficher)
 
 | Commande | Signification |
 |----------|---------------|
-| `TRACE UNE LIGNE` | Du point actuel, tracer une ligne |
-| `DE X À Y` | Depuis position X vers position Y |
-| `HAUT / BAS / GAUCHE / DROITE` | Direction |
-| `PETIT / MOYEN / GRAND` | Taille relative |
+| `AVANCE` | Avancer d'une case |
+| `RECULE` | Reculer d'une case |
+| `GAUCHE` | Tourner à gauche (90°) |
+| `DROITE` | Tourner à droite (90°) |
+
+**C'est tout.** Pas de "avance de 3 cases", pas de "va vers le haut", pas de "attention au mur".
+
+### Règles strictes
+
+- La personne qui exécute trace le chemin sur le labyrinthe au crayon
+- La personne qui donne les instructions voit le labyrinthe avec la solution
+- **Aucune question autorisée**
+- **Uniquement les 4 commandes ci-dessus**
+- Si le crayon touche un mur = "crash" → retour au début
+
+### Déroulement
+
+| Temps | Action |
+|-------|--------|
+| 0-1 min | Distribution des labyrinthes |
+| 1-4 min | Premier essai (personne A guide, personne B trace) |
+| 4-5 min | Révélation et comparaison |
+| 5-8 min | Échange de rôles avec un nouveau labyrinthe |
+| 8-10 min | Discussion rapide : "Combien d'instructions ont été nécessaires ?" |
+
+---
+
+## Niveau 2 — Les baguettes
+
+### Description
+
+Une personne a un dessin simple devant elle (carré, triangle, lettre). Elle doit guider sa partenaire pour reproduire ce dessin en **posant des baguettes une par une** sur la table, sans jamais nommer la forme finale.
+
+### Pourquoi ce niveau ?
+
+!!! info "Vocabulaire élargi, mais pas de raccourcis"
+
+    On peut maintenant parler de positions et d'orientations, mais toujours pas de formes. Pour faire un carré, il faut placer 4 baguettes une par une. Le vocabulaire est plus riche qu'au niveau 1, mais il n'y a pas encore de "raccourci".
+
+### Matériel nécessaire
+
+- [ ] Baguettes, allumettes ou cure-dents (10-15 par binôme)
+- [ ] Modèles de formes imprimés (voir annexe)
+- [ ] Surface plane (table, sol)
+- [ ] Séparation visuelle entre les partenaires
+
+### Vocabulaire autorisé (à afficher)
+
+| Commande | Signification |
+|----------|---------------|
+| `PRENDS UNE BAGUETTE` | Saisir une baguette |
+| `POSE` | Poser la baguette |
+| `HORIZONTAL` | Orientation horizontale |
+| `VERTICAL` | Orientation verticale |
+| `DIAGONAL GAUCHE` | Inclinée vers la gauche (/) |
+| `DIAGONAL DROITE` | Inclinée vers la droite (\) |
+| `À GAUCHE DE` | Position relative |
+| `À DROITE DE` | Position relative |
+| `AU-DESSUS DE` | Position relative |
+| `EN DESSOUS DE` | Position relative |
+| `AU BOUT DE` | À l'extrémité de la baguette précédente |
+| `BAGUETTE 1, 2, 3...` | Référence aux baguettes déjà posées |
+
+**Interdit** : nommer des formes ("fais un carré"), utiliser des mesures ("à 5 cm"), montrer avec les mains.
+
+### Règles strictes
+
+- Poser **une baguette à la fois**
+- Chaque baguette doit être placée **par rapport aux précédentes**
+- La personne qui exécute ne voit **jamais** le modèle original
+- Pas de "non, pas comme ça" — une fois posée, c'est posé
+
+### Déroulement
+
+| Temps | Action |
+|-------|--------|
+| 0-1 min | Distribution du matériel et des modèles |
+| 1-5 min | Premier essai (forme simple : carré ou triangle) |
+| 5-6 min | Révélation et comparaison |
+| 6-10 min | Échange de rôles avec une forme différente |
+| 10-12 min | Discussion : "Est-ce plus facile ou plus difficile que le labyrinthe ?" |
+
+### Formes suggérées (difficulté croissante)
+
+1. **Carré** (4 baguettes)
+2. **Triangle** (3 baguettes)
+3. **Maison** (5 baguettes : carré + toit)
+4. **Lettre E ou F** (4-5 baguettes)
+5. **Étoile simple** (6 baguettes)
+
+---
+
+## Niveau 3 — Le dessin libre
+
+### Description
+
+Une personne décrit un dessin que sa partenaire doit reproduire au crayon sur une feuille blanche. Cette fois, le vocabulaire est **enrichi** : on peut utiliser des noms de formes, des tailles, des positions absolues.
+
+### Pourquoi ce niveau ?
+
+!!! info "Vocabulaire riche avec des raccourcis"
+
+    On peut maintenant dire "cercle" ou "carré" : ce sont des **raccourcis** qui représentent plein d'opérations simples. Une seule instruction remplace des dizaines de placements. Mais la personne qui dessine doit quand même tracer chaque trait — le raccourci facilite la communication, pas l'exécution.
+
+### Matériel nécessaire
+
+- [ ] Feuilles blanches A4
+- [ ] Crayons ou feutres
+- [ ] Modèles de dessins simples (voir annexe)
+- [ ] Séparation visuelle entre les partenaires
+
+### Vocabulaire autorisé (à afficher)
+
+| Commande | Signification |
+|----------|---------------|
 | `CERCLE` | Forme ronde |
 | `CARRÉ` | Forme carrée |
+| `RECTANGLE` | Forme rectangulaire |
 | `TRIANGLE` | Forme triangulaire |
-| `AU CENTRE` | Au milieu de la feuille |
+| `LIGNE` | Trait droit |
+| `PETIT / MOYEN / GRAND` | Taille relative |
 | `EN HAUT / EN BAS` | Position verticale |
 | `À GAUCHE / À DROITE` | Position horizontale |
+| `AU CENTRE` | Au milieu de la feuille |
 | `DANS` | À l'intérieur d'une forme |
-| `À CÔTÉ` | Adjacent à |
-| `AU-DESSUS / EN-DESSOUS` | Position relative |
+| `À CÔTÉ DE` | Adjacent à une forme |
+| `AU-DESSUS DE / EN DESSOUS DE` | Position relative |
+| `RELIE ... À ...` | Trace une ligne entre deux éléments |
 
-**Interdit** : "c'est compris ?", "c'est comme...", "non refaire", montrer avec les mains, etc.
+**Interdit** : "c'est un soleil", "tu connais la forme d'une maison ?", montrer avec les mains.
+
+### Règles
+
+- La personne qui exécute **ne pose aucune question**
+- La personne qui donne les instructions ne voit **pas** ce qui est dessiné
+- On ne peut **pas corriger** une forme déjà dessinée
+
+### Déroulement
+
+| Temps | Action |
+|-------|--------|
+| 0-1 min | Distribution des feuilles et modèles |
+| 1-4 min | Premier essai (dessin simple) |
+| 4-5 min | Révélation et comparaison |
+| 5-8 min | Échange de rôles avec un nouveau dessin |
+| 8-10 min | Discussion : "Avec plus de vocabulaire, était-ce plus facile ?" |
 
 ### Dessins suggérés (difficulté croissante)
-1. **Facile** : Soleil (cercle + traits), maison simple, cœur
-2. **Moyen** : Étoile à 5 branches, bonhomme, arbre
-3. **Difficile** : Emoji clignant de l'œil, voiture, fusée
+
+1. **Soleil** (cercle + lignes autour)
+2. **Maison simple** (carré + triangle + porte)
+3. **Bonhomme** (cercle + lignes)
+4. **Paysage minimal** (soleil + maison + arbre)
 
 ---
 
-## Option C - Construction
+## Débriefing collectif
 
-### Description
-Une personne a une construction simple (Lego, Kapla, ou blocs). Elle doit guider sa partenaire pour reproduire la même construction avec des pièces identiques, sans montrer l'original.
+Après avoir traversé les trois niveaux, prenons un moment pour réfléchir à ce qui a changé.
 
-### Matériel nécessaire
-- [ ] Jeu de construction : Lego Duplo, Kapla, blocs en bois, ou même livres/objets
-- [ ] Deux jeux de pièces identiques par binôme
-- [ ] Séparation visuelle (carton, dos à dos)
-- [ ] Modèles pré-construits (ou laisser une partenaire construire d'abord)
-- [ ] Chronomètre
+### Questions à se poser
 
-### Vocabulaire autorisé (à afficher)
+**Sur les différences entre niveaux :**
 
-| Commande | Signification |
-|----------|---------------|
-| `PRENDS` | Sélectionner une pièce |
-| `PIÈCE ROUGE / BLEUE / etc.` | Couleur de la pièce |
-| `GRANDE / PETITE / MOYENNE` | Taille de la pièce |
-| `POSE` | Placer la pièce |
-| `SUR` | Au-dessus, en contact |
-| `À CÔTÉ` | Adjacent horizontalement |
-| `DEVANT / DERRIÈRE` | Position avant/arrière |
-| `À GAUCHE / À DROITE` | Position latérale |
-| `TOURNE` | Pivoter la pièce |
-| `HORIZONTAL / VERTICAL` | Orientation de la pièce |
-| `ALIGNE` | Sur la même ligne que |
+- Quel niveau a semblé le plus facile ? Le plus difficile ?
+- Au niveau 1, combien d'instructions ont été nécessaires pour traverser le labyrinthe ?
+- Au niveau 3, combien d'instructions pour dessiner une maison ?
+- Qu'est-ce qui a rendu le niveau 3 plus rapide ?
 
-**Interdit** : "l'autre pièce", "celle-là", montrer, regarder la construction de l'autre
+**Connexion avec la programmation :**
 
-### Constructions suggérées
-- Tour simple (3-4 pièces empilées)
-- Escalier (3 marches)
-- Pont (deux piliers + une pièce dessus)
-- Lettre L ou T
+Cette activité illustre comment fonctionnent les **langages de programmation** :
 
----
+- Au **niveau 1** (labyrinthe) : très peu de mots disponibles. Il faut beaucoup d'instructions pour faire quelque chose de simple. C'est fatigant, mais très précis.
 
-## Déroulement détaillé
+- Au **niveau 2** (baguettes) : plus de vocabulaire, on peut parler de positions. Mais toujours pas de raccourci pour dire "fais un carré".
 
-### Phase 1 - Introduction (5 min)
+- Au **niveau 3** (dessin) : on peut dire "cercle" et ça marche. C'est un **raccourci** — un mot qui cache plein d'opérations simples.
 
-**Ce que dit la personne enseignante :**
+Les langages de programmation fonctionnent pareil : certains offrent peu de mots mais beaucoup de contrôle, d'autres offrent des raccourcis puissants. Mais l'ordinateur, lui, doit toujours tout traduire en opérations de base.
 
-> "Aujourd'hui, nous allons faire une expérience. Vous allez découvrir à quel point il est difficile de donner des instructions précises. C'est exactement ce que l'on fait quand on programme."
+### Tableau de synthèse
 
-1. Expliquer brièvement l'activité choisie (2 min)
-2. Former les binômes (1 min)
-3. Présenter les règles strictes (2 min) :
-   - L'exécuteur·ice ne peut PAS poser de questions
-   - L'instructeur·ice ne peut utiliser QUE le vocabulaire affiché
-   - Pas de gestes, pas de "oui/non", pas de corrections du genre "non, pas ça"
+| Niveau | Vocabulaire | Ce que ça demande |
+|--------|-------------|-------------------|
+| 1. Labyrinthe | 4 mots | Beaucoup d'instructions, très détaillé |
+| 2. Baguettes | ~15 mots | Moins d'instructions, mais pas de raccourcis |
+| 3. Dessin | ~20 mots + formes | Peu d'instructions grâce aux raccourcis |
 
-### Phase 2 - Premier essai (8 min)
+### Le point clé
 
-| Temps | Action |
-|-------|--------|
-| 0-1 min | Distribution du matériel, mise en place |
-| 1-5 min | Premier essai (4 min chrono) |
-| 5-6 min | Révélation et comparaison |
-| 6-8 min | Discussion rapide en binôme : "Qu'est-ce qui a été difficile ?" |
+Plus le vocabulaire est riche, plus c'est facile de communiquer. Mais quelqu'un a dû définir ce que "cercle" veut dire en termes simples. En programmation, c'est pareil : des gens créent des raccourcis pour que d'autres puissent les utiliser.
 
-**Conseils pour la personne enseignante :**
-- Circuler et observer sans intervenir
-- Noter les erreurs intéressantes pour le débriefing
-- Rappeler les règles si quelqu'un ne les respecte pas
+!!! success "À retenir"
 
-### Phase 3 - Échange de rôles (8 min)
-
-| Temps | Action |
-|-------|--------|
-| 0-1 min | Changement de rôles, nouveau matériel si besoin |
-| 1-5 min | Deuxième essai (4 min chrono) |
-| 5-6 min | Révélation et comparaison |
-| 6-8 min | Discussion en binôme : "Était-ce plus facile d'être instructeur·ice ou exécuteur·ice ?" |
-
-### Phase 4 - Deuxième round avec amélioration (10 min)
-
-**Ce que dit la personne enseignante :**
-
-> "Maintenant que les difficultés sont identifiées, un nouveau tour commence. Cette fois, il s'agit d'appliquer ce qui a été appris."
-
-| Temps | Action |
-|-------|--------|
-| 0-4 min | Troisième essai (nouveau défi, mêmes rôles qu'au début) |
-| 4-5 min | Révélation |
-| 5-9 min | Quatrième essai (rôles inversés) |
-| 9-10 min | Révélation finale |
-
-### Phase 5 - Débriefing collectif (12 min)
-
-#### Questions de débriefing (à poser au groupe)
-
-1. **Sur l'expérience**
-   - "Qu'est-ce qui a été le plus frustrant ?"
-   - "Lever la main si la partenaire a fait exactement ce qui semblait avoir été dit."
-   - "Qu'est-ce qui s'est amélioré au deuxième tour ?"
-
-2. **Sur la précision**
-   - "Donner un exemple d'instruction qui a été mal comprise."
-   - "Comment aurait-on pu la formuler autrement ?"
-   - "Pourquoi le vocabulaire limité aide-t-il finalement ?"
-
-3. **Connexion avec la programmation**
-
-**Ce que dit la personne enseignante :**
-
-> "Ce que vous venez de vivre, c'est exactement ce qui se passe quand on programme :
->
-> - La partenaire jouait le rôle de l'ordinateur : il fait ce qui est dit, pas ce qui est pensé
-> - Le vocabulaire limité, c'est le langage de programmation : on ne peut pas tout dire n'importe comment
-> - Les erreurs ne sont pas des échecs : ce sont des bugs que l'on corrige
-> - Le deuxième essai était meilleur : c'est l'itération, on améliore son code petit à petit"
-
-#### Points clés à faire émerger
-
-| Constat de l'activité | Équivalent en programmation |
-|-----------------------|----------------------------|
-| "Ma partenaire n'a pas compris" | Un bug n'est pas une erreur de l'ordinateur, c'est une erreur d'instruction |
-| "Il était impossible de dire 'là-bas'" | Un langage a une syntaxe précise, on ne peut pas inventer |
-| "C'était frustrant de ne pas pouvoir poser de questions" | Le code ne pose pas de questions, il exécute |
-| "Au 2e essai, c'était plus clair" | On itère, on teste, on améliore |
-| "Il fallait décomposer chaque action" | Un programme est une suite de petites instructions |
-
-### Phase 6 - Clôture (2 min)
-
-**Ce que dit la personne enseignante :**
-
-> "Garder cette expérience en tête pour toute la semaine. Chaque fois que le code ne marche pas, se demander : ai-je été assez précis·e ? Est-ce que l'ordinateur a fait ce que j'ai dit... ou ce que je pensais ?"
+    **Plus on monte en abstraction, moins on écrit d'instructions — mais l'ordinateur, lui, exécute toujours autant d'opérations de base.**
 
 ---
 
-## Variantes et adaptations
+## Déroulement complet
 
-### Pour un groupe plus grand (+ de 30 personnes)
-- Former des groupes de 3 : un·e instructeur·ice, un·e exécuteur·ice, un·e observateur·ice (qui note les erreurs)
-- Les observateur·ice·s donnent un feedback structuré après chaque essai
-- Rotation des rôles à chaque essai
-
-### Pour un groupe plus petit (- de 12 personnes)
-- Un seul binôme fait la démonstration devant tout le monde pour le premier essai
-- Débriefing plus approfondi avec chaque binôme qui partage
-- Possibilité de faire les 2 ou 3 options successivement
-
-### Version compétition amicale
-- Chronométrer chaque binôme
-- Compter le nombre d'instructions utilisées
-- Prime à la précision ET à la rapidité
-- Attention : peut augmenter le stress, à utiliser si le groupe est à l'aise
-
-### Version numérique (si salle informatique)
-- Utiliser un outil de dessin collaboratif (Excalidraw, Figma)
-- Une partenaire dicte par chat uniquement (pas de vocal)
-- Simule encore mieux la "communication" avec un ordinateur
-
-### Pour raccourcir (30 min)
-- Supprimer le deuxième round (Phase 4)
-- Réduire le débriefing à 8 min
-- Garder uniquement les questions essentielles
-
-### Pour allonger (60 min)
-- Ajouter une phase de "création de vocabulaire" : les binômes peuvent proposer 2-3 nouvelles commandes
-- Faire un essai supplémentaire avec ce vocabulaire enrichi
-- Réflexion : "Pourquoi les langages évoluent-ils ?"
+| Phase | Durée | Activité |
+|-------|-------|----------|
+| Introduction | 2 min | Explication du concept et des 3 niveaux |
+| Niveau 1 | 10 min | Labyrinthe (instructions primitives) |
+| Niveau 2 | 12 min | Baguettes (placement séquentiel) |
+| Niveau 3 | 10 min | Dessin (abstractions) |
+| Débriefing | 11 min | Synthèse et connexion avec la programmation |
+| **Total** | **45 min** | |
 
 ---
 
-## Annexe - Dessins à imprimer (Option B)
+## Annexe — Labyrinthes à imprimer (Niveau 1)
 
-### Niveau Facile
-
-```
-    \   |   /
-     \  |  /
-      \ | /
-   ----[O]----    SOLEIL
-      / | \
-     /  |  \
-    /   |   \
-```
+### Labyrinthe facile
 
 ```
-      /\
-     /  \
-    /    \
-   /______\
-   |  __  |       MAISON
-   | |  | |
-   |_|__|_|
+┌───────────────────────┐
+│ D ─ ─ ─ ─ ─ ┐         │
+│             │         │
+│     ┌───────┘         │
+│     │                 │
+│     └─────────────┐   │
+│                   │   │
+│         ┌─────────┘   │
+│         │             │
+│         └───────── A  │
+└───────────────────────┘
+
+D = Départ    A = Arrivée
 ```
 
-### Niveau Moyen
+### Labyrinthe moyen
 
 ```
-       *
-      /|\
-     / | \
-    *--+--*       ÉTOILE
-     \ | /
-      \|/
-       *
-```
-
-```
-    O
-   /|\            BONHOMME
-   / \
-```
-
-### Niveau Difficile
-
-```
-  ___________
- /           \
-|   O    -    |   EMOJI CLIN D'ŒIL
-|      <      |
-|   \_____/   |
- \___________/
+┌───────────────────────────┐
+│ D ┐                       │
+│   │   ┌───────────┐       │
+│   │   │           │       │
+│   └───┘   ┌───┐   │       │
+│           │   │   │       │
+│   ┌───────┘   │   └───┐   │
+│   │           │       │   │
+│   │   ┌───────┴───┐   │   │
+│   │   │           │   │   │
+│   └───┘           └───┘ A │
+└───────────────────────────┘
 ```
 
 ---
 
-## Checklist personne enseignante
+## Annexe — Formes pour les baguettes (Niveau 2)
 
-### Avant l'activité
-- [ ] Choisir l'option (A, B ou C)
-- [ ] Préparer le matériel nécessaire
-- [ ] Afficher ou projeter le vocabulaire autorisé
-- [ ] Préparer l'espace (dégager si labyrinthe, tables en binômes sinon)
-- [ ] Avoir un chronomètre visible
+### Carré (4 baguettes)
 
-### Pendant l'activité
-- [ ] Rappeler les règles strictement au début
-- [ ] Circuler et observer sans corriger
-- [ ] Noter les "bugs" intéressants pour le débriefing
-- [ ] Respecter le timing de chaque phase
-- [ ] Encourager sans valider ("intéressant" plutôt que "c'est bien")
+```
+─────
+│   │
+─────
+```
 
-### Après l'activité
-- [ ] Faire le lien explicite avec la programmation
-- [ ] S'assurer que le message clé est compris
-- [ ] Récupérer les dessins ou photos des constructions (optionnel, pour mémoire)
+### Triangle (3 baguettes)
+
+```
+  /\
+ /  \
+/────\
+```
+
+### Maison (5 baguettes)
+
+```
+  /\
+ /  \
+│────│
+│    │
+│────│
+```
+
+### Lettre E (4 baguettes)
+
+```
+─────
+│
+─────
+│
+─────
+```
 
 ---
 
-## Résumé pour l'affichage
+## Annexe — Dessins pour le niveau 3
+
+### Soleil
+
+- Grand cercle au centre
+- 8 petites lignes autour (rayons)
+
+### Maison simple
+
+- Grand carré en bas au centre
+- Triangle au-dessus du carré (toit)
+- Petit carré dans le grand carré en bas (porte)
+
+### Bonhomme
+
+- Cercle en haut au centre (tête)
+- Ligne verticale en dessous (corps)
+- Deux lignes diagonales depuis le milieu du corps (bras)
+- Deux lignes depuis le bas du corps (jambes)
+
+---
+
+## Résumé
 
 ```
-RÈGLES DU JEU
-
-1. L'exécuteur·ice ne pose AUCUNE question
-2. L'instructeur·ice utilise UNIQUEMENT le vocabulaire affiché
-3. Pas de gestes, pas de "oui/non"
-4. 4 minutes par essai
-5. Ensuite, on inverse les rôles
-
-UN ORDINATEUR = LA PARTENAIRE
-Il fait ce qui est DIT, pas ce qui est PENSÉ.
+╔═══════════════════════════════════════════════════════════╗
+║          DONNER DES INSTRUCTIONS - 3 NIVEAUX              ║
+╠═══════════════════════════════════════════════════════════╣
+║                                                           ║
+║  NIVEAU 1 : LABYRINTHE                                    ║
+║  Vocabulaire : AVANCE, RECULE, GAUCHE, DROITE             ║
+║  → 4 mots seulement, beaucoup d'instructions              ║
+║                                                           ║
+║  NIVEAU 2 : BAGUETTES                                     ║
+║  Vocabulaire : POSE, HORIZONTAL, VERTICAL, À CÔTÉ DE...   ║
+║  → Plus de mots, mais pas de raccourcis                   ║
+║                                                           ║
+║  NIVEAU 3 : DESSIN                                        ║
+║  Vocabulaire : CERCLE, CARRÉ, TRIANGLE, GRAND, PETIT...   ║
+║  → Raccourcis puissants, peu d'instructions               ║
+║                                                           ║
+╠═══════════════════════════════════════════════════════════╣
+║  RÈGLE D'OR : Pas de questions, pas de corrections.       ║
+║  L'ordinateur fait ce qui est DIT, pas ce qui est PENSÉ.  ║
+╚═══════════════════════════════════════════════════════════╝
 ```

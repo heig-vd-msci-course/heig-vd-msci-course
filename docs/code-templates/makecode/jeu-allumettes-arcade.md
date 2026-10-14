@@ -51,7 +51,7 @@ MakeCode Arcade est un outil permettant de créer des **jeux 2D rétro** (style 
 
 ---
 
-## Étape 1 : Créer le projet (5 min)
+## Étape 1 : Créer le projet
 
 ### Instructions
 
@@ -67,7 +67,7 @@ L'éditeur MakeCode s'affiche avec un écran de jeu noir sur la droite.
 
 ---
 
-## Étape 2 : Créer la variable "allumettes" (10 min)
+## Étape 2 : Créer la variable "allumettes"
 
 ### Concept
 
@@ -102,7 +102,7 @@ Il est nécessaire d'indiquer que le jeu commence avec 21 allumettes.
 
 ---
 
-## Étape 3 : Afficher le nombre d'allumettes (10 min)
+## Étape 3 : Afficher le nombre d'allumettes
 
 ### Instructions
 
@@ -136,7 +136,7 @@ Cliquer sur le **simulateur** à droite. Le message "Allumettes: 21" devrait s'a
 
 ---
 
-## Étape 4 : Créer les boutons (15 min)
+## Étape 4 : Créer les boutons
 
 ### Concept
 
@@ -207,7 +207,7 @@ Dans le simulateur, cliquer sur les boutons A et B. Le nombre devrait diminuer.
 
 ---
 
-## Étape 5 : Détecter la fin du jeu (15 min)
+## Étape 5 : Détecter la fin du jeu
 
 ### Concept
 
@@ -251,7 +251,7 @@ Jouer jusqu'à 0 allumettes. Le message "Partie perdue" et l'écran de fin devra
 
 ---
 
-## Étape 6 : Ajouter l'alternance des tours (15 min)
+## Étape 6 : Ajouter l'alternance des tours
 
 ### Concept
 

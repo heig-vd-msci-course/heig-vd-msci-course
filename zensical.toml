@@ -14,11 +14,15 @@ nav = [
   { "Accueil" = "index.md" },
   { "Équipe enseignante" = "equipe.md" },
   { "Programme" = [
-    { "Lundi - Introduction" = "programme/lundi.md" },
-    { "Mardi - Web" = "programme/jour2.md" },
-    { "Mercredi - micro:bit" = "programme/jour3.md" },
-    { "Jeudi - Travail libre" = "programme/jour4.md" },
-    { "Vendredi - Projet" = "programme/jour5.md" },
+    { "Lundi" = [
+      { "Lundi" = "programme/lundi/index.md" },
+      { "Matin" = "programme/lundi/matin.md" },
+      { "Après-midi" = "programme/lundi/apres-midi.md" },
+    ]},
+    { "Mardi" = "programme/mardi.md" },
+    { "Mercredi" = "programme/mercredi.md" },
+    { "Jeudi" = "programme/jeudi.md" },
+    { "Vendredi" = "programme/vendredi.md" },
   ]},
   { "Présentations" = [
     { "Lundi - Introduction (HTML)" = "slides/lundi-introduction-algorithmique.html" },
