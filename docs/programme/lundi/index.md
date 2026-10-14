@@ -26,7 +26,7 @@ icon: lucide/play
 |---------|----------|-------|
 | 08h30 - 09h00 | Accueil et prise de contact | R102 |
 | 09h00 - 09h45 | Élaboration de la charte et formation des équipes | R102 |
-| 09h45 - 10h00 | Introduction à la programmation | R102 |
+| 09h45 - 10h00 | Histoire de la programmation | R102 |
 | 10h00 - 10h30 | Pause | — |
 | 10h30 - 11h15 | Activité : Donner des instructions | T155 / T157 |
 | 11h15 - 12h00 | Découverte du jeu des allumettes | T155 / T157 |
@@ -37,7 +37,7 @@ icon: lucide/play
 
 | Horaire | Activité | Salle |
 |---------|----------|-------|
-| 13h00 - 13h15 | Introduction à la programmation sans code | T155 / T157 |
+| 13h00 - 13h15 | Introduction à la programmation | T155 / T157 |
 | 13h15 - 14h00 | Découverte de MakeCode Arcade | T155 / T157 |
 | 14h00 - 14h45 | Atelier : Jeu des allumettes en blocs - Partie 1 | T155 / T157 |
 | 14h45 - 15h00 | Pause | — |

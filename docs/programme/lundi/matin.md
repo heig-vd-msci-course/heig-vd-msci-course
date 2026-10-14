@@ -14,7 +14,7 @@ icon: lucide/sunrise
 |---------|----------|-------|
 | 08h30 - 09h00 | Accueil et prise de contact | R102 |
 | 09h00 - 09h45 | Élaboration de la charte et formation des équipes | R102 |
-| 09h45 - 10h00 | Introduction à la programmation | R102 |
+| 09h45 - 10h00 | Histoire de la programmation | R102 |
 | 10h00 - 10h30 | Pause | — |
 | 10h30 - 11h15 | Activité : Donner des instructions | T155 / T157 |
 | 11h15 - 12h00 | Découverte du jeu des allumettes | T155 / T157 |
@@ -29,64 +29,59 @@ Bienvenue dans cette semaine de découverte de l'algorithmique et de la programm
 
 ## Élaboration de la charte
 
-La charte de comportement est construite collectivement via Wooclap. Elle définit les règles de fonctionnement pour la semaine.
+La charte de comportement est construite collectivement via **Wooclap**. Les nuages de mots générés par le groupe définissent les valeurs et règles de fonctionnement pour la semaine.
 
-→ [Template de la charte](../../supports/template-charte-comportement.md)
+Les résultats (captures d'écran des nuages de mots) sont disponibles dans les ressources.
 
 ---
 
-## Introduction à la programmation
+## Histoire de la programmation
 
-### Qu'est-ce qu'un algorithme ?
+Un bref voyage dans le temps pour comprendre d'où vient la programmation.
 
-Un **algorithme** est une suite d'instructions ordonnées permettant de résoudre un problème.
-
-```
-Exemple : Préparation de pâtes
-─────────────────────────────
-1. Remplir une casserole d'eau
-2. Porter à ébullition
-3. Ajouter les pâtes
-4. Attendre 10 minutes
-5. Égoutter
-6. Servir
-```
-
-### La variable
-
-Une **variable** est un espace de stockage nommé contenant une valeur.
+### Les pionnières
 
 ```
-    ┌─────────────┐
-    │ allumettes  │  ← nom (identifiant)
-    ├─────────────┤
-    │     21      │  ← valeur
-    └─────────────┘
+1843 — Ada Lovelace
+       Écrit le premier programme informatique
+       pour la machine analytique de Babbage
+
+1940s — Les programmeuses de l'ENIAC
+        Six femmes programment le premier
+        ordinateur électronique général
 ```
 
-### La condition
+### L'évolution des langages
 
-Une **condition** permet d'exécuter des instructions différentes selon un test logique.
+| Époque | Langage | Particularité |
+|--------|---------|---------------|
+| 1950s | Assembleur | Instructions très basiques |
+| 1957 | FORTRAN | Premier langage de haut niveau |
+| 1970s | C | Encore très utilisé aujourd'hui |
+| 1990s | Python, JavaScript | Langages modernes accessibles |
+| 2020s | Blocs visuels | Programmer sans écrire de code |
 
-```
-SI allumettes == 0 ALORS
-    afficher("Partie terminée")
-SINON
-    afficher("Continuer la partie")
-```
-
-### La boucle
-
-Une **boucle** permet de répéter des instructions tant qu'une condition est vérifiée.
+### De la carte perforée au smartphone
 
 ```
-TANT QUE allumettes > 0 FAIRE
-    choisir(1, 2 ou 3)
-    retirer allumettes
-FIN TANT QUE
+┌─────────────────────────────────────────────────┐
+│  1950s          1980s          2020s           │
+│                                                 │
+│  ▓▓▓▓▓▓▓▓      ┌──────┐       ┌─────┐          │
+│  ▓░░░░░▓▓      │ ░░░░ │       │ ░░░ │          │
+│  ▓▓░░▓▓▓▓  →   │ ░░░░ │   →   │ ░░░ │          │
+│  ▓▓▓▓▓▓▓▓      │ ████ │       │ ░░░ │          │
+│                └──────┘       └─────┘          │
+│  Carte          Ordi           Smartphone      │
+│  perforée       personnel                      │
+└─────────────────────────────────────────────────┘
 ```
 
-→ [Fiche récapitulative des concepts](../../supports/cheatsheet-concepts-algo.md)
+### Le point clé
+
+!!! info "Ce qui n'a pas changé"
+
+    Depuis 1843, le principe reste le même : **donner des instructions précises à une machine**. Seule la façon de les écrire a évolué.
 
 ---
 

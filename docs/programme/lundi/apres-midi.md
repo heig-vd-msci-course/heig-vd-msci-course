@@ -12,7 +12,7 @@ icon: lucide/sunset
 
 | Horaire | Activité | Salle |
 |---------|----------|-------|
-| 13h00 - 13h15 | Introduction à la programmation sans code | T155 / T157 |
+| 13h00 - 13h15 | Introduction à la programmation | T155 / T157 |
 | 13h15 - 14h00 | Découverte de MakeCode Arcade | T155 / T157 |
 | 14h00 - 14h45 | Atelier : Jeu des allumettes en blocs - Partie 1 | T155 / T157 |
 | 14h45 - 15h00 | Pause | — |
@@ -21,9 +21,60 @@ icon: lucide/sunset
 
 ---
 
-## Introduction à la programmation sans code
+## Introduction à la programmation
 
-La programmation visuelle permet de créer des programmes en assemblant des **blocs** plutôt qu'en écrivant du code textuel. C'est une excellente façon de comprendre les concepts fondamentaux sans se soucier de la syntaxe.
+La programmation visuelle permet de créer des programmes en assemblant des **blocs** plutôt qu'en écrivant du code textuel. Avant de commencer, voici les concepts fondamentaux.
+
+### Qu'est-ce qu'un algorithme ?
+
+Un **algorithme** est une suite d'instructions ordonnées permettant de résoudre un problème.
+
+```
+Exemple : Préparation de pâtes
+─────────────────────────────
+1. Remplir une casserole d'eau
+2. Porter à ébullition
+3. Ajouter les pâtes
+4. Attendre 10 minutes
+5. Égoutter
+6. Servir
+```
+
+### La variable
+
+Une **variable** est un espace de stockage nommé contenant une valeur.
+
+```
+    ┌─────────────┐
+    │ allumettes  │  ← nom (identifiant)
+    ├─────────────┤
+    │     21      │  ← valeur
+    └─────────────┘
+```
+
+### La condition
+
+Une **condition** permet d'exécuter des instructions différentes selon un test logique.
+
+```
+SI allumettes == 0 ALORS
+    afficher("Partie terminée")
+SINON
+    afficher("Continuer la partie")
+```
+
+### La boucle
+
+Une **boucle** permet de répéter des instructions tant qu'une condition est vérifiée.
+
+```
+TANT QUE allumettes > 0 FAIRE
+    choisir(1, 2 ou 3)
+    retirer allumettes
+FIN TANT QUE
+```
+
+→ [Fiche récapitulative des concepts](../../supports/cheatsheet-concepts-algo.md)
 
 ---
 

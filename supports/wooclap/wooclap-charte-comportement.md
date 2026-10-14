@@ -121,7 +121,7 @@ Question 6 : En un mot : quelle ambiance souhaitez-vous pour cette semaine ?
 **Conseils d'animation :**
 - Laisser 60 secondes pour les réponses
 - Identifier les 3-5 valeurs les plus citées
-- Les noter au tableau ou sur le template de charte
+- Les noter au tableau
 
 ---
 
@@ -207,7 +207,7 @@ Question 6 : En un mot : quelle ambiance souhaitez-vous pour cette semaine ?
 - [ ] Créer l'événement Wooclap sur app.wooclap.com
 - [ ] Copier-coller chaque question (section "Création rapide")
 - [ ] Tester chaque question en mode prévisualisation
-- [ ] Préparer le template de charte (version papier ou numérique)
+- [ ] Préparer l'export des nuages de mots (captures d'écran)
 - [ ] Vérifier que le WiFi supporte 60-70 connexions simultanées
 - [ ] Préparer un code d'accès court et facile à retenir
 
@@ -231,9 +231,8 @@ Question 6 : En un mot : quelle ambiance souhaitez-vous pour cette semaine ?
 
 ### Après l'activité
 
-- [ ] Faire une capture d'écran des nuages de mots (pour la fin de semaine)
-- [ ] Synthétiser les réponses dans le template de charte
-- [ ] Afficher la charte finalisée dans la salle
+- [ ] Faire une capture d'écran de chaque nuage de mots
+- [ ] Exporter les images dans des slides séparées pour les ressources
 - [ ] Conserver les résultats Wooclap pour analyse
 
 ### Variante : Mode réduit (10 minutes)
@@ -242,15 +241,6 @@ Si le temps est limité, ne garder que :
 - Question 1 : Craintes (température)
 - Question 3 : Valeurs importantes (charte)
 - Question 6 : Ambiance souhaitée (charte)
-
-### Lien avec le template de charte
-
-Les réponses collectées alimentent directement les sections du template :
-- Questions 3 et 6 → Section "Valeurs"
-- Question 4 → Section "Comportements positifs"
-- Question 5 → Section "Règles à respecter"
-
-Utiliser le document `supports/template-charte-comportement.md` pour la mise en forme finale.
 
 ---
 
