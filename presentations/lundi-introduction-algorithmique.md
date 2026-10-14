@@ -18,8 +18,28 @@ footer: 'ERACOM - Semaine 43'
 
 ## L'équipe enseignante
 
-- **Clarisse Estelle Fleurimont** - Ingénieure logiciel, formatrice, assistante de recherche HEIG-VD
-- **Vincent** - ...
+<div class="two-columns center">
+<div>
+
+**Clarisse Estelle Fleurimont**
+
+Ingénieure logiciel, formatrice, assistante de recherche HEIG-VD
+
+[clarisse.fleurimont@heig-vd.ch](mailto:clarisse.fleurimont@heig-vd.ch)
+[GitHub - Stellucidam](https://github.com/Stellucidam)
+
+</div>
+<div>
+
+**Vincent Claude Guidoux**
+
+Ingénieur logiciel, entrepreneur, chargé de cours et comédien.
+
+[vincent.guidoux1@heig-vd.ch](mailto:vincent.guidoux1@heig-vd.ch)
+[GitHub - Nortalle](https://github.com/Nortalle)
+
+</div>
+</div>
 
 ---
 
