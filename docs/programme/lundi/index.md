@@ -41,7 +41,8 @@ icon: lucide/play
 | 13h15 - 14h00 | Découverte de MakeCode Arcade | T155 / T157 |
 | 14h00 - 14h45 | Atelier : Jeu des allumettes en blocs - Partie 1 | T155 / T157 |
 | 14h45 - 15h00 | Pause | — |
-| 15h00 - 15h45 | Atelier : Jeu des allumettes en blocs - Partie 2 | T155 / T157 |
+| 15h00 - 15h30 | Atelier : Jeu des allumettes en blocs - Partie 2 | T155 / T157 |
+| 15h30 - 15h45 | Partage des projets | T155 / T157 |
 | 15h45 - 16h15 | Synthèse et quiz Wooclap | T155 / T157 |
 
 → [Voir le détail de l'après-midi](apres-midi.md){target="_blank"}

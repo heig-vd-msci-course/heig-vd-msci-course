@@ -82,6 +82,7 @@ Ingénieur logiciel, entrepreneur, chargé de cours et comédien.
 | 14h00 | Atelier : Jeu des allumettes en blocs - Partie 1 |
 | 14h45 | Pause |
 | 15h00 | Atelier : Jeu des allumettes en blocs - Partie 2 |
+| 15h30 | Partage des projets |
 | 15h45 | Synthèse et quiz Wooclap |
 
 ---

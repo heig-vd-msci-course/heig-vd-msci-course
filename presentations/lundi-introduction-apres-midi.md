@@ -150,7 +150,7 @@ footer: 'ERACOM - Semaine 43'
 
 # Découverte de MakeCode Arcade
 
-## 13h15 - 13h55
+## 13h15 - 14h00
 
 ---
 
@@ -228,10 +228,9 @@ Chaque catégorie contient des blocs spécifiques :
 |--------|-------------|------------|
 | **A** | Bouton gauche | `Z` ou Espace |
 | **B** | Bouton droit | `X` ou Entrée |
-| **A+B** | Les deux ensemble | `Z` + `X` |
-| **Flèches** | Croix directionnelle | Flèches du clavier |
+| **Flèche haut** | Haut de la croix directionnelle | Flèche ↑ du clavier |
 
-*Pour notre jeu des allumettes, on utilisera A, B et A+B*
+*Pour notre jeu des allumettes, on utilisera A, B et la flèche haut*
 
 ---
 
@@ -239,8 +238,8 @@ Chaque catégorie contient des blocs spécifiques :
 
 ## Ce qu'il faut connaître
 
-- **Variables** : créer `allumettes` et `tour`
-- **Contrôleur** : `quand bouton A pressé`
+- **Variables** : créer `allumettes` et `joueuse`
+- **Contrôleur** : `quand bouton A est appuyé`
 - **Jeu** : `splash` (message) et `fin de jeu`
 - **Logique** : `si ... alors ... sinon`
 
@@ -284,7 +283,7 @@ splash "20 allumettes"
 
 - **Bouton A** : Retirer 1
 - **Bouton B** : Retirer 2
-- **A + B** : Retirer 3
+- **Flèche haut** : Retirer 3
 
 ---
 
@@ -308,7 +307,7 @@ splash "20 allumettes"
 
 **Objectifs :**
 - Variable pour le nombre d'allumettes
-- Boutons A, B, A+B pour retirer 1, 2 ou 3
+- Boutons A, B et flèche haut pour retirer 1, 2 ou 3
 - Détection de fin de partie
 - Affichage du nombre restant
 
@@ -370,7 +369,10 @@ Je continue à passer dans les groupes.
 
 ## Si besoin, voici comment ça peut fonctionner
 
-*(Démonstration d'une version complète)*
+- **Joueuse contre joueuse** : [arcade.makecode.com/S32221-15913-36189-53679](https://arcade.makecode.com/S32221-15913-36189-53679)
+- **Contre l'ordinateur** : [arcade.makecode.com/S19881-31620-38681-62591](https://arcade.makecode.com/S19881-31620-38681-62591)
+
+*Aussi disponibles sur le site du cours, page « Solution »*
 
 ---
 

@@ -16,7 +16,8 @@ icon: lucide/sunset
 | 13h15 - 14h00 | Découverte de MakeCode Arcade | T155 / T157 |
 | 14h00 - 14h45 | Atelier : Jeu des allumettes en blocs - Partie 1 | T155 / T157 |
 | 14h45 - 15h00 | Pause | — |
-| 15h00 - 15h45 | Atelier : Jeu des allumettes en blocs - Partie 2 | T155 / T157 |
+| 15h00 - 15h30 | Atelier : Jeu des allumettes en blocs - Partie 2 | T155 / T157 |
+| 15h30 - 15h45 | Partage des projets | T155 / T157 |
 | 15h45 - 16h15 | Synthèse et quiz Wooclap | T155 / T157 |
 
 ---
@@ -83,7 +84,7 @@ QUAND bouton A pressé ALORS
     retirer(1)
 ```
 
-Dans le jeu des allumettes, les boutons A, B et A+B sont des événements qui déclenchent le retrait d'allumettes.
+Dans le jeu des allumettes, les boutons A, B et la flèche haut sont des événements qui déclenchent le retrait d'allumettes.
 
 ### Les opérateurs
 
@@ -140,8 +141,8 @@ Pour le jeu des allumettes, quatre catégories sont principalement utilisées :
 
 | Catégorie | Couleur | Utilisation |
 |-----------|---------|-------------|
-| **Variables** | Orange-Rouge | Créer et modifier `allumettes`, `tour` |
-| **Contrôleur** | Rose | Détecter les appuis sur les boutons A, B, A+B |
+| **Variables** | Orange-Rouge | Créer et modifier `allumettes`, `joueuse` |
+| **Contrôleur** | Rose | Détecter les appuis sur les boutons A, B et la flèche haut |
 | **Logique** | Bleu clair | Créer des conditions (si... alors...) |
 | **Jeu** | Violet | Afficher des messages, terminer la partie |
 
@@ -153,8 +154,7 @@ Le simulateur à gauche de l'écran permet de tester le jeu sans console physiqu
 |----------|------------|--------|
 | **Bouton A** | Touche `Z` ou `A` | Retirer 1 allumette |
 | **Bouton B** | Touche `X` ou `B` | Retirer 2 allumettes |
-| **A + B** | `Z` + `X` ensemble | Retirer 3 allumettes |
-| **Flèches** | Flèches du clavier | Navigation dans les menus |
+| **Flèche haut** | Flèche ↑ du clavier | Retirer 3 allumettes |
 | **Menu** | Touche `Entrée` | Recommencer la partie |
 
 !!! tip "Astuce"
@@ -193,9 +193,9 @@ Créer une version jouable du jeu des allumettes avec MakeCode Arcade.
 
 | Concept | Dans MakeCode | Application |
 |---------|--------------|-------------|
-| **Variable** | Variables → Créer une Variable | `allumettes`, `tour` |
+| **Variable** | Variables → Créer une Variable | `allumettes`, `joueuse` |
 | **Assignation** | définir [var] à [valeur] | `définir allumettes à 20` |
-| **Événement** | Contrôleur → quand bouton pressé | Détecter les appuis |
+| **Événement** | Contrôleur → quand bouton est appuyé | Détecter les appuis |
 | **Condition** | Logique → si...alors...sinon | Vérifier si allumettes <= 0 |
 | **Affichage** | Jeu → splash | Afficher les messages |
 
@@ -203,11 +203,14 @@ Créer une version jouable du jeu des allumettes avec MakeCode Arcade.
 
 → [Template MakeCode Arcade - Jeu des Allumettes](../../code-templates/makecode-arcade/jeu-allumettes-compact-instructions.md){target="_blank"}
 
-<!-- LIEN SOLUTION - Décommenter pour activer
 !!! tip "Besoin d'aide ?"
 
-    → [Voir la solution complète](../../code-templates/makecode-arcade/solution.md){target="_blank"}
--->
+    Les solutions sont disponibles dans MakeCode :
+
+    - [Joueuse contre joueuse](https://arcade.makecode.com/S32221-15913-36189-53679){target="_blank"}
+    - [Contre l'ordinateur](https://arcade.makecode.com/S19881-31620-38681-62591){target="_blank"} (Aller plus loin)
+
+    → [Page de la solution](../../code-templates/makecode-arcade/solution.md){target="_blank"} : jouer en ligne et voir tous les blocs
 
 !!! tip "Jeu terminé ?"
 
@@ -230,7 +233,7 @@ Créer une version jouable du jeu des allumettes avec MakeCode Arcade.
 | Catégorie | Blocs importants | Utilisation |
 |-----------|------------------|-------------|
 | **Variables** | `Créer une Variable`, `définir [var] à`, `modifier [var] de` | Stocker le nombre d'allumettes et le tour |
-| **Contrôleur** | `quand bouton A pressé`, `quand bouton B pressé` | Réagir aux actions des personnes |
+| **Contrôleur** | `quand bouton A est appuyé`, `quand bouton B est appuyé` | Réagir aux actions des personnes |
 | **Logique** | `si...alors...sinon`, comparaisons (`<`, `>`, `=`) | Vérifier les conditions de fin |
 | **Jeu** | `splash`, `fin de jeu`, `afficher texte long` | Afficher des informations à l'écran |
 | **Texte** | `joindre`, `""` | Combiner du texte et des variables |
@@ -304,14 +307,14 @@ Pour partager un projet avec son équipe ou le soumettre :
     Deux options sont disponibles :
 
     - **Dans le simulateur** : Cliquer sur le bouton de redémarrage (icône de flèche circulaire) sous le simulateur
-    - **Dans le code** : Ajouter un bloc `quand bouton menu pressé` qui réinitialise les variables `allumettes` et `tour`
+    - **Dans le code** : Ajouter un bloc `quand bouton menu est appuyé` qui réinitialise les variables `allumettes` et `joueuse`
 
     Voir le [template complet](../../code-templates/makecode-arcade/jeu-allumettes-compact-instructions.md#test-et-depannage){target="_blank"} pour le dépannage.
 
 ??? question "Les boutons ne fonctionnent pas dans le simulateur ?"
 
     - S'assurer d'avoir **cliqué sur le simulateur** pour l'activer
-    - Vérifier que les blocs sont bien **à l'intérieur** du bloc `quand bouton pressé`
+    - Vérifier que les blocs sont bien **à l'intérieur** du bloc `quand bouton ... est appuyé`
     - Utiliser les touches `Z` (bouton A) et `X` (bouton B) au clavier
 
 ---

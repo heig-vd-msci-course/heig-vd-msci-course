@@ -406,8 +406,11 @@ Bouton A / B / Haut
 
 ---
 
-<!-- LIEN SOLUTION - Décommenter pour activer
 !!! tip "Besoin d'aide ?"
 
-    → [Voir la solution complète](solution.md){target="_blank"}
--->
+    Les solutions sont disponibles dans MakeCode :
+
+    - [Joueuse contre joueuse](https://arcade.makecode.com/S32221-15913-36189-53679){target="_blank"}
+    - [Contre l'ordinateur](https://arcade.makecode.com/S19881-31620-38681-62591){target="_blank"} (Aller plus loin)
+
+    → [Page de la solution](solution.md){target="_blank"} : jouer en ligne et voir tous les blocs

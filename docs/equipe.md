@@ -62,7 +62,9 @@ La Haute École d'Ingénierie et de Gestion du Canton de Vaud propose ce cours d
 
 ## Contact
 
-Pour toute question relative au cours :
+Pour toute question relative au cours, écrire **aux deux membres de l'équipe enseignante dans le même e-mail** :
 
-- **E-mail** : TODO - Adresse de contact principale
-- **Site** : TODO - Lien vers le site du département
+- Clarisse Fleurimont : [clarisse.fleurimont@heig-vd.ch](mailto:clarisse.fleurimont@heig-vd.ch)
+- Vincent Guidoux : [vincent.guidoux1@heig-vd.ch](mailto:vincent.guidoux1@heig-vd.ch)
+
+[:material-email-outline: Écrire aux deux](mailto:clarisse.fleurimont@heig-vd.ch,vincent.guidoux1@heig-vd.ch){ .md-button }

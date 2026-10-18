@@ -8,6 +8,10 @@ icon: lucide/code
 
 > *Création d'un site web personnel et découverte des langages du web.*
 
+!!! info "Rendez-vous"
+
+    **08h30** · Salle **R102**
+
 ---
 
 !!! warning "Page en construction"
