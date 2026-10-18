@@ -44,6 +44,8 @@ L'équipe pédagogique du cours Algorithmique et programmation accompagne le gro
 - [Site personnel](https://vincentguidoux.ch)
 - E-mail : [vincent.guidoux@gmail.com](mailto:vincent.guidoux@gmail.com)
 
+<small>Photo : [RSphotography](https://www.instagram.com/raphaelsalis.studio/)</small>
+
 ---
 
 ## Institution partenaire
