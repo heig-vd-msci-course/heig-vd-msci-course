@@ -150,6 +150,12 @@ Cette activité en binôme permet de découvrir concrètement les **différents 
 
 → [Fiche complète de l'activité](../../supports/activities/activite-donner-instructions.md){target="_blank"}
 
+!!! info "Pour l'équipe enseignante : document à télécharger et imprimer"
+
+    Labyrinthes, formes, dessins, vocabulaire et plateaux du jeu des allumettes : tout est dans un seul PDF.
+
+    [:material-download: Matériel du lundi (PDF)](../../ressources-enseignement/lundi-materiel.pdf){ .md-button target="_blank" }
+
 ---
 
 ## Découverte du jeu des allumettes

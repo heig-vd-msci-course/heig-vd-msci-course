@@ -37,6 +37,7 @@ nav = [
       { "Donner des instructions" = "supports/activities/activite-donner-instructions.md" },
       { "Jeu des allumettes (MakeCode)" = "code-templates/makecode-arcade/jeu-allumettes-compact-instructions.md" },
     ]},
+    { "Pour l'équipe enseignante" = "ressources-enseignement/index.md" },
   ]},
 ]
 
