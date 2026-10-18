@@ -309,8 +309,7 @@ splash "20 allumettes"
 - Détection de fin de partie
 - Affichage du nombre restant
 
-Je passe dans les groupes pour vous aider.
-
+Nous passons dans les groupes pour vous aider.
 ---
 
 <!-- _class: invert -->
