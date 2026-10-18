@@ -15,12 +15,14 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
 - [ ] Imprimer la [signalétique](#materiel-a-imprimer) et la poser le lundi matin entre l'entrée du bâtiment et la salle R102
 - [ ] Imprimer la [liste de présences](#materiel-a-imprimer) (une par groupe)
 - [ ] Prévoir des baguettes ou allumettes (environ 10 par binôme), des feuilles blanches et des crayons
-- [ ] Vérifier les salles (R102, T155 / T157) et l'accès à [arcade.makecode.com](https://arcade.makecode.com){target="_blank"} depuis les ordinateurs
+- [ ] Vérifier les salles (R102, T155 / T157) et l'accès à [arcade.makecode.com](https://arcade.makecode.com){target="_blank"} et à [MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"} depuis les ordinateurs
+- [ ] Activer GitHub Pages sur le [dépôt des projets](https://github.com/heig-vd-msci-course/heig-vd-msci-projets){target="_blank"}
 - [ ] Préparer les Wooclap du jour (charte, quiz)
 
 ## Pendant le cours
 
 - [ ] Relever les présences à chaque demi-journée
+- [ ] Mardi soir : [publier les projets des équipes](#mardi-soir-publier-les-projets)
 - [ ] Prise de température au début de chaque jour (attentes, craintes)
 - [ ] Noter les questions fréquentes et les difficultés pour améliorer le support
 
@@ -53,6 +55,24 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
     ```
 
     Le script nécessite Chrome ou Chromium, et Docker pour la liste de présences (image `pandoc/latex`).
+
+---
+
+## Mardi soir : publier les projets
+
+Les équipes envoient leur projet par e-mail avant **mardi 16h30**, avec le modèle de la [page du mardi](../programme/mardi.md#rendre-son-projet){target="_blank"}. Le code est copié depuis MDN Playground (« Partager → Copier le Markdown »).
+
+1. Copier le texte de chaque e-mail dans `emails/<equipe>.txt`, dans le [dépôt des projets](https://github.com/heig-vd-msci-course/heig-vd-msci-projets){target="_blank"}
+2. Lancer `python3 publier.py` : le script crée le dossier de chaque équipe et met à jour la galerie
+3. Vérifier la galerie en local, puis commiter et pousser
+4. Répondre à chaque équipe avec son lien
+
+La procédure détaillée et la réponse type aux équipes se trouvent dans le README du [dépôt des projets](https://github.com/heig-vd-msci-course/heig-vd-msci-projets){target="_blank"}.
+
+| | Adresse |
+|---|---|
+| Galerie | <https://heig-vd-msci-course.github.io/heig-vd-msci-projets/> |
+| Projet d'une équipe | `https://heig-vd-msci-course.github.io/heig-vd-msci-projets/<equipe>/` (fruit en minuscules, sans accents) |
 
 ---
 

@@ -87,7 +87,7 @@ Aucune installation n'est requise. Les outils suivants fonctionnent directement 
 | Outil | Usage |
 |-------|-------|
 | **MakeCode Arcade** | Programmation visuelle par blocs |
-| **JSFiddle** | Expérimentation HTML/CSS/JavaScript |
+| **MDN Playground** | Écrire du HTML, du CSS et du JavaScript directement dans le navigateur, sans compte |
 | **MakeCode micro:bit** | Programmation du micro:bit |
 | **Wooclap** | Questions interactives, quiz, sondages |
 
