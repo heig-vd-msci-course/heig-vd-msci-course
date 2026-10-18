@@ -8,13 +8,156 @@ icon: lucide/sunrise
 
 !!! warning "Page en construction"
 
-    Les chapitres « Rappel HTML » et « Rappel CSS » sont prêts. Les autres chapitres du matin arrivent bientôt.
+    Seul l'atelier de fin de matinée reste à venir.
 
 ---
 
 ## Le web et MDN Playground
 
-*À venir.*
+Avant d'écrire sa première page, un petit tour de ce qui se passe quand on ouvre un site, puis la découverte de l'outil de la journée.
+
+### Comment fonctionne le web
+
+Quand on tape une adresse dans le navigateur, celui-ci **demande** la page à un ordinateur distant, le **serveur**, qui la lui **envoie**. Le navigateur assemble ensuite tout ce qu'il a reçu pour afficher la page.
+
+```mermaid
+sequenceDiagram
+    participant N as Navigateur (son ordinateur)
+    participant S as Serveur (le site)
+    N->>S: Je voudrais la page tiktok.com
+    S-->>N: Voici le HTML
+    N->>S: Il me faut aussi le CSS, le JavaScript et les images
+    S-->>N: Les voici
+    Note over N: Le navigateur assemble et affiche la page
+```
+
+| Mot | Signification |
+|-----|---------------|
+| **Navigateur** | Le logiciel qui affiche les pages : Firefox, Chrome, Safari, Edge... |
+| **Serveur** | Un ordinateur, quelque part, qui stocke le site et l'envoie à qui le demande |
+| **URL** | L'adresse d'une page, par exemple `https://developer.mozilla.org/fr/` |
+
+→ Sur MDN : [Comment fonctionne le Web](https://developer.mozilla.org/fr/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works){target="_blank"}
+
+### Trois langages, trois rôles
+
+Toutes les pages web, de TikTok à Spotify, reposent sur les trois mêmes langages :
+
+| Langage | Rôle | Comme pour une tenue... |
+|---------|------|------------------------|
+| **HTML** | Le **contenu** : titres, textes, images, boutons | Les vêtements que l'on porte |
+| **CSS** | L'**apparence** : couleurs, polices, disposition | Le style : couleurs, coupe, accessoires |
+| **JavaScript** | Le **comportement** : réagir aux clics, calculer, animer | Les mouvements : marcher, danser, poser |
+
+Ce matin : HTML et CSS. Cet après-midi : JavaScript.
+
+### Expérience : modifier une vraie page
+
+Le navigateur contient des **outils de développement** qui montrent le HTML et le CSS de n'importe quelle page, et permettent même de les modifier.
+
+1. Ouvrir un site connu dans un nouvel onglet (un site d'actualité, de musique, de mode...)
+2. Faire un **clic droit** sur un titre, puis **Inspecter** : un panneau s'ouvre avec le code HTML, l'élément choisi est surligné
+3. **Double-cliquer** sur le texte du titre dans le panneau, le remplacer par autre chose, puis appuyer sur ++enter++
+4. Observer la page : le titre a changé !
+5. Recharger la page (++f5++)
+
+??? success "Que s'est-il passé ?"
+
+    La modification n'a eu lieu que **dans son propre navigateur**, sur la copie de la page reçue du serveur. Le vrai site n'a pas changé, et personne d'autre ne voit la modification. En rechargeant la page, le navigateur redemande l'original au serveur : tout revient comme avant.
+
+    **À retenir** : une capture d'écran d'un site peut être modifiée de cette façon en quelques secondes. Une capture d'écran n'est pas une preuve : mieux vaut vérifier à la source.
+
+→ Sur MDN : [Que sont les outils de développement du navigateur ?](https://developer.mozilla.org/fr/docs/Learn_web_development/Howto/Tools_and_setup/What_are_browser_developer_tools){target="_blank"}
+
+### Découvrir MDN Playground
+
+Pour écrire ses propres pages, la journée se déroule dans **[MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"}** : un éditeur en ligne, gratuit, sans compte et sans rien à installer, proposé par Mozilla (l'organisation qui développe Firefox).
+
+```text
+┌──────────────────────────┬──────────────────────────┐
+│  [Format] [Exécuter]     │                          │
+│  [Partager] [Effacer]    │         APERÇU           │
+├──────────────────────────┤   (le résultat de la     │
+│  HTML                    │    page)                 │
+├──────────────────────────┤                          │
+│  CSS                     ├──────────────────────────┤
+├──────────────────────────┤         CONSOLE          │
+│  JAVASCRIPT              │   (les messages du       │
+│                          │    JavaScript)           │
+└──────────────────────────┴──────────────────────────┘
+```
+
+| Bouton | Action |
+|--------|--------|
+| **Format** | Remet le code en forme (indentation, retours à la ligne) |
+| **Exécuter** | Met à jour l'aperçu |
+| **Partager** | Copie le code pour le garder ou l'envoyer (voir plus bas) |
+| **Effacer** | Vide **tout** : HTML, CSS et JavaScript. À utiliser avec précaution ! |
+
+!!! info "MDN, la référence du web"
+
+    MDN Playground fait partie de **MDN Web Docs**, la documentation de référence du web, écrite par Mozilla et une grande communauté. Elle est gratuite, en français et utilisée par les développeuses et développeurs du monde entier. Tout au long de la journée, les liens « → Sur MDN » mènent vers ses pages pour aller plus loin.
+
+    Point de départ : [Apprendre le développement web](https://developer.mozilla.org/fr/docs/Learn_web_development){target="_blank"}
+
+### Premier essai : les trois langages ensemble
+
+Copier chaque bloc dans la bonne zone de MDN Playground, puis cliquer sur le bouton qui apparaît dans l'aperçu.
+
+=== "HTML"
+
+    ```html
+    <h1>Bonjour !</h1>
+    <button id="bouton">Cliquer ici</button>
+    ```
+
+=== "CSS"
+
+    ```css
+    h1 {
+      color: teal;
+    }
+
+    button {
+      font-size: 20px;
+    }
+    ```
+
+=== "JavaScript"
+
+    ```js
+    document.querySelector("#bouton").addEventListener("click", () => {
+      document.querySelector("h1").textContent = "Bienvenue en MSCI !";
+      console.log("Le bouton a été cliqué");
+    });
+    ```
+
+En cliquant sur le bouton, le titre change, et un message apparaît dans la **console**. Pas besoin de comprendre le JavaScript pour l'instant : c'est le programme de l'après-midi.
+
+!!! question "Petit défi"
+
+    Sans rien connaître encore, essayer de deviner quoi modifier pour :
+
+    - changer la couleur du titre ;
+    - changer le texte du bouton ;
+    - changer le message qui s'affiche après le clic.
+
+### Garder son travail
+
+MDN Playground ne garde pas le code pour toujours. Avant de fermer l'onglet, et à la fin de chaque chapitre :
+
+1. Cliquer sur **Partager**
+2. Cliquer sur **Copier le Markdown** : le HTML, le CSS et le JavaScript sont copiés d'un coup
+3. Coller le tout dans un fichier texte ou un e-mail à soi-même
+
+Pour reprendre plus tard, il suffit de recoller chaque bloc dans la bonne zone.
+
+!!! success "À retenir"
+
+    - Le navigateur demande les pages à un serveur, puis les affiche
+    - HTML = contenu, CSS = apparence, JavaScript = comportement
+    - **Inspecter** montre le code de n'importe quelle page
+    - Dans MDN Playground : penser à **Partager → Copier le Markdown** pour garder son travail
 
 ---
 
