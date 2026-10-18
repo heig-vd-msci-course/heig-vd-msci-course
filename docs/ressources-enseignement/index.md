@@ -58,6 +58,19 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
 
 ---
 
+## Solutions des ateliers
+
+| Jour | Atelier | Solution |
+|------|---------|----------|
+| Lundi | Jeu des allumettes en blocs (MakeCode Arcade) | [Page de la solution](../code-templates/makecode-arcade/solution.md){target="_blank"} : projets MakeCode jouables et blocs |
+| Mardi | Interface web du jeu des allumettes | [Page de la solution](../code-templates/jeu-allumettes-web/solution.md){target="_blank"} : jeu jouable, code HTML/CSS/JavaScript, variante contre l'ordinateur |
+
+!!! info "Donner accès à la solution du mardi"
+
+    Dans la page de l'après-midi, le lien « Besoin d'aide ? » vers la solution de l'atelier est en commentaire, comme celui du lundi au départ. Le décommenter dans `docs/programme/mardi/apres-midi.md` (bloc `LIEN SOLUTION`) quand vous souhaitez que les équipes y aient accès.
+
+---
+
 ## Mardi soir : publier les projets
 
 Les équipes envoient leur projet par e-mail avant **mardi 16h30**, avec le modèle de la [page du mardi](../programme/mardi/apres-midi.md#rendre-son-projet){target="_blank"}. Le code est copié depuis MDN Playground (« Partager → Copier le Markdown »).

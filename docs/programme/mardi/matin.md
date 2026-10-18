@@ -6,12 +6,6 @@ icon: lucide/sunrise
 
 > *HTML et CSS : créer et personnaliser sa page*
 
-!!! warning "Page en construction"
-
-    Seul l'atelier de fin de matinée reste à venir.
-
----
-
 ## Le web et MDN Playground
 
 Avant d'écrire sa première page, un petit tour de ce qui se passe quand on ouvre un site, puis la découverte de l'outil de la journée.
@@ -134,6 +128,10 @@ Copier chaque bloc dans la bonne zone de MDN Playground, puis cliquer sur le bou
 
 En cliquant sur le bouton, le titre change, et un message apparaît dans la **console**. Pas besoin de comprendre le JavaScript pour l'instant : c'est le programme de l'après-midi.
 
+??? info "Afficher la capture d'écran illustrant l'étape"
+
+    ![MDN Playground : le titre a changé après le clic et la console affiche un message](../../assets/images/tuesday/mardi-web-premier-essai.webp)
+
 !!! question "Petit défi"
 
     Sans rien connaître encore, essayer de deviner quoi modifier pour :
@@ -188,6 +186,10 @@ Au passage, quelques erreurs sont glissées **exprès** : c'est en cassant une p
 </ul>
 ```
 
+??? info "Afficher la capture d'écran illustrant l'étape"
+
+    ![MDN Playground : la page de départ dans la zone HTML et son aperçu](../../assets/images/tuesday/mardi-html-etape-1.webp)
+
 Chaque morceau de la page est un **élément**, construit de la même façon :
 
 ```text
@@ -233,6 +235,10 @@ Modifier le code pour qu'il parle de soi :
 2. Remplacer l'âge et la passion
 3. Ajouter **au moins deux** éléments `<li>` dans la liste : musique, artistes, séries, jeux, mode...
 
+??? info "Afficher la capture d'écran illustrant l'étape"
+
+    ![MDN Playground : la page avec quatre éléments dans la liste](../../assets/images/tuesday/mardi-html-etape-2.webp)
+
 !!! tip "Astuce de MDN Playground"
 
     En tapant `<li>`, l'éditeur ajoute tout seul la balise fermante `</li>`. Il suffit d'écrire le texte entre les deux, sans retaper `</li>` : sinon, la balise fermante apparaît en double.
@@ -252,6 +258,8 @@ Modifier le code pour qu'il parle de soi :
     Observer la page. Que s'est-il passé ? Pourquoi ?
 
 ??? success "Explication et correction"
+
+    ![MDN Playground : sans balise fermante, la liste est aussi en gras](../../assets/images/tuesday/mardi-html-etape-3-bug.webp)
 
     Toute la suite de la page est passée **en gras**, jusqu'à la liste. Sans balise fermante, le navigateur ne sait pas où s'arrête le texte important : il continue jusqu'à la fin.
 
@@ -289,6 +297,10 @@ Ajouter ce paragraphe à la fin de la page, avec un vrai lien vers une chanson, 
 | `href` | L'adresse du lien |
 | `target="_blank"` | Ouvrir le lien dans un nouvel onglet |
 
+??? info "Afficher la capture d'écran illustrant l'étape"
+
+    ![MDN Playground : le lien apparaît en bleu et souligné](../../assets/images/tuesday/mardi-html-etape-4.webp)
+
 !!! bug "Bug volontaire"
 
     Dans la balise `<a>`, écrire `herf` au lieu de `href` :
@@ -300,6 +312,8 @@ Ajouter ce paragraphe à la fin de la page, avec un vrai lien vers une chanson, 
     Que devient le lien ?
 
 ??? success "Explication et correction"
+
+    ![MDN Playground : avec herf, le texte du lien n'est plus un lien](../../assets/images/tuesday/mardi-html-etape-4-bug.webp)
 
     Le texte n'est plus bleu ni souligné, et on ne peut plus cliquer dessus. Le navigateur ne connaît pas d'attribut `herf` : il l'ignore sans rien dire. L'élément `<a>` n'a donc plus d'adresse, et ce n'est plus un lien.
 
@@ -322,6 +336,10 @@ Ajouter cette image juste sous le titre `<h1>` :
 | `src` | L'adresse de l'image (ici, un site qui donne une photo au hasard) |
 | `alt` | Un texte qui décrit l'image |
 
+??? info "Afficher la capture d'écran illustrant l'étape"
+
+    ![MDN Playground : une photo s'affiche sous le titre](../../assets/images/tuesday/mardi-html-etape-5.webp)
+
 !!! note "Une balise sans fermeture"
 
     `<img>` n'a **pas** de balise fermante : l'élément n'a pas de contenu, tout est dans ses attributs. On parle d'élément *vide*.
@@ -337,6 +355,8 @@ Ajouter cette image juste sous le titre `<h1>` :
     Qu'affiche maintenant la page à la place de l'image ?
 
 ??? success "Explication et correction"
+
+    ![MDN Playground : une icône d'image cassée et le texte alt](../../assets/images/tuesday/mardi-html-etape-5-bug.webp)
 
     Le navigateur ne trouve pas l'image à cette adresse : il affiche une **icône d'image cassée** et, à côté, le texte de l'attribut `alt`.
 
@@ -429,6 +449,10 @@ h1 {
 }
 ```
 
+??? info "Afficher la capture d'écran illustrant l'étape"
+
+    ![MDN Playground : fond lavande et titre rose](../../assets/images/tuesday/mardi-css-etape-1.webp)
+
 Chaque morceau de CSS est une **règle**, construite de la même façon :
 
 ```text
@@ -465,6 +489,10 @@ Modifier le style pour qu'il corresponde à sa personnalité :
 
 3. Essayer d'autres polices pour `body` : `serif`, `monospace`, `cursive`, `system-ui`...
 
+??? info "Afficher la capture d'écran illustrant l'étape"
+
+    ![MDN Playground : le titre en majuscules](../../assets/images/tuesday/mardi-css-etape-2.webp)
+
 → Sur MDN : [Valeurs et unités](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Values_and_units){target="_blank"}
 
 ### Étape 3 : Le bug du point-virgule
@@ -483,6 +511,8 @@ Modifier le style pour qu'il corresponde à sa personnalité :
     Observer le titre. Que s'est-il passé ? Pourquoi les **deux** déclarations ne fonctionnent-elles plus ?
 
 ??? success "Explication et correction"
+
+    ![MDN Playground : sans point-virgule, le titre perd sa couleur et ses majuscules](../../assets/images/tuesday/mardi-css-etape-3-bug.webp)
 
     Le titre perd sa couleur **et** ses majuscules. Sans point-virgule, le navigateur ne voit pas où s'arrête la première déclaration : il lit `color: deeppink text-transform: uppercase`, une couleur qui n'existe pas. Il ignore donc toute la déclaration, sans rien dire.
 
@@ -546,6 +576,10 @@ flowchart TD
 
 *En bleu : les éléments visés par `li`. En jaune : celui visé par `li` **et** `.coup-de-coeur`.*
 
+??? info "Afficher la capture d'écran illustrant l'étape"
+
+    ![MDN Playground : l'élément préféré sur fond doré](../../assets/images/tuesday/mardi-css-etape-4.webp)
+
 !!! bug "Bug volontaire"
 
     Dans le CSS, **retirer le point** devant le nom de la classe :
@@ -560,6 +594,8 @@ flowchart TD
     Que devient l'élément préféré ?
 
 ??? success "Explication et correction"
+
+    ![MDN Playground : sans le point, l'élément préféré n'a plus de fond doré](../../assets/images/tuesday/mardi-css-etape-4-bug.webp)
 
     Il redevient comme les autres : plus de fond doré, plus de gras. Sans le point, le navigateur cherche des éléments HTML qui s'appellent `<coup-de-coeur>`. Il n'y en a aucun, donc la règle ne s'applique à rien.
 
@@ -612,6 +648,10 @@ body {
 | `margin: 0 auto;` | Marges automatiques à gauche et à droite : la page est centrée |
 | `padding: 16px;` | De l'espace entre le bord de la page et le contenu |
 
+??? info "Afficher la capture d'écran illustrant l'étape"
+
+    ![MDN Playground : la page centrée et l'image aux coins arrondis](../../assets/images/tuesday/mardi-css-etape-5.webp)
+
 !!! bug "Bug volontaire"
 
     Dans la règle `img`, **retirer l'unité** `px` :
@@ -626,6 +666,8 @@ body {
     Que deviennent les coins de l'image ?
 
 ??? success "Explication et correction"
+
+    ![MDN Playground : sans unité, l'image a des coins carrés](../../assets/images/tuesday/mardi-css-etape-5-bug.webp)
 
     Les coins redeviennent carrés. `20` tout seul ne veut rien dire : 20 pixels ? 20 % ? Le navigateur ne devine pas et ignore la déclaration.
 
@@ -730,7 +772,145 @@ Donner à sa page un style qui lui ressemble. Quelques idées :
 
 ## Atelier : personnaliser sa page
 
-*À venir.*
+C'est le moment de faire de sa page personnelle **sa** page : ses goûts, son univers, son style. L'atelier propose trois niveaux de défis. Chaque personne avance à son rythme : le niveau 1 est la base, les niveaux 2 et 3 sont là pour aller plus loin.
+
+!!! info "Avant de commencer"
+
+    - Repartir de sa page de la fin du chapitre CSS (sinon, coller le [code complet de l'étape 5](#etape-5-des-boites-et-des-espaces))
+    - Cette page reste personnelle : elle n'est **pas** publiée. Même ainsi, garder la bonne habitude de ne jamais mettre d'informations sensibles sur une page web (adresse, numéro de téléphone...)
+    - Penser régulièrement à **Partager → Copier le Markdown** pour garder son travail
+
+### Choisir son univers
+
+Avant de coder, prendre deux minutes pour choisir :
+
+- **Un thème** : sa musique, ses séries, son sport, la mode, un jeu, un voyage rêvé...
+- **Deux ou trois couleurs** qui vont bien ensemble : une pour le fond, une pour les titres, une pour les éléments mis en avant
+- **Une ambiance** : sobre, colorée, sombre, rétro...
+
+!!! tip "Lisible avant tout"
+
+    Le texte doit rester facile à lire : un texte clair sur un fond clair, ou foncé sur un fond foncé, se lit mal, surtout pour les personnes malvoyantes. On parle de **contraste**.
+
+    → Sur MDN : [Contraste des couleurs](https://developer.mozilla.org/fr/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast){target="_blank"}
+
+### Niveau 1 : la base
+
+- [ ] Au moins **trois sections**, chacune avec son titre `<h2>` (par exemple : *Ce que j'aime*, *Mon top 3*, *Mes projets*)
+- [ ] Au moins **une liste** (`<ul>` ou `<ol>`)
+- [ ] Au moins **une image**, avec un vrai texte `alt` qui la décrit
+- [ ] Au moins **un lien** vers une chanson, une vidéo ou un site aimé
+- [ ] Ses **propres couleurs** et sa **police** pour la page et les titres
+- [ ] Au moins **une classe** CSS pour mettre en avant un élément
+
+### Niveau 2 : soigner les détails
+
+- [ ] La page est **centrée**, avec des espaces confortables (`max-width`, `margin`, `padding`)
+- [ ] Les sous-titres ont un **style** à eux : un trait dessous, une couleur, des majuscules...
+- [ ] Un effet au **survol** de la souris avec `:hover`
+- [ ] Les **liens** ont une couleur assortie au thème
+
+??? tip "Exemple : des sous-titres soulignés et un survol"
+
+    ```css
+    h2 {
+      color: teal;
+      border-bottom: 3px solid gold;
+      padding-bottom: 4px;
+    }
+
+    li:hover {
+      color: deeppink;
+    }
+
+    a {
+      color: teal;
+      font-weight: bold;
+    }
+    ```
+
+→ Sur MDN : [Fondamentaux du texte et des polices](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Text_styling/Fundamentals){target="_blank"}
+
+### Niveau 3 : les défis
+
+Pour les personnes qui veulent aller plus loin. Chaque défi introduit une notion nouvelle : la lire sur MDN, essayer, casser, réparer !
+
+??? example "Défi : des cartes côte à côte"
+
+    Disposer ses sections comme des cartes, côte à côte, avec **Flexbox**.
+
+    **HTML** : entourer les sections d'un `<div class="cartes">`, et chaque section d'un `<div class="carte">`
+
+    ```html
+    <div class="cartes">
+      <div class="carte">
+        <h2>Ce que j'aime</h2>
+        <ul>
+          <li>Le rap</li>
+          <li>Les séries</li>
+        </ul>
+      </div>
+      <div class="carte">
+        <h2>Mon top 3</h2>
+        <ol>
+          <li>...</li>
+        </ol>
+      </div>
+    </div>
+    ```
+
+    **CSS**
+
+    ```css
+    .cartes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .carte {
+      flex: 1 1 200px;
+      background-color: white;
+      padding: 16px;
+      border-radius: 12px;
+    }
+    ```
+
+    `display: flex` aligne les cartes sur une ligne, `flex-wrap: wrap` les fait passer à la ligne quand il n'y a plus de place, et `gap` met de l'espace entre elles.
+
+    → Sur MDN : [Flexbox](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/CSS_layout/Flexbox){target="_blank"}
+
+??? example "Défi : une image qui bouge au survol"
+
+    ```css
+    img {
+      transition: transform 0.3s;
+    }
+
+    img:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+    ```
+
+    `transform` agrandit (`scale`) et tourne (`rotate`) l'image, `transition` rend le changement progressif au lieu d'instantané.
+
+    → Sur MDN : [Utiliser les transitions CSS](https://developer.mozilla.org/fr/docs/Web/CSS/Guides/Transitions/Using){target="_blank"} · [transform](https://developer.mozilla.org/fr/docs/Web/CSS/transform){target="_blank"}
+
+??? example "Défi : un thème sombre"
+
+    Inverser les couleurs : un fond foncé (`#1e1e2e`, `midnightblue`...) et un texte clair (`white`, `#f5f5f5`). Attention au contraste des liens et des éléments mis en avant !
+
+??? example "Défi : une chasse au bug CSS"
+
+    Comme au chapitre HTML : échanger d'ordinateur avec sa voisine, glisser **une** erreur CSS dans sa page (un point-virgule, un point devant une classe, une unité oubliée...), puis se rendre les ordinateurs. Utiliser **Inspecter** pour trouver le bug plus vite !
+
+### Montrer sa page
+
+En fin d'atelier, deux ou trois personnes volontaires présentent leur page au projecteur : leur univers, leur style, et le bug qui leur a donné le plus de fil à retordre.
+
+!!! success "Et cet après-midi ?"
+
+    Le même HTML et le même CSS serviront à construire l'interface du **jeu des allumettes**. Il ne manquera plus qu'une chose : le **JavaScript**, pour que la page réagisse aux clics.
 
 ---
 

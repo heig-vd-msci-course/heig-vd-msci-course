@@ -52,3 +52,6 @@ docs/slides/*.pdf
 
 # Node modules
 node_modules/
+
+# Données personnelles des élèves (local uniquement)
+prive/

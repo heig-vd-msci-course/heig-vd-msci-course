@@ -1,0 +1,59 @@
+body {
+  font-family: sans-serif;
+  background-color: #fff5f7;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 16px;
+  text-align: center;
+}
+
+h1 {
+  color: deeppink;
+  margin-bottom: 0;
+}
+
+.equipe {
+  color: gray;
+  margin-top: 4px;
+}
+
+#message {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#tas {
+  min-height: 80px;
+  margin: 16px 0;
+}
+
+.allumette {
+  display: inline-block;
+  width: 8px;
+  height: 60px;
+  margin: 0 4px;
+  background-color: burlywood;
+  border-top: 14px solid crimson;
+  border-radius: 6px 6px 2px 2px;
+}
+
+button {
+  font-size: 18px;
+  padding: 8px 16px;
+  margin: 4px;
+  border: none;
+  border-radius: 8px;
+  background-color: deeppink;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
+}
+
+#rejouer {
+  background-color: teal;
+  margin-top: 16px;
+}
