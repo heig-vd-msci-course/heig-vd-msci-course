@@ -161,7 +161,20 @@ Le simulateur à gauche de l'écran permet de tester le jeu sans console physiqu
 
     Cliquer une fois sur le simulateur pour l'activer avant d'utiliser le clavier.
 
+### Tutoriels de prise en main
+
+Avant de commencer l'atelier, suivre ces tutoriels dans l'ordre pour se familiariser avec l'éditeur :
+
+1. [Introduction à MakeCode Arcade](https://arcade.makecode.com/#tutorial:/tutorials/intro){target="_blank"}
+2. [Parcours débutant (skillmap)](https://arcade.makecode.com/--skillmap#beginner){target="_blank"}
+
+!!! tip "Bonus"
+
+    Les tutoriels [Chase the Pizza](https://arcade.makecode.com/#tutorial:/tutorials/chase-the-pizza){target="_blank"} et [Froggy](https://arcade.makecode.com/#tutorial:/tutorials/froggy){target="_blank"} sont réservés aux personnes qui ont de l'avance.
+
 ### Procédure d'accès
+
+Une fois les tutoriels terminés, quitter le tutoriel et créer un **nouveau** projet pour le jeu des allumettes :
 
 1. Ouvrir un navigateur web
 2. Accéder à **arcade.makecode.com**
@@ -195,6 +208,10 @@ Créer une version jouable du jeu des allumettes avec MakeCode Arcade.
 
     → [Voir la solution complète](../../code-templates/makecode-arcade/solution.md){target="_blank"}
 -->
+
+!!! tip "Jeu terminé ?"
+
+    Continuer avec les tutoriels bonus [Chase the Pizza](https://arcade.makecode.com/#tutorial:/tutorials/chase-the-pizza){target="_blank"} et [Froggy](https://arcade.makecode.com/#tutorial:/tutorials/froggy){target="_blank"}.
 
 ---
 
