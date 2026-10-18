@@ -8,7 +8,7 @@ icon: lucide/sunrise
 
 !!! warning "Page en construction"
 
-    Seul le chapitre « Rappel HTML » est prêt. Les autres chapitres du matin arrivent bientôt.
+    Les chapitres « Rappel HTML » et « Rappel CSS » sont prêts. Les autres chapitres du matin arrivent bientôt.
 
 ---
 
@@ -261,7 +261,327 @@ Compléter sa page librement. Quelques idées :
 
 ## Rappel CSS : mettre en forme sa page
 
-*À venir.*
+Le **CSS** décrit l'*apparence* d'une page : les couleurs, les polices, les espacements, les bordures. Le HTML dit *ce qu'il y a* sur la page, le CSS dit *à quoi ça ressemble*.
+
+Ce tutoriel reprend la page personnelle du chapitre précédent et lui donne un style. Comme pour le HTML, quelques erreurs sont glissées **exprès**.
+
+!!! info "Le tutoriel de référence"
+
+    Ce chapitre suit la logique du tutoriel [Mettre en forme le contenu](https://developer.mozilla.org/fr/docs/Learn_web_development/Getting_started/Your_first_website/Styling_the_content){target="_blank"} de MDN. Chaque étape renvoie vers la page MDN correspondante pour aller plus loin.
+
+### Étape 1 : Une première règle
+
+1. Garder sa page personnelle dans la zone **HTML** de MDN Playground (sinon, coller le [code complet de la fin du chapitre HTML](#etape-5-ajouter-une-image))
+2. Copier le code ci-dessous et le coller dans la zone **CSS**
+3. Observer le résultat
+
+```css
+body {
+  font-family: sans-serif;
+  background-color: lavender;
+}
+
+h1 {
+  color: deeppink;
+}
+```
+
+Chaque morceau de CSS est une **règle**, construite de la même façon :
+
+```text
+h1 {  color: deeppink;  }
+│     │      │       │
+│     │      │       └── point-virgule : fin de la déclaration
+│     │      └── valeur
+│     └── propriété
+└── sélecteur : les éléments HTML concernés
+```
+
+| Terme | Rôle | Exemple |
+|-------|------|---------|
+| **Sélecteur** | Quels éléments modifier | `h1`, `body` |
+| **Propriété** | Quoi modifier | `color`, `background-color`, `font-family` |
+| **Valeur** | Comment le modifier | `deeppink`, `lavender`, `sans-serif` |
+| **Déclaration** | Une propriété et sa valeur, terminée par `;` | `color: deeppink;` |
+
+→ Sur MDN : [Qu'est-ce que le CSS ?](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/What_is_CSS){target="_blank"} · [Premiers pas en CSS](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Getting_started){target="_blank"}
+
+### Étape 2 : Ses couleurs, sa police
+
+Modifier le style pour qu'il corresponde à sa personnalité :
+
+1. Changer les couleurs de `body` et de `h1`. Il existe [140 noms de couleurs](https://developer.mozilla.org/fr/docs/Web/CSS/named-color){target="_blank"} (`tomato`, `teal`, `gold`, `midnightblue`...) ou des codes comme `#ff6b6b`
+2. Ajouter une déclaration dans la règle `h1` pour écrire le titre en majuscules :
+
+    ```css
+    h1 {
+      color: deeppink;
+      text-transform: uppercase;
+    }
+    ```
+
+3. Essayer d'autres polices pour `body` : `serif`, `monospace`, `cursive`, `system-ui`...
+
+→ Sur MDN : [Valeurs et unités](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Values_and_units){target="_blank"}
+
+### Étape 3 : Le bug du point-virgule
+
+!!! bug "Bug volontaire"
+
+    Dans la règle `h1`, **supprimer** le point-virgule après `deeppink` :
+
+    ```css
+    h1 {
+      color: deeppink
+      text-transform: uppercase;
+    }
+    ```
+
+    Observer le titre. Que s'est-il passé ? Pourquoi les **deux** déclarations ne fonctionnent-elles plus ?
+
+??? success "Explication et correction"
+
+    Le titre perd sa couleur **et** ses majuscules. Sans point-virgule, le navigateur ne voit pas où s'arrête la première déclaration : il lit `color: deeppink text-transform: uppercase`, une couleur qui n'existe pas. Il ignore donc toute la déclaration, sans rien dire.
+
+    **Correction** : remettre le `;` à la fin de chaque déclaration.
+
+    **À retenir** : comme le HTML, le CSS n'affiche pas de message d'erreur. Une déclaration incorrecte est simplement ignorée, et la page s'affiche sans ce style.
+
+??? abstract "Code CSS complet à la fin de l'étape 3"
+
+    ```css
+    body {
+      font-family: sans-serif;
+      background-color: lavender;
+    }
+
+    h1 {
+      color: deeppink;
+      text-transform: uppercase;
+    }
+    ```
+
+### Étape 4 : Cibler un élément précis
+
+Un sélecteur comme `li` modifie **tous** les éléments `<li>`. Pour n'en modifier qu'un seul, on lui donne une **classe** dans le HTML, puis on la cible en CSS avec un **point** devant son nom.
+
+1. Dans la zone **HTML**, ajouter une classe à son élément de liste préféré :
+
+    ```html
+    <li class="coup-de-coeur">Les séries</li>
+    ```
+
+2. Dans la zone **CSS**, ajouter ces deux règles :
+
+    ```css
+    li {
+      color: midnightblue;
+    }
+
+    .coup-de-coeur {
+      background-color: gold;
+      font-weight: bold;
+    }
+    ```
+
+Les deux règles ne visent pas les mêmes éléments de l'arbre :
+
+```mermaid
+flowchart TD
+    body["body"] --> h1["h1"]
+    body --> p["p"]
+    body --> h2["h2"]
+    body --> ul["ul"]
+    ul --> li1["li"]
+    ul --> li2["li class='coup-de-coeur'"]
+    ul --> li3["li"]
+    classDef tous fill:#8fb8ff,stroke:#191970,stroke-width:2px
+    classDef classe fill:#ffe066,stroke:#b8860b,stroke-width:3px
+    class li1,li3 tous
+    class li2 classe
+```
+
+*En bleu : les éléments visés par `li`. En jaune : celui visé par `li` **et** `.coup-de-coeur`.*
+
+!!! bug "Bug volontaire"
+
+    Dans le CSS, **retirer le point** devant le nom de la classe :
+
+    ```css
+    coup-de-coeur {
+      background-color: gold;
+      font-weight: bold;
+    }
+    ```
+
+    Que devient l'élément préféré ?
+
+??? success "Explication et correction"
+
+    Il redevient comme les autres : plus de fond doré, plus de gras. Sans le point, le navigateur cherche des éléments HTML qui s'appellent `<coup-de-coeur>`. Il n'y en a aucun, donc la règle ne s'applique à rien.
+
+    **Correction** : remettre le point, `.coup-de-coeur`.
+
+    **À retenir** : `li` vise un type d'élément, `.coup-de-coeur` vise une classe. Le point fait toute la différence.
+
+→ Sur MDN : [Sélecteurs de base](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Basic_selectors){target="_blank"}
+
+### Étape 5 : Des boîtes et des espaces
+
+En CSS, chaque élément est une **boîte**. Autour du contenu, on peut régler trois couches :
+
+```text
+┌──────────────── margin (marge extérieure) ───────────────┐
+│  ┌───────────── border (bordure) ─────────────────────┐  │
+│  │  ┌────────── padding (marge intérieure) ────────┐  │  │
+│  │  │                                              │  │  │
+│  │  │                  contenu                     │  │  │
+│  │  │                                              │  │  │
+│  │  └──────────────────────────────────────────────┘  │  │
+│  └────────────────────────────────────────────────────┘  │
+└──────────────────────────────────────────────────────────┘
+```
+
+Ajouter ces règles pour arrondir l'image et centrer la page :
+
+```css
+img {
+  border-radius: 20px;
+  border: 4px solid white;
+}
+
+body {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+}
+```
+
+!!! note "Deux règles pour `body`"
+
+    La règle `body` existe déjà depuis l'étape 1. On peut soit ajouter ces déclarations dans la règle existante, soit écrire une deuxième règle : le navigateur combine les deux.
+
+| Déclaration | Effet |
+|-------------|-------|
+| `border-radius: 20px;` | Arrondit les coins |
+| `border: 4px solid white;` | Bordure de 4 pixels, pleine, blanche |
+| `max-width: 600px;` | La page ne dépasse pas 600 pixels de large |
+| `margin: 0 auto;` | Marges automatiques à gauche et à droite : la page est centrée |
+| `padding: 16px;` | De l'espace entre le bord de la page et le contenu |
+
+!!! bug "Bug volontaire"
+
+    Dans la règle `img`, **retirer l'unité** `px` :
+
+    ```css
+    img {
+      border-radius: 20;
+      border: 4px solid white;
+    }
+    ```
+
+    Que deviennent les coins de l'image ?
+
+??? success "Explication et correction"
+
+    Les coins redeviennent carrés. `20` tout seul ne veut rien dire : 20 pixels ? 20 % ? Le navigateur ne devine pas et ignore la déclaration.
+
+    **Correction** : écrire `20px`. Seul `0` peut s'écrire sans unité, puisque zéro pixel ou zéro pour cent, c'est pareil.
+
+→ Sur MDN : [Le modèle de boîte](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Box_model){target="_blank"}
+
+??? abstract "Code complet à la fin de l'étape 5"
+
+    **HTML**
+
+    ```html
+    <h1>Salut, moi c'est Alex !</h1>
+    <img src="https://picsum.photos/400/250" alt="Une photo au hasard">
+    <p>J'ai 17 ans et j'adore la <strong>musique</strong>.</p>
+
+    <h2>Ce que j'aime</h2>
+    <ul>
+      <li>Le rap</li>
+      <li class="coup-de-coeur">Les séries</li>
+      <li>Les jeux vidéo</li>
+      <li>La mode</li>
+    </ul>
+
+    <p>Ma chanson du moment : <a href="https://www.youtube.com" target="_blank">le titre de la chanson</a></p>
+    ```
+
+    **CSS**
+
+    ```css
+    body {
+      font-family: sans-serif;
+      background-color: lavender;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    h1 {
+      color: deeppink;
+      text-transform: uppercase;
+    }
+
+    li {
+      color: midnightblue;
+    }
+
+    .coup-de-coeur {
+      background-color: gold;
+      font-weight: bold;
+    }
+
+    img {
+      border-radius: 20px;
+      border: 4px solid white;
+    }
+    ```
+
+### Étape 6 : À vous de jouer
+
+Donner à sa page un style qui lui ressemble. Quelques idées :
+
+- Un thème sombre : fond `#1e1e2e`, texte `white`
+- Un trait sous les sous-titres : `h2 { border-bottom: 3px solid deeppink; }`
+- Une couleur pour le lien : `a { color: teal; }`
+- Un effet au survol de la souris, avec la *pseudo-classe* `:hover` :
+
+    ```css
+    li:hover {
+      color: deeppink;
+    }
+    ```
+
+!!! tip "Trouver un bug CSS avec les outils du navigateur"
+
+    Contrairement au HTML, le navigateur peut **montrer** les erreurs CSS. Faire un clic droit sur l'élément mal affiché dans l'aperçu, puis **Inspecter** : dans le panneau *Styles*, les déclarations ignorées sont **barrées**, avec une petite icône d'avertissement.
+
+→ Sur MDN : [Pseudo-classes et pseudo-éléments](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Pseudo_classes_and_elements){target="_blank"} · [Déboguer le CSS](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Debugging_CSS){target="_blank"}
+
+### Récapitulatif
+
+| Notion | Exemple | Rôle |
+|--------|---------|------|
+| Règle | `h1 { color: deeppink; }` | Un sélecteur et ses déclarations |
+| Sélecteur d'élément | `li` | Vise tous les éléments `<li>` |
+| Sélecteur de classe | `.coup-de-coeur` | Vise les éléments avec `class="coup-de-coeur"` |
+| Couleurs | `color`, `background-color` | Couleur du texte, du fond |
+| Texte | `font-family`, `font-weight`, `text-transform` | Police, gras, majuscules |
+| Boîte | `padding`, `border`, `margin` | Espaces et bordure autour d'un élément |
+
+!!! success "À retenir"
+
+    - Une règle = un sélecteur + des déclarations `propriété: valeur;` entre accolades
+    - Le point `.` vise une classe, sans point on vise un type d'élément
+    - Une déclaration incorrecte (point-virgule ou unité oubliés) est ignorée sans message : les outils du navigateur (**Inspecter**) aident à la trouver
+
+!!! tip "Garder son travail"
+
+    Avant de fermer l'onglet : **Partager → Copier le Markdown**, puis coller le code dans un fichier ou un e-mail à soi-même.
 
 ---
 
