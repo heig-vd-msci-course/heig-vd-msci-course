@@ -162,7 +162,7 @@ Cette activité en binôme permet de découvrir concrètement les **différents 
 
 ### Stratégie gagnante
 
-!!! success "Principe : les multiples de 4"
+??? success "Principe : les multiples de 4 (cliquer pour révéler)"
 
     Pour garantir la victoire, il faut laisser un nombre d'allumettes égal à un multiple de 4, plus 1 :
 
@@ -176,11 +176,13 @@ Cette activité en binôme permet de découvrir concrètement les **différents 
 
 ### Formule
 
-```
-allumettes_à_retirer = (restantes - 1) % 4
-```
+??? example "Formule (cliquer pour révéler)"
 
-L'opérateur `%` (modulo) retourne le reste de la division entière.
+    ```
+    allumettes_à_retirer = (restantes - 1) % 4
+    ```
+
+    L'opérateur `%` (modulo) retourne le reste de la division entière.
 
 → [Guide complet du jeu des allumettes](../../supports/guide-jeu-allumettes.md){target="_blank"}
 
