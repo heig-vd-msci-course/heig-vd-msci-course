@@ -148,7 +148,7 @@ Cette activité en binôme permet de découvrir concrètement les **différents 
 
     **Plus le vocabulaire est riche, moins il faut d'instructions** — mais l'ordinateur, lui, doit toujours tout décomposer en opérations simples.
 
-→ [Fiche complète de l'activité](../../supports/activities/activite-donner-instructions.md)
+→ [Fiche complète de l'activité](../../supports/activities/activite-donner-instructions.md){target="_blank"}
 
 ---
 
@@ -182,11 +182,11 @@ allumettes_à_retirer = (restantes - 1) % 4
 
 L'opérateur `%` (modulo) retourne le reste de la division entière.
 
-→ [Guide complet du jeu des allumettes](../../supports/guide-jeu-allumettes.md)
+→ [Guide complet du jeu des allumettes](../../supports/guide-jeu-allumettes.md){target="_blank"}
 
 ---
 
 ## Navigation
 
-- [← Retour au programme du Lundi](index.md)
-- [Lundi après-midi →](apres-midi.md)
+- [← Retour au programme du Lundi](index.md){target="_blank"}
+- [Lundi après-midi →](apres-midi.md){target="_blank"}

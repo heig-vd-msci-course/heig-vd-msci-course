@@ -22,9 +22,9 @@ L'équipe pédagogique du cours Algorithmique et programmation accompagne le gro
 
 **Liens** :
 
-- [LinkedIn](https://www.linkedin.com/in/clarisse-fleurimont-2a05481a3)
-- [GitHub](https://github.com/stellucidam)
-- [Site personnel](https://stellucidam.ch)
+- [LinkedIn](https://www.linkedin.com/in/clarisse-fleurimont-2a05481a3){target="_blank"}
+- [GitHub](https://github.com/stellucidam){target="_blank"}
+- [Site personnel](https://stellucidam.ch){target="_blank"}
 
 ---
 
@@ -40,11 +40,11 @@ L'équipe pédagogique du cours Algorithmique et programmation accompagne le gro
 
 **Liens** :
 
-- [GitHub](https://github.com/Nortalle)
-- [Site personnel](https://vincentguidoux.ch)
+- [GitHub](https://github.com/Nortalle){target="_blank"}
+- [Site personnel](https://vincentguidoux.ch){target="_blank"}
 - E-mail : [vincent.guidoux@gmail.com](mailto:vincent.guidoux@gmail.com)
 
-<small>Photo : [RSphotography](https://www.instagram.com/raphaelsalis.studio/)</small>
+<small>Photo : [RSphotography](https://www.instagram.com/raphaelsalis.studio/){target="_blank"}</small>
 
 ---
 

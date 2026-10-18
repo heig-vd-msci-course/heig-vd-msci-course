@@ -96,7 +96,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Comment utiliser cette solution
 
-1. Ouvrir [arcade.makecode.com](https://arcade.makecode.com)
+1. Ouvrir [arcade.makecode.com](https://arcade.makecode.com){target="_blank"}
 2. Créer un **nouveau projet**
 3. Cliquer sur **JavaScript** en haut de l'écran (à côté de "Blocs")
 4. Effacer tout le code existant
@@ -137,4 +137,4 @@ Bouton A / B / Haut
 
 ---
 
-[← Retour aux instructions](jeu-allumettes-compact-instructions.md)
+[← Retour aux instructions](jeu-allumettes-compact-instructions.md){target="_blank"}

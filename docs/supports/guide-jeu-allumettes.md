@@ -51,4 +51,4 @@ La partie continue jusqu'à ce qu'il ne reste qu'une seule allumette. La personn
 
 Une version web du jeu est disponible pour s'entraîner :
 
-[:octicons-arrow-right-24: Jouer au jeu des allumettes en ligne](https://heig-vd-msci-course.github.io/heig-vd-msci-matches-webapp/)
+[:octicons-arrow-right-24: Jouer au jeu des allumettes en ligne](https://heig-vd-msci-course.github.io/heig-vd-msci-matches-webapp/){target="_blank"}

@@ -88,5 +88,5 @@ Chaque présentation inclut :
 
 ## Navigation
 
-- [Retour au Jeudi - Travail libre](jeudi.md)
-- [Retour à l'accueil](../index.md)
+- [Retour au Jeudi - Travail libre](jeudi.md){target="_blank"}
+- [Retour à l'accueil](../index.md){target="_blank"}

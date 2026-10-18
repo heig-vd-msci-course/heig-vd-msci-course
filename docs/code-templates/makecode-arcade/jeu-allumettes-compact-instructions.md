@@ -22,7 +22,7 @@ Programmer un jeu des allumettes jouable contre l'ordinateur, **uniquement avec 
 
 ## Démarrage
 
-1. Ouvrir [arcade.makecode.com](https://arcade.makecode.com)
+1. Ouvrir [arcade.makecode.com](https://arcade.makecode.com){target="_blank"}
 2. Cliquer **Nouveau projet** → nommer "Jeu allumettes"
 3. Rester en mode **Blocs** (ne jamais cliquer sur JavaScript)
 
@@ -182,6 +182,6 @@ Bouton A / B / Haut
 <!-- LIEN SOLUTION - Décommenter pour activer
 !!! tip "Besoin d'aide ?"
 
-    → [Voir la solution complète](solution.md)
+    → [Voir la solution complète](solution.md){target="_blank"}
 -->
 

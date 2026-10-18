@@ -97,7 +97,7 @@ Les **opérateurs** sont des symboles pour calculer et comparer.
 | `<=` | Inférieur ou égal ? |
 | `>` | Supérieur à ? |
 
-→ [Fiche récapitulative des concepts](../../supports/cheatsheet-concepts-algo.md)
+→ [Fiche récapitulative des concepts](../../supports/cheatsheet-concepts-algo.md){target="_blank"}
 
 ---
 
@@ -107,7 +107,7 @@ Les **opérateurs** sont des symboles pour calculer et comparer.
 
 MakeCode Arcade est un environnement de programmation visuelle permettant de créer des **jeux 2D rétro** (style Game Boy) avec des blocs. Développé par Microsoft, cet outil est conçu pour l'apprentissage de la programmation.
 
-**URL** : [arcade.makecode.com](https://arcade.makecode.com)
+**URL** : [arcade.makecode.com](https://arcade.makecode.com){target="_blank"}
 
 ### Pourquoi utiliser MakeCode Arcade ?
 
@@ -188,12 +188,12 @@ Créer une version jouable du jeu des allumettes avec MakeCode Arcade.
 
 ### Guide pas à pas
 
-→ [Template MakeCode Arcade - Jeu des Allumettes](../../code-templates/makecode-arcade/jeu-allumettes-compact-instructions.md)
+→ [Template MakeCode Arcade - Jeu des Allumettes](../../code-templates/makecode-arcade/jeu-allumettes-compact-instructions.md){target="_blank"}
 
 <!-- LIEN SOLUTION - Décommenter pour activer
 !!! tip "Besoin d'aide ?"
 
-    → [Voir la solution complète](../../code-templates/makecode-arcade/solution.md)
+    → [Voir la solution complète](../../code-templates/makecode-arcade/solution.md){target="_blank"}
 -->
 
 ---
@@ -204,9 +204,9 @@ Créer une version jouable du jeu des allumettes avec MakeCode Arcade.
 
 | Ressource | URL | Description |
 |-----------|-----|-------------|
-| **Éditeur** | [arcade.makecode.com](https://arcade.makecode.com) | Créer et modifier des projets |
-| **Tutoriels** | [arcade.makecode.com/tutorials](https://arcade.makecode.com/tutorials) | Guides pas à pas officiels |
-| **Documentation** | [arcade.makecode.com/docs](https://arcade.makecode.com/docs) | Référence complète des blocs |
+| **Éditeur** | [arcade.makecode.com](https://arcade.makecode.com){target="_blank"} | Créer et modifier des projets |
+| **Tutoriels** | [arcade.makecode.com/tutorials](https://arcade.makecode.com/tutorials){target="_blank"} | Guides pas à pas officiels |
+| **Documentation** | [arcade.makecode.com/docs](https://arcade.makecode.com/docs){target="_blank"} | Référence complète des blocs |
 
 ### Catégories de blocs - Référence rapide
 
@@ -289,7 +289,7 @@ Pour partager un projet avec son équipe ou le soumettre :
     - **Dans le simulateur** : Cliquer sur le bouton de redémarrage (icône de flèche circulaire) sous le simulateur
     - **Dans le code** : Ajouter un bloc `quand bouton menu pressé` qui réinitialise les variables `allumettes` et `tour`
 
-    Voir le [template complet](../../code-templates/makecode-arcade/jeu-allumettes-compact-instructions.md#test-et-depannage) pour le dépannage.
+    Voir le [template complet](../../code-templates/makecode-arcade/jeu-allumettes-compact-instructions.md#test-et-depannage){target="_blank"} pour le dépannage.
 
 ??? question "Les boutons ne fonctionnent pas dans le simulateur ?"
 
@@ -301,6 +301,6 @@ Pour partager un projet avec son équipe ou le soumettre :
 
 ## Navigation
 
-- [← Lundi matin](matin.md)
-- [← Retour au programme du Lundi](index.md)
-- [Mardi →](../mardi.md)
+- [← Lundi matin](matin.md){target="_blank"}
+- [← Retour au programme du Lundi](index.md){target="_blank"}
+- [Mardi →](../mardi.md){target="_blank"}

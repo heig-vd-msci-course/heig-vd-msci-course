@@ -31,7 +31,7 @@ icon: lucide/play
 | 10h30 - 11h15 | Activité : Donner des instructions | T155 / T157 |
 | 11h15 - 12h00 | Découverte du jeu des allumettes | T155 / T157 |
 
-→ [Voir le détail du matin](matin.md)
+→ [Voir le détail du matin](matin.md){target="_blank"}
 
 ### Après-midi : Programmation visuelle
 
@@ -44,7 +44,7 @@ icon: lucide/play
 | 15h00 - 15h45 | Atelier : Jeu des allumettes en blocs - Partie 2 | T155 / T157 |
 | 15h45 - 16h15 | Synthèse et quiz Wooclap | T155 / T157 |
 
-→ [Voir le détail de l'après-midi](apres-midi.md)
+→ [Voir le détail de l'après-midi](apres-midi.md){target="_blank"}
 
 ---
 
@@ -54,16 +54,16 @@ icon: lucide/play
 
     **Matin :**
 
-    - [Présentation : Introduction (HTML)](../../slides/lundi-introduction-matin.html)
-    - [Présentation : Introduction (PDF)](../../slides/lundi-introduction-matin.pdf)
+    - [Présentation : Introduction (HTML)](../../slides/lundi-introduction-matin.html){target="_blank"}
+    - [Présentation : Introduction (PDF)](../../slides/lundi-introduction-matin.pdf){target="_blank"}
 
     **Après-midi :**
 
-    - [Présentation : MakeCode Arcade (HTML)](../../slides/lundi-introduction-apres-midi.html)
-    - [Présentation : MakeCode Arcade (PDF)](../../slides/lundi-introduction-apres-midi.pdf)
+    - [Présentation : MakeCode Arcade (HTML)](../../slides/lundi-introduction-apres-midi.html){target="_blank"}
+    - [Présentation : MakeCode Arcade (PDF)](../../slides/lundi-introduction-apres-midi.pdf){target="_blank"}
 
 ---
 
 ## Navigation
 
-- [Mardi - Web](../mardi.md)
+- [Mardi - Web](../mardi.md){target="_blank"}
