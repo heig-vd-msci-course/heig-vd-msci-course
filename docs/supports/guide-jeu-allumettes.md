@@ -37,10 +37,10 @@ Le jeu des allumettes est un classique des jeux de logique. Derrière sa simplic
 
 | Tour | Personne | Retire | Reste |
 |------|----------|--------|-------|
-| 1 | Alice | 2 | 19 |
-| 2 | Bella | 3 | 16 |
-| 3 | Alice | 1 | 15 |
-| 4 | Bella | 2 | 13 |
+| 1 | Alice | 2 | 18 |
+| 2 | Bella | 3 | 15 |
+| 3 | Alice | 1 | 14 |
+| 4 | Bella | 1 | 13 |
 | ... | ... | ... | ... |
 
 La partie continue jusqu'à ce qu'il ne reste qu'une seule allumette. La personne qui doit la prendre a perdu.

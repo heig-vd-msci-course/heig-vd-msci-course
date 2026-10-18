@@ -17,7 +17,7 @@ RECETTE : Préparer des pâtes
 6. Servir
 ```
 
-**Exemple du jeu des allumettes** : La stratégie gagnante consiste à toujours laisser un multiple de 4 allumettes.
+**Exemple du jeu des allumettes** : La stratégie gagnante consiste à toujours laisser un multiple de 4, plus 1 (17, 13, 9, 5, puis 1 allumette).
 
 ---
 

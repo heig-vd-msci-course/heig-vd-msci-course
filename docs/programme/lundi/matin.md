@@ -97,8 +97,8 @@ Un bref voyage dans le temps pour comprendre d'où vient la programmation.
 
 | Année | Évolution |
 |-------|-----------|
-| **2014** | **Swift** (Apple) — remplace Objective-C pour iOS |
 | **2012** | **TypeScript** (Microsoft) — JavaScript amélioré |
+| **2014** | **Swift** (Apple) — remplace Objective-C pour iOS |
 | **2020s** | **IA et assistants de code** — l'IA aide à écrire du code |
 
 ### Dans votre quotidien

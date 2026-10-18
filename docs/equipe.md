@@ -42,7 +42,7 @@ L'équipe pédagogique du cours Algorithmique et programmation accompagne le gro
 
 - [GitHub](https://github.com/Nortalle){target="_blank"}
 - [Site personnel](https://vincentguidoux.ch){target="_blank"}
-- E-mail : [vincent.guidoux@gmail.com](mailto:vincent.guidoux@gmail.com)
+- E-mail : [vincent.guidoux1@heig-vd.ch](mailto:vincent.guidoux1@heig-vd.ch)
 
 <small>Photo : [RSphotography](https://www.instagram.com/raphaelsalis.studio/){target="_blank"}</small>
 

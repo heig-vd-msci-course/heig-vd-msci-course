@@ -64,7 +64,7 @@ Ingénieur logiciel, entrepreneur, chargé de cours et comédien.
 |---------|----------|
 | 08h30 | Accueil et prise de contact |
 | 09h00 | Élaboration de la charte et formation des équipes |
-| 09h45 | Introduction à la programmation |
+| 09h45 | Histoire de la programmation |
 | 10h00 | Pause |
 | 10h30 | Activité : Donner des instructions |
 | 11h15 | Découverte du jeu des allumettes |
@@ -140,11 +140,11 @@ Répondez aux questions en un ou deux mots, ou par un mot-clé, nous en ferons l
 
 Chaque équipe porte un **nom de fruit** (ex. : Pomme, Poire, Banane, Kiwi, etc.).
 
-Choissez votre nom d'équipe et notez-le sur cette Google Sheet : [https://tinylink.net/YeCH0](https://tinylink.net/YeCH0) (ou scannez le QR code ci-dessous).
+Choisissez votre nom d'équipe et notez-le sur cette Google Sheet : [https://tinylink.net/YeCH0](https://tinylink.net/YeCH0) (ou scannez le QR code ci-dessous).
 
 <div class="center">
 
-![Wooclap QR](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://tinylink.net/YeCH0)
+![QR code Google Sheet](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://tinylink.net/YeCH0)
 
 </div>
 
@@ -195,13 +195,13 @@ Choissez votre nom d'équipe et notez-le sur cette Google Sheet : [https://tinyl
 
 # Grace Hopper
 
-## Créatrice du premier "bug" (1947)
+## Le premier « bug » documenté (1947)
 
 <div class="seventy-thirty-columns">
 <div>
 
-- Amiral de la marine américaine
-- Trouve un **vrai insecte** dans l'ordinateur
+- Contre-amirale de la marine américaine
+- Trouve un **vrai insecte** (un papillon de nuit) dans l'ordinateur
 - Crée COBOL (1959) : langage proche de l'anglais
 
 > La phrase la plus dangereuse de la langue est : "Nous avons toujours fait comme ça".
@@ -212,7 +212,7 @@ Choissez votre nom d'équipe et notez-le sur cette Google Sheet : [https://tinyl
 ![w:280](../docs/assets/images/monday/grace_hopper.jpg)
 <span class="tiny gray">*Source (image) : [wikimedia.org](https://commons.wikimedia.org/wiki/File:Grace_Murray_Hopper,_in_her_office_in_Washington_DC,_1978,_©Lynn_Gilbert.jpg)*</span>
 </div>
-<div>
+</div>
 
 ---
 
@@ -311,32 +311,36 @@ Maintenant que nous avons vu l'histoire, passons à l'action :
 
 # Activité 1 : Labyrinthe
 
-Guidez votre partenaire (yeux fermés) à travers un parcours.
+<style scoped>table { font-size: 0.8em; }</style>
+
+Guidez votre partenaire (yeux fermés) : elle trace le chemin au crayon sur le labyrinthe.
 
 | Commande | Signification |
 |----------|---------------|
-| `AVANCE X` | Fait X pas en avant |
-| `RECULE X` | Fait X pas en arrière |
-| `TOURNE GAUCHE` | Pivote 90° à gauche |
-| `TOURNE DROITE` | Pivote 90° à droite |
+| `AVANCE` | Avancer d'une case |
+| `RECULE` | Reculer d'une case |
+| `GAUCHE` | Tourner à gauche (90°) |
+| `DROITE` | Tourner à droite (90°) |
 
-**Interdit** : "un peu", "là-bas", "attention", "vers la fenêtre"...
+**Interdit** : "avance de 3 cases", "attention au mur"... Mur touché = retour au départ
 
 ---
 
 # Activité 2 : Baguettes
 
+<style scoped>table { font-size: 0.7em; }</style>
+
 Faites reproduire un motif avec des baguettes/cure-dents.
 
 | Commande | Signification |
 |----------|---------------|
-| `POSE` | Place une baguette |
+| `PRENDS UNE BAGUETTE` / `POSE` | Saisir / poser une baguette |
 | `HORIZONTAL` / `VERTICAL` | Orientation |
-| `À CÔTÉ DE` | Adjacent à une autre |
-| `AU-DESSUS` / `EN-DESSOUS` | Position relative |
-| `TOUCHE` / `NE TOUCHE PAS` | Contact ou non |
+| `DIAGONAL GAUCHE` / `DIAGONAL DROITE` | Inclinée ( / ) ou ( \ ) |
+| `À GAUCHE DE` / `À DROITE DE` / `AU-DESSUS DE` / `EN DESSOUS DE` | Position relative |
+| `AU BOUT DE` / `BAGUETTE 1, 2, 3...` | Par rapport aux baguettes déjà posées |
 
-**Interdit** : nommer des formes ("carré", "triangle", "lettre L"...)
+**Interdit** : nommer une forme ("carré", "lettre L"...) ou une mesure
 
 ---
 
@@ -349,7 +353,7 @@ Faites reproduire un dessin simple sur papier.
 | **Formes** | `CERCLE`, `CARRÉ`, `TRIANGLE`, `LIGNE` |
 | **Tailles** | `PETIT`, `MOYEN`, `GRAND` |
 | **Positions** | `AU CENTRE`, `EN HAUT`, `À GAUCHE` |
-| **Relations** | `DANS`, `À CÔTÉ`, `AU-DESSUS` |
+| **Relations** | `DANS`, `À CÔTÉ DE`, `AU-DESSUS DE`, `RELIE ... À ...` |
 
 **Interdit** : "tu vois ?", "c'est comme...", montrer avec les mains
 
@@ -441,7 +445,7 @@ Pas d'interprétation. Pas de "bon sens".  Pas de questions.
 
 ## En équipes de 2
 
-1. Prenez vos baguettes
+1. Prenez le plateau imprimé (ou 20 baguettes)
 2. Jouez plusieurs parties
 3. Cherchez une stratégie...
 

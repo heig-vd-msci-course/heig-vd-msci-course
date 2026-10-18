@@ -141,8 +141,8 @@ Pour le jeu des allumettes, quatre catégories sont principalement utilisées :
 
 | Catégorie | Couleur | Utilisation |
 |-----------|---------|-------------|
-| **Variables** | Orange-Rouge | Créer et modifier `allumettes`, `joueuse` |
-| **Contrôleur** | Rose | Détecter les appuis sur les boutons A, B et la flèche haut |
+| **Variables** | Rouge | Créer et modifier `allumettes`, `joueuse` |
+| **Contrôleur** | Orange | Détecter les appuis sur les boutons A, B et la flèche haut |
 | **Logique** | Bleu clair | Créer des conditions (si... alors...) |
 | **Jeu** | Violet | Afficher des messages, terminer la partie |
 
@@ -152,14 +152,13 @@ Le simulateur à gauche de l'écran permet de tester le jeu sans console physiqu
 
 | Contrôle | Au clavier | Action |
 |----------|------------|--------|
-| **Bouton A** | Touche `Z` ou `A` | Retirer 1 allumette |
-| **Bouton B** | Touche `X` ou `B` | Retirer 2 allumettes |
-| **Flèche haut** | Flèche ↑ du clavier | Retirer 3 allumettes |
-| **Menu** | Touche `Entrée` | Recommencer la partie |
+| **Bouton A** | `Espace` ou `Z` | Retirer 1 allumette |
+| **Bouton B** | `Entrée` ou `X` | Retirer 2 allumettes |
+| **Flèche haut** | Flèche ↑ ou `W` | Retirer 3 allumettes |
 
 !!! tip "Astuce"
 
-    Cliquer une fois sur le simulateur pour l'activer avant d'utiliser le clavier.
+    Cliquer une fois sur le simulateur pour l'activer avant d'utiliser le clavier. Attention : la touche `A` du clavier ne correspond **pas** au bouton A (elle sert à aller à gauche).
 
 ### Tutoriels de prise en main
 
@@ -232,11 +231,11 @@ Créer une version jouable du jeu des allumettes avec MakeCode Arcade.
 
 | Catégorie | Blocs importants | Utilisation |
 |-----------|------------------|-------------|
-| **Variables** | `Créer une Variable`, `définir [var] à`, `modifier [var] de` | Stocker le nombre d'allumettes et le tour |
+| **Variables** | `Créer une Variable`, `définir [var] à`, `modifier [var] de` | Stocker le nombre d'allumettes et la joueuse |
 | **Contrôleur** | `quand bouton A est appuyé`, `quand bouton B est appuyé` | Réagir aux actions des personnes |
 | **Logique** | `si...alors...sinon`, comparaisons (`<`, `>`, `=`) | Vérifier les conditions de fin |
 | **Jeu** | `splash`, `fin de jeu`, `afficher texte long` | Afficher des informations à l'écran |
-| **Texte** | `joindre`, `""` | Combiner du texte et des variables |
+| **Texte** | `concaténation`, `""` | Combiner du texte et des variables |
 
 ### Partager un projet
 
@@ -315,7 +314,7 @@ Pour partager un projet avec son équipe ou le soumettre :
 
     - S'assurer d'avoir **cliqué sur le simulateur** pour l'activer
     - Vérifier que les blocs sont bien **à l'intérieur** du bloc `quand bouton ... est appuyé`
-    - Utiliser les touches `Z` (bouton A) et `X` (bouton B) au clavier
+    - Utiliser les touches `Espace` ou `Z` (bouton A), `Entrée` ou `X` (bouton B) et la flèche ↑ au clavier
 
 ---
 

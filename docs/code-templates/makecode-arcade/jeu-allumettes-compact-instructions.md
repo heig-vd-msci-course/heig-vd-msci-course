@@ -41,7 +41,7 @@ Dans la catégorie **Variables** (rouge) :
 
 ## Étape 2 : Initialiser le jeu
 
-Dans la catégorie **Loops** (vert), trouver le bloc `au démarrage`.
+Dans la catégorie **Boucles** (vert), trouver le bloc `au démarrage`.
 
 Glisser à l'intérieur (depuis **Variables**) :
 
@@ -51,8 +51,8 @@ Glisser à l'intérieur (depuis **Variables**) :
 Puis ajouter :
 
 - `définir score à allumettes` (depuis **Info**) → le nombre d'allumettes s'affiche en haut à droite
-- `splash "20 allumettes - A:1 B:2 Haut:3"` (depuis **Game**)
-- `splash "Joueuse 1 commence"` (depuis **Game**)
+- `splash "20 allumettes - A:1 B:2 Haut:3"` (depuis **Jeu**)
+- `splash "Joueuse 1 commence"` (depuis **Jeu**)
 
 Résultat attendu :
 
@@ -68,7 +68,7 @@ game.splash("Joueuse 1 commence")
 
 ## Étape 3 : Bouton A (retirer 1 allumette)
 
-Dans la catégorie **Controller** (rose), glisser :
+Dans la catégorie **Contrôleur** (orange), glisser :
 
 - `quand bouton A est appuyé`
 
@@ -88,12 +88,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ### 3.2 Vérifier si la joueuse a perdu
 
-Depuis **Logic** (bleu), glisser un bloc `si <condition> alors / sinon` :
+Depuis **Logique** (bleu), glisser un bloc `si <condition> alors / sinon` :
 
 - Condition : `allumettes ≤ 0` (utiliser `≤`)
 - Dans **si** :
-    - `splash` + bloc `concaténation` avec `"Joueuse "`, `joueuse` et `" a perdu !"` (depuis Text)
-    - `réinitialiser jeu` (depuis Game) → la partie recommence
+    - `splash` + bloc `concaténation` avec `"Joueuse "`, `joueuse` et `" a perdu !"` (depuis **Avancé → Texte**)
+    - `réinitialiser jeu` (depuis Jeu) → la partie recommence
 
 ```blocks
 if (allumettes <= 0) {
@@ -175,7 +175,7 @@ Le jeu fonctionne, mais l'écran est vide. Il est temps de dessiner de vraies al
 ### A.1 Dessiner l'allumette
 
 1. Créer une variable `imageAllumette`
-2. Dans `au démarrage`, ajouter `définir imageAllumette à` + un bloc image (depuis **Images**)
+2. Dans `au démarrage`, ajouter `définir imageAllumette à` + un bloc image (depuis **Avancé → Images**)
 3. Cliquer sur l'image grise pour ouvrir l'éditeur et dessiner une allumette **fine** : environ **4 pixels de large** et **16 de haut** (tête rouge, bâton beige)
 
 ```blocks
@@ -205,7 +205,7 @@ imageAllumette = img`
 
 ### A.2 Dessiner une rangée d'allumettes
 
-Créer une variable `allumette`, puis dans `au démarrage`, après `définir score à allumettes`, ajouter une **boucle** (depuis **Loops**) :
+Créer une variable `allumette`, puis dans `au démarrage`, après `définir score à allumettes`, ajouter une **boucle** (depuis **Boucles**) :
 
 ```blocks
 let imageAllumette: Image = null
@@ -216,7 +216,7 @@ for (let index = 0; index <= allumettes - 1; index++) {
 }
 ```
 
-- Le bloc `pour index variant de 0 à ...` se trouve dans **Loops**
+- Le bloc `pour index variant de 0 à ...` se trouve dans **Boucles**
 - Le bloc `définir allumette à sprite ... de type ...` se trouve dans **Sprites**
 - Le bloc `définir la position de ... à x ... y ...` se trouve aussi dans **Sprites**
 - `index` vaut 0, puis 1, puis 2... : chaque allumette est placée 7 pixels plus loin que la précédente
@@ -257,7 +257,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 
 !!! question "Pour aller plus loin"
 
-    La même boucle est copiée 4 fois. Et s'il fallait la modifier ? Il existe un moyen de l'écrire **une seule fois** et de l'utiliser partout : les **fonctions** (catégorie **Functions**, dans Avancé).
+    La même boucle est copiée 4 fois. Et s'il fallait la modifier ? Il existe un moyen de l'écrire **une seule fois** et de l'utiliser partout : les **fonctions** (catégorie **Fonctions**, dans Avancé).
 
 ---
 
@@ -276,20 +276,20 @@ Dans `au démarrage`, ajouter `définir monTour à vrai`.
 
 ### B.2 Vérifier que c'est mon tour
 
-Dans le bouton A, placer **tout le contenu** dans un bloc `si monTour = vrai alors` (depuis **Logic**).
+Dans le bouton A, placer **tout le contenu** dans un bloc `si monTour = vrai alors` (depuis **Logique**).
 
 Ainsi, appuyer sur un bouton pendant que l'ordinateur réfléchit ne fait rien.
 
 ### B.3 Remplacer la défaite
 
-Dans le `si allumettes ≤ 0`, remplacer les blocs existants par `game over` avec `LOSE` (depuis **Game**) : c'est toi qui as pris la dernière allumette.
+Dans le `si allumettes ≤ 0`, remplacer les blocs existants par `game over` avec `LOSE` (depuis **Jeu**) : c'est toi qui as pris la dernière allumette.
 
 ### B.4 L'ordinateur joue
 
 Dans le **sinon**, retirer le bloc qui change de joueuse et le texte "Au tour de joueuse", puis ajouter :
 
 1. `définir monTour à faux`
-2. `pause 1000 ms` (depuis **Loops**) → l'ordinateur « réfléchit »
+2. `pause 1000 ms` (depuis **Boucles**) → l'ordinateur « réfléchit »
 3. `définir ordiRetire à 1` ← Version simple : l'ordinateur retire toujours 1
 4. `modifier allumettes de` puis glisser `0 - ordiRetire` (pour soustraire)
 5. `définir score à allumettes`, puis redessiner les allumettes (dupliquer `détruire tous les sprites` et la boucle)
@@ -350,7 +350,7 @@ Pour rendre l'ordinateur plus malin, remplacer :
 
 Par une formule mathématique avec les blocs :
 
-1. Depuis **Math**, utiliser le bloc `reste de ÷` (modulo)
+1. Depuis **Maths**, utiliser le bloc `reste de ÷` (modulo)
 2. Construire : `définir ordiRetire à reste de (allumettes - 1) ÷ 4`
 3. Ajouter un `si ordiRetire = 0 alors` → `définir ordiRetire à 1`
 

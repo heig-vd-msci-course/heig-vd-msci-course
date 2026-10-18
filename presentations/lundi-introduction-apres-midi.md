@@ -69,7 +69,7 @@ footer: 'ERACOM - Semaine 43'
 </div>
 </div>
 
-**Exemples** : `allumettes = 20`, `tour = 1`, `joueur = "Alice"`
+**Exemples** : `allumettes = 20`, `joueuse = 1`, `nom = "Alice"`
 
 ---
 
@@ -203,8 +203,8 @@ Chaque catégorie contient des blocs spécifiques :
 |-----------|---------|---------|
 | **Boucles** | Vert | Répéter des actions |
 | **Logique** | Bleu | Conditions if/then/else |
-| **Variables** | Orange-Rouge | Stocker des valeurs |
-| **Contrôleur** | Rouge | Réagir aux boutons |
+| **Variables** | Rouge | Stocker des valeurs |
+| **Contrôleur** | Orange | Réagir aux boutons |
 | **Jeu** | Violet | Messages, fin de partie |
 
 ---
@@ -345,7 +345,7 @@ Nous passons dans les groupes pour vous aider.
 - Ajoutez vos touches personnelles (graphismes, sons, messages)
 - Testez avec votre binôme
 
-Je continue à passer dans les groupes.
+Nous continuons à passer dans les groupes.
 
 ---
 
