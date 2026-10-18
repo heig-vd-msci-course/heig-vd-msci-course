@@ -22,9 +22,9 @@ L'équipe pédagogique du cours Algorithmique et programmation accompagne le gro
 
 **Liens** :
 
-- [LinkedIn](https://www.linkedin.com/in/clarisse-fleurimont-2a05481a3)
-- [GitHub](https://github.com/stellucidam)
-- [Site personnel](https://stellucidam.ch)
+- [LinkedIn](https://www.linkedin.com/in/clarisse-fleurimont-2a05481a3){target="_blank"}
+- [GitHub](https://github.com/stellucidam){target="_blank"}
+- [Site personnel](https://stellucidam.ch){target="_blank"}
 
 ---
 
@@ -40,11 +40,11 @@ L'équipe pédagogique du cours Algorithmique et programmation accompagne le gro
 
 **Liens** :
 
-- [GitHub](https://github.com/Nortalle)
-- [Site personnel](https://vincentguidoux.ch)
-- E-mail : [vincent.guidoux@gmail.com](mailto:vincent.guidoux@gmail.com)
+- [GitHub](https://github.com/Nortalle){target="_blank"}
+- [Site personnel](https://vincentguidoux.ch){target="_blank"}
+- E-mail : [vincent.guidoux1@heig-vd.ch](mailto:vincent.guidoux1@heig-vd.ch)
 
-<small>Photo : [RSphotography](https://www.instagram.com/raphaelsalis.studio/)</small>
+<small>Photo : [RSphotography](https://www.instagram.com/raphaelsalis.studio/){target="_blank"}</small>
 
 ---
 
@@ -62,7 +62,9 @@ La Haute École d'Ingénierie et de Gestion du Canton de Vaud propose ce cours d
 
 ## Contact
 
-Pour toute question relative au cours :
+Pour toute question relative au cours, écrire **aux deux membres de l'équipe enseignante dans le même e-mail** :
 
-- **E-mail** : TODO - Adresse de contact principale
-- **Site** : TODO - Lien vers le site du département
+- Clarisse Fleurimont : [clarisse.fleurimont@heig-vd.ch](mailto:clarisse.fleurimont@heig-vd.ch)
+- Vincent Guidoux : [vincent.guidoux1@heig-vd.ch](mailto:vincent.guidoux1@heig-vd.ch)
+
+[:material-email-outline: Écrire aux deux](mailto:clarisse.fleurimont@heig-vd.ch,vincent.guidoux1@heig-vd.ch){ .md-button }

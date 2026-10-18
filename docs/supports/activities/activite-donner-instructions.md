@@ -6,6 +6,12 @@
 |-------|--------|----------|
 | 45 min | Binômes | Labyrinthes imprimés, baguettes/allumettes, feuilles et crayons |
 
+!!! info "Pour l'équipe enseignante : document à télécharger et imprimer"
+
+    Tout le matériel papier de cette activité (labyrinthes, formes, dessins et vocabulaire des 3 niveaux) est regroupé dans un seul PDF, avec le nombre d'exemplaires conseillés.
+
+    [:material-download: Matériel du lundi (PDF)](../../ressources-enseignement/lundi-materiel.pdf){ .md-button target="_blank" }
+
 ## Objectifs pédagogiques
 
 - Comprendre qu'un ordinateur exécute exactement ce qui lui est indiqué

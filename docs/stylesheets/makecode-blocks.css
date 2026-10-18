@@ -1,0 +1,53 @@
+/* Blocs MakeCode rendus par javascripts/makecode-blocks.js */
+
+img.makecode-blocks {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0;
+}
+
+/* Code en attente de rendu : discret */
+pre.blocks[data-makecode="loading"],
+pre.blocks-full[data-makecode="loading"] {
+  opacity: 0.4;
+}
+
+pre.blocks,
+pre.blocks-full {
+  padding: 0.8em 1em;
+  border-radius: 0.2rem;
+  background-color: var(--md-code-bg-color);
+  font-size: 0.75rem;
+  overflow-x: auto;
+}
+
+/* Projet partagé entier (data-packageid) : défilement horizontal */
+.makecode-project-wrapper {
+  overflow-x: auto;
+  margin: 1em 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+  background-color: #fff;
+}
+
+.makecode-project-wrapper img.makecode-project {
+  max-width: none;
+  margin: 0;
+}
+
+/* Simulateur MakeCode intégré */
+.makecode-simulator {
+  position: relative;
+  max-width: 480px;
+  aspect-ratio: 1 / 1.12;
+  margin: 1em 0;
+}
+
+.makecode-simulator iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

@@ -97,8 +97,8 @@ Un bref voyage dans le temps pour comprendre d'où vient la programmation.
 
 | Année | Évolution |
 |-------|-----------|
-| **2014** | **Swift** (Apple) — remplace Objective-C pour iOS |
 | **2012** | **TypeScript** (Microsoft) — JavaScript amélioré |
+| **2014** | **Swift** (Apple) — remplace Objective-C pour iOS |
 | **2020s** | **IA et assistants de code** — l'IA aide à écrire du code |
 
 ### Dans votre quotidien
@@ -148,7 +148,13 @@ Cette activité en binôme permet de découvrir concrètement les **différents 
 
     **Plus le vocabulaire est riche, moins il faut d'instructions** — mais l'ordinateur, lui, doit toujours tout décomposer en opérations simples.
 
-→ [Fiche complète de l'activité](../../supports/activities/activite-donner-instructions.md)
+→ [Fiche complète de l'activité](../../supports/activities/activite-donner-instructions.md){target="_blank"}
+
+!!! info "Pour l'équipe enseignante : document à télécharger et imprimer"
+
+    Labyrinthes, formes, dessins, vocabulaire et plateaux du jeu des allumettes : tout est dans un seul PDF.
+
+    [:material-download: Matériel du lundi (PDF)](../../ressources-enseignement/lundi-materiel.pdf){ .md-button target="_blank" }
 
 ---
 
@@ -162,7 +168,7 @@ Cette activité en binôme permet de découvrir concrètement les **différents 
 
 ### Stratégie gagnante
 
-!!! success "Principe : les multiples de 4"
+??? success "Principe : les multiples de 4 (cliquer pour révéler)"
 
     Pour garantir la victoire, il faut laisser un nombre d'allumettes égal à un multiple de 4, plus 1 :
 
@@ -176,17 +182,19 @@ Cette activité en binôme permet de découvrir concrètement les **différents 
 
 ### Formule
 
-```
-allumettes_à_retirer = (restantes - 1) % 4
-```
+??? example "Formule (cliquer pour révéler)"
 
-L'opérateur `%` (modulo) retourne le reste de la division entière.
+    ```
+    allumettes_à_retirer = (restantes - 1) % 4
+    ```
 
-→ [Guide complet du jeu des allumettes](../../supports/guide-jeu-allumettes.md)
+    L'opérateur `%` (modulo) retourne le reste de la division entière.
+
+→ [Guide complet du jeu des allumettes](../../supports/guide-jeu-allumettes.md){target="_blank"}
 
 ---
 
 ## Navigation
 
-- [← Retour au programme du Lundi](index.md)
-- [Lundi après-midi →](apres-midi.md)
+- [← Retour au programme du Lundi](index.md){target="_blank"}
+- [Lundi après-midi →](apres-midi.md){target="_blank"}

@@ -52,10 +52,10 @@ Cette journée permet de :
 
 !!! tip "Liens utiles"
 
-    - **MakeCode Arcade** : https://arcade.makecode.com
-    - **MakeCode micro:bit** : https://makecode.microbit.org
-    - **JSFiddle** : https://jsfiddle.net
-    - **Documentation MDN** : https://developer.mozilla.org/fr/
+    - **MakeCode Arcade** : [https://arcade.makecode.com](https://arcade.makecode.com){target="_blank"}
+    - **MakeCode micro:bit** : [https://makecode.microbit.org](https://makecode.microbit.org){target="_blank"}
+    - **JSFiddle** : [https://jsfiddle.net](https://jsfiddle.net){target="_blank"}
+    - **Documentation MDN** : [https://developer.mozilla.org/fr/](https://developer.mozilla.org/fr/){target="_blank"}
 
 ---
 
@@ -85,5 +85,5 @@ Si des questions surgissent pendant cette journée de travail autonome :
 
 ## Navigation
 
-- [Retour au Mercredi - micro:bit](mercredi.md)
-- [Vendredi - Projet final](vendredi.md)
+- [Retour au Mercredi - micro:bit](mercredi.md){target="_blank"}
+- [Vendredi - Projet final](vendredi.md){target="_blank"}

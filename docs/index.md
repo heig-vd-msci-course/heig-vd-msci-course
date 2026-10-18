@@ -20,7 +20,7 @@ L'équipe pédagogique accompagne le groupe tout au long de la semaine.
 
 !!! note "Présentation de l'équipe"
 
-    Consulter la page [Équipe enseignante](equipe.md) pour découvrir les membres de l'équipe en charge du cours.
+    Consulter la page [Équipe enseignante](equipe.md){target="_blank"} pour découvrir les membres de l'équipe en charge du cours.
 
 ---
 
@@ -28,11 +28,11 @@ L'équipe pédagogique accompagne le groupe tout au long de la semaine.
 
 | Jour | Thème | Réalisations |
 |------|-------|--------------|
-| [Lundi](programme/lundi/index.md) | Introduction et algorithmique | Premiers algorithmes, jeu des allumettes en programmation visuelle |
-| [Mardi](programme/mardi.md) | HTML/CSS et publication web | Création et publication d'un site web personnel |
-| [Mercredi](programme/mercredi.md) | micro:bit et programmation physique | Objet interactif avec capteurs et LEDs |
-| [Jeudi](programme/jeudi.md) | Travail autonome à domicile | Consolidation des acquis, préparation du projet final |
-| [Vendredi](programme/vendredi.md) | Projet créatif et clôture | Projet final personnalisé, présentations |
+| [Lundi](programme/lundi/index.md){target="_blank"} | Introduction et algorithmique | Premiers algorithmes, jeu des allumettes en programmation visuelle |
+| [Mardi](programme/mardi.md){target="_blank"} | HTML/CSS et publication web | Création et publication d'un site web personnel |
+| [Mercredi](programme/mercredi.md){target="_blank"} | micro:bit et programmation physique | Objet interactif avec capteurs et LEDs |
+| [Jeudi](programme/jeudi.md){target="_blank"} | Travail autonome à domicile | Consolidation des acquis, préparation du projet final |
+| [Vendredi](programme/vendredi.md){target="_blank"} | Projet créatif et clôture | Projet final personnalisé, présentations |
 
 ---
 
@@ -65,7 +65,7 @@ Un projet unique accompagne le groupe tout au long de la semaine, decliné sous 
 
     Deux personnes retirent alternativement 1, 2 ou 3 allumettes d'un tas de 20. La personne qui retire la dernière allumette perd la partie. Une stratégie mathématique permet de garantir la victoire.
 
-    [:octicons-arrow-right-24: Consulter le guide complet](supports/guide-jeu-allumettes.md)
+    [:octicons-arrow-right-24: Consulter le guide complet](supports/guide-jeu-allumettes.md){target="_blank"}
 
 Ce projet permet d'aborder progressivement les concepts fondamentaux : variables, conditions, boucles et événements.
 
@@ -97,4 +97,4 @@ Aucune installation n'est requise. Les outils suivants fonctionnent directement 
 
     Ce cours privilégie l'expérimentation et l'apprentissage par la pratique. Les erreurs font partie intégrante du processus d'apprentissage en programmation.
 
-Pour commencer, consulter [le programme du lundi](programme/lundi/index.md).
+Pour commencer, consulter [le programme du lundi](programme/lundi/index.md){target="_blank"}.

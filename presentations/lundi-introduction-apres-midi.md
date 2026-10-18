@@ -56,15 +56,20 @@ footer: 'ERACOM - Semaine 43'
 
 ## Un espace de stockage avec un nom
 
-```
-    ┌─────────────┐
-    │ allumettes  │  ← nom
-    ├─────────────┤
-    │     20      │  ← valeur (peut changer)
-    └─────────────┘
-```
+<div class="two-columns">
+<div>
 
-**Exemples** : `allumettes = 20`, `tour = 1`, `joueur = "Alice"`
+![w:460](../docs/assets/images/concepts/schema-variable.svg)
+
+</div>
+<div>
+
+![w:300](../docs/assets/images/concepts/blocs-variable.png)
+
+</div>
+</div>
+
+**Exemples** : `allumettes = 20`, `joueuse = 1`, `nom = "Alice"`
 
 ---
 
@@ -72,18 +77,18 @@ footer: 'ERACOM - Semaine 43'
 
 ## Prendre une décision selon un test
 
-```
-         ┌───────────────┐
-         │ allumettes    │
-         │    == 0 ?     │
-         └───────┬───────┘
-                 │
-        ┌────────┴────────┐
-        ▼                 ▼
-      [OUI]             [NON]
-        │                 │
-    "Perdu !"        "Continuer"
-```
+<div class="two-columns">
+<div>
+
+![h:300](../docs/assets/images/concepts/schema-condition.svg)
+
+</div>
+<div>
+
+![w:320](../docs/assets/images/concepts/blocs-condition.png)
+
+</div>
+</div>
 
 **Opérateurs** : `==` (égal), `<=` (inférieur ou égal), `>` (supérieur)
 
@@ -93,19 +98,18 @@ footer: 'ERACOM - Semaine 43'
 
 ## Répéter tant qu'une condition est vraie
 
-```
-    ┌──────────────────────────┐
-    │                          │
-    ▼                          │
-┌────────────┐                 │
-│ allumettes │──[OUI]──► jouer │
-│   > 0 ?    │                 │
-└─────┬──────┘                 │
-      │        ◄───────────────┘
-    [NON]
-      ▼
-   FIN DU JEU
-```
+<div class="two-columns">
+<div>
+
+![h:300](../docs/assets/images/concepts/schema-boucle.svg)
+
+</div>
+<div>
+
+![w:480](../docs/assets/images/concepts/blocs-boucle.png)
+
+</div>
+</div>
 
 ---
 
@@ -113,13 +117,18 @@ footer: 'ERACOM - Semaine 43'
 
 ## Réagir quand quelque chose se produit
 
-```
-┌──────────────────┐      ┌──────────────────┐
-│  Bouton pressé   │ ───► │  Retirer des     │
-│                  │      │  allumettes      │
-└──────────────────┘      └──────────────────┘
-    DÉCLENCHEUR               ACTION
-```
+<div class="two-columns">
+<div>
+
+![w:480](../docs/assets/images/concepts/schema-evenement.svg)
+
+</div>
+<div>
+
+![w:330](../docs/assets/images/concepts/blocs-evenement.png)
+
+</div>
+</div>
 
 **QUAND** un événement arrive, **ALORS** exécuter une action.
 
@@ -141,7 +150,7 @@ footer: 'ERACOM - Semaine 43'
 
 # Découverte de MakeCode Arcade
 
-## 13h15 - 13h55
+## 13h15 - 14h00
 
 ---
 
@@ -194,8 +203,8 @@ Chaque catégorie contient des blocs spécifiques :
 |-----------|---------|---------|
 | **Boucles** | Vert | Répéter des actions |
 | **Logique** | Bleu | Conditions if/then/else |
-| **Variables** | Orange-Rouge | Stocker des valeurs |
-| **Contrôleur** | Rouge | Réagir aux boutons |
+| **Variables** | Rouge | Stocker des valeurs |
+| **Contrôleur** | Orange | Réagir aux boutons |
 | **Jeu** | Violet | Messages, fin de partie |
 
 ---
@@ -219,10 +228,9 @@ Chaque catégorie contient des blocs spécifiques :
 |--------|-------------|------------|
 | **A** | Bouton gauche | `Z` ou Espace |
 | **B** | Bouton droit | `X` ou Entrée |
-| **A+B** | Les deux ensemble | `Z` + `X` |
-| **Flèches** | Croix directionnelle | Flèches du clavier |
+| **Flèche haut** | Haut de la croix directionnelle | Flèche ↑ du clavier |
 
-*Pour notre jeu des allumettes, on utilisera A, B et A+B*
+*Pour notre jeu des allumettes, on utilisera A, B et la flèche haut*
 
 ---
 
@@ -230,8 +238,8 @@ Chaque catégorie contient des blocs spécifiques :
 
 ## Ce qu'il faut connaître
 
-- **Variables** : créer `allumettes` et `tour`
-- **Contrôleur** : `quand bouton A pressé`
+- **Variables** : créer `allumettes` et `joueuse`
+- **Contrôleur** : `quand bouton A est appuyé`
 - **Jeu** : `splash` (message) et `fin de jeu`
 - **Logique** : `si ... alors ... sinon`
 
@@ -275,19 +283,13 @@ splash "20 allumettes"
 
 - **Bouton A** : Retirer 1
 - **Bouton B** : Retirer 2
-- **A + B** : Retirer 3
+- **Flèche haut** : Retirer 3
 
 ---
 
 # Code du bouton A
 
-```
-┌──────────────────────────────────────────┐
-│ quand bouton A pressé                    │
-│   modifier allumettes de -1              │
-│   splash (joindre "Reste: " allumettes)  │
-└──────────────────────────────────────────┘
-```
+![w:820](../docs/assets/images/concepts/blocs-bouton-a.png)
 
 ---
 
@@ -305,12 +307,11 @@ splash "20 allumettes"
 
 **Objectifs :**
 - Variable pour le nombre d'allumettes
-- Boutons A, B, A+B pour retirer 1, 2 ou 3
+- Boutons A, B et flèche haut pour retirer 1, 2 ou 3
 - Détection de fin de partie
 - Affichage du nombre restant
 
-Je passe dans les groupes pour vous aider.
-
+Nous passons dans les groupes pour vous aider.
 ---
 
 <!-- _class: invert -->
@@ -344,7 +345,7 @@ Je passe dans les groupes pour vous aider.
 - Ajoutez vos touches personnelles (graphismes, sons, messages)
 - Testez avec votre binôme
 
-Je continue à passer dans les groupes.
+Nous continuons à passer dans les groupes.
 
 ---
 
@@ -368,7 +369,10 @@ Je continue à passer dans les groupes.
 
 ## Si besoin, voici comment ça peut fonctionner
 
-*(Démonstration d'une version complète)*
+- **Joueuse contre joueuse** : [arcade.makecode.com/S32221-15913-36189-53679](https://arcade.makecode.com/S32221-15913-36189-53679)
+- **Contre l'ordinateur** : [arcade.makecode.com/S19881-31620-38681-62591](https://arcade.makecode.com/S19881-31620-38681-62591)
+
+*Aussi disponibles sur le site du cours, page « Solution »*
 
 ---
 

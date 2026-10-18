@@ -75,5 +75,5 @@ Le jeu des allumettes devient un objet physique :
 
 ## Navigation
 
-- [Retour au Mardi - Web](mardi.md)
-- [Jeudi - Travail libre](jeudi.md)
+- [Retour au Mardi - Web](mardi.md){target="_blank"}
+- [Jeudi - Travail libre](jeudi.md){target="_blank"}

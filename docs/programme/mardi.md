@@ -8,6 +8,10 @@ icon: lucide/code
 
 > *Création d'un site web personnel et découverte des langages du web.*
 
+!!! info "Rendez-vous"
+
+    **08h30** · Salle **R102**
+
 ---
 
 !!! warning "Page en construction"
@@ -74,5 +78,5 @@ Le jeu des allumettes prend forme sur le web :
 
 ## Navigation
 
-- [Retour au lundi - Introduction](lundi/index.md)
-- [Mercredi - micro:bit](mercredi.md)
+- [Retour au lundi - Introduction](lundi/index.md){target="_blank"}
+- [Mercredi - micro:bit](mercredi.md){target="_blank"}
