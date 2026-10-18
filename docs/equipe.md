@@ -28,17 +28,21 @@ L'équipe pédagogique du cours Algorithmique et programmation accompagne le gro
 
 ---
 
-### Vincent Guidoux
+### Vincent Claude Guidoux
+
+![Vincent Guidoux](assets/images/equipe/vincent.webp){ width="256", align="left" }
 
 **Rôle** : Enseignant
 
-**Parcours** : TODO - Ajouter une brève biographie (2-3 phrases)
+**Parcours** : Ingénieur logiciel titulaire d'un Bachelor HES-SO en Informatique (orientation Génie logiciel) de la HEIG-VD. Après plus de deux ans comme ingénieur logiciel chez Ancotech SA, il a cofondé Artios, une agence spécialisée dans les applications Web robustes et sur mesure. Depuis 2023, il est chargé de cours à la HEIG-VD, notamment en programmation Java et en technologies Web.
 
-**Spécialités** : TODO - Domaines d'expertise
+**Spécialités** : Développement Web (TypeScript, SvelteKit, NestJS, PostgreSQL, Docker), enseignement de la programmation, open source. Comédien amateur et improvisateur, il défend une pédagogie avec une théorie courte et beaucoup de pratique.
 
-**Contact** : TODO - Adresse e-mail professionnelle
+**Liens** :
 
-<!-- Photo : Ajouter une photo dans docs/assets/images/equipe/ -->
+- [GitHub](https://github.com/Nortalle)
+- [Site personnel](https://vincentguidoux.ch)
+- E-mail : [vincent.guidoux@gmail.com](mailto:vincent.guidoux@gmail.com)
 
 ---
 
