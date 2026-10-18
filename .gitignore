@@ -45,3 +45,10 @@ Thumbs.db
 
 # Zensical build output (if any)
 site/
+
+# Generated Marp presentations (built in CI)
+docs/slides/*.html
+docs/slides/*.pdf
+
+# Node modules
+node_modules/

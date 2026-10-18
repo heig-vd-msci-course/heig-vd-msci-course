@@ -1,6 +1,6 @@
 [project]
 site_url = "https://heig-vd-msci-course.github.io/heig-vd-msci-course/"
-site_name = "HEIG-VD MSCI Course"
+site_name = "Algorithmique et programmation (MSCI - ERACOM)"
 # site_description = "Le dépôt du cours d'introduction à la programmation pour la maturité."
 # site_author = "Fleurimont C. & Guidoux V."
 
@@ -11,8 +11,33 @@ site_name = "HEIG-VD MSCI Course"
 # edit_uri = "edit/main/docs/"
 
 nav = [
-  { "Get started" = "index.md" },
-  { "Markdown in 5min" = "markdown.md" },
+  { "Accueil" = "index.md" },
+  { "Équipe enseignante" = "equipe.md" },
+  { "Programme" = [
+    { "Lundi" = [
+      { "Lundi" = "programme/lundi/index.md" },
+      { "Matin" = "programme/lundi/matin.md" },
+      { "Après-midi" = "programme/lundi/apres-midi.md" },
+    ]},
+    { "Mardi" = "programme/mardi.md" },
+    { "Mercredi" = "programme/mercredi.md" },
+    { "Jeudi" = "programme/jeudi.md" },
+    { "Vendredi" = "programme/vendredi.md" },
+  ]},
+  { "Présentations" = [
+    { "Lundi Matin - Introduction" = "slides/lundi-introduction-matin.html" },
+    { "Lundi Après-midi - MakeCode" = "slides/lundi-introduction-apres-midi.html" },
+  ]},
+  { "Ressources" = [
+    { "Fiches" = [
+      { "Concepts algorithmiques" = "supports/cheatsheet-concepts-algo.md" },
+      { "Guide du jeu des allumettes" = "supports/guide-jeu-allumettes.md" },
+    ]},
+    { "Activités" = [
+      { "Donner des instructions" = "supports/activities/activite-donner-instructions.md" },
+      { "Jeu des allumettes (MakeCode)" = "code-templates/makecode-arcade/jeu-allumettes-compact-instructions.md" },
+    ]},
+  ]},
 ]
 
 # extra_css = ["stylesheets/extra.css"]
@@ -22,7 +47,7 @@ nav = [
 # variant = "classic"
 # custom_dir = "overrides"
 # favicon = "images/favicon.png"
-language = "en"
+language = "fr"
 features = [
   "announce.dismiss",
   # "content.action.edit",

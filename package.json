@@ -1,0 +1,20 @@
+{
+  "name": "heig-vd-msci-course",
+  "version": "1.0.0",
+  "description": "Cours Algorithmique et programmation - MSCI ERACOM",
+  "scripts": {
+    "build:slides": "./generate-presentations.sh",
+    "marp:html": "marp presentations/*.md --output docs/slides/ --html --config-file .marp/config.yaml",
+    "marp:pdf": "marp presentations/*.md --output docs/slides/ --pdf --config-file .marp/config.yaml"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.2.3"
+  },
+  "keywords": [
+    "course",
+    "programming",
+    "msci",
+    "eracom"
+  ],
+  "license": "CC-BY-SA-4.0"
+}
