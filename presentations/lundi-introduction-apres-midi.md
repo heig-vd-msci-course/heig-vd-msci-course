@@ -20,9 +20,10 @@ footer: 'ERACOM - Semaine 43'
 |---------|----------|
 | 13h00 | Introduction à la programmation |
 | 13h15 | Découverte de MakeCode Arcade |
-| 14h00 | Atelier : Jeu des allumettes en blocs - Partie 1 |
+| 14h00 | Atelier : Création du jeu des allumettes |
 | 14h45 | Pause |
-| 15h00 | Atelier : Jeu des allumettes en blocs - Partie 2 |
+| 15h00 | Atelier : Suite et personnalisation |
+| 15h30 | Partage des projets |
 | 15h45 | Synthèse et quiz Wooclap |
 
 ---
@@ -35,25 +36,104 @@ footer: 'ERACOM - Semaine 43'
 
 ---
 
-# Le no-code, c'est quoi ?
+# Qu'est-ce qu'un programme ?
 
-## Programmer sans écrire de texte
+## Une suite d'instructions précises
 
-- Des **blocs** qu'on assemble
-- Comme des Lego
-- Les mêmes concepts qu'en "vrai" code
+```
+1. Prendre 20 allumettes
+2. Demander combien retirer
+3. Retirer ce nombre
+4. Vérifier s'il en reste
+5. Recommencer ou terminer
+```
+
+*On peut écrire ces instructions avec des blocs ou du texte*
 
 ---
 
-# Pourquoi commencer par cela ?
+# La variable
 
-## Se concentrer sur la logique
+## Un espace de stockage avec un nom
 
-- Pas de syntaxe à mémoriser
-- Pas de fautes de frappe
-- Visualisation immédiate
+```
+    ┌─────────────┐
+    │ allumettes  │  ← nom
+    ├─────────────┤
+    │     20      │  ← valeur (peut changer)
+    └─────────────┘
+```
 
-*Demain, on passera au "vrai" code*
+**Exemples** : `allumettes = 20`, `tour = 1`, `joueur = "Alice"`
+
+---
+
+# La condition
+
+## Prendre une décision selon un test
+
+```
+         ┌───────────────┐
+         │ allumettes    │
+         │    == 0 ?     │
+         └───────┬───────┘
+                 │
+        ┌────────┴────────┐
+        ▼                 ▼
+      [OUI]             [NON]
+        │                 │
+    "Perdu !"        "Continuer"
+```
+
+**Opérateurs** : `==` (égal), `<=` (inférieur ou égal), `>` (supérieur)
+
+---
+
+# La boucle
+
+## Répéter tant qu'une condition est vraie
+
+```
+    ┌──────────────────────────┐
+    │                          │
+    ▼                          │
+┌────────────┐                 │
+│ allumettes │──[OUI]──► jouer │
+│   > 0 ?    │                 │
+└─────┬──────┘                 │
+      │        ◄───────────────┘
+    [NON]
+      ▼
+   FIN DU JEU
+```
+
+---
+
+# L'événement
+
+## Réagir quand quelque chose se produit
+
+```
+┌──────────────────┐      ┌──────────────────┐
+│  Bouton pressé   │ ───► │  Retirer des     │
+│                  │      │  allumettes      │
+└──────────────────┘      └──────────────────┘
+    DÉCLENCHEUR               ACTION
+```
+
+**QUAND** un événement arrive, **ALORS** exécuter une action.
+
+---
+
+# Cinq concepts, un jeu
+
+| Concept | Rôle dans le jeu |
+|---------|------------------|
+| **Variable** | Stocker le nombre d'allumettes |
+| **Condition** | Vérifier si la partie est finie |
+| **Boucle** | Répéter jusqu'à la fin |
+| **Événement** | Réagir aux appuis sur les boutons |
+| **Opérateur** | Calculer et comparer |
 
 ---
 
@@ -61,7 +141,7 @@ footer: 'ERACOM - Semaine 43'
 
 # Découverte de MakeCode Arcade
 
-## 13h15 - 14h00
+## 13h15 - 13h55
 
 ---
 
@@ -69,21 +149,91 @@ footer: 'ERACOM - Semaine 43'
 
 ## arcade.makecode.com
 
-Un outil pour créer des **jeux 2D rétro**
+Un outil gratuit pour créer des **jeux 2D rétro**
+
+- Fonctionne dans le navigateur (rien à installer)
+- Sauvegarde automatique
+- Simulateur intégré pour tester immédiatement
 
 ---
 
-# L'interface
+# L'interface en 3 zones
 
 ```
-┌─────────────┬────────────────┬──────────────┐
-│ Catégories  │ Zone de code   │ Simulateur   │
-│             │ (blocs)        │              │
-│ - Loops     │                │   [ÉCRAN]    │
-│ - Logic     │                │              │
-│ - Variables │                │   [A]  [B]   │
-└─────────────┴────────────────┴──────────────┘
+┌──────────────┬─────────────┬────────────────┐
+│  SIMULATEUR  │  TOOLBOX    │  ZONE DE CODE  │
+│   (gauche)   │  (centre)   │   (droite)     │
+│              │             │                │
+│   Tester     │ Catégories  │  Assembler     │
+│   le jeu     │ de blocs    │  les blocs     │
+│              │             │  ici           │
+│   [A]  [B]   │             │                │
+└──────────────┴─────────────┴────────────────┘
 ```
+
+---
+
+# Zone 1 : Le simulateur (gauche)
+
+## Tester sans attendre
+
+- Le jeu se lance **automatiquement**
+- Boutons virtuels **A** et **B** cliquables
+- Bouton **Redémarrer** pour recommencer
+- Bouton **Plein écran** pour agrandir
+
+---
+
+# Zone 2 : La Toolbox (centre)
+
+## Les catégories de blocs
+
+Chaque catégorie contient des blocs spécifiques :
+
+| Catégorie | Couleur | Utilité |
+|-----------|---------|---------|
+| **Boucles** | Vert | Répéter des actions |
+| **Logique** | Bleu | Conditions if/then/else |
+| **Variables** | Orange-Rouge | Stocker des valeurs |
+| **Contrôleur** | Rouge | Réagir aux boutons |
+| **Jeu** | Violet | Messages, fin de partie |
+
+---
+
+# Zone 3 : Zone de code (droite)
+
+## L'espace de travail
+
+- **Glisser-déposer** les blocs depuis la Toolbox
+- Les blocs **s'emboîtent** comme des puzzles
+- **Supprimer** : glisser vers la Toolbox ou touche Suppr
+- **Zoom** : molette de souris ou boutons +/-
+
+---
+
+# Les boutons de jeu
+
+## Comment interagir avec le jeu
+
+| Bouton | Sur l'écran | Au clavier |
+|--------|-------------|------------|
+| **A** | Bouton gauche | `Z` ou Espace |
+| **B** | Bouton droit | `X` ou Entrée |
+| **A+B** | Les deux ensemble | `Z` + `X` |
+| **Flèches** | Croix directionnelle | Flèches du clavier |
+
+*Pour notre jeu des allumettes, on utilisera A, B et A+B*
+
+---
+
+# Les catégories utiles pour notre jeu
+
+## Ce qu'il faut connaître
+
+- **Variables** : créer `allumettes` et `tour`
+- **Contrôleur** : `quand bouton A pressé`
+- **Jeu** : `splash` (message) et `fin de jeu`
+- **Logique** : `si ... alors ... sinon`
 
 ---
 
@@ -92,7 +242,7 @@ Un outil pour créer des **jeux 2D rétro**
 ## Suivez sur vos écrans
 
 1. Ouvrez **arcade.makecode.com**
-2. Cliquez sur **"New Project"**
+2. Cliquez sur **"Nouveau Projet"**
 3. Nommez-le **"Jeu-Allumettes"**
 
 ---
@@ -101,9 +251,9 @@ Un outil pour créer des **jeux 2D rétro**
 
 ## Créer le compteur
 
-1. **Variables** → **Make a Variable**
+1. **Variables** → **Créer une Variable**
 2. Nom : `allumettes`
-3. **set allumettes to 20**
+3. **définir allumettes à 20**
 
 ---
 
@@ -132,61 +282,34 @@ splash "20 allumettes"
 # Code du bouton A
 
 ```
-┌────────────────────────────────────┐
-│ on A button pressed                │
-│   change allumettes by -1          │
-│   splash (join "Reste: " allumettes)│
-└────────────────────────────────────┘
+┌──────────────────────────────────────────┐
+│ quand bouton A pressé                    │
+│   modifier allumettes de -1              │
+│   splash (joindre "Reste: " allumettes)  │
+└──────────────────────────────────────────┘
 ```
 
 ---
 
 <!-- _class: invert -->
 
-# Atelier : Jeu des allumettes en blocs - Partie 1
+# Atelier : Création du jeu des allumettes
 
 ## 14h00 - 14h45
 
 ---
 
-# Étape 4 : Détecter la fin
+# À vous de jouer
 
-## Condition : si allumettes <= 0
+## Créez votre jeu des allumettes
 
-```
-┌────────────────────────────────────┐
-│ if allumettes <= 0 then            │
-│   splash "Perdu !"                 │
-│   game over LOSE                   │
-└────────────────────────────────────┘
-```
-
----
-
-# Étape 5 : Les tours
-
-## Alterner joueur 1 et joueur 2
-
-Nouvelle variable : `tour`
-
-```
-if tour = 1 then
-  set tour to 2
-else
-  set tour to 1
-```
-
----
-
-# Travail en équipe
-
-## Implémentez les fonctionnalités de base
-
+**Objectifs :**
 - Variable pour le nombre d'allumettes
-- Boutons pour retirer 1, 2 ou 3
+- Boutons A, B, A+B pour retirer 1, 2 ou 3
 - Détection de fin de partie
+- Affichage du nombre restant
 
-**45 minutes**
+Je passe dans les groupes pour vous aider.
 
 ---
 
@@ -207,30 +330,68 @@ else
 
 <!-- _class: invert -->
 
-# Atelier : Jeu des allumettes en blocs - Partie 2
+# Atelier : Suite et personnalisation
 
-## 15h00 - 15h45
-
----
-
-# Personnalisez votre jeu
-
-## Ajoutez vos touches personnelles
-
-- Graphismes
-- Sons
-- Messages personnalisés
-- Variantes de règles
-
-**45 minutes**
+## 15h00 - 15h30
 
 ---
 
-# Galerie éclair
+# Continuez votre jeu
 
-## Qui veut montrer son jeu ?
+## Finalisez et personnalisez
 
-*2-3 équipes volontaires...*
+- Terminez les fonctionnalités de base
+- Ajoutez vos touches personnelles (graphismes, sons, messages)
+- Testez avec votre binôme
+
+Je continue à passer dans les groupes.
+
+---
+
+<!-- _class: invert -->
+
+# Partage des projets
+
+## 15h30 - 15h45
+
+---
+
+# Qui veut montrer ?
+
+## Présentations volontaires
+
+*2-3 équipes qui souhaitent partager leur création...*
+
+---
+
+# Version de référence
+
+## Si besoin, voici comment ça peut fonctionner
+
+*(Démonstration d'une version complète)*
+
+---
+
+# Sauvegarder et partager
+
+## Le projet est sauvegardé automatiquement
+
+Mais pour le **partager** :
+
+1. Cliquer sur le bouton **Partager** (en haut)
+2. Donner un **nom** au projet
+3. Cliquer sur **Publier le projet**
+4. Copier le **lien** généré
+
+---
+
+# Retrouver ses projets
+
+## Depuis la page d'accueil
+
+- Les projets récents apparaissent automatiquement
+- Cliquer sur **Mes Projets** pour voir tout
+- Possible de **renommer** ou **supprimer**
 
 ---
 
@@ -244,9 +405,15 @@ else
 
 # Rejoignez le quiz
 
-## wooclap.com
+## Scannez le QR code
 
-**Code : _______**
+<div class="center">
+
+![Wooclap QR](https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://app.wooclap.com/BLCNLQZ?from=instruction-slide)
+
+</div>
+
+**wooclap.com** → Code : <b class="secondary"> BLCNLQZ </b>
 
 ---
 
@@ -271,63 +438,8 @@ Avec du **vrai code** cette fois
 
 ---
 
-# Devoirs (optionnel)
-
-## Réfléchissez au design
-
-- Quelle couleur pour votre équipe ?
-- Quel style voulez-vous ?
-- Des idées d'améliorations ?
-
----
-
 # À demain
 
-## 8h30 - Salle X
+## 8h30 - Salle R102
 
 **Merci pour cette première journée**
-
----
-
-<!-- _class: invert -->
-
-# Annexes
-
-## Slides de secours
-
----
-
-# Si problème technique
-
-## Plan B - Version papier
-
-Le jeu fonctionne très bien avec :
-- Cure-dents
-- Papier et crayon
-- Doigts
-
----
-
-# Liens utiles
-
-- **MakeCode Arcade** : arcade.makecode.com
-- **Scratch** : scratch.mit.edu
-- **JSFiddle** : jsfiddle.net
-
----
-
-# Contact
-
-## Questions après le cours ?
-
-*(Coordonnées à compléter)*
-
----
-
-# Crédits
-
-## MSCI 2026 - ERACOM
-
-Cours créé pour les personnes créatives de demain.
-
-*Semaine 43 - Octobre 2026*

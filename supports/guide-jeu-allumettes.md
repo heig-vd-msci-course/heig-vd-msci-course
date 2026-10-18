@@ -88,10 +88,10 @@ Voici la cle de la victoire :
 
 ```
 Position gagnante = laisser un multiple de 4 + 1 allumettes
-                  = 5, 9, 13, 17, 21
+                  = 5, 9, 13, 17
 ```
 
-Attends... 21 ? Oui ! Si tu commences, tu es en position de force.
+Avec 20 allumettes au départ, la personne qui commence peut atteindre 17 en retirant 3.
 
 ### Pourquoi ca marche ?
 
@@ -113,7 +113,7 @@ Quoi que l'adversaire joue (1, 2 ou 3), tu peux toujours completer pour faire 4.
 ### Les positions gagnantes
 
 ```
-21 → Tu commences, tu peux gagner !
+20 → Retire 3 pour atteindre 17
 17 → Position gagnante (laisse 17)
 13 → Position gagnante (laisse 13)
  9 → Position gagnante (laisse 9)
@@ -133,13 +133,13 @@ allumettes_a_retirer = (allumettes_restantes - 1) modulo 4
 
 | Restantes | Calcul | A retirer |
 |-----------|--------|-----------|
-| 21 | (21-1) % 4 = 20 % 4 = 0 | → prends 4* |
+| 20 | (20-1) % 4 = 19 % 4 = 3 | → prends 3 |
 | 19 | (19-1) % 4 = 18 % 4 = 2 | → prends 2 |
-| 17 | (17-1) % 4 = 16 % 4 = 0 | → prends 4* |
+| 17 | (17-1) % 4 = 16 % 4 = 0 | → prends 1* |
 | 15 | (15-1) % 4 = 14 % 4 = 2 | → prends 2 |
 | 14 | (14-1) % 4 = 13 % 4 = 1 | → prends 1 |
 
-*Si le resultat est 0, tu es deja en position gagnante ! Prends ce que tu veux (mais pas 4, c'est interdit).
+*Si le resultat est 0, tu es deja en position gagnante ! Prends 1 par defaut.
 
 ### En pratique
 
@@ -157,7 +157,7 @@ Ce jeu contient tous les ingredients d'un programme informatique :
 
 | Concept | Dans le jeu | En programmation |
 |---------|-------------|------------------|
-| **Variable** | Nombre d'allumettes restantes | `let allumettes = 21` |
+| **Variable** | Nombre d'allumettes restantes | `let allumettes = 20` |
 | **Condition** | "S'il reste 1 allumette, j'ai perdu" | `if (allumettes == 1)` |
 | **Boucle** | Repeter les tours jusqu'a la fin | `while (allumettes > 0)` |
 | **Fonction** | La strategie de jeu | `function choisirCoup()` |
@@ -168,7 +168,7 @@ Ce jeu contient tous les ingredients d'un programme informatique :
 
 ```
 DEBUT du jeu
-    allumettes ← 21
+    allumettes ← 20
 
     TANT QUE allumettes > 1 FAIRE
 
@@ -229,7 +229,7 @@ Et si celle qui prend la derniere allumette **gagne** ?
 
 ### Defi 2 : Changer le nombre de depart
 
-Avec 15 allumettes au lieu de 21 :
+Avec 15 allumettes au lieu de 20 :
 - Qui a l'avantage ? Celle qui commence ou celle qui attend ?
 - La strategie des multiples de 4 fonctionne-t-elle toujours ?
 
