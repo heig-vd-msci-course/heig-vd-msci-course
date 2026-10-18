@@ -1,0 +1,23 @@
+/* Blocs MakeCode rendus par javascripts/makecode-blocks.js */
+
+img.makecode-blocks {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0;
+}
+
+/* Code en attente de rendu : discret */
+pre.blocks[data-makecode="loading"],
+pre.blocks-full[data-makecode="loading"] {
+  opacity: 0.4;
+}
+
+pre.blocks,
+pre.blocks-full {
+  padding: 0.8em 1em;
+  border-radius: 0.2rem;
+  background-color: var(--md-code-bg-color);
+  font-size: 0.75rem;
+  overflow-x: auto;
+}

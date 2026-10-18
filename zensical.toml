@@ -40,8 +40,8 @@ nav = [
   ]},
 ]
 
-# extra_css = ["stylesheets/extra.css"]
-# extra_javascript = ["javascripts/extra.js"]
+extra_css = ["stylesheets/makecode-blocks.css"]
+extra_javascript = ["javascripts/makecode-blocks.js"]
 
 [project.theme]
 # variant = "classic"
@@ -149,6 +149,16 @@ pymdownx.superfences = {
     {
       name = "mermaid",
       class = "mermaid",
+      format = "pymdownx.superfences.fence_code_format",
+    },
+    {
+      name = "blocks",
+      class = "blocks",
+      format = "pymdownx.superfences.fence_code_format",
+    },
+    {
+      name = "blocks-full",
+      class = "blocks-full",
       format = "pymdownx.superfences.fence_code_format",
     },
   ],
