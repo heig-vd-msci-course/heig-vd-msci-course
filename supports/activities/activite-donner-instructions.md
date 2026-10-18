@@ -262,6 +262,12 @@ Une personne a une construction simple (Lego, Kapla, ou blocs). Elle doit guider
 
 ---
 
+## Ressources complémentaires
+
+→ [Exemples de parcours, motifs et dessins](exemples-donner-instructions.md) — Fiches imprimables pour inspirer les équipes
+
+---
+
 ## Annexe - Dessins a imprimer (Option B)
 
 ### Niveau Facile

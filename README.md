@@ -2,7 +2,7 @@
 
 Cours d'introduction à l'algorithmique et à la programmation pour la Maturité Spécialisée Communication-Information (MSCI) de l'ERACOM.
 
-- **Dates** : Semaine 43, du 20 au 24 octobre 2026
+- **Dates** : Semaine 43, du 19 au 23 octobre 2026
 - **Durée** : 32 périodes sur 4 jours
 - **Public** : 60-70 personnes (17-18 ans)
 - **Site web** : [heig-vd-msci-course.github.io/heig-vd-msci-course](https://heig-vd-msci-course.github.io/heig-vd-msci-course/)

@@ -29,12 +29,12 @@ RECETTE : Préparer des pâtes
     ┌─────────────┐
     │ allumettes  │  <-- étiquette (nom)
     ├─────────────┤
-    │     21      │  <-- contenu (valeur)
+    │     20      │  <-- contenu (valeur)
     └─────────────┘
 ```
 
 **Exemples** :
-- `allumettes = 21` (un nombre)
+- `allumettes = 20` (un nombre)
 - `joueur = "Alice"` (du texte)
 - `monTour = vrai` (valeur booléenne)
 
@@ -144,7 +144,7 @@ FIN TANT QUE
 ## Le jeu des allumettes en pseudo-code
 
 ```
-allumettes = 21
+allumettes = 20
 
 TANT QUE allumettes > 0 FAIRE
 

@@ -52,8 +52,15 @@ icon: lucide/play
 
 !!! tip "Slides"
 
-    - [Présentation : Introduction à l'algorithmique (HTML)](../../slides/lundi-introduction-algorithmique.html)
-    - [Présentation : Introduction à l'algorithmique (PDF)](../../slides/lundi-introduction-algorithmique.pdf)
+    **Matin :**
+
+    - [Présentation : Introduction (HTML)](../../slides/lundi-introduction-matin.html)
+    - [Présentation : Introduction (PDF)](../../slides/lundi-introduction-matin.pdf)
+
+    **Après-midi :**
+
+    - [Présentation : MakeCode Arcade (HTML)](../../slides/lundi-introduction-apres-midi.html)
+    - [Présentation : MakeCode Arcade (PDF)](../../slides/lundi-introduction-apres-midi.pdf)
 
 ---
 

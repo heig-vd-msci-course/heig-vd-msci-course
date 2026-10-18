@@ -122,7 +122,7 @@ Créer une version jouable du jeu des allumettes avec MakeCode Arcade.
 | Concept | Dans MakeCode | Application |
 |---------|--------------|-------------|
 | **Variable** | Variables → Make a variable | `allumettes`, `tour` |
-| **Assignation** | set [var] to [value] | `set allumettes to 21` |
+| **Assignation** | set [var] to [value] | `set allumettes to 20` |
 | **Événement** | Controller → on button pressed | Détecter les appuis |
 | **Condition** | Logic → if...then...else | Vérifier si allumettes <= 0 |
 | **Affichage** | Game → splash | Afficher les messages |
@@ -140,7 +140,7 @@ Créer une version jouable du jeu des allumettes avec MakeCode Arcade.
 | Concept | Définition | Exemple |
 |---------|------------|---------|
 | **Algorithme** | Suite d'instructions ordonnées | Recette de cuisine |
-| **Variable** | Espace de stockage nommé | `allumettes = 21` |
+| **Variable** | Espace de stockage nommé | `allumettes = 20` |
 | **Condition** | Test logique | `SI reste 1...` |
 | **Boucle** | Répétition d'instructions | Jouer jusqu'à la fin |
 | **Événement** | Déclencheur d'action | Clic sur un bouton |

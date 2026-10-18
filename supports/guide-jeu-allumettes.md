@@ -20,11 +20,11 @@ Le jeu des allumettes est un classique des jeux de logique. Derriere sa simplici
 ### Le materiel
 
 ```
-| | | | | | | | | | | | | | | | | | | | |
-1 2 3 4 5 6 7 8 9 ...                 21
+| | | | | | | | | | | | | | | | | | | |
+1 2 3 4 5 6 7 8 9 ...                20
 ```
 
-**21 allumettes** (ou cure-dents, batons, crayons...) posees sur la table.
+**20 allumettes** (ou cure-dents, batons, crayons...) posees sur la table.
 
 ### Comment jouer
 
@@ -245,7 +245,7 @@ Si on peut retirer 1, 2, 3 **ou 4** allumettes :
 
 ### Les regles
 
-- 21 allumettes au depart
+- 20 allumettes au depart
 - Retirer 1, 2 ou 3 a chaque tour
 - Celle qui prend la derniere **perd**
 

@@ -71,7 +71,7 @@ Tu vois l'éditeur MakeCode avec un écran de jeu noir sur la droite.
 
 ### Concept
 
-Une **variable** est comme une boîte qui contient une valeur. Notre boîte s'appelle `allumettes` et contient le nombre `21`.
+Une **variable** est comme une boîte qui contient une valeur. Notre boîte s'appelle `allumettes` et contient le nombre `20`.
 
 ### Instructions
 
@@ -82,11 +82,11 @@ Une **variable** est comme une boîte qui contient une valeur. Notre boîte s'ap
 
 ### Initialiser la variable
 
-Maintenant, on va dire que le jeu commence avec 21 allumettes.
+Maintenant, on va dire que le jeu commence avec 20 allumettes.
 
 1. Trouve le bloc **"on start"** (au démarrage) - il devrait déjà être là
 2. Dans **"Variables"**, prends le bloc **"set allumettes to 0"**
-3. Change le `0` en `21`
+3. Change le `0` en `20`
 4. Place ce bloc dans le bloc **"on start"**
 
 ### Code en blocs
@@ -95,7 +95,7 @@ Maintenant, on va dire que le jeu commence avec 21 allumettes.
 ┌─────────────────────────────────────┐
 │  on start                           │
 │  ┌─────────────────────────────┐    │
-│  │ set [allumettes ▼] to (21)  │    │
+│  │ set [allumettes ▼] to (20)  │    │
 │  └─────────────────────────────┘    │
 └─────────────────────────────────────┘
 ```
@@ -108,7 +108,7 @@ Maintenant, on va dire que le jeu commence avec 21 allumettes.
 
 1. Dans **"Game"**, trouve le bloc **"splash"** (afficher message)
 2. Place-le après le bloc "set allumettes"
-3. Modifie le texte : **"21 allumettes"**
+3. Modifie le texte : **"20 allumettes"**
 
 Ou mieux, pour afficher dynamiquement :
 
@@ -122,7 +122,7 @@ Ou mieux, pour afficher dynamiquement :
 ┌─────────────────────────────────────────────────────┐
 │  on start                                           │
 │  ┌─────────────────────────────┐                    │
-│  │ set [allumettes ▼] to (21)  │                    │
+│  │ set [allumettes ▼] to (20)  │                    │
 │  └─────────────────────────────┘                    │
 │  ┌────────────────────────────────────────────────┐ │
 │  │ splash (join "Allumettes: " [allumettes])      │ │
@@ -296,13 +296,13 @@ Pour jouer à deux, on a besoin d'une deuxième variable : `tour` (1 ou 2).
 ┌─────────────────────────────────────────────────────┐
 │  on start                                           │
 │  ┌─────────────────────────────┐                    │
-│  │ set [allumettes ▼] to (21)  │                    │
+│  │ set [allumettes ▼] to (20)  │                    │
 │  └─────────────────────────────┘                    │
 │  ┌─────────────────────────────┐                    │
 │  │ set [tour ▼] to (1)         │                    │
 │  └─────────────────────────────┘                    │
 │  ┌────────────────────────────────────────────────┐ │
-│  │ splash "Jeu des Allumettes - 21 allumettes"    │ │
+│  │ splash "Jeu des Allumettes - 20 allumettes"    │ │
 │  └────────────────────────────────────────────────┘ │
 │  ┌────────────────────────────────────────────────┐ │
 │  │ splash "A=1, B=2, A+B=3"                       │ │
@@ -398,7 +398,7 @@ Ajoute un bloc pour le bouton "menu" ou crée un bouton restart :
 ┌─────────────────────────────────────┐
 │  on [menu ▼] button pressed         │
 │  ┌─────────────────────────────┐    │
-│  │ set [allumettes] to (21)    │    │
+│  │ set [allumettes] to (20)    │    │
 │  │ set [tour] to (1)           │    │
 │  │ splash "Nouvelle partie!"   │    │
 │  └─────────────────────────────┘    │
@@ -412,7 +412,7 @@ Ajoute un bloc pour le bouton "menu" ou crée un bouton restart :
 | Concept | Dans MakeCode | Ce qu'on a fait |
 |---------|--------------|-----------------|
 | **Variable** | Variables → Make a variable | `allumettes`, `tour` |
-| **Assignation** | set [var] to [value] | `set allumettes to 21` |
+| **Assignation** | set [var] to [value] | `set allumettes to 20` |
 | **Événement** | Controller → on button pressed | Détecter les appuis |
 | **Condition** | Logic → if...then...else | Vérifier si allumettes <= 0 |
 | **Comparaison** | Logic → 0 = 0 | `allumettes <= 0` |
@@ -425,7 +425,7 @@ Ajoute un bloc pour le bouton "menu" ou crée un bouton restart :
 Ce que tu viens de faire en blocs, c'est exactement ce que fait ce code JavaScript :
 
 ```javascript
-let allumettes = 21;
+let allumettes = 20;
 let tour = 1;
 
 function retirer(n) {

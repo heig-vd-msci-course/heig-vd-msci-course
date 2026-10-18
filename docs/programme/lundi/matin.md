@@ -39,49 +39,94 @@ Les résultats (captures d'écran des nuages de mots) sont disponibles dans les 
 
 Un bref voyage dans le temps pour comprendre d'où vient la programmation.
 
-### Les pionnières
+### Timeline
 
-```
-1843 — Ada Lovelace
-       Écrit le premier programme informatique
-       pour la machine analytique de Babbage
+![Histoire de la programmation](../../assets/images/monday/histoire_prog.jpeg)
 
-1940s — Les programmeuses de l'ENIAC
-        Six femmes programment le premier
-        ordinateur électronique général
-```
+*Image générée par Gemini AI.*
 
-### L'évolution des langages
+### Les fondations (1840s–1940s)
 
-| Époque | Langage | Particularité |
-|--------|---------|---------------|
-| 1950s | Assembleur | Instructions très basiques |
-| 1957 | FORTRAN | Premier langage de haut niveau |
-| 1970s | C | Encore très utilisé aujourd'hui |
-| 1990s | Python, JavaScript | Langages modernes accessibles |
-| 2020s | Blocs visuels | Programmer sans écrire de code |
+| Année | Événement | Importance |
+|-------|-----------|------------|
+| **1843** | **Ada Lovelace** écrit le premier algorithme pour la machine de Babbage | Premier programme informatique de l'histoire |
+| **1943** | **Konrad Zuse** conçoit Plankalkül | Premier langage de programmation (resté sur papier) |
+| **1949** | L'**assembleur** apparaît | Remplace le code binaire (0 et 1) par des mots |
 
-### De la carte perforée au smartphone
+!!! note "Ada Lovelace : la première programmeuse"
 
-```
-┌─────────────────────────────────────────────────┐
-│  1950s          1980s          2020s           │
-│                                                 │
-│  ▓▓▓▓▓▓▓▓      ┌──────┐       ┌─────┐          │
-│  ▓░░░░░▓▓      │ ░░░░ │       │ ░░░ │          │
-│  ▓▓░░▓▓▓▓  →   │ ░░░░ │   →   │ ░░░ │          │
-│  ▓▓▓▓▓▓▓▓      │ ████ │       │ ░░░ │          │
-│                └──────┘       └─────┘          │
-│  Carte          Ordi           Smartphone      │
-│  perforée       personnel                      │
-└─────────────────────────────────────────────────┘
-```
+    Augusta Ada King, comtesse de Lovelace (1815–1852), fille du poète Lord Byron, est considérée comme la première programmeuse de l'histoire.
+
+    En 1843, à seulement 27 ans, elle rédige ce qui est reconnu comme le **premier algorithme informatique** — des instructions détaillées pour la machine analytique de Charles Babbage, un ordinateur mécanique qui n'a jamais été construit.
+
+    Elle a aussi imaginé que les machines pourraient un jour créer de la musique ou de l'art, une vision remarquablement avant-gardiste pour son époque.
+
+    > *La machine analytique ne prétend nullement créer quoi que ce soit. Elle peut exécuter tout ce que nous savons lui ordonner d'accomplir.*
+
+### L'ère des langages (1950s–1970s)
+
+| Année | Langage | Créateur | Usage |
+|-------|---------|----------|-------|
+| **1957** | **FORTRAN** | John Backus (IBM) | Calculs scientifiques et mathématiques |
+| **1958** | **LISP** | John McCarthy | Intelligence artificielle |
+| **1959** | **COBOL** | Grace Hopper | Applications d'entreprise |
+| **1964** | **BASIC** | Kemeny & Kurtz | Apprentissage de la programmation |
+| **1972** | **C** | Dennis Ritchie | Systèmes d'exploitation (UNIX, Windows, Linux) |
+
+!!! note "Grace Hopper : l'amiral du code"
+
+    Grace Hopper (1906–1992), contre-amiral de la marine américaine, est l'une des figures les plus influentes de l'informatique.
+
+    En **1947**, elle découvre un papillon de nuit coincé dans un relais de l'ordinateur Harvard Mark II — le premier "bug" documenté de l'histoire (le terme existait déjà, mais cet incident l'a popularisé).
+
+    En **1959**, elle crée **COBOL**, un langage révolutionnaire qui utilise des mots anglais au lieu de codes incompréhensibles. Cette approche a transformé la programmation en la rendant accessible à un plus grand nombre de personnes.
+
+    > *La phrase la plus dangereuse de la langue est : "Nous avons toujours fait comme ça".*
+
+### L'ère moderne (1980s–2000s)
+
+| Année | Langage | Particularité |
+|-------|---------|---------------|
+| **1983** | **C++** | Ajoute la programmation orientée objet à C |
+| **1991** | **Python** | Facile à lire, idéal pour débuter |
+| **1995** | **Java** | "Écrire une fois, exécuter partout" |
+| **1995** | **JavaScript** | Langage du web (pages interactives) |
+| **2009** | **Go** | Créé par Google pour les gros systèmes |
+
+### Aujourd'hui (2010s–2020s)
+
+| Année | Évolution |
+|-------|-----------|
+| **2014** | **Swift** (Apple) — remplace Objective-C pour iOS |
+| **2012** | **TypeScript** (Microsoft) — JavaScript amélioré |
+| **2020s** | **IA et assistants de code** — l'IA aide à écrire du code |
+
+### Dans votre quotidien
+
+La programmation est partout, y compris dans les applications utilisées chaque jour :
+
+| Application | Langages utilisés |
+|-------------|-------------------|
+| **TikTok** | Swift, Python, C++ |
+| **Spotify** | Python, Java |
+| **Instagram** | Python, JavaScript |
+| **Minecraft** | Java |
+| **Discord** | Python, Rust |
+
+Chaque fonctionnalité — le scroll infini de TikTok, les recommandations de Spotify, les filtres d'Instagram — a été écrite ligne par ligne par des équipes de développement.
 
 ### Le point clé
 
 !!! info "Ce qui n'a pas changé"
 
-    Depuis 1843, le principe reste le même : **donner des instructions précises à une machine**. Seule la façon de les écrire a évolué.
+    Depuis 1843, le principe reste le même : **donner des instructions précises à une machine**.
+
+    - **Ada Lovelace** (1843) : instructions sur papier pour une machine mécanique
+    - **Grace Hopper** (1959) : instructions en anglais avec COBOL
+    - **Aujourd'hui** : instructions en blocs visuels ou via IA générative
+
+    Ce qui change : les langages deviennent plus **humains**.
+    Ce qui reste : la **précision** est essentielle.
 
 ---
 
@@ -111,7 +156,7 @@ Cette activité en binôme permet de découvrir concrètement les **différents 
 
 ### Règles
 
-- **21 allumettes** au départ
+- **20 allumettes** au départ
 - Chaque personne retire **1, 2 ou 3** allumettes à son tour
 - La personne qui retire la **dernière** allumette a **perdu**
 
@@ -121,7 +166,7 @@ Cette activité en binôme permet de découvrir concrètement les **différents 
 
     Pour garantir la victoire, il faut laisser un nombre d'allumettes égal à un multiple de 4, plus 1 :
 
-    **21 → 17 → 13 → 9 → 5 → 1 → Victoire**
+    **20 → 17 → 13 → 9 → 5 → 1 → Victoire**
 
     Quelle que soit la quantité retirée par l'adversaire, il est possible de compléter à 4 :
 

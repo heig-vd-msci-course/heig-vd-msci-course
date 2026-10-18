@@ -88,9 +88,7 @@ section::after {
 
 header,
 footer,
-section::after,
-blockquote::before,
-blockquote::after {
+section::after {
 	color: var(--color-dimmed);
 }
 
@@ -231,7 +229,8 @@ section mark {
 	color: var(--color-primary);
 }
 
-section:has(h1) > header {
+/* Cache le header uniquement sur les slides de titre (lead) */
+section.lead > header {
 	display: none;
 }
 
@@ -308,6 +307,7 @@ blockquote {
 	margin: 1em 0 0;
 	padding: 0 1em;
 	position: relative;
+	color: var(--color-primary);
 }
 
 blockquote::before,
@@ -317,6 +317,7 @@ blockquote::after {
 	font-family: "Atkinson Hyperlegible", serif;
 	font-weight: bold;
 	position: absolute;
+	color: var(--color-primary);
 }
 
 blockquote::before {
@@ -340,7 +341,9 @@ blockquote > *:first-child {
 .four-columns,
 .one-third-two-thirds-columns,
 .two-thirds-one-third-columns,
-.forty-sixty-columns {
+.forty-sixty-columns,
+.thirty-seventy-columns,
+.seventy-thirty-columns {
 	display: grid;
 	gap: 1rem;
 }
@@ -367,6 +370,14 @@ blockquote > *:first-child {
 
 .forty-sixty-columns {
 	grid-template-columns: 2fr 3fr;
+}
+
+.thirty-seventy-columns {
+	grid-template-columns: 3fr 7fr;
+}
+
+.seventy-thirty-columns {
+	grid-template-columns: 7fr 3fr;
 }
 
 .center {
@@ -448,4 +459,27 @@ section strong.secondary,
 section span.secondary {
 	color: var(--color-secondary) !important;
 	font-weight: bold;
+}
+
+/* Tiny text */
+.tiny {
+	font-size: 0.55em;
+}
+
+/* Gray text (for attributions, captions, etc.) */
+.gray {
+	color: var(--color-dimmed);
+}
+
+.gray a {
+	color: var(--color-dimmed);
+}
+
+/* Inverted versions */
+section.invert .gray {
+	color: #aaa;
+}
+
+section.invert .gray a {
+	color: #aaa;
 }

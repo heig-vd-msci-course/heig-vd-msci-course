@@ -21,11 +21,11 @@ Le jeu des allumettes est un classique des jeux de logique. Derrière sa simplic
 ### Le matériel
 
 ```
-| | | | | | | | | | | | | | | | | | | | |
-1 2 3 4 5 6 7 8 9 ...                 21
+| | | | | | | | | | | | | | | | | | | |
+1 2 3 4 5 6 7 8 9 ...                20
 ```
 
-**21 allumettes** (ou cure-dents, bâtons, crayons) posées sur la table.
+**20 allumettes** (ou cure-dents, bâtons, crayons) posées sur la table.
 
 ### Comment jouer
 

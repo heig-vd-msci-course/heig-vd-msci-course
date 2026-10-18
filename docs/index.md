@@ -4,7 +4,7 @@ icon: lucide/book-open
 
 # Algorithmique et programmation
 
-**Semaine 43 | 20-24 octobre 2026 | ERACOM**
+**Semaine 43 | 19-23 octobre 2026 | ERACOM**
 
 Ce cours d'introduction à la programmation et à l'ingénierie des médias propose une approche pratique centrée sur la création de projets concrets.
 
@@ -28,7 +28,7 @@ L'équipe pédagogique accompagne le groupe tout au long de la semaine.
 
 | Jour | Thème | Réalisations |
 |------|-------|--------------|
-| [Lundi](programme/lundi.md) | Introduction et algorithmique | Premiers algorithmes, jeu des allumettes en programmation visuelle |
+| [Lundi](programme/lundi/index.md) | Introduction et algorithmique | Premiers algorithmes, jeu des allumettes en programmation visuelle |
 | [Mardi](programme/mardi.md) | HTML/CSS et publication web | Création et publication d'un site web personnel |
 | [Mercredi](programme/mercredi.md) | micro:bit et programmation physique | Objet interactif avec capteurs et LEDs |
 | [Jeudi](programme/jeudi.md) | Travail autonome à domicile | Consolidation des acquis, préparation du projet final |
@@ -63,7 +63,7 @@ Un projet unique accompagne le groupe tout au long de la semaine, decliné sous 
 
 !!! example "Principe du jeu des allumettes"
 
-    Deux personnes retirent alternativement 1, 2 ou 3 allumettes d'un tas de 21. La personne qui retire la dernière allumette perd la partie. Une stratégie mathématique permet de garantir la victoire.
+    Deux personnes retirent alternativement 1, 2 ou 3 allumettes d'un tas de 20. La personne qui retire la dernière allumette perd la partie. Une stratégie mathématique permet de garantir la victoire.
 
     [:octicons-arrow-right-24: Consulter le guide complet](supports/guide-jeu-allumettes.md)
 
@@ -97,4 +97,4 @@ Aucune installation n'est requise. Les outils suivants fonctionnent directement 
 
     Ce cours privilégie l'expérimentation et l'apprentissage par la pratique. Les erreurs font partie intégrante du processus d'apprentissage en programmation.
 
-Pour commencer, consulter [le programme du lundi](programme/lundi.md).
+Pour commencer, consulter [le programme du lundi](programme/lundi/index.md).

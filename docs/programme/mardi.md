@@ -74,5 +74,5 @@ Le jeu des allumettes prend forme sur le web :
 
 ## Navigation
 
-- [Retour au lundi - Introduction](lundi.md)
+- [Retour au lundi - Introduction](lundi/index.md)
 - [Mercredi - micro:bit](mercredi.md)

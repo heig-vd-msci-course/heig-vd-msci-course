@@ -25,7 +25,8 @@ nav = [
     { "Vendredi" = "programme/vendredi.md" },
   ]},
   { "Présentations" = [
-    { "Lundi - Introduction (HTML)" = "slides/lundi-introduction-algorithmique.html" },
+    { "Lundi Matin - Introduction" = "slides/lundi-introduction-matin.html" },
+    { "Lundi Après-midi - MakeCode" = "slides/lundi-introduction-apres-midi.html" },
   ]},
   { "Ressources" = [
     { "Guide du jeu des allumettes" = "supports/guide-jeu-allumettes.md" },

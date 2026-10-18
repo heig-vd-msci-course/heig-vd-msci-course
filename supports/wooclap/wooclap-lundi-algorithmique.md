@@ -59,8 +59,8 @@
 
 | Réponse | Correct |
 |---------|---------|
-| 21 | ✅ |
-| 20 | ❌ |
+| 20 | ✅ |
+| 21 | ❌ |
 | 15 | ❌ |
 | 10 | ❌ |
 
@@ -316,7 +316,7 @@
 | # | Question | Thème | Temps | Points |
 |---|----------|-------|-------|--------|
 | 1 | Algorithme = recette | Concept | 20s | Standard |
-| 2 | 21 allumettes | Jeu | 20s | Standard |
+| 2 | 20 allumettes | Jeu | 20s | Standard |
 | 3 | Retirer 1, 2 ou 3 | Jeu | 20s | Standard |
 | 4 | Qui perd ? | Jeu | 20s | Standard |
 | 5 | Variable = boîte | Concept | 30s | Double |
@@ -358,11 +358,11 @@ Si le WiFi ne supporte pas 70 connexions :
 
 ### Questions bonus (si temps restant)
 
-**Bonus 1 :** Combien fait 21 modulo 4 ?
-- **Réponse :** 1 (car 21 = 5×4 + 1)
+**Bonus 1 :** Combien fait 20 modulo 4 ?
+- **Réponse :** 0 (car 20 = 5×4)
 
-**Bonus 2 :** Si on commence à 21, qui a l'avantage ?
-- **Réponse :** La personne qui commence (car 21 = 5×4 + 1)
+**Bonus 2 :** Si on commence à 20, qui a l'avantage ?
+- **Réponse :** La personne qui commence (car elle peut prendre 3 pour laisser 17 = 4×4 + 1)
 
 ---
 
