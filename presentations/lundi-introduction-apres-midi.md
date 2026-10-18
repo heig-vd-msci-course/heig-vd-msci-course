@@ -56,13 +56,18 @@ footer: 'ERACOM - Semaine 43'
 
 ## Un espace de stockage avec un nom
 
-```
-    ┌─────────────┐
-    │ allumettes  │  ← nom
-    ├─────────────┤
-    │     20      │  ← valeur (peut changer)
-    └─────────────┘
-```
+<div class="two-columns">
+<div>
+
+![w:460](../docs/assets/images/concepts/schema-variable.svg)
+
+</div>
+<div>
+
+![w:300](../docs/assets/images/concepts/blocs-variable.png)
+
+</div>
+</div>
 
 **Exemples** : `allumettes = 20`, `tour = 1`, `joueur = "Alice"`
 
@@ -72,18 +77,18 @@ footer: 'ERACOM - Semaine 43'
 
 ## Prendre une décision selon un test
 
-```
-         ┌───────────────┐
-         │ allumettes    │
-         │    == 0 ?     │
-         └───────┬───────┘
-                 │
-        ┌────────┴────────┐
-        ▼                 ▼
-      [OUI]             [NON]
-        │                 │
-    "Perdu !"        "Continuer"
-```
+<div class="two-columns">
+<div>
+
+![h:300](../docs/assets/images/concepts/schema-condition.svg)
+
+</div>
+<div>
+
+![w:320](../docs/assets/images/concepts/blocs-condition.png)
+
+</div>
+</div>
 
 **Opérateurs** : `==` (égal), `<=` (inférieur ou égal), `>` (supérieur)
 
@@ -93,19 +98,18 @@ footer: 'ERACOM - Semaine 43'
 
 ## Répéter tant qu'une condition est vraie
 
-```
-    ┌──────────────────────────┐
-    │                          │
-    ▼                          │
-┌────────────┐                 │
-│ allumettes │──[OUI]──► jouer │
-│   > 0 ?    │                 │
-└─────┬──────┘                 │
-      │        ◄───────────────┘
-    [NON]
-      ▼
-   FIN DU JEU
-```
+<div class="two-columns">
+<div>
+
+![h:300](../docs/assets/images/concepts/schema-boucle.svg)
+
+</div>
+<div>
+
+![w:480](../docs/assets/images/concepts/blocs-boucle.png)
+
+</div>
+</div>
 
 ---
 
@@ -113,13 +117,18 @@ footer: 'ERACOM - Semaine 43'
 
 ## Réagir quand quelque chose se produit
 
-```
-┌──────────────────┐      ┌──────────────────┐
-│  Bouton pressé   │ ───► │  Retirer des     │
-│                  │      │  allumettes      │
-└──────────────────┘      └──────────────────┘
-    DÉCLENCHEUR               ACTION
-```
+<div class="two-columns">
+<div>
+
+![w:480](../docs/assets/images/concepts/schema-evenement.svg)
+
+</div>
+<div>
+
+![w:330](../docs/assets/images/concepts/blocs-evenement.png)
+
+</div>
+</div>
 
 **QUAND** un événement arrive, **ALORS** exécuter une action.
 
@@ -281,13 +290,7 @@ splash "20 allumettes"
 
 # Code du bouton A
 
-```
-┌──────────────────────────────────────────┐
-│ quand bouton A pressé                    │
-│   modifier allumettes de -1              │
-│   splash (joindre "Reste: " allumettes)  │
-└──────────────────────────────────────────┘
-```
+![w:820](../docs/assets/images/concepts/blocs-bouton-a.png)
 
 ---
 

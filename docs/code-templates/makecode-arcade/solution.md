@@ -5,11 +5,45 @@
     Cette page contient une solution complète du jeu des allumettes.
     Consulter uniquement après avoir tenté l'exercice.
 
-## Code JavaScript (MakeCode Arcade)
-
-Ce code peut être copié-collé dans l'éditeur JavaScript de MakeCode Arcade.
+## Jouer et voir les blocs
 
 Deux versions sont disponibles : la version de base (deux joueuses) et la version « Aller plus loin » (contre l'ordinateur).
+
+=== "Joueuse contre joueuse"
+
+    **Jouer** (A : 1 allumette, B : 2, flèche haut : 3) :
+
+    <div class="makecode-simulator">
+      <iframe src="https://arcade.makecode.com/---run?id=S32221-15913-36189-53679" title="Jeu des allumettes - joueuse contre joueuse" allowfullscreen sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe>
+    </div>
+
+    [:material-open-in-new: Ouvrir le projet dans MakeCode](https://arcade.makecode.com/S32221-15913-36189-53679){ .md-button target="_blank" }
+
+    **Les blocs du projet** (faire défiler vers la droite) :
+
+    <pre class="blocks" data-packageid="S32221-15913-36189-53679"></pre>
+
+=== "Contre l'ordinateur"
+
+    **Jouer** (A : 1 allumette, B : 2, flèche haut : 3) :
+
+    <div class="makecode-simulator">
+      <iframe src="https://arcade.makecode.com/---run?id=S19881-31620-38681-62591" title="Jeu des allumettes - contre l'ordinateur" allowfullscreen sandbox="allow-popups allow-forms allow-scripts allow-same-origin"></iframe>
+    </div>
+
+    [:material-open-in-new: Ouvrir le projet dans MakeCode](https://arcade.makecode.com/S19881-31620-38681-62591){ .md-button target="_blank" }
+
+    **Les blocs du projet** (faire défiler vers la droite) :
+
+    <pre class="blocks" data-packageid="S19881-31620-38681-62591"></pre>
+
+!!! tip "Modifier une solution"
+
+    Après avoir ouvert un projet, cliquer sur **Modifier** en haut à droite : MakeCode crée une **copie personnelle** du projet, qui peut être changée librement sans toucher à l'original.
+
+## Code JavaScript (MakeCode Arcade)
+
+Pour les curieuses : le même code, en JavaScript. Il peut être copié-collé dans l'éditeur JavaScript de MakeCode Arcade.
 
 === "Joueuse contre joueuse"
 
@@ -268,7 +302,9 @@ Deux versions sont disponibles : la version de base (deux joueuses) et la versio
     })
     ```
 
-## Comment utiliser cette solution
+## Utiliser le code JavaScript
+
+Le plus simple est d'ouvrir directement le projet avec le bouton **Ouvrir le projet dans MakeCode** ci-dessus. Pour partir du code JavaScript :
 
 1. Ouvrir [arcade.makecode.com](https://arcade.makecode.com){target="_blank"}
 2. Créer un **nouveau projet**

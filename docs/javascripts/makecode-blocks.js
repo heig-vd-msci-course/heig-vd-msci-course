@@ -46,12 +46,16 @@
   }
 
   function sendSnippet(pre) {
+    // <pre class="blocks" data-packageid="S..."></pre> : projet partagé entier
+    var packageId = pre.getAttribute("data-packageid");
     getRenderer().contentWindow.postMessage({
       type: "renderblocks",
       id: pre.id,
-      code: pre.textContent,
+      code: packageId ? "" : pre.textContent,
       // ```blocks : fragment seul / ```blocks-full : avec "au démarrage"
-      options: { snippetMode: !pre.classList.contains("blocks-full") }
+      options: packageId
+        ? { packageId: packageId }
+        : { snippetMode: !pre.classList.contains("blocks-full") }
     }, MAKECODE_ORIGIN);
   }
 
@@ -91,7 +95,19 @@
       img.width = msg.width;
       img.height = msg.height;
       img.alt = "Blocs MakeCode : " + pre.textContent.trim();
-      pre.replaceWith(img);
+      if (pre.hasAttribute("data-packageid")) {
+        // Projet entier : très large, on le fait défiler horizontalement
+        img.alt = "Blocs MakeCode du projet " + pre.getAttribute("data-packageid");
+        img.classList.add("makecode-project");
+        img.width = Math.round(msg.width * 0.6);
+        img.height = Math.round(msg.height * 0.6);
+        var wrapper = document.createElement("div");
+        wrapper.className = "makecode-project-wrapper";
+        wrapper.appendChild(img);
+        pre.replaceWith(wrapper);
+      } else {
+        pre.replaceWith(img);
+      }
     }
   });
 

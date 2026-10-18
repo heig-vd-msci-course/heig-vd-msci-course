@@ -11,8 +11,8 @@ Templates pour l'activité MakeCode Arcade du lundi après-midi.
 | Fichier | Description | Pour qui |
 |---------|-------------|----------|
 | `jeu-allumettes-compact-instructions.md` | Guide pas à pas avec blocs | Élèves |
-| `jeu-allumettes-2-joueuses-solution.ts` | Version complète joueuse contre joueuse, avec sprites | Enseignante uniquement |
-| `jeu-allumettes-compact-solution.ts` | Version complète contre l'ordinateur (Aller plus loin) | Enseignante uniquement |
+| `jeu-allumettes-2-joueuses-solution.ts` | Version complète joueuse contre joueuse, avec sprites ([projet MakeCode](https://arcade.makecode.com/S32221-15913-36189-53679){target="_blank"}) | Enseignante uniquement |
+| `jeu-allumettes-compact-solution.ts` | Version complète contre l'ordinateur, Aller plus loin ([projet MakeCode](https://arcade.makecode.com/S19881-31620-38681-62591){target="_blank"}) | Enseignante uniquement |
 
 ## Contrôles du jeu
 
