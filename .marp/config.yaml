@@ -3,7 +3,7 @@ browserTimeout: 120
 html: true
 jpegQuality: 75
 lang: fr
-themeSet: .marp
+themeSet: .
 options:
   markdown:
     breaks: false

@@ -1,75 +1,50 @@
 #!/usr/bin/env bash
 
+# Stop on first error so CI fails loudly
+set -euo pipefail
+
 ## Variables
 WORKDIR=$(pwd)
 MARP_DOCKER_IMAGE="marpteam/marp-cli:v4.2.3"
+INPUT_DIR="presentations"
 OUTPUT_DIR="docs/slides"
-THEME_FILE=".marp/theme.css"
 
 ## Script
-# Check if Marp is installed locally
-if command -v "marp" > /dev/null 2>&1; then
+# Check if Marp is installed locally (the Docker image ships `marp-cli.js`)
+if command -v "marp-cli.js" > /dev/null 2>&1; then
     echo "Marp installed locally, using it..."
-    USE_DOCKER=false
-elif command -v "npx" > /dev/null 2>&1 && [ -f "package.json" ]; then
-    echo "Using npx marp..."
-    USE_DOCKER=false
+    MARP_CMD=(marp-cli.js)
+elif [ -x "node_modules/.bin/marp" ]; then
+    echo "Using Marp from node_modules..."
+    MARP_CMD=(node_modules/.bin/marp)
 else
     echo "Marp not installed, using its Docker image..."
-    USE_DOCKER=true
+    MARP_CMD=(
+        docker run --rm
+        --entrypoint="marp-cli.js"
+        --volume="${WORKDIR}:/home/marp/app"
+        --user="$(id -u):$(id -g)"
+        "$MARP_DOCKER_IMAGE"
+    )
 fi
 
 # Create output directory
 mkdir -p "$OUTPUT_DIR"
 
 echo "Removing all previous generated presentations..."
-rm -f "$OUTPUT_DIR"/*.html
-rm -f "$OUTPUT_DIR"/*.pdf
+rm -f "$OUTPUT_DIR"/*.html "$OUTPUT_DIR"/*.pdf
 
-echo "Converting presentations..."
+MARP_ARGS=(
+    --config-file .marp/config.yaml
+    --input-dir "$INPUT_DIR"
+    --output "$OUTPUT_DIR"
+)
 
-for file in presentations/*.md; do
-    if [ -f "$file" ]; then
-        filename=$(basename "$file" .md)
-        echo "  Processing: $file"
+echo "Converting presentations to HTML..."
+"${MARP_CMD[@]}" "${MARP_ARGS[@]}"
 
-        if [ "$USE_DOCKER" = true ]; then
-            # Docker version - generate HTML
-            docker run --rm \
-                --volume="${WORKDIR}:/home/marp/app" \
-                --user="$(id -u):$(id -g)" \
-                "$MARP_DOCKER_IMAGE" \
-                --theme-set "$THEME_FILE" \
-                --output "${OUTPUT_DIR}/${filename}.html" \
-                -- "$file"
-
-            # Docker version - generate PDF
-            docker run --rm \
-                --volume="${WORKDIR}:/home/marp/app" \
-                --user="$(id -u):$(id -g)" \
-                "$MARP_DOCKER_IMAGE" \
-                --theme-set "$THEME_FILE" \
-                --pdf \
-                --allow-local-files \
-                --output "${OUTPUT_DIR}/${filename}.pdf" \
-                -- "$file"
-        else
-            # Local version - generate HTML
-            npx marp \
-                --theme-set "$THEME_FILE" \
-                --output "${OUTPUT_DIR}/${filename}.html" \
-                -- "$file"
-
-            # Local version - generate PDF
-            npx marp \
-                --theme-set "$THEME_FILE" \
-                --pdf \
-                --allow-local-files \
-                --output "${OUTPUT_DIR}/${filename}.pdf" \
-                -- "$file"
-        fi
-    fi
-done
+echo "Converting presentations to PDF..."
+"${MARP_CMD[@]}" "${MARP_ARGS[@]}" --pdf
 
 echo ""
 echo "All presentations processed!"
