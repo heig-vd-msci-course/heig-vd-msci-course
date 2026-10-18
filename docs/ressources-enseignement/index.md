@@ -60,7 +60,7 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
 
 ## Mardi soir : publier les projets
 
-Les équipes envoient leur projet par e-mail avant **mardi 16h30**, avec le modèle de la [page du mardi](../programme/mardi.md#rendre-son-projet){target="_blank"}. Le code est copié depuis MDN Playground (« Partager → Copier le Markdown »).
+Les équipes envoient leur projet par e-mail avant **mardi 16h30**, avec le modèle de la [page du mardi](../programme/mardi/apres-midi.md#rendre-son-projet){target="_blank"}. Le code est copié depuis MDN Playground (« Partager → Copier le Markdown »).
 
 1. Copier le texte de chaque e-mail dans `emails/<equipe>.txt`, dans le [dépôt des projets](https://github.com/heig-vd-msci-course/heig-vd-msci-projets){target="_blank"}
 2. Lancer `python3 publier.py` : le script crée le dossier de chaque équipe et met à jour la galerie
