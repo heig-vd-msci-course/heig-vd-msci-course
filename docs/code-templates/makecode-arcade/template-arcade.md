@@ -11,7 +11,8 @@ Templates pour l'activité MakeCode Arcade du lundi après-midi.
 | Fichier | Description | Pour qui |
 |---------|-------------|----------|
 | `jeu-allumettes-compact-instructions.md` | Guide pas à pas avec blocs | Élèves |
-| `jeu-allumettes-compact-solution.ts` | Version complète (référence) | Enseignante uniquement |
+| `jeu-allumettes-2-joueuses-solution.ts` | Version complète joueuse contre joueuse, avec sprites | Enseignante uniquement |
+| `jeu-allumettes-compact-solution.ts` | Version complète contre l'ordinateur (Aller plus loin) | Enseignante uniquement |
 
 ## Contrôles du jeu
 
@@ -31,8 +32,10 @@ Templates pour l'activité MakeCode Arcade du lundi après-midi.
 
 ## Progression
 
-1. **Version simple** : l'ordinateur retire toujours 1 allumette
-2. **Version avancée** : stratégie gagnante avec le modulo
+1. **Version de base** : joueuse contre joueuse
+2. **Amélioration** : afficher les allumettes avec des sprites et une boucle
+3. **Aller plus loin** : jouer contre l'ordinateur, qui retire toujours 1 allumette
+4. **Version avancée** : stratégie gagnante avec le modulo
 
 ## Pages du site
 
