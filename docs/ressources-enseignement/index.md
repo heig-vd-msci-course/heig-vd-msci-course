@@ -73,8 +73,8 @@ Au programme de la semaine :
 
 - Lundi : introduction à la programmation et premier jeu avec MakeCode Arcade
 - Mardi : création de pages web (HTML et CSS)
-- Mercredi : travail libre à domicile
-- Jeudi : programmation physique avec le micro:bit
+- Mercredi : programmation physique avec le micro:bit
+- Jeudi : travail libre à domicile
 - Vendredi : projet créatif et clôture
 
 Aucune connaissance préalable en programmation n'est nécessaire : nous partirons de zéro, avec des projets créatifs.
