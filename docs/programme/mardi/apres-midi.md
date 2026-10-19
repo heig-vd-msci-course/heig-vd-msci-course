@@ -1003,4 +1003,4 @@ Le quiz de la journée se fait sur **Wooclap**, avec le code donné en classe.
 
 - [← Mardi matin](matin.md){target="_blank"}
 - [← Retour au programme du Mardi](index.md){target="_blank"}
-- [Mercredi →](../mercredi.md){target="_blank"}
+- [Mercredi →](../mercredi/index.md){target="_blank"}

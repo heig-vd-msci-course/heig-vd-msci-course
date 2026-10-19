@@ -95,4 +95,4 @@ Le jeu des allumettes prend forme sur le web :
 - [Retour au lundi - Introduction](../lundi/index.md){target="_blank"}
 - [Mardi matin →](matin.md){target="_blank"}
 - [Mardi après-midi →](apres-midi.md){target="_blank"}
-- [Mercredi - micro:bit](../mercredi.md){target="_blank"}
+- [Mercredi - micro:bit et IA](../mercredi/index.md){target="_blank"}
