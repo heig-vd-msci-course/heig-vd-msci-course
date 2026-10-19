@@ -37,7 +37,7 @@ Cette journée permet de :
 ### Approfondissement
 
 - Explorer les tutoriels supplémentaires sur MakeCode
-- Expérimenter avec JSFiddle
+- Expérimenter avec MDN Playground
 - Consulter les ressources en ligne recommandées
 
 ### Préparation du projet
@@ -54,7 +54,7 @@ Cette journée permet de :
 
     - **MakeCode Arcade** : [https://arcade.makecode.com](https://arcade.makecode.com){target="_blank"}
     - **MakeCode micro:bit** : [https://makecode.microbit.org](https://makecode.microbit.org){target="_blank"}
-    - **JSFiddle** : [https://jsfiddle.net](https://jsfiddle.net){target="_blank"}
+    - **MDN Playground** : [https://developer.mozilla.org/fr/play](https://developer.mozilla.org/fr/play){target="_blank"}
     - **Documentation MDN** : [https://developer.mozilla.org/fr/](https://developer.mozilla.org/fr/){target="_blank"}
 
 ---
