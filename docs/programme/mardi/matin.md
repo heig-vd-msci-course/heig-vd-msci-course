@@ -67,19 +67,8 @@ Le navigateur contient des **outils de développement** qui montrent le HTML et 
 
 Pour écrire ses propres pages, la journée se déroule dans **[MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"}** : un éditeur en ligne, gratuit, sans compte et sans rien à installer, proposé par Mozilla (l'organisation qui développe Firefox).
 
-```text
-┌──────────────────────────┬──────────────────────────┐
-│  [Format] [Exécuter]     │                          │
-│  [Partager] [Effacer]    │         APERÇU           │
-├──────────────────────────┤   (le résultat de la     │
-│  HTML                    │    page)                 │
-├──────────────────────────┤                          │
-│  CSS                     ├──────────────────────────┤
-├──────────────────────────┤         CONSOLE          │
-│  JAVASCRIPT              │   (les messages du       │
-│                          │    JavaScript)           │
-└──────────────────────────┴──────────────────────────┘
-```
+<img src="../../assets/images/tuesday/mardi-mdnplayground-printscreen-clear.png#only-light" alt="MDN Playground : trois zones pour le code et un aperçu de la page" class="img-fluid">
+<img src="../../assets/images/tuesday/mardi-mdnplayground-printscreen-dark.png#only-dark" alt="MDN Playground : trois zones pour le code et un aperçu de la page" class="img-fluid">
 
 | Bouton | Action |
 |--------|--------|
