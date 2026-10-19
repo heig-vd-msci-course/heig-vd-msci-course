@@ -96,6 +96,8 @@ Tout ce qui a été vu dans les supports de cours de la semaine, tutoriels compr
 
     Refaire les tutoriels sans regarder la solution, relire les synthèses de chaque journée. Le jeudi est le moment idéal pour réviser.
 
+    Une [évaluation à blanc (PDF)](../supports/evaluation-a-blanc.pdf){target="_blank"} présente un exemple de chaque type de question. La faire sur papier, sans ressource, permet de s'entraîner au format de l'évaluation.
+
 ---
 
 ## Projet final

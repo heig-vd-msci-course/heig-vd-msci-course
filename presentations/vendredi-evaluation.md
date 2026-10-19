@@ -88,7 +88,6 @@ La note finale est arrondie **au dixième**.
 - Choix multiples, vrai ou faux, réponses courtes
 - **Lire du code** et prédire ce qui s'affiche
 - **Trouver un bug** et le corriger
-- **Compléter** un bout de code
 
 <div class="warning">
 
