@@ -207,6 +207,15 @@ imageAllumette = img`
 
 Créer une variable `allumette`, puis dans `au démarrage`, après `définir score à allumettes`, ajouter une **boucle** (depuis **Boucles**) :
 
+!!! warning "`allumette` sans s, pas `allumettes`"
+
+    Il y a maintenant deux variables aux noms très proches :
+
+    - `allumettes` (avec un **s**) : le **nombre** d'allumettes restantes
+    - `allumette` (sans s) : **un sprite**, l'image d'une allumette à l'écran
+
+    Dans les blocs `définir ... à sprite` et `définir la position de ...`, choisir `allumette` **sans s** dans le menu déroulant. Si MakeCode affiche l'erreur *Type 'Sprite' is not assignable to type 'number'* ou *Property 'setPosition' does not exist on type 'number'*, c'est que `allumettes` a été choisie par erreur.
+
 ```blocks
 let imageAllumette: Image = null
 let allumette: Sprite = null
