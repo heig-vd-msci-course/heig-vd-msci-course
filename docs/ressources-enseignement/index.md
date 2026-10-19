@@ -14,6 +14,8 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
 - [ ] Imprimer le [matériel du lundi](#materiel-a-imprimer)
 - [ ] Imprimer la [signalétique](#materiel-a-imprimer) et la poser le lundi matin entre l'entrée du bâtiment et la salle R102
 - [ ] Imprimer la [liste de présences](#materiel-a-imprimer) (une par groupe)
+- [ ] Imprimer la [fiche d'accès](#materiel-a-imprimer) (codes QR et WiFi) et la distribuer dans les classes
+- [ ] Imprimer la [fiche de prêt des ordinateurs](#materiel-a-imprimer) (une par salle)
 - [ ] Prévoir des baguettes ou allumettes (environ 10 par binôme), des feuilles blanches et des crayons
 - [ ] Vérifier les salles (R102, T155 / T157) et l'accès à [arcade.makecode.com](https://arcade.makecode.com){target="_blank"} et à [MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"} depuis les ordinateurs
 - [ ] Activer GitHub Pages sur le [dépôt des projets](https://github.com/heig-vd-msci-course/heig-vd-msci-projets){target="_blank"}
@@ -39,16 +41,20 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
     [:material-download: Matériel du lundi (PDF)](lundi-materiel.pdf){ .md-button .md-button--primary target="_blank" }
     [:material-download: Signalétique MSCI (PDF)](signaletique.pdf){ .md-button target="_blank" }
     [:material-download: Liste de présences (PDF)](presences.pdf){ .md-button target="_blank" }
+    [:material-download: Fiche d'accès (PDF)](acces.pdf){ .md-button target="_blank" }
+    [:material-download: Prêt des ordinateurs (PDF)](prets-ordinateurs.pdf){ .md-button target="_blank" }
 
 | Document | Contenu | Format |
 |----------|---------|--------|
 | **Matériel du lundi** | Labyrinthes, formes avec baguettes, dessins, vocabulaire des 3 niveaux, plateaux du jeu des allumettes. La première page indique le nombre d'exemplaires conseillés. | A4 portrait, 8 pages |
 | **Signalétique MSCI** | Panneaux « MSCI - Tout droit », « MSCI - À gauche » et « MSCI - À droite » pour guider vers la salle | A4 paysage, 3 pages |
 | **Liste de présences** | 70 lignes à remplir, une case par demi-journée (lundi, mardi, mercredi, vendredi) pour noter les périodes d'absence, ligne de visa | A4 paysage, 4 pages |
+| **Fiche d'accès** | Codes QR vers le support du lundi après-midi et l'inscription des groupes (Google Sheets), règles de prêt des ordinateurs, instructions de connexion au WiFi public-HEIG-VD pour les ordinateurs personnels | A4 portrait, 1 page |
+| **Prêt des ordinateurs** | 25 lignes : numéro de l'ordinateur, équipe, membres, case « rendu » pour chaque jour, remarques | A4 paysage, 2 pages |
 
 ??? info "Modifier les documents"
 
-    Les sources se trouvent dans le dossier `impressions/` du dépôt : un fichier HTML par document, sauf la liste de présences (Markdown + LaTeX, générée avec pandoc). Après modification, régénérer les PDF avec :
+    Les sources se trouvent dans le dossier `impressions/` du dépôt : un fichier HTML par document, sauf la liste de présences, la fiche d'accès et le prêt des ordinateurs (Markdown + LaTeX, générés avec pandoc ; codes QR dans `impressions/qr/`, générés avec [QuickChart](https://quickchart.io/documentation/qr-codes/){target="_blank"}). Après modification, régénérer les PDF avec :
 
     ```bash
     ./generate-impressions.sh
