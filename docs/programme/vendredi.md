@@ -66,7 +66,7 @@ La note finale est arrondie au dixième.
 
 - **Durée** : 60 minutes, de 08h45 à 09h45
 - **Sur papier**, sans ordinateur, sans téléphone et sans IA
-- **Types de questions** : choix multiples, vrai ou faux, réponses courtes, lecture de code (prédire ce qui s'affiche), recherche de bug, code à compléter
+- **Types de questions** : choix multiples, vrai ou faux, réponses courtes, lecture de code (prédire ce qui s'affiche), recherche de bug.
 
 ### Matière
 
@@ -74,8 +74,6 @@ Tout ce qui a été vu dans les supports de cours de la semaine, tutoriels compr
 
 **Lundi : algorithmique et programmation visuelle**
 
-- La précision des instructions et les niveaux de langages de programmation
-- Les grandes étapes de l'histoire de la programmation
 - Les règles du jeu des allumettes, la stratégie gagnante et sa formule
 - Les notions d'algorithme, de variable, de condition, de boucle, d'événement et d'opérateur
 - L'interface de MakeCode Arcade et les catégories de blocs utilisées
@@ -96,7 +94,7 @@ Tout ce qui a été vu dans les supports de cours de la semaine, tutoriels compr
 
 !!! tip "Se préparer"
 
-    Refaire les tutoriels sans regarder la solution, relire les synthèses de chaque journée et refaire les quiz Wooclap. Le jeudi est le moment idéal pour réviser.
+    Refaire les tutoriels sans regarder la solution, relire les synthèses de chaque journée. Le jeudi est le moment idéal pour réviser.
 
 ---
 
@@ -120,7 +118,6 @@ L'équipe ajoute **une amélioration par membre** à sa version du jeu. Chaque a
 
 Exemples d'améliorations :
 
-- L'ordinateur joue contre la joueuse en appliquant la stratégie gagnante
 - Choisir le nombre d'allumettes au début de la partie
 - Compter les points sur plusieurs manches
 - Afficher un écran de victoire ou de défaite
