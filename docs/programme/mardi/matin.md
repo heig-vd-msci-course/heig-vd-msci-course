@@ -6,25 +6,6 @@ icon: lucide/sunrise
 
 > *HTML et CSS : créer et personnaliser sa page*
 
-<!-- TODO: Notes pour l'équipe enseignante
-
-1. AU TOUT DÉBUT DE LA JOURNÉE : Parler de lundi
-   - La journée s'est bien passée mais il y avait beaucoup de bruit
-   - On ne veut pas faire la police, on est là pour aider à apprendre et à construire quelque chose
-   - Si ça ne les intéresse pas, on ne va pas leur courir après
-   - Mais merci de respecter leurs camarades et nous en étant au moins silencieux/silencieuses s'ils/elles veulent être sur leur smartphone au lieu d'écouter
-
-2. Parler du projet, du test et des critères d'évaluation
-
-3. Mettre plus l'accent sur CSS que HTML (s'ils ont déjà vu HTML en amont)
-
-4. Aller plus loin dans le CSS - ressources à partager :
-   - Flexbox Froggy : https://flexboxfroggy.com/#fr
-   - CSS Grid Garden : https://cssgridgarden.com/#fr
-   - CSS Diner (sélecteurs) : https://flukeout.github.io
-
--->
-
 ## Le web et MDN Playground
 
 Avant d'écrire sa première page, un petit tour de ce qui se passe quand on ouvre un site, puis la découverte de l'outil de la journée.
@@ -778,13 +759,455 @@ Donner à sa page un style qui lui ressemble. Quelques idées :
 
 ---
 
+## Mise en page : Flexbox et Grid
+
+Jusqu'ici, les éléments de la page s'empilent les uns sous les autres. Pour les placer **côte à côte**, en colonnes ou en grille, le CSS propose deux outils de mise en page :
+
+| Outil | Principe | Idéal pour |
+|-------|----------|------------|
+| **Flexbox** | Ranger des éléments sur **une ligne** (ou une colonne) et partager la place entre eux | Une rangée de cartes, une barre de menu, des boutons |
+| **Grid** | Dessiner une **grille** de lignes et de colonnes, puis y placer les éléments | Une galerie d'images, la mise en page complète d'un site |
+
+Ce chapitre reprend la page personnelle : Flexbox pour disposer ses sections en cartes, Grid pour créer une galerie d'images. Comme dans les chapitres précédents, quelques erreurs sont glissées **exprès**.
+
+!!! info "Le tutoriel de référence"
+
+    Ce chapitre suit la logique des pages [Boîtes flexibles](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/CSS_layout/Flexbox){target="_blank"} et [Grilles](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/CSS_layout/Grids){target="_blank"} du module [La mise en page avec CSS](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/CSS_layout){target="_blank"} de MDN.
+
+### Étape 1 : Regrouper ses sections en cartes
+
+1. Dans la zone **HTML**, remplacer la section *Ce que j'aime* (le `<h2>` et sa liste) par ce code, puis adapter le contenu des cartes à ses goûts :
+
+    ```html
+    <div class="cartes">
+      <div class="carte">
+        <h2>Ce que j'aime</h2>
+        <ul>
+          <li>Le rap</li>
+          <li class="coup-de-coeur">Les séries</li>
+          <li>Les jeux vidéo</li>
+          <li>La mode</li>
+        </ul>
+      </div>
+      <div class="carte">
+        <h2>Mon top 3</h2>
+        <ol>
+          <li>Une chanson</li>
+          <li>Un film</li>
+          <li>Un jeu</li>
+        </ol>
+      </div>
+      <div class="carte">
+        <h2>Mes projets</h2>
+        <p>Créer mon propre site.</p>
+      </div>
+    </div>
+    ```
+
+2. Dans la zone **CSS**, ajouter le style d'une carte :
+
+    ```css
+    .carte {
+      background-color: white;
+      padding: 16px;
+      border-radius: 12px;
+    }
+    ```
+
+!!! note "`<div>`, une boîte pour regrouper"
+
+    `<div>` n'a aucun effet visuel : c'est une boîte qui sert à **regrouper** des éléments, pour pouvoir les mettre en forme ensemble. Ici, chaque `<div class="carte">` regroupe un titre et son contenu, et le `<div class="cartes">` regroupe les trois cartes.
+
+Les trois cartes blanches s'affichent... les unes sous les autres. C'est le **flux normal** de la page : par défaut, chaque bloc (`<h1>`, `<p>`, `<div>`...) prend toute la largeur disponible et se place sous le précédent.
+
+### Étape 2 : Des cartes côte à côte
+
+Dans la zone **CSS**, ajouter cette règle :
+
+```css
+.cartes {
+  display: flex;
+}
+```
+
+Les trois cartes se placent sur une même ligne, et elles ont toutes la **même hauteur**. Elles se touchent encore et n'ont pas la même largeur : chacune prend la place de son contenu. L'étape 4 s'en occupe.
+
+| Terme | Signification |
+|-------|---------------|
+| **Conteneur flexible** | L'élément qui reçoit `display: flex` : ici, `.cartes` |
+| **Éléments flexibles** | Ses enfants **directs** : ici, les trois `.carte` |
+| **Axe principal** | La direction dans laquelle les éléments sont rangés : de gauche à droite, par défaut |
+
+```mermaid
+flowchart TD
+    cartes["div class='cartes'"] --> c1["div class='carte'"]
+    cartes --> c2["div class='carte'"]
+    cartes --> c3["div class='carte'"]
+    c1 --> h2["h2"]
+    c1 --> ul["ul"]
+    classDef conteneur fill:#ffe066,stroke:#b8860b,stroke-width:3px
+    classDef element fill:#8fb8ff,stroke:#191970,stroke-width:2px
+    class cartes conteneur
+    class c1,c2,c3 element
+```
+
+*En jaune : le conteneur flexible. En bleu : les éléments flexibles, rangés côte à côte. Le `h2` et la liste, à l'intérieur d'une carte, ne sont pas concernés.*
+
+### Étape 3 : Le bug du mauvais conteneur
+
+!!! bug "Bug volontaire"
+
+    **Déplacer** la déclaration `display: flex;` de la règle `.cartes` vers la règle `.carte` :
+
+    ```css
+    .cartes {
+    }
+
+    .carte {
+      display: flex;
+      background-color: white;
+      padding: 16px;
+      border-radius: 12px;
+    }
+    ```
+
+    Que deviennent les cartes ? Et l'intérieur de chaque carte ?
+
+??? success "Explication et correction"
+
+    Les cartes s'empilent de nouveau, mais à l'intérieur de chacune, le titre et la liste se retrouvent **côte à côte**.
+
+    `display: flex` agit sur les **enfants directs** de l'élément qui le reçoit. Placé sur `.carte`, il range les enfants d'une carte, c'est-à-dire son `<h2>` et sa liste, et non les cartes elles-mêmes.
+
+    **Correction** : remettre `display: flex;` dans la règle `.cartes`.
+
+    **À retenir** : `display: flex` se place sur le **parent** des éléments à ranger. Pour savoir où l'écrire, se demander : *quel élément contient ceux que l'on veut placer côte à côte ?*
+
+### Étape 4 : Partager la place
+
+Compléter les deux règles :
+
+```css
+.cartes {
+  display: flex;
+  gap: 16px;
+}
+
+.carte {
+  flex: 1;
+  background-color: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+```
+
+Les cartes ont maintenant la même largeur, avec un espace entre elles.
+
+| Déclaration | Où | Effet |
+|-------------|----|-------|
+| `gap: 16px;` | Sur le conteneur | De l'espace entre les éléments flexibles |
+| `flex: 1;` | Sur les éléments | Chaque carte reçoit **une part** égale de la place disponible |
+
+!!! question "À essayer"
+
+    - Donner une deuxième classe à une carte, `<div class="carte large">` (un élément peut avoir plusieurs classes, séparées par une espace), puis ajouter la règle `.large { flex: 2; }` : cette carte reçoit deux parts de la place au lieu d'une
+    - Ajouter `flex-direction: column;` dans `.cartes` : l'axe principal devient vertical, et les cartes s'empilent de nouveau
+    - Ajouter `align-items: flex-start;` dans `.cartes` : les cartes ne s'étirent plus et gardent la hauteur de leur contenu
+
+    Retirer ensuite ces essais pour la suite du chapitre.
+
+→ Sur MDN : [Boîtes flexibles](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/CSS_layout/Flexbox){target="_blank"}
+
+### Étape 5 : Une galerie en grille
+
+Un *mood board* est une planche d'images qui donne l'ambiance d'un projet : il est très utilisé en mode, en design et en création de contenu. C'est un bon terrain pour **Grid**.
+
+1. Dans la zone **HTML**, ajouter ce code juste sous les cartes :
+
+    ```html
+    <h2>Mon mood board</h2>
+    <div class="galerie">
+      <img src="https://picsum.photos/seed/msci1/300/300" alt="Une photo au hasard">
+      <img src="https://picsum.photos/seed/msci2/300/300" alt="Une photo au hasard">
+      <img src="https://picsum.photos/seed/msci3/300/300" alt="Une photo au hasard">
+      <img src="https://picsum.photos/seed/msci4/300/300" alt="Une photo au hasard">
+      <img src="https://picsum.photos/seed/msci5/300/300" alt="Une photo au hasard">
+      <img src="https://picsum.photos/seed/msci6/300/300" alt="Une photo au hasard">
+    </div>
+    ```
+
+2. Dans la zone **CSS**, ajouter ces deux règles :
+
+    ```css
+    .galerie {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+    }
+
+    .galerie img {
+      width: 100%;
+      border: none;
+    }
+    ```
+
+Les six images se rangent en deux lignes de trois.
+
+| Déclaration | Effet |
+|-------------|-------|
+| `display: grid;` | Fait de `.galerie` un **conteneur de grille** : ses enfants directs se rangent dans les cases |
+| `grid-template-columns: 1fr 1fr 1fr;` | Dessine **trois colonnes**. L'unité `fr` (pour *fraction*) donne à chaque colonne une part de la place disponible |
+| `gap: 8px;` | De l'espace entre les cases, comme avec Flexbox |
+
+```text
+        1fr          1fr          1fr
+   ┌───────────┬───────────┬───────────┐
+   │  image 1  │  image 2  │  image 3  │
+   ├───────────┼───────────┼───────────┤
+   │  image 4  │  image 5  │  image 6  │
+   └───────────┴───────────┴───────────┘
+```
+
+Seules les colonnes sont définies : la grille crée toute seule autant de lignes que nécessaire.
+
+!!! note "Un sélecteur dans un autre"
+
+    `.galerie img` vise les images qui se trouvent **à l'intérieur** de `.galerie`, et seulement elles. `width: 100%` adapte chaque image à la largeur de sa case.
+
+    `border: none` retire la bordure blanche donnée à toutes les images au chapitre CSS : sans cela, la bordure s'ajouterait à la largeur de l'image, qui déborderait de sa case. La règle `.galerie img` étant plus précise que la règle `img`, c'est elle qui l'emporte.
+
+!!! question "À essayer"
+
+    Remplacer les colonnes par `grid-template-columns: 2fr 1fr 1fr;` : la première colonne reçoit deux parts, elle est deux fois plus large que les autres.
+
+### Étape 6 : Le bug des trois colonnes
+
+!!! bug "Bug volontaire"
+
+    Pour obtenir trois colonnes, écrire **une seule** valeur :
+
+    ```css
+    .galerie {
+      display: grid;
+      grid-template-columns: 3fr;
+      gap: 8px;
+    }
+    ```
+
+    Combien de colonnes la galerie a-t-elle maintenant ?
+
+??? success "Explication et correction"
+
+    Une seule : les images s'affichent les unes sous les autres, en très grand.
+
+    Chaque valeur écrite après `grid-template-columns` crée **une** colonne. `3fr` est donc une seule colonne, qui reçoit trois parts... de toute la place, puisqu'elle est seule. Aucun message d'erreur : la déclaration est valide, mais elle ne fait pas ce qui était voulu.
+
+    **Correction** : une valeur par colonne, `1fr 1fr 1fr`. Le raccourci `repeat(3, 1fr)` fait la même chose : *répéter trois fois `1fr`*.
+
+    **À retenir** : le **nombre de valeurs** donne le nombre de colonnes, l'unité `fr` donne leur largeur les unes par rapport aux autres.
+
+### Étape 7 : Une image vedette
+
+1. Dans la zone **HTML**, donner une classe à la première image de la galerie :
+
+    ```html
+    <img class="vedette" src="https://picsum.photos/seed/msci1/300/300" alt="Une photo au hasard">
+    ```
+
+2. Dans la zone **CSS**, ajouter :
+
+    ```css
+    .vedette {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    ```
+
+L'image vedette occupe maintenant **deux colonnes et deux lignes**. Les autres images se rangent automatiquement dans les cases restantes :
+
+```text
+   ┌───────────────────────┬───────────┐
+   │                       │  image 2  │
+   │        vedette        ├───────────┤
+   │                       │  image 3  │
+   ├───────────┬───────────┼───────────┤
+   │  image 4  │  image 5  │  image 6  │
+   └───────────┴───────────┴───────────┘
+```
+
+!!! bug "Bug volontaire"
+
+    Pour une vedette encore plus grande, lui demander **quatre** colonnes :
+
+    ```css
+    .vedette {
+      grid-column: span 4;
+      grid-row: span 2;
+    }
+    ```
+
+    Que devient la galerie ?
+
+??? success "Explication et correction"
+
+    La galerie est complètement désorganisée : la vedette prend toute la largeur, et les autres images deviennent minuscules ou se retrouvent dispersées.
+
+    La vedette demande quatre colonnes, alors que la grille n'en compte que trois. Le navigateur ajoute une quatrième colonne pour lui faire de la place, mais cette colonne n'a pas de largeur prévue : toute la grille est recalculée.
+
+    **Correction** : revenir à `span 2`. Un élément ne doit jamais demander plus de colonnes que la grille n'en compte.
+
+!!! tip "Voir la grille avec les outils du navigateur"
+
+    Faire un clic droit sur la galerie, puis **Inspecter** : dans le panneau HTML, un petit badge `grid` apparaît à côté de `<div class="galerie">`. Un clic sur ce badge dessine les lignes et les colonnes de la grille par-dessus la page. Le badge `flex` fait de même pour `.cartes`. C'est le moyen le plus rapide de comprendre une mise en page qui ne se comporte pas comme prévu.
+
+→ Sur MDN : [Grilles](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/CSS_layout/Grids){target="_blank"}
+
+??? abstract "Code complet à la fin du chapitre"
+
+    **HTML**
+
+    ```html
+    <h1>Salut, moi c'est Alex !</h1>
+    <img src="https://picsum.photos/400/250" alt="Une photo au hasard">
+    <p>J'ai 17 ans et j'adore la <strong>musique</strong>.</p>
+
+    <div class="cartes">
+      <div class="carte">
+        <h2>Ce que j'aime</h2>
+        <ul>
+          <li>Le rap</li>
+          <li class="coup-de-coeur">Les séries</li>
+          <li>Les jeux vidéo</li>
+          <li>La mode</li>
+        </ul>
+      </div>
+      <div class="carte">
+        <h2>Mon top 3</h2>
+        <ol>
+          <li>Une chanson</li>
+          <li>Un film</li>
+          <li>Un jeu</li>
+        </ol>
+      </div>
+      <div class="carte">
+        <h2>Mes projets</h2>
+        <p>Créer mon propre site.</p>
+      </div>
+    </div>
+
+    <h2>Mon mood board</h2>
+    <div class="galerie">
+      <img class="vedette" src="https://picsum.photos/seed/msci1/300/300" alt="Une photo au hasard">
+      <img src="https://picsum.photos/seed/msci2/300/300" alt="Une photo au hasard">
+      <img src="https://picsum.photos/seed/msci3/300/300" alt="Une photo au hasard">
+      <img src="https://picsum.photos/seed/msci4/300/300" alt="Une photo au hasard">
+      <img src="https://picsum.photos/seed/msci5/300/300" alt="Une photo au hasard">
+      <img src="https://picsum.photos/seed/msci6/300/300" alt="Une photo au hasard">
+    </div>
+
+    <p>Ma chanson du moment : <a href="https://www.youtube.com" target="_blank">le titre de la chanson</a></p>
+    ```
+
+    **CSS**
+
+    ```css
+    body {
+      font-family: sans-serif;
+      background-color: lavender;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    h1 {
+      color: deeppink;
+      text-transform: uppercase;
+    }
+
+    li {
+      color: midnightblue;
+    }
+
+    .coup-de-coeur {
+      background-color: gold;
+      font-weight: bold;
+    }
+
+    img {
+      border-radius: 20px;
+      border: 4px solid white;
+    }
+
+    .cartes {
+      display: flex;
+      gap: 16px;
+    }
+
+    .carte {
+      flex: 1;
+      background-color: white;
+      padding: 16px;
+      border-radius: 12px;
+    }
+
+    .galerie {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .galerie img {
+      width: 100%;
+      border: none;
+    }
+
+    .vedette {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    ```
+
+### Récapitulatif
+
+| Notion | Exemple | Rôle |
+|--------|---------|------|
+| Conteneur flexible | `display: flex;` | Range ses enfants directs côte à côte |
+| Partage de la place | `flex: 1;` | Donne à un élément flexible une part de la place disponible |
+| Direction | `flex-direction: column;` | Change l'axe principal : de haut en bas au lieu de gauche à droite |
+| Conteneur de grille | `display: grid;` | Range ses enfants directs dans les cases d'une grille |
+| Colonnes | `grid-template-columns: repeat(3, 1fr);` | Une valeur par colonne, `fr` pour partager la place |
+| Espacement | `gap: 16px;` | De l'espace entre les éléments, avec Flexbox comme avec Grid |
+| Étendre un élément | `grid-column: span 2;` | Un élément occupe plusieurs colonnes (ou lignes avec `grid-row`) |
+
+!!! success "À retenir"
+
+    - Flexbox range sur **un axe**, Grid sur **deux axes** (lignes et colonnes)
+    - `display: flex` et `display: grid` se placent sur le **parent** : ils agissent sur ses enfants directs
+    - Une erreur de mise en page ne produit aucun message : **Inspecter** et les badges `flex` / `grid` montrent ce que fait vraiment le navigateur
+
+### Pour aller plus loin
+
+Trois jeux en ligne, gratuits et sans compte, permettent de s'exercer sur les notions de ce chapitre et d'aller au-delà :
+
+| Jeu | Notion travaillée |
+|-----|-------------------|
+| [Flexbox Froggy](https://flexboxfroggy.com/#fr){target="_blank"} | Placer des grenouilles sur leurs nénuphars avec **Flexbox** : `justify-content`, `align-items`, `flex-direction`... (en français) |
+| [CSS Grid Garden](https://cssgridgarden.com/#fr){target="_blank"} | Arroser un potager avec **Grid** : placer des éléments sur des lignes et des colonnes précises (en français) |
+| [CSS Diner](https://flukeout.github.io){target="_blank"} | Choisir les bons plats sur la table avec des **sélecteurs** de plus en plus précis (en anglais) |
+
+!!! tip "Garder son travail"
+
+    Avant de fermer l'onglet : **Partager → Copier le Markdown**, puis coller le code dans un fichier ou un e-mail à soi-même.
+
+---
+
 ## Atelier : personnaliser sa page
 
 C'est le moment de faire de sa page personnelle **sa** page : ses goûts, son univers, son style. L'atelier propose trois niveaux de défis. Chaque personne avance à son rythme : le niveau 1 est la base, les niveaux 2 et 3 sont là pour aller plus loin.
 
 !!! info "Avant de commencer"
 
-    - Repartir de sa page de la fin du chapitre CSS (sinon, coller le [code complet de l'étape 5](#etape-5-des-boites-et-des-espaces))
+    - Repartir de sa page de la fin du chapitre Mise en page (sinon, coller le code complet à la fin du chapitre [Mise en page : Flexbox et Grid](#mise-en-page-flexbox-et-grid))
     - Cette page reste personnelle : elle n'est **pas** publiée. Même ainsi, garder la bonne habitude de ne jamais mettre d'informations sensibles sur une page web (adresse, numéro de téléphone...)
     - Penser régulièrement à **Partager → Copier le Markdown** pour garder son travail
 
@@ -814,6 +1237,7 @@ Avant de coder, prendre deux minutes pour choisir :
 ### Niveau 2 : soigner les détails
 
 - [ ] La page est **centrée**, avec des espaces confortables (`max-width`, `margin`, `padding`)
+- [ ] Une **mise en page** à soi : des cartes avec Flexbox, une galerie avec Grid, avec ses propres contenus et ses propres images
 - [ ] Les sous-titres ont un **style** à eux : un trait dessous, une couleur, des majuscules...
 - [ ] Un effet au **survol** de la souris avec `:hover`
 - [ ] Les **liens** ont une couleur assortie au thème
@@ -843,31 +1267,9 @@ Avant de coder, prendre deux minutes pour choisir :
 
 Pour les personnes qui veulent aller plus loin. Chaque défi introduit une notion nouvelle : la lire sur MDN, essayer, casser, réparer !
 
-??? example "Défi : des cartes côte à côte"
+??? example "Défi : des cartes qui passent à la ligne"
 
-    Disposer ses sections comme des cartes, côte à côte, avec **Flexbox**.
-
-    **HTML** : entourer les sections d'un `<div class="cartes">`, et chaque section d'un `<div class="carte">`
-
-    ```html
-    <div class="cartes">
-      <div class="carte">
-        <h2>Ce que j'aime</h2>
-        <ul>
-          <li>Le rap</li>
-          <li>Les séries</li>
-        </ul>
-      </div>
-      <div class="carte">
-        <h2>Mon top 3</h2>
-        <ol>
-          <li>...</li>
-        </ol>
-      </div>
-    </div>
-    ```
-
-    **CSS**
+    Sur un écran étroit, comme celui d'un téléphone, trois cartes côte à côte deviennent trop serrées. `flex-wrap` permet de les faire passer à la ligne :
 
     ```css
     .cartes {
@@ -878,15 +1280,28 @@ Pour les personnes qui veulent aller plus loin. Chaque défi introduit une notio
 
     .carte {
       flex: 1 1 200px;
-      background-color: white;
-      padding: 16px;
-      border-radius: 12px;
     }
     ```
 
-    `display: flex` aligne les cartes sur une ligne, `flex-wrap: wrap` les fait passer à la ligne quand il n'y a plus de place, et `gap` met de l'espace entre elles.
+    `flex: 1 1 200px` signifie : *chaque carte mesure au moins 200 pixels et partage le reste de la place*. Quand il n'y a plus assez de place pour une carte de 200 pixels, elle passe à la ligne suivante. Pour tester, élargir ou rétrécir l'aperçu de MDN Playground.
 
-    → Sur MDN : [Flexbox](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/CSS_layout/Flexbox){target="_blank"}
+    → Sur MDN : [Boîtes flexibles, l'enveloppement](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/CSS_layout/Flexbox){target="_blank"}
+
+??? example "Défi : une galerie qui s'adapte"
+
+    Au lieu de fixer trois colonnes, laisser la grille choisir combien de colonnes tiennent dans la largeur :
+
+    ```css
+    .galerie {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 8px;
+    }
+    ```
+
+    `minmax(150px, 1fr)` : chaque colonne mesure au moins 150 pixels, et au plus une part de la place. `auto-fill` : la grille crée autant de colonnes qu'il en tient. Rétrécir l'aperçu pour voir le nombre de colonnes changer.
+
+    → Sur MDN : [Grilles](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/CSS_layout/Grids){target="_blank"}
 
 ??? example "Défi : une image qui bouge au survol"
 

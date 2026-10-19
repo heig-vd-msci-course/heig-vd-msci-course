@@ -77,6 +77,24 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
 
 ---
 
+## Mardi : points à aborder en classe
+
+### En début de matinée
+
+1. **Retour sur le lundi** : la journée s'est bien passée, mais le niveau de bruit était élevé
+    - L'équipe enseignante n'est pas là pour faire la police, mais pour aider à apprendre et à construire quelque chose
+    - Personne ne sera forcé de s'intéresser au cours
+    - En revanche, le respect des camarades et de l'équipe enseignante est attendu : garder au moins le silence pendant les explications, même en étant sur son smartphone
+2. **Présenter le projet, le test et les critères d'évaluation**
+3. **Mettre l'accent sur le CSS plutôt que sur le HTML** : le chapitre HTML est un rappel, à parcourir rapidement si le groupe l'a déjà vu en amont, pour laisser du temps au chapitre [Mise en page : Flexbox et Grid](../programme/mardi/matin.md#mise-en-page-flexbox-et-grid){target="_blank"}. Les jeux de la section [Pour aller plus loin](../programme/mardi/matin.md#pour-aller-plus-loin){target="_blank"} (Flexbox Froggy, CSS Grid Garden, CSS Diner) conviennent aux personnes plus avancées
+
+### En début d'atelier de l'après-midi
+
+- **Montrer au projecteur la [version d'exemple du jeu](https://heig-vd-msci-course.github.io/heig-vd-msci-matches-webapp/){target="_blank"}** : une version réalisable dans le temps imparti, avec un style choisi
+- Seul `==` est présenté dans les conditions (pas `===`), pour ne pas introduire la notion de types
+
+---
+
 ## Mardi soir : publier les projets
 
 Les équipes envoient leur projet par e-mail avant **mardi 16h30**, avec le modèle de la [page du mardi](../programme/mardi/apres-midi.md#rendre-son-projet){target="_blank"}. Le code est copié depuis MDN Playground (« Partager → Copier le Markdown »).

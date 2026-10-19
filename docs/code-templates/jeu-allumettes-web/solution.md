@@ -145,10 +145,10 @@ Chaque bloc se colle dans la zone correspondante de [MDN Playground](https://dev
     function retirer(nombre) {
       allumettes = allumettes - nombre;
 
-      if (allumettes === 0) {
+      if (allumettes == 0) {
         message.textContent = "La joueuse " + joueuse + " a perdu !";
       } else {
-        if (joueuse === 1) {
+        if (joueuse == 1) {
           joueuse = 2;
         } else {
           joueuse = 1;
@@ -159,7 +159,7 @@ Chaque bloc se colle dans la zone correspondante de [MDN Playground](https://dev
       dessiner();
 
       // Partie terminée : plus aucun bouton ne fonctionne
-      if (allumettes === 0) {
+      if (allumettes == 0) {
         retirer1.disabled = true;
       }
     }
@@ -231,14 +231,14 @@ Chaque bloc se colle dans la zone correspondante de [MDN Playground](https://dev
     function tourOrdinateur() {
       // Stratégie gagnante : (allumettes - 1) % 4, ou 1 si la position est perdante
       let ordiRetire = (allumettes - 1) % 4;
-      if (ordiRetire === 0) {
+      if (ordiRetire == 0) {
         ordiRetire = 1;
       }
 
       allumettes = allumettes - ordiRetire;
       dessiner();
 
-      if (allumettes === 0) {
+      if (allumettes == 0) {
         message.textContent = "L'ordinateur a pris la dernière allumette : vous avez gagné !";
       } else {
         message.textContent = "L'ordinateur a retiré " + ordiRetire + ". À vous de jouer !";
@@ -252,7 +252,7 @@ Chaque bloc se colle dans la zone correspondante de [MDN Playground](https://dev
       dessiner();
       boutonsActifs(false);
 
-      if (allumettes === 0) {
+      if (allumettes == 0) {
         message.textContent = "Vous avez pris la dernière allumette : perdu !";
       } else {
         message.textContent = "L'ordinateur réfléchit...";
@@ -295,7 +295,7 @@ Chaque bloc se colle dans la zone correspondante de [MDN Playground](https://dev
 |---------|------------------|
 | **Variables** | `allumettes` (le nombre restant) et `joueuse` (1 ou 2), créées avec `let` parce qu'elles changent |
 | **Événements** | Un `addEventListener("click", ...)` par bouton : Retirer 1, 2, 3 et Rejouer |
-| **Conditions** | Fin de partie (`allumettes === 0`), changement de joueuse (`joueuse === 1`) |
+| **Conditions** | Fin de partie (`allumettes == 0`), changement de joueuse (`joueuse == 1`) |
 | **Boucles** | Le dessin des allumettes dans `dessiner()` |
 
 ### Deux fonctions pour éviter les répétitions
@@ -309,7 +309,7 @@ Grâce à `retirer(nombre)`, les trois boutons ne contiennent qu'une ligne chacu
 
 ### Les coups impossibles
 
-Dans `dessiner()`, les boutons **Retirer 2** et **Retirer 3** sont désactivés quand il ne reste pas assez d'allumettes (`retirer3.disabled = allumettes < 3;`). Le nombre d'allumettes ne peut donc jamais devenir négatif, et la condition `allumettes === 0` suffit.
+Dans `dessiner()`, les boutons **Retirer 2** et **Retirer 3** sont désactivés quand il ne reste pas assez d'allumettes (`retirer3.disabled = allumettes < 3;`). Le nombre d'allumettes ne peut donc jamais devenir négatif, et la condition `allumettes == 0` suffit.
 
 ### Contre l'ordinateur
 

@@ -34,10 +34,10 @@ function dessiner() {
 function retirer(nombre) {
   allumettes = allumettes - nombre;
 
-  if (allumettes === 0) {
+  if (allumettes == 0) {
     message.textContent = "La joueuse " + joueuse + " a perdu !";
   } else {
-    if (joueuse === 1) {
+    if (joueuse == 1) {
       joueuse = 2;
     } else {
       joueuse = 1;
@@ -48,7 +48,7 @@ function retirer(nombre) {
   dessiner();
 
   // Partie terminée : plus aucun bouton ne fonctionne
-  if (allumettes === 0) {
+  if (allumettes == 0) {
     retirer1.disabled = true;
   }
 }

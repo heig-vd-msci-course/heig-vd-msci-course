@@ -18,7 +18,7 @@ icon: lucide/code
 
 À l'issue de cette journée, il sera possible de :
 
-1. **Structurer** une page web avec HTML et la **styliser** avec CSS
+1. **Structurer** une page web avec HTML, la **styliser** avec CSS et la **mettre en page** avec Flexbox et Grid
 2. **Utiliser** en JavaScript les concepts découverts lundi en blocs : variables, événements, conditions et boucles
 3. **Lire** les messages d'erreur et corriger un bug, en HTML, en CSS et en JavaScript
 4. **Créer** en équipe l'interface web du jeu des allumettes
@@ -32,7 +32,8 @@ icon: lucide/code
 1. [Le web et MDN Playground](matin.md#le-web-et-mdn-playground){target="_blank"} : comment fonctionne le web, découverte de l'outil
 2. [Rappel HTML : sa page personnelle](matin.md#rappel-html-sa-page-personnelle){target="_blank"} : tutoriel pas à pas, avec des bugs volontaires
 3. [Rappel CSS : mettre en forme sa page](matin.md#rappel-css-mettre-en-forme-sa-page){target="_blank"} : tutoriel pas à pas, avec des bugs volontaires
-4. [Atelier : personnaliser sa page](matin.md#atelier-personnaliser-sa-page){target="_blank"} : trois niveaux de défis
+4. [Mise en page : Flexbox et Grid](matin.md#mise-en-page-flexbox-et-grid){target="_blank"} : des cartes côte à côte et une galerie d'images, avec des bugs volontaires
+5. [Atelier : personnaliser sa page](matin.md#atelier-personnaliser-sa-page){target="_blank"} : trois niveaux de défis
 
 ### Après-midi : JavaScript
 
@@ -73,6 +74,8 @@ Le jeu des allumettes prend forme sur le web :
 
     En fin de journée, chaque équipe envoie son projet web (l'interface du jeu des allumettes) par e-mail à l'équipe enseignante, qui le publie en ligne dans la soirée. Les instructions détaillées sont données à la fin de l'après-midi : [Rendre son projet](apres-midi.md#rendre-son-projet){target="_blank"}.
 
+    → [Voir la version d'exemple du jeu](https://heig-vd-msci-course.github.io/heig-vd-msci-matches-webapp/){target="_blank"} : un exemple de résultat possible, chaque équipe crée sa propre version
+
 ---
 
 ## Ressources
@@ -80,6 +83,7 @@ Le jeu des allumettes prend forme sur le web :
 | Ressource | Description |
 |-----------|-------------|
 | [MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"} | L'éditeur en ligne de la journée : HTML, CSS et JavaScript, sans compte |
+| [Version d'exemple du jeu](https://heig-vd-msci-course.github.io/heig-vd-msci-matches-webapp/){target="_blank"} | Un exemple d'interface web du jeu des allumettes, à essayer avant l'atelier |
 | [Votre premier site web](https://developer.mozilla.org/fr/docs/Learn_web_development/Getting_started/Your_first_website){target="_blank"} | Le tutoriel MDN dont s'inspire la journée |
 | [Script dynamique avec JavaScript](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Scripting){target="_blank"} | Les chapitres MDN sur les variables, conditions, boucles et événements |
 | [Apprendre le développement web](https://developer.mozilla.org/fr/docs/Learn_web_development){target="_blank"} | Pour continuer à apprendre après la semaine |

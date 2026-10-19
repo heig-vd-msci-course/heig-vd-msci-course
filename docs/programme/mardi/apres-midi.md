@@ -6,20 +6,6 @@ icon: lucide/sunset
 
 > *JavaScript : donner vie à la page*
 
-<!-- TODO: Notes pour l'équipe enseignante
-
-1. Retirer la note sur le === et parler uniquement de == pour ne pas introduire les types
-   (voir la section "Les conditions" et le tableau de comparaison)
-
-2. Aller plus loin dans le JavaScript - ressource à partager :
-   - Elevator Saga : https://play.elevatorsaga.com
-
-3. Montrer la version d'exemple du jeu des allumettes :
-   https://heig-vd-msci-course.github.io/heig-vd-msci-matches-webapp/
-   (une version faisable avec un style choisi)
-
--->
-
 Ce matin, la page personnelle a pris forme avec le HTML (le contenu) et le CSS (l'apparence). Cet après-midi, place au **JavaScript** : le langage qui permet à une page de *réagir*, de *calculer* et de *changer* pendant qu'on l'utilise.
 
 Les quatre chapitres construisent, pas à pas, un **compteur d'allumettes** dans MDN Playground. Chaque chapitre présente un concept déjà rencontré lundi dans MakeCode, cette fois écrit en JavaScript. L'atelier final réunit le tout : l'interface complète du jeu des allumettes, en équipe.
@@ -431,11 +417,11 @@ Pour l'instant, on peut cliquer à l'infini : le compteur passe à 0, puis à -1
     bouton.addEventListener("click", function () {
       allumettes = allumettes - 1;
 
-      if (allumettes === 0) {
+      if (allumettes == 0) {
         message.textContent = "La joueuse " + joueuse + " a perdu !";
         bouton.disabled = true;
       } else {
-        if (joueuse === 1) {
+        if (joueuse == 1) {
           joueuse = 2;
         } else {
           joueuse = 1;
@@ -458,10 +444,10 @@ Pour l'instant, on peut cliquer à l'infini : le compteur passe à 0, puis à -1
 === "JavaScript"
 
     ```js
-    if (allumettes === 0) {
+    if (allumettes == 0) {
       message.textContent = "La joueuse " + joueuse + " a perdu !";
     } else {
-      if (joueuse === 1) {
+      if (joueuse == 1) {
         joueuse = 2;
       } else {
         joueuse = 1;
@@ -474,8 +460,8 @@ Pour l'instant, on peut cliquer à l'infini : le compteur passe à 0, puis à -1
 
     ```mermaid
     flowchart TD
-        Q{"allumettes === 0 ?"} -->|oui| P["La joueuse a perdu !"]
-        Q -->|non| J{"joueuse === 1 ?"}
+        Q{"allumettes == 0 ?"} -->|oui| P["La joueuse a perdu !"]
+        Q -->|non| J{"joueuse == 1 ?"}
         J -->|oui| J2["joueuse = 2"]
         J -->|non| J1["joueuse = 1"]
         J2 --> M["Au tour de la joueuse..."]
@@ -500,8 +486,8 @@ Pour l'instant, on peut cliquer à l'infini : le compteur passe à 0, puis à -1
 
 | Comparaison | Signification |
 |-------------|---------------|
-| `===` | Est égal à |
-| `!==` | Est différent de |
+| `==` | Est égal à |
+| `!=` | Est différent de |
 | `<` / `>` | Plus petit que / plus grand que |
 | `<=` / `>=` | Plus petit ou égal / plus grand ou égal |
 
@@ -511,7 +497,7 @@ Pour l'instant, on peut cliquer à l'infini : le compteur passe à 0, puis à -1
 
 !!! bug "Bug volontaire"
 
-    Dans la condition, écrire **un seul** signe `=` au lieu de trois :
+    Dans la condition, écrire **un seul** signe `=` au lieu de deux :
 
     ```js
     if (allumettes = 0) {
@@ -527,19 +513,19 @@ Pour l'instant, on peut cliquer à l'infini : le compteur passe à 0, puis à -1
 
     Un seul `=` ne *compare* pas : il *range* une valeur, comme dans `let allumettes = 20`. La condition `allumettes = 0` met donc 0 dans `allumettes`... et JavaScript considère que 0 veut dire « faux » : c'est le bloc `else` qui s'exécute. Aucun message d'erreur, puisque le code est valide : c'est encore un bug de logique.
 
-    **Correction** : `===` pour comparer.
+    **Correction** : `==` pour comparer.
 
-    **À retenir** : `=` range une valeur dans une variable, `===` compare deux valeurs. Confondre les deux est l'un des bugs les plus courants, même chez les développeuses expérimentées.
+    **À retenir** : `=` range une valeur dans une variable, `==` compare deux valeurs. Confondre les deux est l'un des bugs les plus courants, même chez les développeuses expérimentées.
 
 ### Étape 3 : Et avec trois allumettes d'un coup ?
 
 !!! question "Réfléchir"
 
-    Imaginer qu'il reste **2** allumettes et qu'une joueuse en retire **3** (avec le bouton de l'étape 4 du chapitre précédent). Que vaut `allumettes` ? La condition `allumettes === 0` est-elle vraie ?
+    Imaginer qu'il reste **2** allumettes et qu'une joueuse en retire **3** (avec le bouton de l'étape 4 du chapitre précédent). Que vaut `allumettes` ? La condition `allumettes == 0` est-elle vraie ?
 
 ??? success "Réponse"
 
-    `allumettes` vaut `-1`, et `-1 === 0` est faux : la partie continue avec un nombre négatif d'allumettes !
+    `allumettes` vaut `-1`, et `-1 == 0` est faux : la partie continue avec un nombre négatif d'allumettes !
 
     Solution : tester `allumettes <= 0` (*plus petit ou égal à zéro*), comme lundi dans MakeCode. On peut aussi remettre le compteur à 0 pour ne pas afficher de nombre négatif :
 
@@ -580,7 +566,7 @@ Pour l'instant, on peut cliquer à l'infini : le compteur passe à 0, puis à -1
         message.textContent = "La joueuse " + joueuse + " a perdu !";
         bouton.disabled = true;
       } else {
-        if (joueuse === 1) {
+        if (joueuse == 1) {
           joueuse = 2;
         } else {
           joueuse = 1;
@@ -810,7 +796,7 @@ Pour l'instant, le tas ne change pas quand on clique sur le bouton. Il faut le *
         message.textContent = "La joueuse " + joueuse + " a perdu !";
         bouton.disabled = true;
       } else {
-        if (joueuse === 1) {
+        if (joueuse == 1) {
           joueuse = 2;
         } else {
           joueuse = 1;
@@ -1004,7 +990,12 @@ Les idées sont les mêmes : seule l'écriture change. Ce qui a été compris lu
 
 Le quiz de la journée se fait sur **Wooclap**, avec le code donné en classe.
 
-→ Pour continuer à apprendre : [Apprendre le développement web](https://developer.mozilla.org/fr/docs/Learn_web_development){target="_blank"} sur MDN
+### Pour aller plus loin
+
+| Ressource | Description |
+|-----------|-------------|
+| [Elevator Saga](https://play.elevatorsaga.com){target="_blank"} | Programmer en JavaScript des ascenseurs qui transportent le plus de personnes possible, niveau après niveau (en anglais) |
+| [Apprendre le développement web](https://developer.mozilla.org/fr/docs/Learn_web_development){target="_blank"} | Le parcours complet de MDN, pour continuer à apprendre après la semaine |
 
 ---
 

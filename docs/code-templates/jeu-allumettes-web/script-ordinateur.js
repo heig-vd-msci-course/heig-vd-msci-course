@@ -37,14 +37,14 @@ function dessiner() {
 function tourOrdinateur() {
   // Stratégie gagnante : (allumettes - 1) % 4, ou 1 si la position est perdante
   let ordiRetire = (allumettes - 1) % 4;
-  if (ordiRetire === 0) {
+  if (ordiRetire == 0) {
     ordiRetire = 1;
   }
 
   allumettes = allumettes - ordiRetire;
   dessiner();
 
-  if (allumettes === 0) {
+  if (allumettes == 0) {
     message.textContent = "L'ordinateur a pris la dernière allumette : vous avez gagné !";
   } else {
     message.textContent = "L'ordinateur a retiré " + ordiRetire + ". À vous de jouer !";
@@ -58,7 +58,7 @@ function retirer(nombre) {
   dessiner();
   boutonsActifs(false);
 
-  if (allumettes === 0) {
+  if (allumettes == 0) {
     message.textContent = "Vous avez pris la dernière allumette : perdu !";
   } else {
     message.textContent = "L'ordinateur réfléchit...";
