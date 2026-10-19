@@ -85,5 +85,5 @@ Si des questions surgissent pendant cette journée de travail autonome :
 
 ## Navigation
 
-- [Retour au Mercredi - micro:bit](mercredi.md){target="_blank"}
+- [Retour au Mercredi - micro:bit et IA](mercredi/index.md){target="_blank"}
 - [Vendredi - Projet final](vendredi.md){target="_blank"}

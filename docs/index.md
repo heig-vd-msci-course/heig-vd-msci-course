@@ -30,7 +30,7 @@ L'équipe pédagogique accompagne le groupe tout au long de la semaine.
 |------|-------|--------------|
 | [Lundi](programme/lundi/index.md){target="_blank"} | Introduction et algorithmique | Premiers algorithmes, jeu des allumettes en programmation visuelle |
 | [Mardi](programme/mardi.md){target="_blank"} | HTML/CSS et publication web | Création et publication d'un site web personnel |
-| [Mercredi](programme/mercredi.md){target="_blank"} | micro:bit et programmation physique | Objet interactif avec capteurs et LEDs |
+| [Mercredi](programme/mercredi/index.md){target="_blank"} | micro:bit et intelligence artificielle | Objet interactif avec capteurs, réflexion sur l'IA |
 | [Jeudi](programme/jeudi.md){target="_blank"} | Travail autonome à domicile | Consolidation des acquis, préparation du projet final |
 | [Vendredi](programme/vendredi.md){target="_blank"} | Projet créatif et clôture | Projet final personnalisé, présentations |
 

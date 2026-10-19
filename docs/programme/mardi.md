@@ -79,4 +79,4 @@ Le jeu des allumettes prend forme sur le web :
 ## Navigation
 
 - [Retour au lundi - Introduction](lundi/index.md){target="_blank"}
-- [Mercredi - micro:bit](mercredi.md){target="_blank"}
+- [Mercredi - micro:bit et IA](mercredi/index.md){target="_blank"}
