@@ -258,6 +258,13 @@ Les contraintes ne rapportent pas de points. Elles doivent toutes être respect�
 
 ---
 
+## Ressources
+
+- [Présentation : Évaluation et projet final (HTML)](../slides/vendredi-evaluation.html){target="_blank"}
+- [Présentation : Évaluation et projet final (PDF)](../slides/vendredi-evaluation.pdf){target="_blank"}
+
+---
+
 ## Navigation
 
 - [Retour au Jeudi - Travail libre](jeudi.md){target="_blank"}
