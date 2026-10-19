@@ -52,6 +52,8 @@ Chaque élément est noté sur 6 selon la formule :
 note = (points obtenus / points maximum) × 5 + 1
 ```
 
+La note finale est arrondie au dixième.
+
 !!! warning "Règles connues à l'avance"
 
     Les critères et les contraintes de cette page s'appliquent tels quels. Ils sont publiés dès mardi pour permettre à chaque équipe de s'y préparer.
@@ -155,8 +157,8 @@ L'équipe doit pouvoir montrer où chacune de ces notions se trouve dans son cod
 
 | Délai | À faire |
 |-------|---------|
-| **Mercredi 16h00** | Noter dans la [feuille des équipes](https://docs.google.com/spreadsheets/d/15XeT07NH9VhMVT2w1itHC7NJF7lpZywitm_qXmaGwH8/edit?gid=1066530451#gid=1066530451){target="_blank"} : l'option choisie, la technologie, les objectifs et la personne responsable de chaque amélioration |
-| **Vendredi 12h00** | Remettre le projet selon la procédure de sa technologie |
+| **Mercredi 16h00** | Noter dans la [feuille des équipes](https://docs.google.com/spreadsheets/d/15XeT07NH9VhMVT2w1itHC7NJF7lpZywitm_qXmaGwH8/edit?gid=1066530451#gid=1066530451){target="_blank"} : l'option choisie, la technologie, les objectifs et l'amélioration (ou la fonctionnalité) dont chaque membre est responsable |
+| **Vendredi 12h00** | Remettre le projet selon la procédure de sa technologie, puis noter dans la feuille des équipes le lien du projet et le lien des slides (Google Slides) |
 
 ---
 
@@ -164,16 +166,18 @@ L'équipe doit pouvoir montrer où chacune de ces notions se trouve dans son cod
 
 ### Durée
 
-| Taille de l'équipe | Présentation | Questions | Transition |
-|--------------------|--------------|-----------|------------|
-| 4 personnes | 8 à 9 min | 2 min | 1 min |
-| 3 personnes | 7 à 8 min | 2 min | 1 min |
-| 2 personnes | 6 à 7 min | 2 min | 1 min |
-| 1 personne | 5 à 6 min | 2 min | 1 min |
+La durée maximale de la présentation est de **4 minutes + 1 minute par membre de l'équipe**.
+
+| Taille de l'équipe | Présentation (maximum) | Questions | Transition |
+|--------------------|------------------------|-----------|------------|
+| 4 personnes | 8 min | 2 min | 1 min |
+| 3 personnes | 7 min | 2 min | 1 min |
+| 2 personnes | 6 min | 2 min | 1 min |
+| 1 personne | 5 min | 2 min | 1 min |
 
 ### Format
 
-- Les slides sont autorisées
+- Les slides sont autorisées (lien Google Slides noté dans la feuille des équipes)
 - Une **démonstration en direct** du projet est obligatoire
 - Toute l'équipe participe : prendre la parole, gérer les slides ou faire la démonstration
 - L'équipe enseignante pose des questions sur le projet et sur son code
@@ -182,25 +186,25 @@ L'équipe doit pouvoir montrer où chacune de ces notions se trouve dans son cod
 
 L'ordre a été tiré au sort. Les horaires sont indicatifs.
 
-| # | Équipe | Membres | Présentation | Début |
+| # | Équipe | Membres | Présentation (maximum) | Début |
 |---|--------|---------|--------------|-------|
-| 1 | Raisin 🍇 | 3 | 7-8 min | 13h00 |
-| 2 | Pastèque 🍉 | 4 | 8-9 min | 13h10 |
-| 3 | Cerise 🍒 | 4 | 8-9 min | 13h21 |
-| 4 | Myrtille 🫐 | 2 | 6-7 min | 13h32 |
-| 5 | Orange 🍊 | 4 | 8-9 min | 13h41 |
-| 6 | Pêche 🍑 | 2 | 6-7 min | 13h52 |
-| 7 | Mangue 🥭 | 2 | 6-7 min | 14h01 |
-| 8 | Lime 🍋‍🟩 | 1 | 5-6 min | 14h10 |
-| 9 | Fraise 🍓 | 3 | 7-8 min | 14h18 |
-| 10 | Pomme 🍎 | 4 | 8-9 min | 14h28 |
-| 11 | Banane 🍌 | 3 | 7-8 min | 14h39 |
-| 12 | Poire 🍐 | 2 | 6-7 min | 14h49 |
-| 13 | Mangue 2 🥭 | 2 | 6-7 min | 14h58 |
-| 14 | Ananas 🍍 | 3 | 7-8 min | 15h07 |
-| 15 | Citron 🍋 | 3 | 7-8 min | 15h17 |
-| 16 | Kiwi 🥝 | 3 | 7-8 min | 15h27 |
-| 17 | Coco 🥥 | 3 | 7-8 min | 15h37 |
+| 1 | Raisin 🍇 | 3 | 7 min | 13h00 |
+| 2 | Pastèque 🍉 | 4 | 8 min | 13h10 |
+| 3 | Cerise 🍒 | 4 | 8 min | 13h21 |
+| 4 | Myrtille 🫐 | 2 | 6 min | 13h32 |
+| 5 | Orange 🍊 | 4 | 8 min | 13h41 |
+| 6 | Pêche 🍑 | 2 | 6 min | 13h52 |
+| 7 | Mangue 🥭 | 2 | 6 min | 14h01 |
+| 8 | Lime 🍋‍🟩 | 1 | 5 min | 14h10 |
+| 9 | Fraise 🍓 | 3 | 7 min | 14h18 |
+| 10 | Pomme 🍎 | 4 | 8 min | 14h28 |
+| 11 | Banane 🍌 | 3 | 7 min | 14h39 |
+| 12 | Poire 🍐 | 2 | 6 min | 14h49 |
+| 13 | Mangue 2 🥭 | 2 | 6 min | 14h58 |
+| 14 | Ananas 🍍 | 3 | 7 min | 15h07 |
+| 15 | Citron 🍋 | 3 | 7 min | 15h17 |
+| 16 | Kiwi 🥝 | 3 | 7 min | 15h27 |
+| 17 | Coco 🥥 | 3 | 7 min | 15h37 |
 
 ---
 
@@ -227,7 +231,7 @@ Chaque critère est évalué sur 2 points :
 | 9 | Le temps imparti est respecté | 2 |
 | 10 | Les réponses aux questions de l'équipe enseignante sont correctes, y compris sur le code des améliorations | 2 |
 | 11 | Toute l'équipe participe activement (parole, slides ou démonstration) | 2 |
-| 12 | Le comportement de l'équipe du mardi au vendredi est fairplay et respectueux | 2 |
+| 12 | Le comportement de l'équipe est fairplay et respectueux (global sur la semaine) | 2 |
 | | **Total** | **24** |
 
 ---
@@ -244,8 +248,8 @@ Les contraintes ne rapportent pas de points. Elles doivent toutes être respect�
 | La musique, les images et les sons sont libres de droits ou leur source est citée | Critère concerné à 0 |
 | Le contenu peut être présenté publiquement au nom de la HEIG-VD : aucun contenu discriminatoire, haineux, sexuel ou violent gratuit, aucune moquerie visant une personne réelle | Note du projet à 1 |
 | Toutes les personnes sont présentes pendant les présentations des autres équipes | Note du projet à 1 |
-| Le silence et le respect sont de mise pendant les présentations | Note du projet à 1 |
-| Il est formellement interdit de filmer, photographier ou enregistrer qui que ce soit | Note du projet à 1 |
+| Le silence et le respect sont de mise pendant les présentations | 1 point retiré de la note du projet |
+| Il est formellement interdit de filmer, photographier ou enregistrer qui que ce soit à son insu | Note du projet à 1 |
 
 !!! note "Pourquoi ces contraintes ?"
 
