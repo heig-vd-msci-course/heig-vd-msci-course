@@ -273,20 +273,27 @@ Après l'atelier, discussion collective :
 
 ### Le projet créatif de vendredi
 
-La dernière journée sera consacrée à un **projet libre** utilisant les technologies découvertes cette semaine :
+Vendredi, chaque équipe présente un projet réalisé avec **une** des trois technologies de la semaine : MakeCode Arcade, HTML/CSS/JavaScript ou micro:bit. Deux options sont possibles :
 
-- MakeCode Arcade (jeu vidéo)
-- HTML/CSS/JS (site web)
-- micro:bit (objet interactif)
+- **Option A** : améliorer le jeu des allumettes, avec une amélioration par membre de l'équipe
+- **Option B** : créer un projet libre, avec une base qui fonctionne et une fonctionnalité par membre
 
-### Objectifs du projet
+Dans les deux cas, le projet utilise au minimum une variable, une condition, une boucle et un événement.
 
-| Critère | Description |
-|---------|-------------|
-| **Créativité** | Une idée originale ou personnalisée |
-| **Technique** | Utilisation des concepts appris |
-| **Documentation** | Capacité à expliquer ce qui a été fait |
-| **Finalisation** | Un projet qui fonctionne |
+### Règles et critères
+
+Toutes les règles du projet se trouvent sur la page du vendredi :
+
+| Section | Contenu |
+|---------|---------|
+| [Projet final](../vendredi.md#projet-final){target="_blank"} | Technologies, options et exigences communes |
+| [Délais](../vendredi.md#delais){target="_blank"} | Ce qu'il faut noter dans la feuille des équipes, et quand |
+| [Critères d'évaluation](../vendredi.md#criteres-devaluation){target="_blank"} | Les critères de la présentation, notés sur 2 points chacun |
+| [Contraintes](../vendredi.md#contraintes){target="_blank"} | Les règles à respecter et les sanctions en cas de non-respect |
+
+!!! warning "Avant 16h00 aujourd'hui"
+
+    Noter dans la feuille des équipes l'option choisie, la technologie, les objectifs et l'amélioration (ou la fonctionnalité) dont chaque membre est responsable. Le respect de ce délai fait partie des critères d'évaluation.
 
 ### Passage dans les équipes
 

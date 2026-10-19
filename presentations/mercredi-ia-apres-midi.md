@@ -441,24 +441,25 @@ L'IA peut accélérer l'apprentissage ou l'empêcher.
 
 # Le projet créatif de vendredi
 
-## Votre création personnelle
+## Une technologie, deux options
 
-Vendredi sera consacré à un projet libre utilisant les technologies de la semaine :
+Une des trois technologies de la semaine : MakeCode Arcade, HTML/CSS/JavaScript ou micro:bit
 
-- MakeCode Arcade (jeu vidéo)
-- HTML/CSS/JS (site web)
-- micro:bit (objet interactif)
+- **Option A** : améliorer le jeu des allumettes, une amélioration par membre
+- **Option B** : un projet libre, une base qui fonctionne et une fonctionnalité par membre
+
+Au minimum : une variable, une condition, une boucle et un événement
 
 ---
 
-# Les objectifs
+# Règles et critères
 
-## Ce qu'on attend du projet
+## Tout est sur la page du vendredi
 
-1. **Créativité** : une idée originale ou personnalisée
-2. **Technique** : utilisation des concepts appris
-3. **Documentation** : pouvoir expliquer ce que vous avez fait
-4. **Finalisation** : un projet qui fonctionne
+Options, délais, critères d'évaluation et contraintes :
+heig-vd-msci-course.github.io/heig-vd-msci-course/programme/vendredi/
+
+**Avant 16h00 aujourd'hui** : noter dans la feuille des équipes l'option, la technologie, les objectifs et l'amélioration (ou la fonctionnalité) de chaque membre
 
 ---
 
