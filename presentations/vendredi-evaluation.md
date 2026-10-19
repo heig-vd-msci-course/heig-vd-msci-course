@@ -113,9 +113,9 @@ La matière : tous les supports de la semaine, tutoriels compris.
 
 - Le fonctionnement du web, le rôle de **HTML**, **CSS** et **JavaScript**
 - Les balises vues : titres, paragraphes, liens, images
-- CSS : sélecteur, propriété, valeur, boîtes et espacements
+- CSS : sélecteur, propriété, valeur, boîtes et espacements 
 - JavaScript : console, `let` et `const`, afficher dans la page
-- Réagir à un bouton, `if` et `===`, la boucle `for`
+- Réagir à un bouton, `if` et `==`, la boucle `for`
 - Les bugs de la journée et comment les corriger
 
 ---

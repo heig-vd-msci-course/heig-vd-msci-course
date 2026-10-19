@@ -83,7 +83,7 @@ Tout ce qui a été vu dans les supports de cours de la semaine, tutoriels compr
 - Le fonctionnement du web et le rôle de chaque langage (HTML, CSS, JavaScript)
 - Les balises HTML vues dans les tutoriels (titres, paragraphes, liens, images)
 - Les règles CSS : sélecteur, propriété, valeur, boîtes et espacements
-- JavaScript : la console, `let` et `const`, afficher dans la page, réagir à un bouton, `if` et `===`, la boucle `for`
+- JavaScript : la console, `let` et `const`, afficher dans la page, réagir à un bouton, `if` et `==`, la boucle `for`
 - Les bugs de la journée et la manière de les corriger
 
 **Mercredi : micro:bit et IA**
