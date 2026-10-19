@@ -6,6 +6,20 @@ icon: lucide/sunset
 
 > *JavaScript : donner vie à la page*
 
+<!-- TODO: Notes pour l'équipe enseignante
+
+1. Retirer la note sur le === et parler uniquement de == pour ne pas introduire les types
+   (voir la section "Les conditions" et le tableau de comparaison)
+
+2. Aller plus loin dans le JavaScript - ressource à partager :
+   - Elevator Saga : https://play.elevatorsaga.com
+
+3. Montrer la version d'exemple du jeu des allumettes :
+   https://heig-vd-msci-course.github.io/heig-vd-msci-matches-webapp/
+   (une version faisable avec un style choisi)
+
+-->
+
 Ce matin, la page personnelle a pris forme avec le HTML (le contenu) et le CSS (l'apparence). Cet après-midi, place au **JavaScript** : le langage qui permet à une page de *réagir*, de *calculer* et de *changer* pendant qu'on l'utilise.
 
 Les quatre chapitres construisent, pas à pas, un **compteur d'allumettes** dans MDN Playground. Chaque chapitre présente un concept déjà rencontré lundi dans MakeCode, cette fois écrit en JavaScript. L'atelier final réunit le tout : l'interface complète du jeu des allumettes, en équipe.
@@ -491,10 +505,6 @@ Pour l'instant, on peut cliquer à l'infini : le compteur passe à 0, puis à -1
 | `<` / `>` | Plus petit que / plus grand que |
 | `<=` / `>=` | Plus petit ou égal / plus grand ou égal |
 
-!!! note "`==` ou `===` ?"
-
-    Dans MakeCode, on écrit `joueuse == 1`. En JavaScript, on préfère `===` : il vérifie aussi que les deux valeurs sont du même type (un nombre et un nombre, pas un nombre et un texte).
-
 `bouton.disabled = true;` désactive le bouton : la partie est finie, on ne peut plus cliquer.
 
 ### Étape 2 : Le bug du signe égal
@@ -825,6 +835,8 @@ Pour l'instant, le tas ne change pas quand on clique sur le bouton. Il faut le *
 C'est le moment de tout assembler, **en équipe**, pour créer sa propre version du jeu des allumettes. C'est ce projet que l'équipe envoie avant **16h30** et qui sera publié dans la galerie.
 
 Voici un exemple de résultat, au cours d'une partie complète. Chaque équipe crée **sa** version : les couleurs, les textes et la disposition peuvent être complètement différents.
+
+→ [Voir la version d'exemple en ligne](https://heig-vd-msci-course.github.io/heig-vd-msci-matches-webapp/){target="_blank"}
 
 ![Une partie complète du jeu des allumettes : les joueuses retirent des allumettes à tour de rôle jusqu'au message de fin, puis la partie recommence](../../assets/images/tuesday/jeu-allumettes-partie.gif)
 

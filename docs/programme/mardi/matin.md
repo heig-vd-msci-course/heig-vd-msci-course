@@ -6,6 +6,25 @@ icon: lucide/sunrise
 
 > *HTML et CSS : créer et personnaliser sa page*
 
+<!-- TODO: Notes pour l'équipe enseignante
+
+1. AU TOUT DÉBUT DE LA JOURNÉE : Parler de lundi
+   - La journée s'est bien passée mais il y avait beaucoup de bruit
+   - On ne veut pas faire la police, on est là pour aider à apprendre et à construire quelque chose
+   - Si ça ne les intéresse pas, on ne va pas leur courir après
+   - Mais merci de respecter leurs camarades et nous en étant au moins silencieux/silencieuses s'ils/elles veulent être sur leur smartphone au lieu d'écouter
+
+2. Parler du projet, du test et des critères d'évaluation
+
+3. Mettre plus l'accent sur CSS que HTML (s'ils ont déjà vu HTML en amont)
+
+4. Aller plus loin dans le CSS - ressources à partager :
+   - Flexbox Froggy : https://flexboxfroggy.com/#fr
+   - CSS Grid Garden : https://cssgridgarden.com/#fr
+   - CSS Diner (sélecteurs) : https://flukeout.github.io
+
+-->
+
 ## Le web et MDN Playground
 
 Avant d'écrire sa première page, un petit tour de ce qui se passe quand on ouvre un site, puis la découverte de l'outil de la journée.
