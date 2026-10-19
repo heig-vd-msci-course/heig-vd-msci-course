@@ -19,7 +19,11 @@ nav = [
       { "Matin" = "programme/lundi/matin.md" },
       { "Après-midi" = "programme/lundi/apres-midi.md" },
     ]},
-    { "Mardi" = "programme/mardi.md" },
+    { "Mardi" = [
+      { "Mardi" = "programme/mardi/index.md" },
+      { "Matin" = "programme/mardi/matin.md" },
+      { "Après-midi" = "programme/mardi/apres-midi.md" },
+    ]},
     { "Mercredi" = [
       { "Mercredi" = "programme/mercredi/index.md" },
       { "Matin" = "programme/mercredi/matin.md" },

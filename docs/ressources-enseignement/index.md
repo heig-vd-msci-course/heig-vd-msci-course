@@ -14,13 +14,17 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
 - [ ] Imprimer le [matériel du lundi](#materiel-a-imprimer)
 - [ ] Imprimer la [signalétique](#materiel-a-imprimer) et la poser le lundi matin entre l'entrée du bâtiment et la salle R102
 - [ ] Imprimer la [liste de présences](#materiel-a-imprimer) (une par groupe)
+- [ ] Imprimer la [fiche d'accès](#materiel-a-imprimer) (codes QR et WiFi) et la distribuer dans les classes
+- [ ] Imprimer la [fiche de prêt des ordinateurs](#materiel-a-imprimer) (une par salle)
 - [ ] Prévoir des baguettes ou allumettes (environ 10 par binôme), des feuilles blanches et des crayons
-- [ ] Vérifier les salles (R102, T155 / T157) et l'accès à [arcade.makecode.com](https://arcade.makecode.com){target="_blank"} depuis les ordinateurs
+- [ ] Vérifier les salles (R102, T155 / T157) et l'accès à [arcade.makecode.com](https://arcade.makecode.com){target="_blank"} et à [MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"} depuis les ordinateurs
+- [ ] Activer GitHub Pages sur le [dépôt des projets](https://github.com/heig-vd-msci-course/heig-vd-msci-projets){target="_blank"}
 - [ ] Préparer les Wooclap du jour (charte, quiz)
 
 ## Pendant le cours
 
 - [ ] Relever les présences à chaque demi-journée
+- [ ] Mardi soir : [publier les projets des équipes](#mardi-soir-publier-les-projets)
 - [ ] Prise de température au début de chaque jour (attentes, craintes)
 - [ ] Noter les questions fréquentes et les difficultés pour améliorer le support
 
@@ -37,22 +41,75 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
     [:material-download: Matériel du lundi (PDF)](lundi-materiel.pdf){ .md-button .md-button--primary target="_blank" }
     [:material-download: Signalétique MSCI (PDF)](signaletique.pdf){ .md-button target="_blank" }
     [:material-download: Liste de présences (PDF)](presences.pdf){ .md-button target="_blank" }
+    [:material-download: Fiche d'accès (PDF)](acces.pdf){ .md-button target="_blank" }
+    [:material-download: Prêt des ordinateurs (PDF)](prets-ordinateurs.pdf){ .md-button target="_blank" }
 
 | Document | Contenu | Format |
 |----------|---------|--------|
 | **Matériel du lundi** | Labyrinthes, formes avec baguettes, dessins, vocabulaire des 3 niveaux, plateaux du jeu des allumettes. La première page indique le nombre d'exemplaires conseillés. | A4 portrait, 8 pages |
 | **Signalétique MSCI** | Panneaux « MSCI - Tout droit », « MSCI - À gauche » et « MSCI - À droite » pour guider vers la salle | A4 paysage, 3 pages |
 | **Liste de présences** | 70 lignes à remplir, une case par demi-journée (lundi, mardi, mercredi, vendredi) pour noter les périodes d'absence, ligne de visa | A4 paysage, 4 pages |
+| **Fiche d'accès** | Codes QR vers le support du lundi après-midi et l'inscription des groupes (Google Sheets), règles de prêt des ordinateurs, instructions de connexion au WiFi public-HEIG-VD pour les ordinateurs personnels | A4 portrait, 1 page |
+| **Prêt des ordinateurs** | 25 lignes : numéro de l'ordinateur, équipe, membres, case « rendu » pour chaque jour, remarques | A4 paysage, 2 pages |
 
 ??? info "Modifier les documents"
 
-    Les sources se trouvent dans le dossier `impressions/` du dépôt : un fichier HTML par document, sauf la liste de présences (Markdown + LaTeX, générée avec pandoc). Après modification, régénérer les PDF avec :
+    Les sources se trouvent dans le dossier `impressions/` du dépôt : un fichier HTML par document, sauf la liste de présences, la fiche d'accès et le prêt des ordinateurs (Markdown + LaTeX, générés avec pandoc ; codes QR dans `impressions/qr/`, générés avec [QuickChart](https://quickchart.io/documentation/qr-codes/){target="_blank"}). Après modification, régénérer les PDF avec :
 
     ```bash
     ./generate-impressions.sh
     ```
 
     Le script nécessite Chrome ou Chromium, et Docker pour la liste de présences (image `pandoc/latex`).
+
+---
+
+## Solutions des ateliers
+
+| Jour | Atelier | Solution |
+|------|---------|----------|
+| Lundi | Jeu des allumettes en blocs (MakeCode Arcade) | [Page de la solution](../code-templates/makecode-arcade/solution.md){target="_blank"} : projets MakeCode jouables et blocs |
+| Mardi | Interface web du jeu des allumettes | [Page de la solution](../code-templates/jeu-allumettes-web/solution.md){target="_blank"} : jeu jouable, code HTML/CSS/JavaScript, variante contre l'ordinateur |
+
+!!! info "Donner accès à la solution du mardi"
+
+    Dans la page de l'après-midi, le lien « Besoin d'aide ? » vers la solution de l'atelier est en commentaire, comme celui du lundi au départ. Le décommenter dans `docs/programme/mardi/apres-midi.md` (bloc `LIEN SOLUTION`) quand vous souhaitez que les équipes y aient accès.
+
+---
+
+## Mardi : points à aborder en classe
+
+### En début de matinée
+
+1. **Retour sur le lundi** : la journée s'est bien passée, mais le niveau de bruit était élevé
+    - L'équipe enseignante n'est pas là pour faire la police, mais pour aider à apprendre et à construire quelque chose
+    - Personne ne sera forcé de s'intéresser au cours
+    - En revanche, le respect des camarades et de l'équipe enseignante est attendu : garder au moins le silence pendant les explications, même en étant sur son smartphone
+2. **Présenter le projet, le test et les critères d'évaluation**
+3. **Mettre l'accent sur le CSS plutôt que sur le HTML** : le chapitre HTML est un rappel, à parcourir rapidement si le groupe l'a déjà vu en amont, pour laisser du temps au chapitre [Mise en page : Flexbox et Grid](../programme/mardi/matin.md#mise-en-page-flexbox-et-grid){target="_blank"}. Les jeux de la section [Pour aller plus loin](../programme/mardi/matin.md#pour-aller-plus-loin){target="_blank"} (Flexbox Froggy, CSS Grid Garden, CSS Diner) conviennent aux personnes plus avancées
+
+### En début d'atelier de l'après-midi
+
+- **Montrer au projecteur la [version d'exemple du jeu](https://heig-vd-msci-course.github.io/heig-vd-msci-matches-webapp/){target="_blank"}** : une version réalisable dans le temps imparti, avec un style choisi
+- Seul `==` est présenté dans les conditions (pas `===`), pour ne pas introduire la notion de types
+
+---
+
+## Mardi soir : publier les projets
+
+Les équipes envoient leur projet par e-mail avant **mardi 16h30**, avec le modèle de la [page du mardi](../programme/mardi/apres-midi.md#rendre-son-projet){target="_blank"}. Le code est copié depuis MDN Playground (« Partager → Copier le Markdown »).
+
+1. Copier le texte de chaque e-mail dans `emails/<equipe>.txt`, dans le [dépôt des projets](https://github.com/heig-vd-msci-course/heig-vd-msci-projets){target="_blank"}
+2. Lancer `python3 publier.py` : le script crée le dossier de chaque équipe et met à jour la galerie
+3. Vérifier la galerie en local, puis commiter et pousser
+4. Répondre à chaque équipe avec son lien
+
+La procédure détaillée et la réponse type aux équipes se trouvent dans le README du [dépôt des projets](https://github.com/heig-vd-msci-course/heig-vd-msci-projets){target="_blank"}.
+
+| | Adresse |
+|---|---|
+| Galerie | <https://heig-vd-msci-course.github.io/heig-vd-msci-projets/> |
+| Projet d'une équipe | `https://heig-vd-msci-course.github.io/heig-vd-msci-projets/<equipe>/` (fruit en minuscules, sans accents) |
 
 ---
 

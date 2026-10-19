@@ -92,5 +92,5 @@ L'après-midi, réflexion sur comment l'IA pourrait générer du code pour ce je
 
 ## Navigation
 
-- [← Mardi - Web](../mardi.md){target="_blank"}
+- [← Mardi - Web](../mardi/index.md){target="_blank"}
 - [Jeudi - Travail libre →](../jeudi.md){target="_blank"}

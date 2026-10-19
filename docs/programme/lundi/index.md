@@ -67,4 +67,4 @@ icon: lucide/play
 
 ## Navigation
 
-- [Mardi - Web](../mardi.md){target="_blank"}
+- [Mardi - Web](../mardi/index.md){target="_blank"}

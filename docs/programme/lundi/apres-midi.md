@@ -322,4 +322,4 @@ Pour partager un projet avec son équipe ou le soumettre :
 
 - [← Lundi matin](matin.md){target="_blank"}
 - [← Retour au programme du Lundi](index.md){target="_blank"}
-- [Mardi →](../mardi.md){target="_blank"}
+- [Mardi →](../mardi/index.md){target="_blank"}
