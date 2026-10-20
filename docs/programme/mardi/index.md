@@ -80,6 +80,18 @@ Le jeu des allumettes prend forme sur le web :
 
 ## Ressources
 
+!!! tip "Slides"
+
+    **Matin :**
+
+    - [Présentation : HTML et CSS (HTML)](../../slides/mardi-html-css-matin.html){target="_blank"}
+    - [Présentation : HTML et CSS (PDF)](../../slides/mardi-html-css-matin.pdf){target="_blank"}
+
+    **Après-midi :**
+
+    - [Présentation : JavaScript (HTML)](../../slides/mardi-javascript-apres-midi.html){target="_blank"}
+    - [Présentation : JavaScript (PDF)](../../slides/mardi-javascript-apres-midi.pdf){target="_blank"}
+
 | Ressource | Description |
 |-----------|-------------|
 | [MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"} | L'éditeur en ligne de la journée : HTML, CSS et JavaScript, sans compte |
