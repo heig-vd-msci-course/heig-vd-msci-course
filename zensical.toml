@@ -35,6 +35,8 @@ nav = [
   { "Présentations" = [
     { "Lundi Matin - Introduction" = "slides/lundi-introduction-matin.html" },
     { "Lundi Après-midi - MakeCode" = "slides/lundi-introduction-apres-midi.html" },
+    { "Mardi Matin - HTML et CSS" = "slides/mardi-html-css-matin.html" },
+    { "Mardi Après-midi - JavaScript" = "slides/mardi-javascript-apres-midi.html" },
     { "Mercredi Après-midi - IA" = "slides/mercredi-ia-apres-midi.html" },
   ]},
   { "Ressources" = [
