@@ -290,6 +290,12 @@ Ajouter ce paragraphe à la fin de la page, avec un vrai lien vers une chanson, 
 
     ![MDN Playground : le lien apparaît en bleu et souligné](../../assets/images/tuesday/mardi-html-etape-4.webp)
 
+!!! warning "Dans MDN Playground, le lien ne s'ouvre pas"
+
+    Un clic sur le lien dans l'aperçu ne fait rien : c'est normal, le code n'est pas en cause. L'aperçu de MDN Playground est une zone protégée (un « bac à sable ») qui empêche la page testée d'ouvrir un nouvel onglet. Sans `target="_blank"`, le site visé s'ouvrirait dans l'aperçu lui-même, mais la plupart des sites, comme YouTube, refusent de s'y afficher.
+
+    Pour vérifier l'adresse : clic droit sur le lien, **Copier l'adresse du lien**, puis la coller dans un nouvel onglet. Sur une vraie page publiée en ligne, le lien fonctionne normalement.
+
 !!! bug "Bug volontaire"
 
     Dans la balise `<a>`, écrire `herf` au lieu de `href` :
