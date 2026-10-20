@@ -51,7 +51,6 @@ footer: 'ERACOM - Semaine 43'
 | Les boucles | Dessiner les allumettes |
 | Atelier | L'interface du jeu des allumettes, en équipe |
 | Rendre son projet | Avant 16h30, par e-mail |
-| Synthèse | Récapitulatif et quiz Wooclap |
 
 ---
 
@@ -194,18 +193,6 @@ compteur.textContent = allumettes;
 
 ---
 
-# À vous : les variables
-
-## Sur le site, chapitre « Les variables »
-
-1. La console
-2. Une variable
-3. Le bug de la faute de frappe
-4. `let` ou `const` ?
-5. Afficher dans la page
-
----
-
 <!-- _class: invert -->
 
 # Les événements
@@ -248,46 +235,6 @@ Quand on fait un `"click"` sur `bouton`, exécuter tout ce qui se trouve entre l
 
 </div>
 </div>
-
----
-
-# Deux sortes de bugs
-
-## Avec ou sans message d'erreur
-
-<div class="two-columns">
-<div>
-
-### Avec un message
-
-```text
-TypeError: Cannot read properties of null
-```
-
-`null` : un `querySelector` n'a **rien** trouvé. Vérifier le `#` et l'`id`.
-
-</div>
-<div>
-
-### Sans message
-
-La variable change, mais la page reste à 20 : un **bug de logique**.
-
-La page ne se met **jamais** à jour toute seule.
-
-</div>
-</div>
-
----
-
-# À vous : les événements
-
-## Sur le site, chapitre « Les événements »
-
-1. Un bouton qui retire une allumette
-2. Le bug du `#` oublié
-3. Le bug de l'affichage oublié
-4. Trois boutons
 
 ---
 
@@ -362,22 +309,6 @@ if (allumettes <= 0) {
 ```
 
 `bouton.disabled = true` désactive le bouton : la partie est finie.
-
----
-
-# À vous : les conditions
-
-## Sur le site, chapitre « Les conditions »
-
-1. Qui a perdu ?
-2. Le bug du signe égal
-3. Et avec trois allumettes d'un coup ?
-
-<div class="info">
-
-Pour tester plus vite : commencer avec `let allumettes = 5;`
-
-</div>
 
 ---
 
@@ -487,17 +418,6 @@ Dans la fonction du bouton : **vider** le tas, puis le **redessiner**.
 
 ---
 
-# À vous : les boucles
-
-## Sur le site, chapitre « Les boucles »
-
-1. Dessiner une allumette
-2. La boucle `for`
-3. Le bug de l'allumette en trop
-4. Redessiner après chaque clic
-
----
-
 <!-- _class: invert -->
 
 # Atelier
@@ -516,18 +436,9 @@ Dans la fonction du bouton : **vider** le tas, puis le **redessiner**.
 
 [Voir la version d'exemple en ligne](https://heig-vd-msci-course.github.io/heig-vd-msci-matches-webapp/)
 
+[À disposition : Fichier allumettes](https://heig-vd-msci-course.github.io/heig-vd-msci-course/supports/ressources-images-allumettes/)
+
 </div>
-
----
-
-# Organisation
-
-## En équipe, dans un seul MDN Playground
-
-- **Une personne au clavier**, les autres guident et relisent
-- Changer de rôle toutes les **15 minutes**
-- Passer le clavier : **Partager → Copier le Markdown**, envoyer, recoller
-- Point de départ : le code complet du chapitre *Les boucles*
 
 ---
 
@@ -549,17 +460,6 @@ Dans la fonction du bouton : **vider** le tas, puis le **redessiner**.
 
 ---
 
-# Des indices sur le site
-
-## À ouvrir seulement en cas de blocage
-
-- Les trois boutons
-- Désactiver tous les boutons
-- Le bouton **Rejouer**
-- Moins de code répété : les **fonctions**
-
----
-
 # Personnaliser et aller plus loin
 
 <div class="two-columns">
@@ -571,7 +471,7 @@ Dans la fonction du bouton : **vider** le tas, puis le **redessiner**.
 - Un style pour `button:disabled`
 - Un effet au survol `:hover`
 - Des emojis dans les messages
-- Des allumettes d'une autre forme
+- Des allumettes d'une autre forme : [images à disposition](https://heig-vd-msci-course.github.io/heig-vd-msci-course/supports/ressources-images-allumettes/)
 
 </div>
 <div>
@@ -584,17 +484,6 @@ Dans la fonction du bouton : **vider** le tas, puis le **redessiner**.
 
 </div>
 </div>
-
----
-
-# Avant d'envoyer
-
-## Les vérifications
-
-1. Jouer **une partie complète**, jusqu'au message de fin
-2. Tester le bouton **Rejouer**
-3. Vérifier que la **console** n'affiche aucune erreur
-4. Vérifier le **nom de l'équipe** dans le titre
 
 ---
 
@@ -618,76 +507,6 @@ Dans la fonction du bouton : **vider** le tas, puis le **redessiner**.
 
 ---
 
-# Le modèle d'e-mail
-
-```text
-Objet : [MSCI 2026] Projet web - Équipe Pomme
-
-Équipe : Pomme
-Titre du projet : ...
-Description (une phrase) : ...
-Nous acceptons que le projet soit publié en ligne : oui
-
-Code (Partager → Copier le Markdown, puis coller ici) :
-```
-
-Le modèle complet est sur le site : remplacer `Pomme` par le nom de l'équipe, sans changer les mots avant les deux-points.
-
----
-
-<!-- _class: invert -->
-
-# Synthèse de la journée
-
-## Du bloc au texte, et quiz Wooclap
-
----
-
-# Du bloc au texte
-
-## Mêmes idées, autre écriture
-
-<style scoped>table { font-size: 0.85em; }</style>
-
-| Concept | Lundi : MakeCode | Mardi : JavaScript |
-|---------|------------------|--------------------|
-| **Variable** | `définir allumettes à 20` | `let allumettes = 20;` |
-| **Événement** | `quand bouton A est appuyé` | `bouton.addEventListener(...)` |
-| **Condition** | `si ... alors ... sinon` | `if (...) { ... } else { ... }` |
-| **Boucle** | `pour index de 0 à ...` | `for (let i = 0; i < ...; i++)` |
-
----
-
-# Les bugs de la journée
-
-<style scoped>table { font-size: 0.8em; }</style>
-
-| Langage | Une erreur... | Comment la trouver |
-|---------|---------------|--------------------|
-| **HTML** | n'affiche aucun message | Observer la page, relire le code autour |
-| **CSS** | est ignorée sans message | **Inspecter** : les déclarations ignorées sont barrées |
-| **JavaScript** | s'affiche dans la **console**, sauf les bugs de logique | Lire le message, ajouter des `console.log` |
-
----
-
-# À retenir
-
-## Mardi : le web
-
-1. HTML = **contenu**, CSS = **apparence**, JavaScript = **comportement**
-2. Variables, événements, conditions, boucles : les mêmes concepts en blocs et en texte
-3. <b class="primary">Un bug n'est pas un échec</b> : c'est une information. Le lire, le comprendre, le corriger
-
----
-
-# Quiz Wooclap
-
-## Rejoignez le quiz
-
-**wooclap.com** → code donné en classe
-
----
-
 # Pour aller plus loin
 
 <style scoped>table { font-size: 0.85em; }</style>
@@ -699,17 +518,8 @@ Le modèle complet est sur le site : remplacer `Pomme` par le nom de l'équipe, 
 
 ---
 
-# Demain
-
-## micro:bit et intelligence artificielle
-
-- **Matin** : le jeu des allumettes devient un **objet physique**
-- **Après-midi** : comprendre l'IA et l'utiliser de manière responsable
-
----
-
 # À demain
 
-## 8h30 · Salles T155 / T157
+## 8h30 · Salle R102
 
 **Merci pour cette journée**
