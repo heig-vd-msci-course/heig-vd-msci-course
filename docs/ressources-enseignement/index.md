@@ -98,6 +98,26 @@ Un fichier `.hex` par résultat de chapitre. Chaque fichier sert à deux choses 
 
 Les sources TypeScript (`.ts`) se trouvent dans le même dossier du dépôt : `docs/code-templates/makecode-microbit/`.
 
+### Programmer une carte depuis Linux
+
+Sous Linux, glisser le fichier `.hex` avec le gestionnaire de fichiers échoue souvent : le système retarde l'écriture, et la carte abandonne (erreur 504, `FAIL.TXT` : *The transfer timed out*). Le script `flasher-microbit.sh` fait la copie de façon fiable :
+
+- il trouve les micro:bit branchés, et les monte si nécessaire
+- il écrit le fichier sans délai, puis attend que la carte revienne
+- il vérifie l'absence de `FAIL.TXT`, et recommence une fois en cas d'échec
+- avec plusieurs cartes, il les programme **l'une après l'autre**
+
+[:material-download: flasher-microbit.sh](flasher-microbit.sh){ .md-button download="flasher-microbit.sh" }
+
+```bash
+chmod +x flasher-microbit.sh   # une seule fois, après le téléchargement
+
+./flasher-microbit.sh chapitre-2-jeu-allumettes.hex          # une carte (demande laquelle s'il y en a plusieurs)
+./flasher-microbit.sh --all chapitre-3-jeu-allumettes-radio.hex   # toutes les cartes branchées
+```
+
+Le script utilise `lsblk`, `dd` et `udisksctl`, déjà présents sur les distributions de bureau courantes (Ubuntu, Debian, Fedora). Sous Windows et macOS, glisser le fichier sur le lecteur MICROBIT fonctionne sans script.
+
 ---
 
 ## Mardi : points à aborder en classe
