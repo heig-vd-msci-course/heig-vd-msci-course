@@ -830,7 +830,7 @@ Le jeu est terminé : il est temps de **télécharger** le fichier `.hex` et de 
     nouvellePartie()
     ```
 
-    → [Télécharger la solution (.hex)](../../code-templates/makecode-microbit/chapitre-2-jeu-allumettes.hex){download}, à copier sur la carte ou à ouvrir dans MakeCode (voir [Ouvrir une solution](#ouvrir-une-solution-dans-makecode))
+    → [Télécharger la solution (.hex)](../../code-templates/makecode-microbit/chapitre-2-jeu-allumettes.hex){ download="chapitre-2-jeu-allumettes.hex" }, à copier sur la carte ou à ouvrir dans MakeCode (voir [Ouvrir une solution](#ouvrir-une-solution-dans-makecode))
 
 ---
 
@@ -1044,7 +1044,7 @@ La partie se lance en **secouant** l'une des deux cartes. La fonction `bruler` n
     nouvellePartie()
     ```
 
-    → [Télécharger la solution (.hex)](../../code-templates/makecode-microbit/chapitre-3-jeu-allumettes-radio.hex){download}
+    → [Télécharger la solution (.hex)](../../code-templates/makecode-microbit/chapitre-3-jeu-allumettes-radio.hex){ download="chapitre-3-jeu-allumettes-radio.hex" }
 
     La solution utilise le groupe **0** : l'ouvrir dans MakeCode et remplacer `0` par le numéro choisi (celui de son équipe, ou l'un des deux numéros choisi avec l'autre équipe) **avant** de la copier sur les cartes.
 
@@ -1115,10 +1115,10 @@ Il suffit aussi de **glisser** le fichier `.hex` directement sur l'éditeur Make
 
 | Solution | Fichier |
 |----------|---------|
-| Premier programme : HELLO | [chapitre-1-hello.hex](../../code-templates/makecode-microbit/chapitre-1-hello.hex){download} |
-| Jeu des allumettes, une carte | [chapitre-2-jeu-allumettes.hex](../../code-templates/makecode-microbit/chapitre-2-jeu-allumettes.hex){download} |
-| HELLO par radio | [chapitre-3-radio-hello.hex](../../code-templates/makecode-microbit/chapitre-3-radio-hello.hex){download} |
-| Jeu des allumettes, deux cartes | [chapitre-3-jeu-allumettes-radio.hex](../../code-templates/makecode-microbit/chapitre-3-jeu-allumettes-radio.hex){download} |
+| Premier programme : HELLO | [chapitre-1-hello.hex](../../code-templates/makecode-microbit/chapitre-1-hello.hex){ download="chapitre-1-hello.hex" } |
+| Jeu des allumettes, une carte | [chapitre-2-jeu-allumettes.hex](../../code-templates/makecode-microbit/chapitre-2-jeu-allumettes.hex){ download="chapitre-2-jeu-allumettes.hex" } |
+| HELLO par radio | [chapitre-3-radio-hello.hex](../../code-templates/makecode-microbit/chapitre-3-radio-hello.hex){ download="chapitre-3-radio-hello.hex" } |
+| Jeu des allumettes, deux cartes | [chapitre-3-jeu-allumettes-radio.hex](../../code-templates/makecode-microbit/chapitre-3-jeu-allumettes-radio.hex){ download="chapitre-3-jeu-allumettes-radio.hex" } |
 
 ---
 
