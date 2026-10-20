@@ -17,7 +17,8 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
 - [ ] Imprimer la [fiche d'accès](#materiel-a-imprimer) (codes QR et WiFi) et la distribuer dans les classes
 - [ ] Imprimer la [fiche de prêt des ordinateurs](#materiel-a-imprimer) (une par salle)
 - [ ] Prévoir des baguettes ou allumettes (environ 10 par binôme), des feuilles blanches et des crayons
-- [ ] Vérifier les salles (R102, T155 / T157) et l'accès à [arcade.makecode.com](https://arcade.makecode.com){target="_blank"} et à [MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"} depuis les ordinateurs
+- [ ] Vérifier les salles (R102, T149 / T151) et l'accès à [arcade.makecode.com](https://arcade.makecode.com){target="_blank"}, à [MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"} et à [makecode.microbit.org](https://makecode.microbit.org){target="_blank"} depuis les ordinateurs
+- [ ] Mercredi : préparer un micro:bit et un câble USB par binôme, et les quatre cartes de la [démo d'accroche](#mercredi-solutions-microbit)
 - [ ] Activer GitHub Pages sur le [dépôt des projets](https://github.com/heig-vd-msci-course/heig-vd-msci-projets){target="_blank"}
 - [ ] Préparer les Wooclap du jour (charte, quiz)
 
@@ -70,10 +71,32 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
 |------|---------|----------|
 | Lundi | Jeu des allumettes en blocs (MakeCode Arcade) | [Page de la solution](../code-templates/makecode-arcade/solution.md){target="_blank"} : projets MakeCode jouables et blocs |
 | Mardi | Interface web du jeu des allumettes | [Page de la solution](../code-templates/jeu-allumettes-web/solution.md){target="_blank"} : jeu jouable, code HTML/CSS/JavaScript, variante contre l'ordinateur |
+| Mercredi | Premier programme, jeu des allumettes et multijoueur (micro:bit) | [Fichiers .hex des trois chapitres](#mercredi-solutions-microbit) : à copier sur une carte ou à ouvrir dans MakeCode |
 
 !!! info "Donner accès à la solution du mardi"
 
     Dans la page de l'après-midi, le lien « Besoin d'aide ? » vers la solution de l'atelier est en commentaire, comme celui du lundi au départ. Le décommenter dans `docs/programme/mardi/apres-midi.md` (bloc `LIEN SOLUTION`) quand vous souhaitez que les équipes y aient accès.
+
+### Mercredi : solutions micro:bit
+
+Un fichier `.hex` par résultat de chapitre. Chaque fichier sert à deux choses : le **copier sur le lecteur MICROBIT** pour programmer une carte, ou l'**ouvrir dans MakeCode** (Accueil → Importer → Importer un fichier) pour afficher les blocs et les modifier.
+
+| Chapitre | Solution | Ce que fait la carte | Télécharger |
+|----------|----------|----------------------|-------------|
+| **1. Premier programme** | HELLO | Bouton A : *HELLO* défile | [:material-download: chapitre-1-hello.hex](../code-templates/makecode-microbit/chapitre-1-hello.hex){ .md-button download="chapitre-1-hello.hex" } |
+| **2. Le jeu des allumettes** | Jeu sur une carte | 20 allumettes en LED. A, B et A+B retirent 1, 2 ou 3 allumettes, qui brûlent avec un crépitement. Mélodie de fin, secouer pour rejouer | [:material-download: chapitre-2-jeu-allumettes.hex](../code-templates/makecode-microbit/chapitre-2-jeu-allumettes.hex){ .md-button download="chapitre-2-jeu-allumettes.hex" } |
+| **3. Multijoueur par radio** | HELLO par radio | Bouton A : envoie *HELLO*, l'autre carte l'affiche | [:material-download: chapitre-3-radio-hello.hex](../code-templates/makecode-microbit/chapitre-3-radio-hello.hex){ .md-button download="chapitre-3-radio-hello.hex" } |
+| **3. Multijoueur par radio** | Jeu sur deux cartes | Le même jeu, une carte par joueuse. Secouer une carte lance la partie : elle commence | [:material-download: chapitre-3-jeu-allumettes-radio.hex](../code-templates/makecode-microbit/chapitre-3-jeu-allumettes-radio.hex){ .md-button download="chapitre-3-jeu-allumettes-radio.hex" } |
+
+!!! tip "Démo d'accroche avec quatre cartes"
+
+    Copier `chapitre-1-hello.hex` sur la carte 1, `chapitre-2-jeu-allumettes.hex` sur la carte 2, et `chapitre-3-jeu-allumettes-radio.hex` sur les cartes 3 **et** 4. Programmer les cartes **l'une après l'autre** et attendre la fin du clignotement de la LED jaune. Avec plusieurs cartes branchées en même temps, la copie peut échouer (erreur 504, fichier `FAIL.TXT` : *The transfer timed out*).
+
+!!! warning "Groupe radio des solutions"
+
+    Les deux solutions radio utilisent le groupe **0**, qu'aucune équipe n'a. Elles fonctionnent donc telles quelles pour la démo, sans interférer avec les équipes (groupes 1 à 17). Une équipe qui part d'une solution doit remplacer `0` par son propre numéro.
+
+Les sources TypeScript (`.ts`) se trouvent dans le même dossier du dépôt : `docs/code-templates/makecode-microbit/`.
 
 ---
 

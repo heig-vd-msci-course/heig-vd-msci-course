@@ -37,6 +37,7 @@ nav = [
     { "Lundi Après-midi - MakeCode" = "slides/lundi-introduction-apres-midi.html" },
     { "Mardi Matin - HTML et CSS" = "slides/mardi-html-css-matin.html" },
     { "Mardi Après-midi - JavaScript" = "slides/mardi-javascript-apres-midi.html" },
+    { "Mercredi Matin - micro:bit" = "slides/mercredi-microbit-matin.html" },
     { "Mercredi Après-midi - IA" = "slides/mercredi-ia-apres-midi.html" },
   ]},
   { "Ressources" = [
@@ -172,6 +173,16 @@ pymdownx.superfences = {
     {
       name = "blocks-full",
       class = "blocks-full",
+      format = "pymdownx.superfences.fence_code_format",
+    },
+    {
+      name = "microbit",
+      class = "microbit",
+      format = "pymdownx.superfences.fence_code_format",
+    },
+    {
+      name = "microbit-full",
+      class = "microbit-full",
       format = "pymdownx.superfences.fence_code_format",
     },
   ],

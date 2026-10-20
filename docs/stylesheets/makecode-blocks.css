@@ -9,12 +9,16 @@ img.makecode-blocks {
 
 /* Code en attente de rendu : discret */
 pre.blocks[data-makecode="loading"],
-pre.blocks-full[data-makecode="loading"] {
+pre.blocks-full[data-makecode="loading"],
+pre.microbit[data-makecode="loading"],
+pre.microbit-full[data-makecode="loading"] {
   opacity: 0.4;
 }
 
 pre.blocks,
-pre.blocks-full {
+pre.blocks-full,
+pre.microbit,
+pre.microbit-full {
   padding: 0.8em 1em;
   border-radius: 0.2rem;
   background-color: var(--md-code-bg-color);

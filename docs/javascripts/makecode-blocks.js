@@ -1,10 +1,20 @@
 // ============================================================
-// Rendu des blocs MakeCode Arcade dans le site
+// Rendu des blocs MakeCode dans le site
 // ============================================================
 //
-// Transforme chaque bloc de code ```blocks (ou ```blocks-full)
-// en image de blocs, dessinée par le moteur de MakeCode Arcade
-// (en français).
+// Transforme chaque bloc de code en image de blocs, dessinée
+// par le moteur de MakeCode (en français) :
+//
+//   ```blocks / ```blocks-full     → MakeCode Arcade
+//   ```microbit / ```microbit-full → MakeCode micro:bit
+//
+// La variante -full dessine aussi le bloc "au démarrage".
+//
+// Un appel à une fonction définie ailleurs doit être déclaré
+// dans l'extrait, sinon il reste en JavaScript gris. Précédée
+// de "// @hide", la déclaration n'est pas dessinée :
+//   // @hide
+//   function dessiner () {}
 //
 // Les variables de type Sprite ou Image doivent être déclarées
 // dans l'extrait (let allumette: Sprite = null), sinon leurs
@@ -16,20 +26,29 @@
 // ============================================================
 
 (function () {
-  var MAKECODE_URL = "https://arcade.makecode.com/";
-  var MAKECODE_ORIGIN = "https://arcade.makecode.com";
-  var RENDERER_ID = "makecode-renderer";
+  // Un moteur de rendu (iframe cachée) par éditeur
+  var EDITORS = {
+    arcade: { url: "https://arcade.makecode.com", classes: ["blocks", "blocks-full"] },
+    microbit: { url: "https://makecode.microbit.org", classes: ["microbit", "microbit-full"] }
+  };
 
-  var ready = false;
   var nextId = 0;
-  var pending = [];
+  var state = {};
+  Object.keys(EDITORS).forEach(function (name) {
+    state[name] = { ready: false, pending: [] };
+  });
 
-  function getRenderer() {
-    var frame = document.getElementById(RENDERER_ID);
+  function editorOf(pre) {
+    return pre.classList.contains("microbit") || pre.classList.contains("microbit-full") ? "microbit" : "arcade";
+  }
+
+  function getRenderer(name) {
+    var id = "makecode-renderer-" + name;
+    var frame = document.getElementById(id);
     if (!frame) {
-      ready = false;
+      state[name].ready = false;
       frame = document.createElement("iframe");
-      frame.id = RENDERER_ID;
+      frame.id = id;
       frame.title = "Rendu des blocs MakeCode";
       frame.setAttribute("aria-hidden", "true");
       frame.style.position = "absolute";
@@ -39,49 +58,58 @@
       frame.style.height = "1px";
       frame.style.border = "0";
       frame.style.opacity = "0";
-      frame.src = MAKECODE_URL + "--docs?render=1&lang=" + (document.documentElement.lang || "fr");
+      frame.src = EDITORS[name].url + "/--docs?render=1&lang=" + (document.documentElement.lang || "fr");
       document.body.appendChild(frame);
     }
     return frame;
   }
 
   function sendSnippet(pre) {
+    var name = editorOf(pre);
     // <pre class="blocks" data-packageid="S..."></pre> : projet partagé entier
     var packageId = pre.getAttribute("data-packageid");
-    getRenderer().contentWindow.postMessage({
+    getRenderer(name).contentWindow.postMessage({
       type: "renderblocks",
       id: pre.id,
       code: packageId ? "" : pre.textContent,
       // ```blocks : fragment seul / ```blocks-full : avec "au démarrage"
       options: packageId
         ? { packageId: packageId }
-        : { snippetMode: !pre.classList.contains("blocks-full") }
-    }, MAKECODE_ORIGIN);
+        : { snippetMode: !pre.classList.contains("blocks-full") && !pre.classList.contains("microbit-full") }
+    }, EDITORS[name].url);
   }
 
   function renderPage() {
-    var snippets = document.querySelectorAll("pre.blocks:not([data-makecode]), pre.blocks-full:not([data-makecode])");
-    if (snippets.length === 0) return;
-    getRenderer();
-    snippets.forEach(function (pre) {
-      pre.id = "makecode-blocks-" + nextId++;
-      pre.setAttribute("data-makecode", "loading");
-      if (ready) {
-        sendSnippet(pre);
-      } else {
-        pending.push(pre);
-      }
+    Object.keys(EDITORS).forEach(function (name) {
+      var selector = EDITORS[name].classes.map(function (c) {
+        return "pre." + c + ":not([data-makecode])";
+      }).join(", ");
+      var snippets = document.querySelectorAll(selector);
+      if (snippets.length === 0) return;
+      getRenderer(name);
+      snippets.forEach(function (pre) {
+        pre.id = "makecode-blocks-" + nextId++;
+        pre.setAttribute("data-makecode", "loading");
+        if (state[name].ready) {
+          sendSnippet(pre);
+        } else {
+          state[name].pending.push(pre);
+        }
+      });
     });
   }
 
   window.addEventListener("message", function (ev) {
     var msg = ev.data;
-    if (ev.origin !== MAKECODE_ORIGIN || !msg || msg.source !== "makecode") return;
+    var name = Object.keys(EDITORS).filter(function (n) {
+      return EDITORS[n].url === ev.origin;
+    })[0];
+    if (!name || !msg || msg.source !== "makecode") return;
 
     if (msg.type === "renderready") {
-      ready = true;
-      pending.forEach(sendSnippet);
-      pending = [];
+      state[name].ready = true;
+      state[name].pending.forEach(sendSnippet);
+      state[name].pending = [];
     } else if (msg.type === "renderblocks") {
       var pre = document.getElementById(msg.id);
       if (!pre) return;
@@ -94,7 +122,8 @@
       img.src = msg.uri;
       img.width = msg.width;
       img.height = msg.height;
-      img.alt = "Blocs MakeCode : " + pre.textContent.trim();
+      // Les lignes précédées de "// @hide" ne sont pas dessinées : on les retire du texte alternatif
+      img.alt = "Blocs MakeCode : " + pre.textContent.replace(/\/\/ @hide\n[^\n]*\n/g, "").trim();
       if (pre.hasAttribute("data-packageid")) {
         // Projet entier : très large, on le fait défiler horizontalement
         img.alt = "Blocs MakeCode du projet " + pre.getAttribute("data-packageid");
