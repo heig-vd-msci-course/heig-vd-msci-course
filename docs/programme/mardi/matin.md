@@ -74,7 +74,7 @@ Pour écrire ses propres pages, la journée se déroule dans **[MDN Playground](
 |--------|--------|
 | **Format** | Remet le code en forme (indentation, retours à la ligne) |
 | **Exécuter** | Met à jour l'aperçu |
-| **Partager** | Copie le code pour le garder ou l'envoyer (voir plus bas) |
+| **Partager** | Copie le code pour le garder ou l'envoyer (voir plus bas). Il se trouve juste au-dessus de la zone **HTML** |
 | **Effacer** | Vide **tout** : HTML, CSS et JavaScript. À utiliser avec précaution ! |
 
 !!! info "MDN, la référence du web"
@@ -133,9 +133,12 @@ En cliquant sur le bouton, le titre change, et un message apparaît dans la **co
 
 MDN Playground ne garde pas le code pour toujours. Avant de fermer l'onglet, et à la fin de chaque chapitre :
 
-1. Cliquer sur **Partager**
+1. Cliquer sur **Partager** : le bouton se trouve **juste au-dessus de la zone HTML**, à droite de « Terrain d'essai », entre **Exécuter** et **Effacer**
 2. Cliquer sur **Copier le Markdown** : le HTML, le CSS et le JavaScript sont copiés d'un coup
 3. Coller le tout dans un fichier texte ou un e-mail à soi-même
+
+<img src="../../assets/images/tuesday/mardi-mdnplayground-partager-clear.png#only-light" alt="MDN Playground : le bouton Partager, encadré en rouge, juste au-dessus de la zone HTML" class="img-fluid">
+<img src="../../assets/images/tuesday/mardi-mdnplayground-partager-dark.png#only-dark" alt="MDN Playground : le bouton Partager, encadré en rouge, juste au-dessus de la zone HTML" class="img-fluid">
 
 Pour reprendre plus tard, il suffit de recoller chaque bloc dans la bonne zone.
 

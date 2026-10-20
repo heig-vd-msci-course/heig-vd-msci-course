@@ -923,7 +923,7 @@ Le projet web de chaque équipe est publié en ligne par l'équipe enseignante, 
 
 ### 1. Copier son code
 
-Dans [MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"}, cliquer sur **Partager**, puis **Copier le Markdown**. Tout le code (HTML, CSS et JavaScript) est copié d'un coup.
+Dans [MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"}, cliquer sur **Partager** (le bouton juste au-dessus de la zone HTML, entre **Exécuter** et **Effacer**), puis **Copier le Markdown**. Tout le code (HTML, CSS et JavaScript) est copié d'un coup.
 
 ### 2. Envoyer l'e-mail
 
