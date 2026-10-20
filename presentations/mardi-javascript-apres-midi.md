@@ -436,6 +436,8 @@ Dans la fonction du bouton : **vider** le tas, puis le **redessiner**.
 
 [Voir la version d'exemple en ligne](https://heig-vd-msci-course.github.io/heig-vd-msci-matches-webapp/)
 
+[À disposition : Fichier allumettes](https://heig-vd-msci-course.github.io/heig-vd-msci-course/supports/ressources-images-allumettes/)
+
 </div>
 
 ---
@@ -469,7 +471,7 @@ Dans la fonction du bouton : **vider** le tas, puis le **redessiner**.
 - Un style pour `button:disabled`
 - Un effet au survol `:hover`
 - Des emojis dans les messages
-- Des allumettes d'une autre forme
+- Des allumettes d'une autre forme : [images à disposition](https://heig-vd-msci-course.github.io/heig-vd-msci-course/supports/ressources-images-allumettes/)
 
 </div>
 <div>
