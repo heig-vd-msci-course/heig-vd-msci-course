@@ -382,6 +382,26 @@ Compléter sa page librement. Quelques idées :
 - Un mot important avec `<em>` (mis en avant, en italique)
 - Une deuxième image, avec un vrai texte `alt`
 
+!!! tip "Chercher sur MDN avant d'utiliser une nouvelle balise"
+
+    `<ol>` et `<em>` n'ont pas encore été utilisées dans ce tutoriel. Avant de les écrire, chercher sur internet **« MDN ol »** (ou **« MDN em »**), puis lire l'exemple de la page MDN : à quoi sert la balise, et comment l'écrire.
+
+    Chercher soi-même dans la documentation est un réflexe à prendre dès maintenant : c'est ce que font au quotidien toutes les personnes qui programment.
+
+??? success "Vérifier : comment s'écrit une liste numérotée ?"
+
+    Exactement comme la liste à puces de l'étape 1 : **une seule** balise `<ol>` autour de la liste, et une balise `<li>` pour chaque élément.
+
+    ```html
+    <ol>
+      <li>Une chanson</li>
+      <li>Un film</li>
+      <li>Un jeu</li>
+    </ol>
+    ```
+
+    Écrire une balise `<ol>` par élément, sans `<li>`, ne crée pas de liste : aucun numéro ne s'affiche, le texte est seulement décalé vers la droite.
+
 !!! question "Défi : chasse au bug"
 
     Échanger d'ordinateur avec sa voisine : chacune glisse **une** erreur dans la page de l'autre (une balise fermante oubliée, une faute dans un attribut...), puis on se rend les ordinateurs. Qui trouve et corrige le bug le plus vite ?

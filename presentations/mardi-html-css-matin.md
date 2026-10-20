@@ -211,6 +211,8 @@ Les éléments s'emboîtent comme des poupées russes : la page forme un **arbre
 | Lien | `<a href="...">` | Aller vers une autre page |
 | Image | `<img src="..." alt="...">` | Afficher une image |
 
+Une nouvelle balise ? Chercher sur internet « MDN » suivi de son nom, par exemple **« MDN ol »**.
+
 ---
 
 # Les attributs
