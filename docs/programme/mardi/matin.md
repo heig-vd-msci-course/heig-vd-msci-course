@@ -74,7 +74,7 @@ Pour écrire ses propres pages, la journée se déroule dans **[MDN Playground](
 |--------|--------|
 | **Format** | Remet le code en forme (indentation, retours à la ligne) |
 | **Exécuter** | Met à jour l'aperçu |
-| **Partager** | Copie le code pour le garder ou l'envoyer (voir plus bas) |
+| **Partager** | Copie le code pour le garder ou l'envoyer (voir plus bas). Il se trouve juste au-dessus de la zone **HTML** |
 | **Effacer** | Vide **tout** : HTML, CSS et JavaScript. À utiliser avec précaution ! |
 
 !!! info "MDN, la référence du web"
@@ -133,9 +133,12 @@ En cliquant sur le bouton, le titre change, et un message apparaît dans la **co
 
 MDN Playground ne garde pas le code pour toujours. Avant de fermer l'onglet, et à la fin de chaque chapitre :
 
-1. Cliquer sur **Partager**
+1. Cliquer sur **Partager** : le bouton se trouve **juste au-dessus de la zone HTML**, à droite de « Terrain d'essai », entre **Exécuter** et **Effacer**
 2. Cliquer sur **Copier le Markdown** : le HTML, le CSS et le JavaScript sont copiés d'un coup
 3. Coller le tout dans un fichier texte ou un e-mail à soi-même
+
+<img src="../../assets/images/tuesday/mardi-mdnplayground-partager-clear.png#only-light" alt="MDN Playground : le bouton Partager, encadré en rouge, juste au-dessus de la zone HTML" class="img-fluid">
+<img src="../../assets/images/tuesday/mardi-mdnplayground-partager-dark.png#only-dark" alt="MDN Playground : le bouton Partager, encadré en rouge, juste au-dessus de la zone HTML" class="img-fluid">
 
 Pour reprendre plus tard, il suffit de recoller chaque bloc dans la bonne zone.
 
@@ -290,6 +293,12 @@ Ajouter ce paragraphe à la fin de la page, avec un vrai lien vers une chanson, 
 
     ![MDN Playground : le lien apparaît en bleu et souligné](../../assets/images/tuesday/mardi-html-etape-4.webp)
 
+!!! warning "Dans MDN Playground, le lien ne s'ouvre pas"
+
+    Un clic sur le lien dans l'aperçu ne fait rien : c'est normal, le code n'est pas en cause. L'aperçu de MDN Playground est une zone protégée (un « bac à sable ») qui empêche la page testée d'ouvrir un nouvel onglet. Sans `target="_blank"`, le site visé s'ouvrirait dans l'aperçu lui-même, mais la plupart des sites, comme YouTube, refusent de s'y afficher.
+
+    Pour vérifier l'adresse : clic droit sur le lien, **Copier l'adresse du lien**, puis la coller dans un nouvel onglet. Sur une vraie page publiée en ligne, le lien fonctionne normalement.
+
 !!! bug "Bug volontaire"
 
     Dans la balise `<a>`, écrire `herf` au lieu de `href` :
@@ -351,7 +360,32 @@ Ajouter cette image juste sous le titre `<h1>` :
 
     C'est tout le rôle de `alt` : décrire l'image quand elle ne s'affiche pas, et surtout pour les personnes aveugles ou malvoyantes, dont le lecteur d'écran lit ce texte à voix haute. Une image sans `alt` est invisible pour elles.
 
-    **Correction** : remettre `photos`. Pour utiliser sa propre image, remplacer l'adresse par celle d'une image trouvée en ligne (clic droit sur l'image → *Copier l'adresse de l'image*).
+    **Correction** : remettre `photos`.
+
+!!! tip "Utiliser sa propre image"
+
+    Pour afficher une image trouvée en ligne, il faut son **adresse** (son URL), à coller entre les guillemets de `src` :
+
+    - **Sur ordinateur** : clic droit sur l'image, puis **Copier l'adresse de l'image** ou **Copier le lien de l'image** (le texte change selon le navigateur)
+    - **Sur iPad** : maintenir le doigt sur l'image, l'ouvrir dans un nouvel onglet ou une nouvelle fenêtre, puis copier l'adresse de ce nouvel onglet
+
+    Si l'image ne s'affiche pas, ouvrir l'adresse copiée dans un nouvel onglet : elle doit montrer l'image seule, et non une page web.
+
+    Pour une page publiée en ligne, comme le projet de vendredi, n'utiliser que des images libres de droits ou dont la source est citée : voir [Ressources multimédias et licences](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/HTML_images#ressources_multimédias_et_licences){target="_blank"} sur MDN.
+
+!!! tip "Une image trop grande ?"
+
+    Les images trouvées en ligne sont souvent immenses. Pour choisir leur taille, ajouter cette règle dans la zone **CSS** (le CSS est présenté au chapitre suivant) :
+
+    ```css
+    img {
+      width: 300px;
+    }
+    ```
+
+    Toutes les images de la page mesurent alors 300 pixels de large. Leur hauteur s'adapte toute seule, sans les déformer : il suffit de ne pas donner de hauteur. Changer `300px` pour agrandir ou réduire les images.
+
+    → Sur MDN : [Images, médias et éléments de formulaire](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Styling_basics/Images_media_forms){target="_blank"}
 
 → Sur MDN : [Les images en HTML](https://developer.mozilla.org/fr/docs/Learn_web_development/Core/Structuring_content/HTML_images){target="_blank"}
 
@@ -381,6 +415,26 @@ Compléter sa page librement. Quelques idées :
 - Une liste numérotée `<ol>` de son top 3 (chansons, films, jeux...)
 - Un mot important avec `<em>` (mis en avant, en italique)
 - Une deuxième image, avec un vrai texte `alt`
+
+!!! tip "Chercher sur MDN avant d'utiliser une nouvelle balise"
+
+    `<ol>` et `<em>` n'ont pas encore été utilisées dans ce tutoriel. Avant de les écrire, chercher sur internet **« MDN ol »** (ou **« MDN em »**), puis lire l'exemple de la page MDN : à quoi sert la balise, et comment l'écrire.
+
+    Chercher soi-même dans la documentation est un réflexe à prendre dès maintenant : c'est ce que font au quotidien toutes les personnes qui programment.
+
+??? success "Vérifier : comment s'écrit une liste numérotée ?"
+
+    Exactement comme la liste à puces de l'étape 1 : **une seule** balise `<ol>` autour de la liste, et une balise `<li>` pour chaque élément.
+
+    ```html
+    <ol>
+      <li>Une chanson</li>
+      <li>Un film</li>
+      <li>Un jeu</li>
+    </ol>
+    ```
+
+    Écrire une balise `<ol>` par élément, sans `<li>`, ne crée pas de liste : aucun numéro ne s'affiche, le texte est seulement décalé vers la droite.
 
 !!! question "Défi : chasse au bug"
 
@@ -1209,6 +1263,7 @@ C'est le moment de faire de sa page personnelle **sa** page : ses goûts, son un
 
     - Repartir de sa page de la fin du chapitre Mise en page (sinon, coller le code complet à la fin du chapitre [Mise en page : Flexbox et Grid](#mise-en-page-flexbox-et-grid))
     - Cette page reste personnelle : elle n'est **pas** publiée. Même ainsi, garder la bonne habitude de ne jamais mettre d'informations sensibles sur une page web (adresse, numéro de téléphone...)
+    - Pour ajouter ses propres images, revoir l'[étape 5 du rappel HTML](#etape-5-ajouter-une-image) : copier l'adresse d'une image, régler sa taille
     - Penser régulièrement à **Partager → Copier le Markdown** pour garder son travail
 
 ### Choisir son univers

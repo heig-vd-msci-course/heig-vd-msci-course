@@ -148,7 +148,7 @@ Ce matin : **HTML** et **CSS**. Cet après-midi : **JavaScript**.
 
 # MDN Playground
 
-## L'éditeur de la journée, gratuit et sans compte
+## L'éditeur de Mozilla, gratuit et sans compte
 
 <style scoped>
 .capture { height: 370px; overflow: hidden; border: 1px solid var(--color-table-border); border-radius: 6px; }
@@ -159,10 +159,10 @@ Ce matin : **HTML** et **CSS**. Cet après-midi : **JavaScript**.
 <div class="forty-sixty-columns">
 <div class="small">
 
-- Proposé par **Mozilla**, l'organisation de Firefox
 - Trois zones de code, un **aperçu** et une **console**
 - **Exécuter** : mettre à jour l'aperçu
 - <b class="primary">Effacer</b> vide **tout** : prudence
+- Les liens ne s'ouvrent **pas** : c'est normal
 
 </div>
 <div class="capture">
@@ -210,6 +210,8 @@ Les éléments s'emboîtent comme des poupées russes : la page forme un **arbre
 | Listes | `<ul>`, `<ol>`, `<li>` | Listes à puces, numérotées |
 | Lien | `<a href="...">` | Aller vers une autre page |
 | Image | `<img src="..." alt="...">` | Afficher une image |
+
+Une nouvelle balise ? Chercher sur internet « MDN » suivi de son nom, par exemple **« MDN ol »**.
 
 ---
 

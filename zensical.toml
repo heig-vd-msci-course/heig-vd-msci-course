@@ -43,6 +43,7 @@ nav = [
     { "Fiches" = [
       { "Concepts algorithmiques" = "supports/cheatsheet-concepts-algo.md" },
       { "Guide du jeu des allumettes" = "supports/guide-jeu-allumettes.md" },
+      { "Images des allumettes" = "supports/ressources-images-allumettes.md" },
     ]},
     { "Activités" = [
       { "Donner des instructions" = "supports/activities/activite-donner-instructions.md" },
