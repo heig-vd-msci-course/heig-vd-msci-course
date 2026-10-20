@@ -6,19 +6,28 @@ icon: lucide/sunset
 
 > *Intelligence artificielle : comprendre et utiliser de manière responsable*
 
+!!! info "Salles de pratique"
+
+    À partir du mercredi 21 octobre, les séances de pratique ont lieu en **T149** et **T151**. Chaque équipe se rend dans la salle qui lui est attribuée.
+
+    | Salle | Équipes |
+    |-------|---------|
+    | **T149** | Cerise, Kiwi, Lime, Mangue, Mangue 2, Myrtille, Orange, Pastèque, Pêche |
+    | **T151** | Ananas, Banane, Citron, Coco, Fraise, Poire, Pomme, Raisin |
+
 ---
 
 ## Programme
 
 | Horaire | Activité | Salle |
 |---------|----------|-------|
-| 13h00 - 13h30 | L'IA dans votre quotidien | T155 / T157 |
-| 13h30 - 14h10 | Vidéo : "La Fabrique à Idiots" (Micode) | T155 / T157 |
-| 14h10 - 14h25 | Discussion | T155 / T157 |
+| 13h00 - 13h30 | L'IA dans votre quotidien | T149 / T151 |
+| 13h30 - 14h10 | Vidéo : "La Fabrique à Idiots" (Micode) | T149 / T151 |
+| 14h10 - 14h25 | Discussion | T149 / T151 |
 | 14h25 - 14h40 | Pause | — |
-| 14h40 - 15h00 | Règles d'usage de l'IA | T155 / T157 |
-| 15h00 - 15h30 | Atelier : Générer du code avec une IA | T155 / T157 |
-| 15h30 - 16h15 | Définition du mini-projet | T155 / T157 |
+| 14h40 - 15h00 | Règles d'usage de l'IA | T149 / T151 |
+| 15h00 - 15h30 | Atelier : Générer du code avec une IA | T149 / T151 |
+| 15h30 - 16h15 | Définition du mini-projet | T149 / T151 |
 
 ---
 

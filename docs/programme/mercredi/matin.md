@@ -6,18 +6,27 @@ icon: lucide/sunrise
 
 > *Programmation physique avec le micro:bit*
 
+!!! info "Salles de pratique"
+
+    À partir du mercredi 21 octobre, les séances de pratique ont lieu en **T149** et **T151**. Chaque équipe se rend dans la salle qui lui est attribuée.
+
+    | Salle | Équipes |
+    |-------|---------|
+    | **T149** | Cerise, Kiwi, Lime, Mangue, Mangue 2, Myrtille, Orange, Pastèque, Pêche |
+    | **T151** | Ananas, Banane, Citron, Coco, Fraise, Poire, Pomme, Raisin |
+
 ---
 
 ## Programme
 
 | Horaire | Activité | Salle |
 |---------|----------|-------|
-| 08h30 - 09h00 | Prise de température et objectifs | T155 / T157 |
-| 09h00 - 09h30 | Présentation du micro:bit | T155 / T157 |
-| 09h30 - 10h00 | Découverte de MakeCode pour micro:bit | T155 / T157 |
+| 08h30 - 09h00 | Prise de température et objectifs | R102 |
+| 09h00 - 09h30 | Présentation du micro:bit | T149 / T151 |
+| 09h30 - 10h00 | Découverte de MakeCode pour micro:bit | T149 / T151 |
 | 10h00 - 10h30 | Pause | — |
-| 10h30 - 11h30 | Atelier : premiers programmes | T155 / T157 |
-| 11h30 - 12h00 | Jeu des allumettes version micro:bit | T155 / T157 |
+| 10h30 - 11h30 | Atelier : premiers programmes | T149 / T151 |
+| 11h30 - 12h00 | Jeu des allumettes version micro:bit | T149 / T151 |
 
 ---
 
