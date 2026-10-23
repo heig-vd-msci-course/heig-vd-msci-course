@@ -1,0 +1,20 @@
+# Bilan des rendus - Présentations du vendredi 23 octobre 2026
+
+| # | Équipe | Projet | Présentation | Source | Lien du projet | Remarque |
+|---|--------|--------|--------------|--------|----------------|----------|
+| 1 | Raisin | Jeu des allumettes amélioré | ✅ | Mail 11h54 | copie locale (code/index.html) |  |
+| 2 | Pastèque | Code morse avec les microbits | ✅ | Mail 11h34 | https://makecode.microbit.org/#editor | Lien de projet générique (éditeur micro:bit vide) |
+| 3 | Cerise | Morpion | ✅ | Mail 12h03 | absent | Code envoyé dans le corps du mail (12h03), pas de lien dans la feuille |
+| 4 | Myrtille | Jeu des allumettes amélioré | ❌ | - | copie locale (code/index.html) | Aucune présentation reçue |
+| 5 | Orange | Jeu de survie | ✅ | Mail 11h59 | https://arcade.makecode.com/S17581-71417-90382-21705 | Lien du projet repris du mail (11h59) |
+| 6 | Pêche | Memory game | ✅ | Mail 12h01 | absent |  |
+| 7 | Mangue | Jeu pong | ✅ | Mail 12h01 | absent | PDF envoyé depuis l’adresse d’une personne de l’équipe Poire ; projet Pong sur makecode.microbit.org, sans lien |
+| 8 | Fraise | Jeu des allumettes amélioré | ✅ | Mail 11h58 | https://developer.mozilla.org/en-US/play | Lien MDN Playground sans identifiant (projet vide) |
+| 9 | Pomme | Jeu des allumettes amélioré | ❌ | - | copie locale (code/index.html) | Feuille : « jeu-des-allumettes-presentation.pptx », aucun mail reçu : PDF à demander |
+| 10 | Banane | Blind test | ✅ | Mail 11h55 | https://arcade.makecode.com/S26730-81483-30344-27756 |  |
+| 11 | Poire | Jeu des allumettes amélioré | ✅ | Google Slides | copie locale (code/index.html) |  |
+| 12 | Mangue 2 | Blackjack | ❌ | - | https://developer.mozilla.org/en-US/play?id=FgiuW5HAZCQyQPzh1vUhHO8SAGeQgkLwN7OG891gIEndd03XpI6VG%2BkzVopueoZOziZIMb9tChPT8996 | Feuille : « Blackjack_Stephane_Nils_6_slides.pptx », aucun mail reçu : PDF à demander |
+| 13 | Ananas | Doué le canard en aventure | ✅ | Mail 11h44 | https://arcade.makecode.com/S88327-64851-95233-60012 | Autre lien : https://makecode.com/_AtE5xu95tJrK |
+| 14 | Citron | Jeu des allumettes amélioré | ❌ | - | https://makecode.com/_YK4daz7E0PHj | Aucune présentation reçue |
+| 15 | Kiwi | site web | ❌ | - | absent | PowerPoint partagé sur SharePoint (12h10), pas de PDF : PDF à demander. Code envoyé dans le corps des mails (12h06, 12h07) |
+| 16 | Coco | jeu pokémon | ✅ | Mail 11h33 | https://arcade.makecode.com/S94699-25716-07913-15750 |  |

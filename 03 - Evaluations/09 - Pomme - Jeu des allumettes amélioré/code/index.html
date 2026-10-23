@@ -1,0 +1,337 @@
+<!doctype html><body><style>body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: orange;
+}
+
+h1 {
+  color: crimson;
+}
+
+.infos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.joueur {
+  padding: 10px 20px;
+  border: 3px solid burlywood;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.actif {
+  border-color: crimson;
+  font-weight: bold;
+}
+
+#message {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.timer {
+  font-size: 20px;
+}
+
+#temps {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+#tas {
+  margin: 20px auto;
+  padding: 20px;
+  border: 3px solid burlywood;
+  border-radius: 15px;
+  max-width: 500px;
+  min-height: 80px;
+  background-color: white
+}
+
+.allumette {
+  display: inline-block;
+  width: 8px;
+  height: 60px;
+  margin: 0 4px;
+  background-color: burlywood;
+  border-top: 14px solid crimson;
+  border-radius: 6px 6px 2px 2px;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 8px;
+  border: none;
+  border-radius: 10px;
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkred;
+}
+
+button:disabled {
+  background-color: lightgray;
+  color: white;
+  cursor: not-allowed;
+}
+
+#indice {
+  background-color: white;
+  color: crimson;
+  border: 2px solid crimson;
+}
+
+#indice:disabled {
+  border-color: lightgray;
+  color: lightgray;
+}
+
+#texteIndice {
+  font-style: italic;
+  color: saddlebrown;
+}
+
+#rejouer {
+  background-color: burlywood;
+}
+
+.petit {
+  font-size: 14px;
+  padding: 6px 12px;
+  background-color: white;
+  color: saddlebrown;
+  border: 2px solid burlywood;
+}
+
+.petit:hover {
+  background-color: burlywood;
+  color: white;
+}</style><h1>Jeu des allumettes – Équipe Pomme</h1>
+
+<div class="infos">
+  <p id="joueuse1" class="joueur"></p>
+  <p id="joueuse2" class="joueur"></p>
+</div>
+
+<p id="message">Au tour de la joueuse 1</p>
+<p class="timer">Temps restant : <span id="temps">10</span> s</p>
+
+<div id="tas"></div>
+<p>Il reste <span id="compteur"></span> allumettes.</p>
+
+<div class="boutons">
+  <button id="retirer1">Retirer 1</button>
+  <button id="retirer2">Retirer 2</button>
+  <button id="retirer3">Retirer 3</button>
+</div>
+
+<button id="indice">💡 Indice</button>
+<p id="texteIndice"></p>
+
+<button id="rejouer">Partie suivante</button>
+<br>
+<button id="recommencer" class="petit">↺ Recommencer la partie</button><script>let allumettes = 20;
+let joueuse = 1;
+let premiere = 1;
+let temps = 10;
+let fini = false;
+let matchFini = false;
+let intervalle;
+
+let vies1 = 3;
+let vies2 = 3;
+let score1 = 0;
+let score2 = 0;
+
+const compteur = document.querySelector("#compteur");
+const message = document.querySelector("#message");
+const tas = document.querySelector("#tas");
+const affichageTemps = document.querySelector("#temps");
+const infoJ1 = document.querySelector("#joueuse1");
+const infoJ2 = document.querySelector("#joueuse2");
+const bouton1 = document.querySelector("#retirer1");
+const bouton2 = document.querySelector("#retirer2");
+const bouton3 = document.querySelector("#retirer3");
+const boutonIndice = document.querySelector("#indice");
+const texteIndice = document.querySelector("#texteIndice");
+const boutonRejouer = document.querySelector("#rejouer");
+const boutonRecommencer = document.querySelector("#recommencer");
+
+// Fabrique le texte des cœurs : ❤️ pour une vie, 🖤 pour une vie perdue
+function coeurs(vies) {
+  let texte = "";
+  for (let i = 0; i < 3; i++) {
+    if (i < vies) {
+      texte = texte + "❤️";
+    } else {
+      texte = texte + "🖤";
+    }
+  }
+  return texte;
+}
+
+// Met à jour toute la page
+function afficher() {
+  tas.innerHTML = "";
+  for (let i = 0; i < allumettes; i++) {
+    tas.innerHTML = tas.innerHTML + '<span class="allumette"></span>';
+  }
+  compteur.textContent = allumettes;
+
+  infoJ1.textContent = "Joueuse 1 : " + coeurs(vies1) + " | Score : " + score1;
+  infoJ2.textContent = "Joueuse 2 : " + coeurs(vies2) + " | Score : " + score2;
+  infoJ1.classList.toggle("actif", joueuse == 1 && !fini);
+  infoJ2.classList.toggle("actif", joueuse == 2 && !fini);
+
+  bouton1.disabled = fini || allumettes < 1;
+  bouton2.disabled = fini || allumettes < 2;
+  bouton3.disabled = fini || allumettes < 3;
+  boutonIndice.disabled = fini;
+  boutonRejouer.disabled = !fini;
+}
+
+// Affiche le temps, en rouge pour les 3 dernières secondes
+function afficherTemps() {
+  affichageTemps.textContent = temps;
+  if (temps <= 3) {
+    affichageTemps.style.color = "crimson";
+  } else {
+    affichageTemps.style.color = "black";
+  }
+}
+
+// Lance 10 secondes pour la joueuse dont c'est le tour
+function demarrerTimer() {
+  clearInterval(intervalle);
+  temps = 10;
+  afficherTemps();
+
+  intervalle = setInterval(function () {
+    temps = temps - 1;
+    afficherTemps();
+
+    if (temps == 0) {
+      joueuse = 3 - joueuse;
+      message.textContent = "⏰ Temps écoulé ! Au tour de la joueuse " + joueuse;
+      texteIndice.textContent = "";
+      afficher();
+      demarrerTimer();
+    }
+  }, 1000);
+}
+
+// Une joueuse a pris la dernière allumette
+function finPartie(perdante) {
+  clearInterval(intervalle);
+  fini = true;
+  const gagnante = 3 - perdante;
+
+  if (perdante == 1) {
+    vies1 = vies1 - 1;
+    score2 = score2 + 1;
+  } else {
+    vies2 = vies2 - 1;
+    score1 = score1 + 1;
+  }
+
+  if (vies1 == 0 || vies2 == 0) {
+    matchFini = true;
+    message.textContent = "🏆 La joueuse " + gagnante + " gagne le match ! La joueuse " + perdante + " a définitivement perdu.";
+    boutonRejouer.textContent = "Nouveau match";
+  } else {
+    message.textContent = "💥 La joueuse " + perdante + " a perdu la partie et perd un cœur !";
+    boutonRejouer.textContent = "Partie suivante";
+  }
+
+  // La perdante commencera la partie suivante
+  joueuse = perdante;
+  afficher();
+}
+
+// Un coup : retirer 1, 2 ou 3 allumettes
+function retirer(nombre) {
+  allumettes = allumettes - nombre;
+  texteIndice.textContent = "";
+
+  if (allumettes == 0) {
+    finPartie(joueuse);
+  } else {
+    joueuse = 3 - joueuse;
+    message.textContent = "Au tour de la joueuse " + joueuse;
+    afficher();
+    demarrerTimer();
+  }
+}
+
+// Donne le meilleur coup avec la stratégie gagnante
+function donnerIndice() {
+  const meilleur = (allumettes - 1) % 4;
+
+  if (meilleur == 0) {
+    texteIndice.textContent = "💡 Pas de coup parfait ici. Retire 1 allumette et espère que l'autre joueuse se trompe !";
+  } else {
+    texteIndice.textContent = "💡 Retire " + meilleur + " allumette(s). Il en restera " + (allumettes - meilleur) + " : laisse toujours 1, 5, 9, 13 ou 17 allumettes à l'autre, et elle finira par prendre la dernière !";
+  }
+}
+
+// Commence une partie avec la joueuse "premiere"
+function lancerPartie() {
+  allumettes = 20;
+  joueuse = premiere;
+  fini = false;
+  message.textContent = "Au tour de la joueuse " + joueuse;
+  texteIndice.textContent = "";
+  afficher();
+  demarrerTimer();
+}
+
+// Partie suivante, ou nouveau match si quelqu'un n'a plus de cœur
+function nouvellePartie() {
+  if (matchFini) {
+    vies1 = 3;
+    vies2 = 3;
+    score1 = 0;
+    score2 = 0;
+    joueuse = 1;
+    matchFini = false;
+  }
+  premiere = joueuse;
+  lancerPartie();
+}
+
+bouton1.addEventListener("click", function () {
+  retirer(1);
+});
+
+bouton2.addEventListener("click", function () {
+  retirer(2);
+});
+
+bouton3.addEventListener("click", function () {
+  retirer(3);
+});
+
+boutonIndice.addEventListener("click", function () {
+  donnerIndice();
+});
+
+boutonRejouer.addEventListener("click", function () {
+  nouvellePartie();
+});
+
+// Recommencer : nouvelle partie avec 3 cœurs chacune
+boutonRecommencer.addEventListener("click", function () {
+  vies1 = 3;
+  vies2 = 3;
+  matchFini = false;
+  boutonRejouer.textContent = "Partie suivante";
+  lancerPartie();
+});
+
+nouvellePartie();</script></body>

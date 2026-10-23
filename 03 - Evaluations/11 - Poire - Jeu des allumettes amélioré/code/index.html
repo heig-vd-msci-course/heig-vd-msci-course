@@ -1,0 +1,235 @@
+<!doctype html><body><style>
+body {
+  font-family:"papyrus";
+  background-color:#F4F6E8;
+  max-width:700px;
+  margin: 0 auto;
+  padding:16px;
+  text-align:center;
+}
+
+h1 {
+  color:#315B35;
+  margin-bottom: 0;
+}
+
+equipe {
+  color:#315B35;
+  margin-top: 4px;
+}
+
+#message {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#tas {
+  min-height: 80px;
+  margin: 16px 0;
+}
+
+.allumette {
+  display: inline-block;
+  width: 8px;
+  height: 60px;
+  margin: 0 4px;
+  background-color: burlywood;
+  border-top: 14px solid crimson;
+  border-radius: 6px 6px 2px 2px;
+}
+
+button {
+  font-size: 18px;
+  padding: 8px 16px;
+  margin: 4px;
+  border: none;
+  border-radius: 8px;
+  background-color:#477A3D;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
+}
+
+#rejouer {
+  background-color: #8DBB61;
+  margin-top: 16px;
+}
+
+#scores {
+  background-color: #E4EBD5;
+  border-radius: 12px;
+  padding: 8px;
+  margin: 16px auto;
+  max-width: 300px;
+  color: #315B35;
+  font-weight: bold;
+}
+
+#scores p {
+  margin: 8px;
+}
+
+#zoneRegles {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  text-align: right;
+}
+
+#boutonRegles {
+  font-size: 13px;
+}
+
+#regles {
+  display: none;
+  width: 250px;
+  padding: 12px;
+  margin-top: 8px;
+  background-color: #E4EBD5;
+  color: #315B35;
+  border: 2px solid #477A3D;
+  border-radius: 12px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+#regles h2 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+#regles p {
+  font-size: 14px;
+  margin: 8px 0;
+}</style>
+
+<h1>Jeu des allumettes</h1>
+<p class="equipe">🍐 Équipe poire 🍐</p>
+
+<p id="message">Au tour de la joueuse 1</p>
+
+<div id="scores">
+  <p>🏆 Joueuse 1 : <span id="score1">0</span> victoire(s)</p>
+  <p>🏆 Joueuse 2 : <span id="score2">0</span> victoire(s)</p>
+</div>
+
+<div id="tas"></div>
+<p>Il reste <span id="compteur"></span> allumettes.</p>
+
+<div class="boutons">
+  <button id="retirer1">Retirer 1</button>
+  <button id="retirer2">Retirer 2</button>
+  <button id="retirer3">Retirer 3</button>
+</div>
+
+<div id="zoneRegles">
+  <button id="boutonRegles">Règles du jeu</button>
+
+  <div id="regles">
+    <h2>Règles du jeu</h2>
+    <p>Le jeu se joue à deux.</p>
+    <p>À chaque tour, une joueuse retire 1, 2 ou 3 allumettes.</p>
+    <p>La joueuse qui retire la dernière allumette perd la partie.</p>
+      </div>
+</div><script>let allumettes = 20;
+let joueuse = 1;
+
+let victoires1 = 0;
+let victoires2 = 0;
+
+const score1 = document.querySelector("#score1");
+const score2 = document.querySelector("#score2");
+
+const tas = document.querySelector("#tas");
+const compteur = document.querySelector("#compteur");
+const message = document.querySelector("#message");
+const retirer1 = document.querySelector("#retirer1");
+const retirer2 = document.querySelector("#retirer2");
+const retirer3 = document.querySelector("#retirer3");
+const rejouer = document.querySelector("#rejouer");
+const boutonRegles = document.querySelector("#boutonRegles");
+const regles = document.querySelector("#regles");
+
+boutonRegles.addEventListener("click", function () {
+  if (regles.style.display == "block") {
+    regles.style.display = "none";
+  } else {
+    regles.style.display = "block";
+  }
+});
+
+function afficherScores() {
+  score1.textContent = victoires1;
+  score2.textContent = victoires2;
+}
+
+function dessiner() {
+  tas.innerHTML = "";
+  for (let i = 0; i < allumettes; i++) {
+    tas.innerHTML = tas.innerHTML + '<span class="allumette"></span>';
+  }
+  compteur.textContent = allumettes;
+
+  
+  retirer2.disabled = allumettes < 2;
+  retirer3.disabled = allumettes < 3;
+}
+
+
+function retirer(nombre) {
+  allumettes = allumettes - nombre;
+
+ if (allumettes == 0) {
+  message.textContent = "La joueuse " + joueuse + " a perdu !";
+
+  if (joueuse == 1) {
+    victoires2++;
+  } else {
+    victoires1++;
+  }
+
+  afficherScores();
+}
+  else {
+    if (joueuse == 1) {
+      joueuse = 2;
+    } else {
+      joueuse = 1;
+    }
+    message.textContent = "Au tour de la joueuse " + joueuse;
+  }
+
+  dessiner();
+
+
+  if (allumettes == 0) {
+    retirer1.disabled = true;
+  }
+}
+
+retirer1.addEventListener("click", function () {
+  retirer(1);
+});
+
+retirer2.addEventListener("click", function () {
+  retirer(2);
+});
+
+retirer3.addEventListener("click", function () {
+  retirer(3);
+});
+
+rejouer.addEventListener("click", function () {
+  allumettes = 20;
+  joueuse = 1;
+  retirer1.disabled = false;
+  message.textContent = "Au tour de la joueuse 1";
+  dessiner();
+});
+
+dessiner();
+afficherScores();</script></body>
