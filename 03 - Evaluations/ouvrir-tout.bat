@@ -30,7 +30,7 @@ start "" "https://makecode.microbit.org/S32216-69942-98516-12762"
 timeout /t 1 /nobreak > nul
 rem 08 - Fraise
 start "" "%~dp008 - Fraise - Jeu des allumettes amélioré\08 - Fraise - Jeu des allumettes amélioré.pdf"
-start "" "https://developer.mozilla.org/en-US/play"
+start "" "%~dp008 - Fraise - Jeu des allumettes amélioré\code\index.html"
 timeout /t 1 /nobreak > nul
 rem 09 - Pomme
 start "" "%~dp009 - Pomme - Jeu des allumettes amélioré\09 - Pomme - Jeu des allumettes amélioré.pdf"

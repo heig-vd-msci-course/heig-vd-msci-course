@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Code - Raisin - Jeu des allumettes amélioré</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; color: #222; background: #fafafa; }
+  header { padding: 1rem 1.5rem; background: #fff; border-bottom: 1px solid #ddd; display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+  h1 { font-size: 1.3rem; margin: 0 1rem 0 0; color: #ff6b6b; }
+  .onglet, .btn { border: 0; border-radius: 6px; padding: .45rem .9rem; font-size: 1rem; cursor: pointer; background: #e8e8e8; color: #222; text-decoration: none; }
+  .onglet.actif { background: #4ecdc4; color: #fff; }
+  .btn { background: #ff6b6b; color: #fff; margin-left: auto; }
+  .btn.alt { background: #888; margin-left: 0; }
+  pre { margin: 0; }
+  pre code.hljs { padding: 1.5rem; font-size: 15px; line-height: 1.5; min-height: calc(100vh - 80px); }
+  .panneau[hidden] { display: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Raisin - Jeu des allumettes amélioré</h1>
+  <button class="onglet actif" data-cible="html">HTML</button>
+  <button class="onglet" data-cible="css">CSS</button>
+  <button class="onglet" data-cible="js">JavaScript</button>
+  <a class="btn alt" href="index.html" target="_blank">Voir le résultat</a>
+  <form action="https://jsfiddle.net/api/post/library/pure/" method="post" target="_blank" style="margin:0">
+    <input type="hidden" name="title" value="Raisin - Jeu des allumettes amélioré">
+    <textarea name="html" hidden>&lt;div class=&quot;raisin coin-haut-gauche&quot;&gt;🍇&lt;/div&gt;
+&lt;div class=&quot;raisin coin-haut-droit&quot;&gt;🍇&lt;/div&gt;
+&lt;div class=&quot;raisin coin-bas-gauche&quot;&gt;🍇&lt;/div&gt;
+&lt;div class=&quot;raisin coin-bas-droit&quot;&gt;🍇&lt;/div&gt;
+&lt;h1&gt;Jeu des lucky blocks&lt;/h1&gt;
+&lt;h2&gt;Équipe Raisin&lt;/h2&gt;
+&lt;p&gt;
+Nombre de lucky blocks au départ :
+&lt;input id=&quot;choixAllumettes&quot; type=&quot;number&quot; min=&quot;1&quot; max=&quot;100&quot; value=&quot;20&quot;&gt; &lt;button id=&quot;commencer&quot; class=&quot;petit-bouton&quot;&gt;Commencer&lt;/button&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;input id=&quot;nom1&quot; type=&quot;text&quot; placeholder=&quot;Nom de la joueuse 1&quot; maxlength=&quot;20&quot;&gt;
+&lt;input id=&quot;nom2&quot; type=&quot;text&quot; placeholder=&quot;Nom de la joueuse 2&quot; maxlength=&quot;20&quot;&gt;
+
+&lt;button id=&quot;valider&quot; class=&quot;petit-bouton&quot;&gt;Valider&lt;/button&gt;
+&lt;/p&gt;
+&lt;p id=&quot;message&quot;&gt;&lt;strong&gt;Au tour de la joueuse 1&lt;/strong&gt;&lt;/p&gt;
+&lt;div id=&quot;tas&quot;&gt;&lt;/div&gt;
+&lt;p&gt;Il reste &lt;span id=&quot;compteur&quot;&gt;&lt;/span&gt; lucky blocks.&lt;/p&gt;
+&lt;div class=&quot;boutons&quot;&gt;
+&lt;button id=&quot;retirer&quot;&gt;Ouvrir 1 &lt;/button&gt;
+&lt;button id=&quot;retirer2&quot;&gt;Ouvrir 2 &lt;/button&gt;
+&lt;button id=&quot;retirer3&quot;&gt;Ouvrir 3 &lt;/button&gt;&lt;/div&gt;
+&lt;p&gt;
+&lt;button id=&quot;rejouer&quot; class=&quot;bouton-rejouer&quot;&gt;Rejouer&lt;/button&gt;
+&lt;/p&gt;
+&lt;/p&gt;
+&lt;footer&gt;
+  &lt;p&gt;Projet réalisé dans le cadre du cours MSCI à l&#x27;HEIG-VD et avec l&#x27;aide de l&#x27;intelligence articficielle.&lt;/p&gt;
+&lt;/footer&gt;</textarea>
+    <textarea name="css" hidden>h1{
+font-family: Arial, sans-serif;
+text-align: center;
+color: #35243F;
+margin-bottom: 5px
+}
+h2{
+font-family: sans-serif;
+text-align: center;
+font-size: 18px;
+color: #7D3C98;
+margin-top: 0px
+}
+p{
+font-family: Arial, sans-serif;
+text-align: center;
+font-size: 20px;
+color: #2E142D;
+}
+.boutons{
+display: flex;
+justify-content: center;
+gap: 30px;
+}
+.boutonRejouer{
+display: flex;
+justify-content: center;
+gap: 10px;
+}
+button {
+border: solid #7136A0;
+background-color: #7136A0;
+color: white;
+font-family: Helvetica, sans-serif;
+width: fit-content;
+border-radius: 5px;
+font-size: 20px;
+}
+button:hover {
+background-color: #54217A;
+border-color: #54217A;
+cursor: pointer;
+}
+body {
+background-color: #F5F0FA
+}
+#tas {
+text-align: center;
+background-color: #F3E8FF;
+border: 2px solid #663399;
+border-radius: 15px;
+padding: 25px 15px;
+margin: 20px auto;
+width: fit-content;
+max-width: 90%;
+}
+
+.lucky-block {
+display: inline-flex;
+width: 45px;
+height: 45px;
+margin: 5px;
+align-items: center;
+justify-content: center;
+background: #ffdf26;
+border: 4px solid #b77b18;
+border-top-color: #fff27a;
+border-left-color: #ffe96b;
+border-radius: 2px;
+box-shadow:
+inset -5px -5px 0 #d69e19,
+inset 4px 4px 0 #fff5a3,
+3px 3px 0 #8b6914;
+vertical-align: middle;
+}
+
+.lucky-block::after {
+content: &quot;?&quot;;
+font-family: &quot;Courier New&quot;, monospace;
+font-size: 32px;
+font-weight: bold;
+color: #a15b15;
+text-shadow: 1px 1px #fff18a;
+}
+.lucky-block.bleu {
+background: #35c9f4;
+border-color: #087da8;
+border-top-color: #a3edff;
+border-left-color: #70e1ff;
+box-shadow:
+inset -5px -5px 0 #159bc9,
+inset 4px 4px 0 #b8f3ff,
+3px 3px 0 #086080;
+}
+.lucky-block.bleu::after {
+color: #075985;
+text-shadow: 1px 1px #b8f3ff;
+}
+
+.petit-bouton {
+font-size: 14px;
+padding: 2px 6px;
+border-width: 1px;
+border-radius: 5px;
+}
+.bouton-rejouer {
+background-color: #DCEBCB;
+border-color: #DCEBCB;
+color: #315C28;
+}
+.bouton-rejouer:hover {
+background-color: #C4DDAA;
+border-color: #C4DDAA;
+}
+.raisin {
+position: fixed;
+font-size: 30px;
+z-index: -1;
+opacity: 0.8;
+}
+.coin-haut-gauche {
+top: 15px;
+left: 15px;
+}
+.coin-haut-droit {
+top: 15px;
+right: 15px;
+}
+.coin-bas-gauche {
+bottom: 15px;
+left: 15px;
+}
+.coin-bas-droit {
+bottom: 15px;
+right: 15px;
+}
+footer p {
+font-size: 13px;
+font-style: italic;
+color: #7950A0;
+text-align: center;
+margin-top: 40px;
+padding-bottom: 10px;
+}
+input {
+border: 2px solid #7136A0;
+border-radius: 5px;
+font-size: 16px;
+padding: 3px 6px;
+}</textarea>
+    <textarea name="js" hidden>let allumettes = 20;
+let joueuse = 1;
+let noms = { 1: &quot;joueuse 1&quot;, 2: &quot;joueuse 2&quot; };
+let blocsBleus = [];
+const choixAllumettes = document.querySelector(&quot;#choixAllumettes&quot;);
+const boutonCommencer = document.querySelector(&quot;#commencer&quot;);
+const compteur = document.querySelector(&quot;#compteur&quot;);
+const message = document.querySelector(&quot;#message&quot;);
+const bouton = document.querySelector(&quot;#retirer&quot;);
+const bouton2 = document.querySelector(&quot;#retirer2&quot;);
+const bouton3 = document.querySelector(&quot;#retirer3&quot;);
+const boutonRejouer = document.querySelector(&quot;#rejouer&quot;);
+const champ1 = document.querySelector(&quot;#nom1&quot;);
+const champ2 = document.querySelector(&quot;#nom2&quot;);
+const boutonValider = document.querySelector(&quot;#valider&quot;);
+const tas = document.querySelector(&quot;#tas&quot;);
+function genererBlocsBleus() {
+blocsBleus = [];
+
+for (let i = 0; i &lt; allumettes; i++) {
+if (Math.random() &lt; 0.15) {
+blocsBleus.push(i);
+}
+}
+if (blocsBleus.length &gt; 4) {
+const choisi =
+blocsBleus[Math.floor(Math.random() * blocsBleus.length)];
+blocsBleus = [choisi];
+}
+}
+
+
+function afficherBlocs() {
+tas.innerHTML = &quot;&quot;;
+for (let i = 0; i &lt; allumettes; i++) {
+const bloc = document.createElement(&quot;span&quot;);
+bloc.className = &quot;lucky-block&quot;;
+if (blocsBleus.includes(i)) {
+bloc.classList.add(&quot;bleu&quot;);
+bloc.title = &quot;Lucky Block spécial&quot;;
+}
+tas.appendChild(bloc);
+}
+compteur.textContent = allumettes;
+verifierBoutons();
+}
+
+
+function verifierBoutons() {
+bouton.disabled = allumettes &lt; 1;
+bouton2.disabled = allumettes &lt; 2;
+bouton3.disabled = allumettes &lt; 3;
+}
+
+function changerJoueuse() {
+joueuse = joueuse === 1 ? 2 : 1;
+}
+
+function effetBlocBleu() {
+const variation = Math.floor(Math.random() * 9) - 4;
+if (variation &gt; 0) {
+allumettes += variation;
+message.textContent =
+&quot;Lucky Block spécial ! &quot; + variation + &quot; blocks ajoutés !&quot;;
+} else if (variation &lt; 0) {
+allumettes = Math.max(0, allumettes + variation);
+message.textContent =
+&quot;Lucky Block spécial ! &quot; + Math.abs(variation) +
+&quot; blocks retirés !&quot;;
+} else {
+message.textContent =
+&quot;Lucky Block spécial ! Tu n&#x27;as rien eu :(&quot;;
+}
+}
+
+function retirerBlocs(nombre) {
+if (allumettes &lt; nombre || allumettes &lt;= 0) return;
+const debut = allumettes - nombre;
+const bleuTrouve = blocsBleus.some(position =&gt; position &gt;= debut);
+allumettes -= nombre;
+blocsBleus = blocsBleus.filter(position =&gt; position &lt; allumettes);
+if (bleuTrouve) {
+effetBlocBleu();
+}
+if (allumettes &lt;= 0) {
+allumettes = 0;
+afficherBlocs();
+message.textContent = noms[joueuse] + &quot; a perdu !&quot;;
+return;
+}
+changerJoueuse();
+if (!bleuTrouve) {
+message.textContent = &quot;Au tour de &quot; + noms[joueuse];
+}
+afficherBlocs();
+}
+bouton.addEventListener(&quot;click&quot;, () =&gt; retirerBlocs(1));
+bouton2.addEventListener(&quot;click&quot;, () =&gt; retirerBlocs(2));
+bouton3.addEventListener(&quot;click&quot;, () =&gt; retirerBlocs(3));
+boutonValider.addEventListener(&quot;click&quot;, function () {
+if (champ1.value.trim() !== &quot;&quot;) {
+noms[1] = champ1.value.trim();
+}
+if (champ2.value.trim() !== &quot;&quot;) {
+noms[2] = champ2.value.trim();
+}
+if (allumettes &gt; 0) {
+message.textContent = &quot;Au tour de &quot; + noms[joueuse];
+}
+});
+
+function nouvellePartie(nombre) {
+allumettes = nombre;
+joueuse = 1;
+genererBlocsBleus();
+afficherBlocs();
+message.textContent = &quot;Au tour de &quot; + noms[1];
+}
+
+nouvellePartie(20);
+
+boutonRejouer.addEventListener(&quot;click&quot;, function () {
+nouvellePartie(20);
+});
+boutonCommencer.addEventListener(&quot;click&quot;, function () {
+const nombreChoisi = Number(choixAllumettes.value);
+if (
+choixAllumettes.value === &quot;&quot; ||
+nombreChoisi &lt; 1 ||
+nombreChoisi &gt; 100 ||
+!Number.isInteger(nombreChoisi)
+) {
+message.textContent = &quot;Choisis un nombre entre 1 et 100 !&quot;;
+return;
+}
+nouvellePartie(nombreChoisi);
+});</textarea>
+    <button class="btn" type="submit">Ouvrir dans JSFiddle</button>
+  </form>
+</header>
+<div class="panneau" id="html"><pre><code class="language-xml">&lt;div class=&quot;raisin coin-haut-gauche&quot;&gt;🍇&lt;/div&gt;
+&lt;div class=&quot;raisin coin-haut-droit&quot;&gt;🍇&lt;/div&gt;
+&lt;div class=&quot;raisin coin-bas-gauche&quot;&gt;🍇&lt;/div&gt;
+&lt;div class=&quot;raisin coin-bas-droit&quot;&gt;🍇&lt;/div&gt;
+&lt;h1&gt;Jeu des lucky blocks&lt;/h1&gt;
+&lt;h2&gt;Équipe Raisin&lt;/h2&gt;
+&lt;p&gt;
+Nombre de lucky blocks au départ :
+&lt;input id=&quot;choixAllumettes&quot; type=&quot;number&quot; min=&quot;1&quot; max=&quot;100&quot; value=&quot;20&quot;&gt; &lt;button id=&quot;commencer&quot; class=&quot;petit-bouton&quot;&gt;Commencer&lt;/button&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;input id=&quot;nom1&quot; type=&quot;text&quot; placeholder=&quot;Nom de la joueuse 1&quot; maxlength=&quot;20&quot;&gt;
+&lt;input id=&quot;nom2&quot; type=&quot;text&quot; placeholder=&quot;Nom de la joueuse 2&quot; maxlength=&quot;20&quot;&gt;
+
+&lt;button id=&quot;valider&quot; class=&quot;petit-bouton&quot;&gt;Valider&lt;/button&gt;
+&lt;/p&gt;
+&lt;p id=&quot;message&quot;&gt;&lt;strong&gt;Au tour de la joueuse 1&lt;/strong&gt;&lt;/p&gt;
+&lt;div id=&quot;tas&quot;&gt;&lt;/div&gt;
+&lt;p&gt;Il reste &lt;span id=&quot;compteur&quot;&gt;&lt;/span&gt; lucky blocks.&lt;/p&gt;
+&lt;div class=&quot;boutons&quot;&gt;
+&lt;button id=&quot;retirer&quot;&gt;Ouvrir 1 &lt;/button&gt;
+&lt;button id=&quot;retirer2&quot;&gt;Ouvrir 2 &lt;/button&gt;
+&lt;button id=&quot;retirer3&quot;&gt;Ouvrir 3 &lt;/button&gt;&lt;/div&gt;
+&lt;p&gt;
+&lt;button id=&quot;rejouer&quot; class=&quot;bouton-rejouer&quot;&gt;Rejouer&lt;/button&gt;
+&lt;/p&gt;
+&lt;/p&gt;
+&lt;footer&gt;
+  &lt;p&gt;Projet réalisé dans le cadre du cours MSCI à l&#x27;HEIG-VD et avec l&#x27;aide de l&#x27;intelligence articficielle.&lt;/p&gt;
+&lt;/footer&gt;</code></pre></div>
+<div class="panneau" id="css" hidden><pre><code class="language-css">h1{
+font-family: Arial, sans-serif;
+text-align: center;
+color: #35243F;
+margin-bottom: 5px
+}
+h2{
+font-family: sans-serif;
+text-align: center;
+font-size: 18px;
+color: #7D3C98;
+margin-top: 0px
+}
+p{
+font-family: Arial, sans-serif;
+text-align: center;
+font-size: 20px;
+color: #2E142D;
+}
+.boutons{
+display: flex;
+justify-content: center;
+gap: 30px;
+}
+.boutonRejouer{
+display: flex;
+justify-content: center;
+gap: 10px;
+}
+button {
+border: solid #7136A0;
+background-color: #7136A0;
+color: white;
+font-family: Helvetica, sans-serif;
+width: fit-content;
+border-radius: 5px;
+font-size: 20px;
+}
+button:hover {
+background-color: #54217A;
+border-color: #54217A;
+cursor: pointer;
+}
+body {
+background-color: #F5F0FA
+}
+#tas {
+text-align: center;
+background-color: #F3E8FF;
+border: 2px solid #663399;
+border-radius: 15px;
+padding: 25px 15px;
+margin: 20px auto;
+width: fit-content;
+max-width: 90%;
+}
+
+.lucky-block {
+display: inline-flex;
+width: 45px;
+height: 45px;
+margin: 5px;
+align-items: center;
+justify-content: center;
+background: #ffdf26;
+border: 4px solid #b77b18;
+border-top-color: #fff27a;
+border-left-color: #ffe96b;
+border-radius: 2px;
+box-shadow:
+inset -5px -5px 0 #d69e19,
+inset 4px 4px 0 #fff5a3,
+3px 3px 0 #8b6914;
+vertical-align: middle;
+}
+
+.lucky-block::after {
+content: &quot;?&quot;;
+font-family: &quot;Courier New&quot;, monospace;
+font-size: 32px;
+font-weight: bold;
+color: #a15b15;
+text-shadow: 1px 1px #fff18a;
+}
+.lucky-block.bleu {
+background: #35c9f4;
+border-color: #087da8;
+border-top-color: #a3edff;
+border-left-color: #70e1ff;
+box-shadow:
+inset -5px -5px 0 #159bc9,
+inset 4px 4px 0 #b8f3ff,
+3px 3px 0 #086080;
+}
+.lucky-block.bleu::after {
+color: #075985;
+text-shadow: 1px 1px #b8f3ff;
+}
+
+.petit-bouton {
+font-size: 14px;
+padding: 2px 6px;
+border-width: 1px;
+border-radius: 5px;
+}
+.bouton-rejouer {
+background-color: #DCEBCB;
+border-color: #DCEBCB;
+color: #315C28;
+}
+.bouton-rejouer:hover {
+background-color: #C4DDAA;
+border-color: #C4DDAA;
+}
+.raisin {
+position: fixed;
+font-size: 30px;
+z-index: -1;
+opacity: 0.8;
+}
+.coin-haut-gauche {
+top: 15px;
+left: 15px;
+}
+.coin-haut-droit {
+top: 15px;
+right: 15px;
+}
+.coin-bas-gauche {
+bottom: 15px;
+left: 15px;
+}
+.coin-bas-droit {
+bottom: 15px;
+right: 15px;
+}
+footer p {
+font-size: 13px;
+font-style: italic;
+color: #7950A0;
+text-align: center;
+margin-top: 40px;
+padding-bottom: 10px;
+}
+input {
+border: 2px solid #7136A0;
+border-radius: 5px;
+font-size: 16px;
+padding: 3px 6px;
+}</code></pre></div>
+<div class="panneau" id="js" hidden><pre><code class="language-javascript">let allumettes = 20;
+let joueuse = 1;
+let noms = { 1: &quot;joueuse 1&quot;, 2: &quot;joueuse 2&quot; };
+let blocsBleus = [];
+const choixAllumettes = document.querySelector(&quot;#choixAllumettes&quot;);
+const boutonCommencer = document.querySelector(&quot;#commencer&quot;);
+const compteur = document.querySelector(&quot;#compteur&quot;);
+const message = document.querySelector(&quot;#message&quot;);
+const bouton = document.querySelector(&quot;#retirer&quot;);
+const bouton2 = document.querySelector(&quot;#retirer2&quot;);
+const bouton3 = document.querySelector(&quot;#retirer3&quot;);
+const boutonRejouer = document.querySelector(&quot;#rejouer&quot;);
+const champ1 = document.querySelector(&quot;#nom1&quot;);
+const champ2 = document.querySelector(&quot;#nom2&quot;);
+const boutonValider = document.querySelector(&quot;#valider&quot;);
+const tas = document.querySelector(&quot;#tas&quot;);
+function genererBlocsBleus() {
+blocsBleus = [];
+
+for (let i = 0; i &lt; allumettes; i++) {
+if (Math.random() &lt; 0.15) {
+blocsBleus.push(i);
+}
+}
+if (blocsBleus.length &gt; 4) {
+const choisi =
+blocsBleus[Math.floor(Math.random() * blocsBleus.length)];
+blocsBleus = [choisi];
+}
+}
+
+
+function afficherBlocs() {
+tas.innerHTML = &quot;&quot;;
+for (let i = 0; i &lt; allumettes; i++) {
+const bloc = document.createElement(&quot;span&quot;);
+bloc.className = &quot;lucky-block&quot;;
+if (blocsBleus.includes(i)) {
+bloc.classList.add(&quot;bleu&quot;);
+bloc.title = &quot;Lucky Block spécial&quot;;
+}
+tas.appendChild(bloc);
+}
+compteur.textContent = allumettes;
+verifierBoutons();
+}
+
+
+function verifierBoutons() {
+bouton.disabled = allumettes &lt; 1;
+bouton2.disabled = allumettes &lt; 2;
+bouton3.disabled = allumettes &lt; 3;
+}
+
+function changerJoueuse() {
+joueuse = joueuse === 1 ? 2 : 1;
+}
+
+function effetBlocBleu() {
+const variation = Math.floor(Math.random() * 9) - 4;
+if (variation &gt; 0) {
+allumettes += variation;
+message.textContent =
+&quot;Lucky Block spécial ! &quot; + variation + &quot; blocks ajoutés !&quot;;
+} else if (variation &lt; 0) {
+allumettes = Math.max(0, allumettes + variation);
+message.textContent =
+&quot;Lucky Block spécial ! &quot; + Math.abs(variation) +
+&quot; blocks retirés !&quot;;
+} else {
+message.textContent =
+&quot;Lucky Block spécial ! Tu n&#x27;as rien eu :(&quot;;
+}
+}
+
+function retirerBlocs(nombre) {
+if (allumettes &lt; nombre || allumettes &lt;= 0) return;
+const debut = allumettes - nombre;
+const bleuTrouve = blocsBleus.some(position =&gt; position &gt;= debut);
+allumettes -= nombre;
+blocsBleus = blocsBleus.filter(position =&gt; position &lt; allumettes);
+if (bleuTrouve) {
+effetBlocBleu();
+}
+if (allumettes &lt;= 0) {
+allumettes = 0;
+afficherBlocs();
+message.textContent = noms[joueuse] + &quot; a perdu !&quot;;
+return;
+}
+changerJoueuse();
+if (!bleuTrouve) {
+message.textContent = &quot;Au tour de &quot; + noms[joueuse];
+}
+afficherBlocs();
+}
+bouton.addEventListener(&quot;click&quot;, () =&gt; retirerBlocs(1));
+bouton2.addEventListener(&quot;click&quot;, () =&gt; retirerBlocs(2));
+bouton3.addEventListener(&quot;click&quot;, () =&gt; retirerBlocs(3));
+boutonValider.addEventListener(&quot;click&quot;, function () {
+if (champ1.value.trim() !== &quot;&quot;) {
+noms[1] = champ1.value.trim();
+}
+if (champ2.value.trim() !== &quot;&quot;) {
+noms[2] = champ2.value.trim();
+}
+if (allumettes &gt; 0) {
+message.textContent = &quot;Au tour de &quot; + noms[joueuse];
+}
+});
+
+function nouvellePartie(nombre) {
+allumettes = nombre;
+joueuse = 1;
+genererBlocsBleus();
+afficherBlocs();
+message.textContent = &quot;Au tour de &quot; + noms[1];
+}
+
+nouvellePartie(20);
+
+boutonRejouer.addEventListener(&quot;click&quot;, function () {
+nouvellePartie(20);
+});
+boutonCommencer.addEventListener(&quot;click&quot;, function () {
+const nombreChoisi = Number(choixAllumettes.value);
+if (
+choixAllumettes.value === &quot;&quot; ||
+nombreChoisi &lt; 1 ||
+nombreChoisi &gt; 100 ||
+!Number.isInteger(nombreChoisi)
+) {
+message.textContent = &quot;Choisis un nombre entre 1 et 100 !&quot;;
+return;
+}
+nouvellePartie(nombreChoisi);
+});</code></pre></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+  if (window.hljs) hljs.highlightAll();
+  document.querySelectorAll(".onglet").forEach((b) => b.addEventListener("click", () => {
+    document.querySelectorAll(".onglet").forEach((x) => x.classList.toggle("actif", x === b));
+    document.querySelectorAll(".panneau").forEach((p) => p.hidden = p.id !== b.dataset.cible);
+  }));
+</script>
+</body>
+</html>

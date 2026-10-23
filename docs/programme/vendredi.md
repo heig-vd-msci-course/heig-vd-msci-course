@@ -279,6 +279,7 @@ Les contraintes ne rapportent pas de points. Elles doivent toutes être respect�
 
 - [Présentation : Évaluation et projet final (HTML)](../slides/vendredi-evaluation.html){target="_blank"}
 - [Présentation : Évaluation et projet final (PDF)](../slides/vendredi-evaluation.pdf){target="_blank"}
+- [Projets finaux des équipes](projets.md){target="_blank"}
 
 ---
 

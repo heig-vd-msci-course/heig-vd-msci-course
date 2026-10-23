@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Kiwi - Ma valise de voyage</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="accueil">
+    <h1>Ma valise de voyage</h1>
+    <h2>L’essentiel pour partir à l’aventure, l’esprit léger !✈︎</h2>
+    <p>Partez à la découverte de Paris, Naples et Bruxelles grâce à nos conseils pour préparer votre valise et emporter tous les indispensables adaptés à votre destination !</p>
+    <button id="destinations">Choisir destination ♡</button>
+</section>
+
+<!-- PARIS -->
+<section id="paris" hidden>
+    <header>
+        <h1>🇫🇷 Paris, la ville de l'amour !</h1>
+        <p>Découvre la capitale et prépare ton aventure.</p>
+    </header>
+
+    <main>
+        <section class="valise">
+            <h2>🧳 Prépare ta valise</h2>
+            <p>Quel temps fera-t-il pendant ton voyage ?</p>
+            <button id="beau">☀️ Il fait beau</button>
+            <button id="moche">🌧️ Il fait moche</button>
+            <p id="message" aria-live="polite"></p>
+            <div id="liste" class="grille"></div>
+        </section>
+
+        <section>
+            <div class="titre-section">
+                <p class="surtitre">NOS INCONTOURNABLES</p>
+                <h2>📍 5 activités à faire à Paris</h2>
+                <p>Des monuments célèbres aux jolies balades, il y a plein de choses à découvrir !</p>
+            </div>
+
+            <div class="activites">
+                <article class="carte">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=700" alt="La tour Eiffel">
+                    <div class="contenu">
+                        <span class="numero">01 · MONUMENT</span>
+                        <h3>🗼 La tour Eiffel</h3>
+                        <p>Admire le monument le plus célèbre de Paris et profite d'une superbe vue sur la ville.</p>
+                    </div>
+                </article>
+
+                <article class="carte">
+                    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700" alt="Le musée du Louvre">
+                    <div class="contenu">
+                        <span class="numero">02 · CULTURE</span>
+                        <h3>🎨 Le musée du Louvre</h3>
+                        <p>Explore un musée extraordinaire et découvre des œuvres célèbres comme la Joconde.</p>
+                    </div>
+                </article>
+
+                <article class="carte">
+                    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700" alt="Une rue de Paris">
+                    <div class="contenu">
+                        <span class="numero">03 · PROMENADE</span>
+                        <h3>🚶 Montmartre</h3>
+                        <p>Promène-toi dans les petites rues, découvre les artistes et visite le Sacré-Cœur.</p>
+                    </div>
+                </article>
+
+                <article class="carte">
+                    <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?w=700" alt="Les bâtiments de Paris">
+                    <div class="contenu">
+                        <span class="numero">04 · DÉTENTE</span>
+                        <h3>🛥️ Une balade sur la Seine</h3>
+                        <p>Découvre Paris depuis la Seine et admire les monuments au fil de l'eau.</p>
+                    </div>
+                </article>
+
+                <article class="carte">
+                    <img src="https://images.unsplash.com/photo-1549144511-f099e773c147?w=700" alt="Les rues et monuments de Paris">
+                    <div class="contenu">
+                        <span class="numero">05 · DÉCOUVERTE</span>
+                        <h3>🌳 Le jardin des Tuileries</h3>
+                        <p>Fais une pause dans ce beau jardin et profite du paysage.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="surprise">
+            <h2>🎲 La destination surprise</h2>
+            <p>Tu ne sais pas où partir ? Laisse le hasard choisir !</p>
+            <button id="bouton-surprise">Choisir ma destination ♡</button>
+            <div id="resultat-surprise" aria-live="polite"></div>
+        </section>
+
+        <div class="navigation">
+            <button id="vers-naples">Découvrir Naples 🇮🇹</button>
+            <button id="vers-bruxelles">Découvrir Bruxelles 🇧🇪</button>
+            <button id="retour-accueil">Retour à l'accueil</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Bon voyage à Paris !</p>
+        <p class="petit">Un voyage, cinq activités et plein de souvenirs.</p>
+    </footer>
+</section>
+
+<!-- NAPLES -->
+<section id="naples" hidden>
+    <header>
+        <h1>🇮🇹 Naples, la perle du sud de l'Italie !</h1>
+        <p>Découvre Naples et prépare ta valise pour une aventure ensoleillée.</p>
+    </header>
+
+    <main>
+        <section class="valise">
+            <h2>🧳 Prépare ta valise</h2>
+            <p>Quel temps fera-t-il pendant ton voyage à Naples ?</p>
+            <button id="beau-naples">☀️ Il fait beau</button>
+            <button id="moche-naples">🌧️ Il fait mauvais</button>
+            <p id="message-naples" aria-live="polite"></p>
+            <div id="liste-naples" class="grille"></div>
+        </section>
+
+        <section>
+            <div class="titre-section">
+                <p class="surtitre">NOS INCONTOURNABLES</p>
+                <h2>📍 5 activités à faire à Naples</h2>
+                <p>Entre paysages magnifiques, ruelles animées et spécialités italiennes, Naples a tout pour te séduire !</p>
+            </div>
+
+            <div class="activites">
+                <article class="carte">
+                    <img src="https://unsacsurledos.com/wp-content/uploads/2023/07/vesuve-activites.jpg" alt="Le Vésuve">
+                    <div class="contenu">
+                        <span class="numero">01 · PAYSAGE</span>
+                        <h3>🌋 Le Vésuve</h3>
+                        <p>Découvre ce célèbre volcan et admire les paysages de la région.</p>
+                    </div>
+                </article>
+
+                <article class="carte">
+                    <img src="https://images.visititaly.eu/uploads/articoli/paragrafo/202103310214392222.jpg" alt="Le centre historique de Naples">
+                    <div class="contenu">
+                        <span class="numero">02 · CULTURE</span>
+                        <h3>🏛️ Le centre historique</h3>
+                        <p>Découvre les églises, les places et l'histoire de Naples.</p>
+                    </div>
+                </article>
+
+                <article class="carte">
+                    <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=700" alt="Pizza italienne">
+                    <div class="contenu">
+                        <span class="numero">03 · GASTRONOMIE</span>
+                        <h3>🍕 La pizza napolitaine</h3>
+                        <p>Déguste la célèbre pizza napolitaine, une spécialité incontournable.</p>
+                    </div>
+                </article>
+
+                <article class="carte">
+                    <img src="https://www.domaine-de-sitare.fr/wp-content/uploads/2026/02/Matin-de-naples-decouvrir-la-magie-du-reveil-en-bord-de-mer.jpg" alt="Le bord de mer">
+                    <div class="contenu">
+                        <span class="numero">04 · PROMENADE</span>
+                        <h3>🌊 Le bord de mer</h3>
+                        <p>Promène-toi le long de la mer et admire la baie de Naples.</p>
+                    </div>
+                </article>
+
+                <article class="carte">
+                    <img src="https://cdn.audleytravel.com/3915/2797/79/1021409-pompeii-with-vesuvius.jpg" alt="Pompéi">
+                    <div class="contenu">
+                        <span class="numero">05 · HISTOIRE</span>
+                        <h3>🏺 Pompéi</h3>
+                        <p>Explore les vestiges de cette ancienne ville romaine.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="navigation">
+            <button id="retour-paris">⬅ Retour à Paris</button>
+            <button id="vers-bruxelles-naples">Découvrir Bruxelles 🇧🇪</button>
+            <button id="retour-accueil-naples">Retour à l'accueil</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>🍋 Bon voyage à Naples !</p>
+        <p class="petit">Du soleil, de la culture et de belles découvertes à mettre dans ta valise.</p>
+    </footer>
+</section>
+
+<!-- BRUXELLES -->
+<section id="bruxelles" hidden>
+    <header>
+        <h1>🇧🇪 Bruxelles, la capitale belge !</h1>
+        <p>Découvre la capitale et ses surprises.</p>
+    </header>
+
+    <main>
+        <section class="valise">
+            <h2>🧳 Prépare ta valise</h2>
+            <p>Quel temps fera-t-il pendant ton voyage à Bruxelles ?</p>
+            <button id="beau-bruxelles">☀️ Il fait beau</button>
+            <button id="moche-bruxelles">🌧️ Il fait moche</button>
+            <p id="message-bruxelles" aria-live="polite"></p>
+            <div id="liste-bruxelles" class="grille"></div>
+        </section>
+
+        <section>
+            <div class="titre-section">
+                <p class="surtitre">NOS INCONTOURNABLES</p>
+                <h2>📍 5 activités à faire à Bruxelles</h2>
+                <p>Des monuments célèbres aux jolies balades, il y a plein de choses à découvrir !</p>
+            </div>
+
+            <div class="activites">
+                <article class="carte">
+                    <img src="https://www.visit.brussels/content/dam/visitbrussels/images/b2c/what-to-do/les-incontournables-de-bruxelles/GRAND_PLACE_4212-%C2%A9_visit.brussels_-_Jean-Michel_Byl.jpg" alt="La Grand-Place">
+                    <div class="contenu">
+                        <span class="numero">01 · MONUMENT HISTORIQUE</span>
+                        <h3>🏛️ La Grand-Place</h3>
+                        <p>Découvre le cœur historique de Bruxelles et ses magnifiques bâtiments.</p>
+                    </div>
+                </article>
+
+                <article class="carte">
+                    <img src="https://agendabrussels2.imgix.net/3a9f1c5cb094ef700c47cab09818e0e2b4b445b5.jpg" alt="L'Atomium">
+                    <div class="contenu">
+                        <span class="numero">02 · DÉCOUVERTE</span>
+                        <h3>⚛️ L'Atomium</h3>
+                        <p>Visite ce monument emblématique et profite d'une vue panoramique sur la ville.</p>
+                    </div>
+                </article>
+
+                <article class="carte">
+                    <img src="https://cdn.prod.website-files.com/65329423a966d94a21420905/68a6f63760b73a7efef1c911_Royal%20Gallery%20of%20Saint%20Hubert_cover.jpg" alt="Les Galeries Royales Saint-Hubert">
+                    <div class="contenu">
+                        <span class="numero">03 · PROMENADE</span>
+                        <h3>🛍️ Les Galeries Royales Saint-Hubert</h3>
+                        <p>Promène-toi dans ces élégantes galeries couvertes et découvre leurs boutiques.</p>
+                    </div>
+                </article>
+
+                <article class="carte">
+                    <img src="https://www.meisterdrucke.fr/kunstwerke/1000px/Jerome%20the%20Elder%20Duquesnoy%20-%20Manneken%20Pis%201619%20bronze%20-%20(MeisterDrucke-356443).jpg" alt="Le Manneken-Pis">
+                    <div class="contenu">
+                        <span class="numero">04 · MONUMENT</span>
+                        <h3>💧 Le Manneken-Pis</h3>
+                        <p>Rencontre la célèbre petite statue, symbole bien connu de Bruxelles.</p>
+                    </div>
+                </article>
+
+                <article class="carte">
+                    <img src="https://ims.easyvoyage.info/shutterstock_1255335097_c1b124f025/shutterstock_1255335097_c1b124f025.jpg" alt="Le Mont des Arts">
+                    <div class="contenu">
+                        <span class="numero">05 · DÉTENTE</span>
+                        <h3>🌳 Le Mont des Arts</h3>
+                        <p>Profite des jardins et admire une belle vue sur le centre-ville.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="surprise">
+            <h2>🎲 La destination surprise</h2>
+            <p>Tu ne sais pas où partir ? Laisse le hasard choisir !</p>
+            <button id="bouton-surprise-bruxelles">Choisir ma destination ♡</button>
+            <div id="resultat-surprise-bruxelles" aria-live="polite"></div>
+        </section>
+
+        <div class="navigation">
+            <button id="retour-paris-bruxelles">⬅ Retour à Paris 🇫🇷</button>
+            <button id="retour-naples-bruxelles">Retour à Naples 🇮🇹</button>
+            <button id="retour-accueil-bruxelles">Retour à l'accueil</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Bon voyage à Bruxelles ! N'oublie pas les frites et les gaufres !</p>
+        <p class="petit">Un voyage, cinq activités et plein de souvenirs.</p>
+    </footer>
+</section>
+
+
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

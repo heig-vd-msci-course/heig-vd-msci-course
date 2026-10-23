@@ -31,6 +31,7 @@ nav = [
     ]},
     { "Jeudi" = "programme/jeudi.md" },
     { "Vendredi" = "programme/vendredi.md" },
+    { "Projets finaux" = "programme/projets.md" },
   ]},
   { "Présentations" = [
     { "Lundi Matin - Introduction" = "slides/lundi-introduction-matin.html" },

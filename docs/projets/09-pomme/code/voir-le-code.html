@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Code - Pomme - Jeu des allumettes amélioré</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; color: #222; background: #fafafa; }
+  header { padding: 1rem 1.5rem; background: #fff; border-bottom: 1px solid #ddd; display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+  h1 { font-size: 1.3rem; margin: 0 1rem 0 0; color: #ff6b6b; }
+  .onglet, .btn { border: 0; border-radius: 6px; padding: .45rem .9rem; font-size: 1rem; cursor: pointer; background: #e8e8e8; color: #222; text-decoration: none; }
+  .onglet.actif { background: #4ecdc4; color: #fff; }
+  .btn { background: #ff6b6b; color: #fff; margin-left: auto; }
+  .btn.alt { background: #888; margin-left: 0; }
+  pre { margin: 0; }
+  pre code.hljs { padding: 1.5rem; font-size: 15px; line-height: 1.5; min-height: calc(100vh - 80px); }
+  .panneau[hidden] { display: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Pomme - Jeu des allumettes amélioré</h1>
+  <button class="onglet actif" data-cible="html">HTML</button>
+  <button class="onglet" data-cible="css">CSS</button>
+  <button class="onglet" data-cible="js">JavaScript</button>
+  <a class="btn alt" href="index.html" target="_blank">Voir le résultat</a>
+  <form action="https://jsfiddle.net/api/post/library/pure/" method="post" target="_blank" style="margin:0">
+    <input type="hidden" name="title" value="Pomme - Jeu des allumettes amélioré">
+    <textarea name="html" hidden>&lt;h1&gt;Jeu des allumettes – Équipe Pomme&lt;/h1&gt;
+
+&lt;div class=&quot;infos&quot;&gt;
+  &lt;p id=&quot;joueuse1&quot; class=&quot;joueur&quot;&gt;&lt;/p&gt;
+  &lt;p id=&quot;joueuse2&quot; class=&quot;joueur&quot;&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p id=&quot;message&quot;&gt;Au tour de la joueuse 1&lt;/p&gt;
+&lt;p class=&quot;timer&quot;&gt;Temps restant : &lt;span id=&quot;temps&quot;&gt;10&lt;/span&gt; s&lt;/p&gt;
+
+&lt;div id=&quot;tas&quot;&gt;&lt;/div&gt;
+&lt;p&gt;Il reste &lt;span id=&quot;compteur&quot;&gt;&lt;/span&gt; allumettes.&lt;/p&gt;
+
+&lt;div class=&quot;boutons&quot;&gt;
+  &lt;button id=&quot;retirer1&quot;&gt;Retirer 1&lt;/button&gt;
+  &lt;button id=&quot;retirer2&quot;&gt;Retirer 2&lt;/button&gt;
+  &lt;button id=&quot;retirer3&quot;&gt;Retirer 3&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;button id=&quot;indice&quot;&gt;💡 Indice&lt;/button&gt;
+&lt;p id=&quot;texteIndice&quot;&gt;&lt;/p&gt;
+
+&lt;button id=&quot;rejouer&quot;&gt;Partie suivante&lt;/button&gt;
+&lt;br&gt;
+&lt;button id=&quot;recommencer&quot; class=&quot;petit&quot;&gt;↺ Recommencer la partie&lt;/button&gt;</textarea>
+    <textarea name="css" hidden>body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: orange;
+}
+
+h1 {
+  color: crimson;
+}
+
+.infos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.joueur {
+  padding: 10px 20px;
+  border: 3px solid burlywood;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.actif {
+  border-color: crimson;
+  font-weight: bold;
+}
+
+#message {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.timer {
+  font-size: 20px;
+}
+
+#temps {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+#tas {
+  margin: 20px auto;
+  padding: 20px;
+  border: 3px solid burlywood;
+  border-radius: 15px;
+  max-width: 500px;
+  min-height: 80px;
+  background-color: white
+}
+
+.allumette {
+  display: inline-block;
+  width: 8px;
+  height: 60px;
+  margin: 0 4px;
+  background-color: burlywood;
+  border-top: 14px solid crimson;
+  border-radius: 6px 6px 2px 2px;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 8px;
+  border: none;
+  border-radius: 10px;
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkred;
+}
+
+button:disabled {
+  background-color: lightgray;
+  color: white;
+  cursor: not-allowed;
+}
+
+#indice {
+  background-color: white;
+  color: crimson;
+  border: 2px solid crimson;
+}
+
+#indice:disabled {
+  border-color: lightgray;
+  color: lightgray;
+}
+
+#texteIndice {
+  font-style: italic;
+  color: saddlebrown;
+}
+
+#rejouer {
+  background-color: burlywood;
+}
+
+.petit {
+  font-size: 14px;
+  padding: 6px 12px;
+  background-color: white;
+  color: saddlebrown;
+  border: 2px solid burlywood;
+}
+
+.petit:hover {
+  background-color: burlywood;
+  color: white;
+}</textarea>
+    <textarea name="js" hidden>let allumettes = 20;
+let joueuse = 1;
+let premiere = 1;
+let temps = 10;
+let fini = false;
+let matchFini = false;
+let intervalle;
+
+let vies1 = 3;
+let vies2 = 3;
+let score1 = 0;
+let score2 = 0;
+
+const compteur = document.querySelector(&quot;#compteur&quot;);
+const message = document.querySelector(&quot;#message&quot;);
+const tas = document.querySelector(&quot;#tas&quot;);
+const affichageTemps = document.querySelector(&quot;#temps&quot;);
+const infoJ1 = document.querySelector(&quot;#joueuse1&quot;);
+const infoJ2 = document.querySelector(&quot;#joueuse2&quot;);
+const bouton1 = document.querySelector(&quot;#retirer1&quot;);
+const bouton2 = document.querySelector(&quot;#retirer2&quot;);
+const bouton3 = document.querySelector(&quot;#retirer3&quot;);
+const boutonIndice = document.querySelector(&quot;#indice&quot;);
+const texteIndice = document.querySelector(&quot;#texteIndice&quot;);
+const boutonRejouer = document.querySelector(&quot;#rejouer&quot;);
+const boutonRecommencer = document.querySelector(&quot;#recommencer&quot;);
+
+// Fabrique le texte des cœurs : ❤️ pour une vie, 🖤 pour une vie perdue
+function coeurs(vies) {
+  let texte = &quot;&quot;;
+  for (let i = 0; i &lt; 3; i++) {
+    if (i &lt; vies) {
+      texte = texte + &quot;❤️&quot;;
+    } else {
+      texte = texte + &quot;🖤&quot;;
+    }
+  }
+  return texte;
+}
+
+// Met à jour toute la page
+function afficher() {
+  tas.innerHTML = &quot;&quot;;
+  for (let i = 0; i &lt; allumettes; i++) {
+    tas.innerHTML = tas.innerHTML + &#x27;&lt;span class=&quot;allumette&quot;&gt;&lt;/span&gt;&#x27;;
+  }
+  compteur.textContent = allumettes;
+
+  infoJ1.textContent = &quot;Joueuse 1 : &quot; + coeurs(vies1) + &quot; | Score : &quot; + score1;
+  infoJ2.textContent = &quot;Joueuse 2 : &quot; + coeurs(vies2) + &quot; | Score : &quot; + score2;
+  infoJ1.classList.toggle(&quot;actif&quot;, joueuse == 1 &amp;&amp; !fini);
+  infoJ2.classList.toggle(&quot;actif&quot;, joueuse == 2 &amp;&amp; !fini);
+
+  bouton1.disabled = fini || allumettes &lt; 1;
+  bouton2.disabled = fini || allumettes &lt; 2;
+  bouton3.disabled = fini || allumettes &lt; 3;
+  boutonIndice.disabled = fini;
+  boutonRejouer.disabled = !fini;
+}
+
+// Affiche le temps, en rouge pour les 3 dernières secondes
+function afficherTemps() {
+  affichageTemps.textContent = temps;
+  if (temps &lt;= 3) {
+    affichageTemps.style.color = &quot;crimson&quot;;
+  } else {
+    affichageTemps.style.color = &quot;black&quot;;
+  }
+}
+
+// Lance 10 secondes pour la joueuse dont c&#x27;est le tour
+function demarrerTimer() {
+  clearInterval(intervalle);
+  temps = 10;
+  afficherTemps();
+
+  intervalle = setInterval(function () {
+    temps = temps - 1;
+    afficherTemps();
+
+    if (temps == 0) {
+      joueuse = 3 - joueuse;
+      message.textContent = &quot;⏰ Temps écoulé ! Au tour de la joueuse &quot; + joueuse;
+      texteIndice.textContent = &quot;&quot;;
+      afficher();
+      demarrerTimer();
+    }
+  }, 1000);
+}
+
+// Une joueuse a pris la dernière allumette
+function finPartie(perdante) {
+  clearInterval(intervalle);
+  fini = true;
+  const gagnante = 3 - perdante;
+
+  if (perdante == 1) {
+    vies1 = vies1 - 1;
+    score2 = score2 + 1;
+  } else {
+    vies2 = vies2 - 1;
+    score1 = score1 + 1;
+  }
+
+  if (vies1 == 0 || vies2 == 0) {
+    matchFini = true;
+    message.textContent = &quot;🏆 La joueuse &quot; + gagnante + &quot; gagne le match ! La joueuse &quot; + perdante + &quot; a définitivement perdu.&quot;;
+    boutonRejouer.textContent = &quot;Nouveau match&quot;;
+  } else {
+    message.textContent = &quot;💥 La joueuse &quot; + perdante + &quot; a perdu la partie et perd un cœur !&quot;;
+    boutonRejouer.textContent = &quot;Partie suivante&quot;;
+  }
+
+  // La perdante commencera la partie suivante
+  joueuse = perdante;
+  afficher();
+}
+
+// Un coup : retirer 1, 2 ou 3 allumettes
+function retirer(nombre) {
+  allumettes = allumettes - nombre;
+  texteIndice.textContent = &quot;&quot;;
+
+  if (allumettes == 0) {
+    finPartie(joueuse);
+  } else {
+    joueuse = 3 - joueuse;
+    message.textContent = &quot;Au tour de la joueuse &quot; + joueuse;
+    afficher();
+    demarrerTimer();
+  }
+}
+
+// Donne le meilleur coup avec la stratégie gagnante
+function donnerIndice() {
+  const meilleur = (allumettes - 1) % 4;
+
+  if (meilleur == 0) {
+    texteIndice.textContent = &quot;💡 Pas de coup parfait ici. Retire 1 allumette et espère que l&#x27;autre joueuse se trompe !&quot;;
+  } else {
+    texteIndice.textContent = &quot;💡 Retire &quot; + meilleur + &quot; allumette(s). Il en restera &quot; + (allumettes - meilleur) + &quot; : laisse toujours 1, 5, 9, 13 ou 17 allumettes à l&#x27;autre, et elle finira par prendre la dernière !&quot;;
+  }
+}
+
+// Commence une partie avec la joueuse &quot;premiere&quot;
+function lancerPartie() {
+  allumettes = 20;
+  joueuse = premiere;
+  fini = false;
+  message.textContent = &quot;Au tour de la joueuse &quot; + joueuse;
+  texteIndice.textContent = &quot;&quot;;
+  afficher();
+  demarrerTimer();
+}
+
+// Partie suivante, ou nouveau match si quelqu&#x27;un n&#x27;a plus de cœur
+function nouvellePartie() {
+  if (matchFini) {
+    vies1 = 3;
+    vies2 = 3;
+    score1 = 0;
+    score2 = 0;
+    joueuse = 1;
+    matchFini = false;
+  }
+  premiere = joueuse;
+  lancerPartie();
+}
+
+bouton1.addEventListener(&quot;click&quot;, function () {
+  retirer(1);
+});
+
+bouton2.addEventListener(&quot;click&quot;, function () {
+  retirer(2);
+});
+
+bouton3.addEventListener(&quot;click&quot;, function () {
+  retirer(3);
+});
+
+boutonIndice.addEventListener(&quot;click&quot;, function () {
+  donnerIndice();
+});
+
+boutonRejouer.addEventListener(&quot;click&quot;, function () {
+  nouvellePartie();
+});
+
+// Recommencer : nouvelle partie avec 3 cœurs chacune
+boutonRecommencer.addEventListener(&quot;click&quot;, function () {
+  vies1 = 3;
+  vies2 = 3;
+  matchFini = false;
+  boutonRejouer.textContent = &quot;Partie suivante&quot;;
+  lancerPartie();
+});
+
+nouvellePartie();</textarea>
+    <button class="btn" type="submit">Ouvrir dans JSFiddle</button>
+  </form>
+</header>
+<div class="panneau" id="html"><pre><code class="language-xml">&lt;h1&gt;Jeu des allumettes – Équipe Pomme&lt;/h1&gt;
+
+&lt;div class=&quot;infos&quot;&gt;
+  &lt;p id=&quot;joueuse1&quot; class=&quot;joueur&quot;&gt;&lt;/p&gt;
+  &lt;p id=&quot;joueuse2&quot; class=&quot;joueur&quot;&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p id=&quot;message&quot;&gt;Au tour de la joueuse 1&lt;/p&gt;
+&lt;p class=&quot;timer&quot;&gt;Temps restant : &lt;span id=&quot;temps&quot;&gt;10&lt;/span&gt; s&lt;/p&gt;
+
+&lt;div id=&quot;tas&quot;&gt;&lt;/div&gt;
+&lt;p&gt;Il reste &lt;span id=&quot;compteur&quot;&gt;&lt;/span&gt; allumettes.&lt;/p&gt;
+
+&lt;div class=&quot;boutons&quot;&gt;
+  &lt;button id=&quot;retirer1&quot;&gt;Retirer 1&lt;/button&gt;
+  &lt;button id=&quot;retirer2&quot;&gt;Retirer 2&lt;/button&gt;
+  &lt;button id=&quot;retirer3&quot;&gt;Retirer 3&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;button id=&quot;indice&quot;&gt;💡 Indice&lt;/button&gt;
+&lt;p id=&quot;texteIndice&quot;&gt;&lt;/p&gt;
+
+&lt;button id=&quot;rejouer&quot;&gt;Partie suivante&lt;/button&gt;
+&lt;br&gt;
+&lt;button id=&quot;recommencer&quot; class=&quot;petit&quot;&gt;↺ Recommencer la partie&lt;/button&gt;</code></pre></div>
+<div class="panneau" id="css" hidden><pre><code class="language-css">body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: orange;
+}
+
+h1 {
+  color: crimson;
+}
+
+.infos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.joueur {
+  padding: 10px 20px;
+  border: 3px solid burlywood;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.actif {
+  border-color: crimson;
+  font-weight: bold;
+}
+
+#message {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.timer {
+  font-size: 20px;
+}
+
+#temps {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+#tas {
+  margin: 20px auto;
+  padding: 20px;
+  border: 3px solid burlywood;
+  border-radius: 15px;
+  max-width: 500px;
+  min-height: 80px;
+  background-color: white
+}
+
+.allumette {
+  display: inline-block;
+  width: 8px;
+  height: 60px;
+  margin: 0 4px;
+  background-color: burlywood;
+  border-top: 14px solid crimson;
+  border-radius: 6px 6px 2px 2px;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 8px;
+  border: none;
+  border-radius: 10px;
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkred;
+}
+
+button:disabled {
+  background-color: lightgray;
+  color: white;
+  cursor: not-allowed;
+}
+
+#indice {
+  background-color: white;
+  color: crimson;
+  border: 2px solid crimson;
+}
+
+#indice:disabled {
+  border-color: lightgray;
+  color: lightgray;
+}
+
+#texteIndice {
+  font-style: italic;
+  color: saddlebrown;
+}
+
+#rejouer {
+  background-color: burlywood;
+}
+
+.petit {
+  font-size: 14px;
+  padding: 6px 12px;
+  background-color: white;
+  color: saddlebrown;
+  border: 2px solid burlywood;
+}
+
+.petit:hover {
+  background-color: burlywood;
+  color: white;
+}</code></pre></div>
+<div class="panneau" id="js" hidden><pre><code class="language-javascript">let allumettes = 20;
+let joueuse = 1;
+let premiere = 1;
+let temps = 10;
+let fini = false;
+let matchFini = false;
+let intervalle;
+
+let vies1 = 3;
+let vies2 = 3;
+let score1 = 0;
+let score2 = 0;
+
+const compteur = document.querySelector(&quot;#compteur&quot;);
+const message = document.querySelector(&quot;#message&quot;);
+const tas = document.querySelector(&quot;#tas&quot;);
+const affichageTemps = document.querySelector(&quot;#temps&quot;);
+const infoJ1 = document.querySelector(&quot;#joueuse1&quot;);
+const infoJ2 = document.querySelector(&quot;#joueuse2&quot;);
+const bouton1 = document.querySelector(&quot;#retirer1&quot;);
+const bouton2 = document.querySelector(&quot;#retirer2&quot;);
+const bouton3 = document.querySelector(&quot;#retirer3&quot;);
+const boutonIndice = document.querySelector(&quot;#indice&quot;);
+const texteIndice = document.querySelector(&quot;#texteIndice&quot;);
+const boutonRejouer = document.querySelector(&quot;#rejouer&quot;);
+const boutonRecommencer = document.querySelector(&quot;#recommencer&quot;);
+
+// Fabrique le texte des cœurs : ❤️ pour une vie, 🖤 pour une vie perdue
+function coeurs(vies) {
+  let texte = &quot;&quot;;
+  for (let i = 0; i &lt; 3; i++) {
+    if (i &lt; vies) {
+      texte = texte + &quot;❤️&quot;;
+    } else {
+      texte = texte + &quot;🖤&quot;;
+    }
+  }
+  return texte;
+}
+
+// Met à jour toute la page
+function afficher() {
+  tas.innerHTML = &quot;&quot;;
+  for (let i = 0; i &lt; allumettes; i++) {
+    tas.innerHTML = tas.innerHTML + &#x27;&lt;span class=&quot;allumette&quot;&gt;&lt;/span&gt;&#x27;;
+  }
+  compteur.textContent = allumettes;
+
+  infoJ1.textContent = &quot;Joueuse 1 : &quot; + coeurs(vies1) + &quot; | Score : &quot; + score1;
+  infoJ2.textContent = &quot;Joueuse 2 : &quot; + coeurs(vies2) + &quot; | Score : &quot; + score2;
+  infoJ1.classList.toggle(&quot;actif&quot;, joueuse == 1 &amp;&amp; !fini);
+  infoJ2.classList.toggle(&quot;actif&quot;, joueuse == 2 &amp;&amp; !fini);
+
+  bouton1.disabled = fini || allumettes &lt; 1;
+  bouton2.disabled = fini || allumettes &lt; 2;
+  bouton3.disabled = fini || allumettes &lt; 3;
+  boutonIndice.disabled = fini;
+  boutonRejouer.disabled = !fini;
+}
+
+// Affiche le temps, en rouge pour les 3 dernières secondes
+function afficherTemps() {
+  affichageTemps.textContent = temps;
+  if (temps &lt;= 3) {
+    affichageTemps.style.color = &quot;crimson&quot;;
+  } else {
+    affichageTemps.style.color = &quot;black&quot;;
+  }
+}
+
+// Lance 10 secondes pour la joueuse dont c&#x27;est le tour
+function demarrerTimer() {
+  clearInterval(intervalle);
+  temps = 10;
+  afficherTemps();
+
+  intervalle = setInterval(function () {
+    temps = temps - 1;
+    afficherTemps();
+
+    if (temps == 0) {
+      joueuse = 3 - joueuse;
+      message.textContent = &quot;⏰ Temps écoulé ! Au tour de la joueuse &quot; + joueuse;
+      texteIndice.textContent = &quot;&quot;;
+      afficher();
+      demarrerTimer();
+    }
+  }, 1000);
+}
+
+// Une joueuse a pris la dernière allumette
+function finPartie(perdante) {
+  clearInterval(intervalle);
+  fini = true;
+  const gagnante = 3 - perdante;
+
+  if (perdante == 1) {
+    vies1 = vies1 - 1;
+    score2 = score2 + 1;
+  } else {
+    vies2 = vies2 - 1;
+    score1 = score1 + 1;
+  }
+
+  if (vies1 == 0 || vies2 == 0) {
+    matchFini = true;
+    message.textContent = &quot;🏆 La joueuse &quot; + gagnante + &quot; gagne le match ! La joueuse &quot; + perdante + &quot; a définitivement perdu.&quot;;
+    boutonRejouer.textContent = &quot;Nouveau match&quot;;
+  } else {
+    message.textContent = &quot;💥 La joueuse &quot; + perdante + &quot; a perdu la partie et perd un cœur !&quot;;
+    boutonRejouer.textContent = &quot;Partie suivante&quot;;
+  }
+
+  // La perdante commencera la partie suivante
+  joueuse = perdante;
+  afficher();
+}
+
+// Un coup : retirer 1, 2 ou 3 allumettes
+function retirer(nombre) {
+  allumettes = allumettes - nombre;
+  texteIndice.textContent = &quot;&quot;;
+
+  if (allumettes == 0) {
+    finPartie(joueuse);
+  } else {
+    joueuse = 3 - joueuse;
+    message.textContent = &quot;Au tour de la joueuse &quot; + joueuse;
+    afficher();
+    demarrerTimer();
+  }
+}
+
+// Donne le meilleur coup avec la stratégie gagnante
+function donnerIndice() {
+  const meilleur = (allumettes - 1) % 4;
+
+  if (meilleur == 0) {
+    texteIndice.textContent = &quot;💡 Pas de coup parfait ici. Retire 1 allumette et espère que l&#x27;autre joueuse se trompe !&quot;;
+  } else {
+    texteIndice.textContent = &quot;💡 Retire &quot; + meilleur + &quot; allumette(s). Il en restera &quot; + (allumettes - meilleur) + &quot; : laisse toujours 1, 5, 9, 13 ou 17 allumettes à l&#x27;autre, et elle finira par prendre la dernière !&quot;;
+  }
+}
+
+// Commence une partie avec la joueuse &quot;premiere&quot;
+function lancerPartie() {
+  allumettes = 20;
+  joueuse = premiere;
+  fini = false;
+  message.textContent = &quot;Au tour de la joueuse &quot; + joueuse;
+  texteIndice.textContent = &quot;&quot;;
+  afficher();
+  demarrerTimer();
+}
+
+// Partie suivante, ou nouveau match si quelqu&#x27;un n&#x27;a plus de cœur
+function nouvellePartie() {
+  if (matchFini) {
+    vies1 = 3;
+    vies2 = 3;
+    score1 = 0;
+    score2 = 0;
+    joueuse = 1;
+    matchFini = false;
+  }
+  premiere = joueuse;
+  lancerPartie();
+}
+
+bouton1.addEventListener(&quot;click&quot;, function () {
+  retirer(1);
+});
+
+bouton2.addEventListener(&quot;click&quot;, function () {
+  retirer(2);
+});
+
+bouton3.addEventListener(&quot;click&quot;, function () {
+  retirer(3);
+});
+
+boutonIndice.addEventListener(&quot;click&quot;, function () {
+  donnerIndice();
+});
+
+boutonRejouer.addEventListener(&quot;click&quot;, function () {
+  nouvellePartie();
+});
+
+// Recommencer : nouvelle partie avec 3 cœurs chacune
+boutonRecommencer.addEventListener(&quot;click&quot;, function () {
+  vies1 = 3;
+  vies2 = 3;
+  matchFini = false;
+  boutonRejouer.textContent = &quot;Partie suivante&quot;;
+  lancerPartie();
+});
+
+nouvellePartie();</code></pre></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+  if (window.hljs) hljs.highlightAll();
+  document.querySelectorAll(".onglet").forEach((b) => b.addEventListener("click", () => {
+    document.querySelectorAll(".onglet").forEach((x) => x.classList.toggle("actif", x === b));
+    document.querySelectorAll(".panneau").forEach((p) => p.hidden = p.id !== b.dataset.cible);
+  }));
+</script>
+</body>
+</html>

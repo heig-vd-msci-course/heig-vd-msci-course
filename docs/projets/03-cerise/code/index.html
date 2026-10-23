@@ -1,0 +1,643 @@
+<!doctype html><body><style>body.theme-classique {
+ --fond: #f0f3f8;
+ --carte: #ffffff;
+ --texte: #20283a;
+ --case: #e8edf5;
+ --accent: #3568d4;
+ --symbole: #3568d4;
+}
+
+body.theme-neon {
+ --fond: #100d20;
+ --carte: #211633;
+ --texte: #f8eaff;
+ --case: #302047;
+ --accent: #ff42d0;
+ --symbole: #55f5ff;
+}
+
+body.theme-nature {
+ --fond: #e1edda;
+ --carte: #f8f5e8;
+ --texte: #28452c;
+ --case: #d4e5c7;
+ --accent: #477c43;
+ --symbole: #477c43;
+}
+
+* {
+ box-sizing: border-box;
+}
+
+body {
+ margin: 0;
+ min-height: 100vh;
+ padding: 24px 12px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-family: Arial, sans-serif;
+ color: var(--texte);
+ background-color: var(--fond);
+ background-image: url("WhatsApp Image 2026-10-21 at 15.18.52.jpeg");
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ transition: background-color 0.3s, color 0.3s;
+}
+
+.game {
+ width: 100%;
+ max-width: 460px;
+ padding: 24px;
+ text-align: center;
+ background: color-mix(in srgb, var(--carte) 70%, transparent);
+ backdrop-filter: blur(4px);
+ border-radius: 20px;
+ box-shadow: 0 8px 28px #00000018;
+}
+
+h1 {
+ margin: 0 0 8px;
+ font-size: 28px;
+}
+
+.subtitle {
+ margin-top: 0;
+ opacity: 0.75;
+}
+
+.settings {
+ display: grid;
+ gap: 8px;
+ margin: 22px 0;
+ text-align: left;
+}
+
+.settings label {
+ font-size: 14px;
+ font-weight: bold;
+}
+
+select {
+ width: 100%;
+ padding: 11px;
+ border: 1px solid #9996;
+ border-radius: 8px;
+ background: color-mix(in srgb, var(--case) 65%, transparent);
+ color: var(--texte);
+ font-size: 15px;
+}
+
+#message {
+ min-height: 24px;
+ font-weight: bold;
+}
+
+.grille {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 8px;
+ margin: 18px 0;
+}
+
+.case {
+ min-width: 0;
+ aspect-ratio: 1;
+ border: none;
+ border-radius: 12px;
+ background: color-mix(in srgb, var(--case) 45%, transparent);
+ color: var(--symbole);
+ font-size: clamp(35px, 10vw, 58px);
+ font-weight: bold;
+ cursor: pointer;
+ transition: transform 0.15s, background 0.2s;
+}
+
+.case:not(:disabled):hover {
+ transform: scale(1.04);
+}
+
+.case:disabled {
+ opacity: 1;
+ cursor: default;
+}
+
+.case.bloquee {
+ background: #9996;
+ color: var(--texte);
+ font-size: 26px;
+}
+
+.case.gagnante {
+ outline: 4px solid var(--accent);
+}
+
+button {
+ font-family: inherit;
+}
+
+.powers {
+ margin: 16px 0;
+}
+
+#pouvoir,
+.rejouer {
+ width: 100%;
+ padding: 13px;
+ border: none;
+ border-radius: 9px;
+ font-size: 15px;
+ font-weight: bold;
+ cursor: pointer;
+}
+
+#pouvoir {
+ background: rgba(50, 100, 200, 0.75);
+ color: white;
+}
+
+#pouvoir:disabled {
+ opacity: 0.45;
+ cursor: not-allowed;
+}
+
+#info-pouvoir {
+ font-size: 13px;
+ opacity: 0.8;
+}
+
+.rejouer {
+ background: rgba(255, 255, 255, 0.35);
+ color: var(--texte);
+ border: 1px solid #9995;
+}
+
+.scores {
+ display: flex;
+ justify-content: space-around;
+ gap: 8px;
+ margin: 22px 0;
+ font-size: 14px;
+}
+
+button:focus-visible,
+select:focus-visible {
+ outline: 3px solid var(--accent);
+ outline-offset: 3px;
+}
+
+@media (max-width: 380px) {
+ .game {
+ padding: 16px;
+ }
+
+ .scores {
+ font-size: 12px;
+ }
+}
+</style><html lang="fr">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Morpion Challenge</title>
+
+ <link rel="stylesheet" href="style.css">
+ <script src="script.js" defer></script>
+</head>
+
+<body class="theme-classique">
+ <main class="game">
+
+ <header>
+ <h1>⚔️ Morpion Challenge</h1>
+ <p class="subtitle">À toi de gagner !</p>
+ </header>
+
+ <section class="settings">
+ <label for="personnage">Ton symbole</label>
+ <select id="personnage">
+ <option value="X">❌ Croix (X)</option>
+ <option value="O">⭕ Cercle (O)</option>
+ </select>
+
+ <label for="difficulte">Difficulté</label>
+ <select id="difficulte">
+ <option value="facile">Facile</option>
+ <option value="moyen">Moyen</option>
+ <option value="difficile">Difficile</option>
+ </select>
+
+ <label for="theme">Thème</label>
+ <select id="theme">
+ <option value="classique">Classique</option>
+ <option value="neon">Néon futuriste</option>
+ <option value="nature">Nature</option>
+ </select>
+ </section>
+
+ <p id="message" aria-live="polite">À toi de jouer !</p>
+
+ <section id="grille" class="grille" aria-label="Grille de jeu">
+ <button class="case" data-index="0" aria-label="Case 1"></button>
+ <button class="case" data-index="1" aria-label="Case 2"></button>
+ <button class="case" data-index="2" aria-label="Case 3"></button>
+ <button class="case" data-index="3" aria-label="Case 4"></button>
+ <button class="case" data-index="4" aria-label="Case 5"></button>
+ <button class="case" data-index="5" aria-label="Case 6"></button>
+ <button class="case" data-index="6" aria-label="Case 7"></button>
+ <button class="case" data-index="7" aria-label="Case 8"></button>
+ <button class="case" data-index="8" aria-label="Case 9"></button>
+ </section>
+
+ <section class="powers">
+ <button id="pouvoir">🛡️ Bloquer une case</button>
+ <p id="info-pouvoir">Utilisable une fois par partie.</p>
+ </section>
+
+ <section class="scores">
+ <div>Toi : <strong id="score-joueur">0</strong></div>
+ <div>Adversaire : <strong id="score-robot">0</strong></div>
+ <div>Matchs nuls : <strong id="score-nul">0</strong></div>
+ </section>
+
+ <button id="rejouer" class="rejouer">
+ 🔄 Recommencer à zéro
+ </button>
+
+ </main>
+</body>
+</html>
+<script>
+const cases = document.querySelectorAll(".case");
+const message = document.querySelector("#message");
+const choixPersonnage = document.querySelector("#personnage");
+const choixDifficulte = document.querySelector("#difficulte");
+const choixTheme = document.querySelector("#theme");
+const boutonPouvoir = document.querySelector("#pouvoir");
+const infoPouvoir = document.querySelector("#info-pouvoir");
+const boutonRejouer = document.querySelector("#rejouer");
+
+const combinaisonsGagnantes = [
+ [0, 1, 2], [3, 4, 5], [6, 7, 8],
+ [0, 3, 6], [1, 4, 7], [2, 5, 8],
+ [0, 4, 8], [2, 4, 6]
+];
+
+let grille = Array(9).fill("");
+let joueur;
+let robot;
+let partieTerminee = false;
+let tourJoueur = true;
+
+let modePouvoir = false;
+let pouvoirJoueurUtilise = false;
+let pouvoirRobotUtilise = false;
+
+let caseBloqueeJoueur = -1;
+let caseBloqueeRobot = -1;
+
+let scores = { joueur: 0, robot: 0, nul: 0 };
+
+function changerTheme() {
+ document.body.className = "theme-" + choixTheme.value;
+}
+
+function trouverCombinaison(symbole) {
+ return combinaisonsGagnantes.find(combinaison =>
+ combinaison.every(index => grille[index] === symbole)
+ ) || null;
+}
+
+function caseDisponible(index) {
+ return (
+ grille[index] === "" &&
+ index !== caseBloqueeJoueur &&
+ index !== caseBloqueeRobot
+ );
+}
+
+function choisirAuHasard() {
+ const libres = grille
+ .map((valeur, index) => caseDisponible(index) ? index : -1)
+ .filter(index => index !== -1);
+
+ if (libres.length === 0) return -1;
+
+ return libres[Math.floor(Math.random() * libres.length)];
+}
+
+function afficherGrille() {
+ cases.forEach((bouton, index) => {
+ bouton.classList.remove("bloquee", "gagnante");
+
+ const bloquee =
+ index === caseBloqueeJoueur ||
+ index === caseBloqueeRobot ||
+ grille[index] === "#";
+
+ bouton.textContent = bloquee ? "🔒" : grille[index];
+ bouton.classList.toggle("bloquee", bloquee);
+
+ bouton.disabled =
+ partieTerminee ||
+ !tourJoueur ||
+ grille[index] !== "" ||
+ bloquee;
+
+ bouton.setAttribute(
+ "aria-label",
+ `Case ${index + 1}${bloquee ? " bloquée" :
+ grille[index] ? " : " + grille[index] : " libre"}`
+ );
+ });
+
+ if (partieTerminee) {
+ const combinaison =
+ trouverCombinaison(joueur) ||
+ trouverCombinaison(robot);
+
+ if (combinaison) {
+ combinaison.forEach(index =>
+ cases[index].classList.add("gagnante")
+ );
+ }
+ }
+}
+
+function verifierFin() {
+ if (trouverCombinaison(joueur)) {
+ terminerPartie("joueur");
+ return true;
+ }
+
+ if (trouverCombinaison(robot)) {
+ terminerPartie("robot");
+ return true;
+ }
+
+ if (grille.every((valeur, index) =>
+ valeur !== "" ||
+ index === caseBloqueeJoueur ||
+ index === caseBloqueeRobot
+ )) {
+ terminerPartie("nul");
+ return true;
+ }
+
+ return false;
+}
+
+function terminerPartie(resultat) {
+ partieTerminee = true;
+ tourJoueur = false;
+ modePouvoir = false;
+
+ caseBloqueeJoueur = -1;
+ caseBloqueeRobot = -1;
+
+ if (resultat === "joueur") {
+ message.textContent = "🎉 Bravo, tu as gagné !";
+ scores.joueur++;
+ } else if (resultat === "robot") {
+ message.textContent = "L'adversaire a gagné !";
+ scores.robot++;
+ } else {
+ message.textContent = "🤝 Match nul !";
+ scores.nul++;
+ }
+
+ document.querySelector("#score-joueur").textContent = scores.joueur;
+ document.querySelector("#score-robot").textContent = scores.robot;
+ document.querySelector("#score-nul").textContent = scores.nul;
+
+ boutonPouvoir.disabled = true;
+ afficherGrille();
+}
+
+// Coups stratégiques
+function trouverCoupStrategique(symbole) {
+ for (let index = 0; index < grille.length; index++) {
+ if (!caseDisponible(index)) continue;
+
+ grille[index] = symbole;
+ const gagne = trouverCombinaison(symbole) !== null;
+ grille[index] = "";
+
+ if (gagne) return index;
+ }
+
+ return -1;
+}
+
+function coupMoyen() {
+ const attaque = trouverCoupStrategique(robot);
+ if (attaque !== -1) return attaque;
+
+ const defense = trouverCoupStrategique(joueur);
+ if (defense !== -1) return defense;
+
+ return choisirAuHasard();
+}
+
+function minimax(symboleQuiJoue) {
+ if (trouverCombinaison(robot)) return 10;
+ if (trouverCombinaison(joueur)) return -10;
+
+ if (!grille.includes("")) return 0;
+
+ const maximiser = symboleQuiJoue === robot;
+ let meilleurScore = maximiser ? -Infinity : Infinity;
+
+ for (let index = 0; index < grille.length; index++) {
+ if (!caseDisponible(index)) continue;
+
+ grille[index] = symboleQuiJoue;
+
+ const prochainSymbole =
+ symboleQuiJoue === robot ? joueur : robot;
+
+ const score = minimax(prochainSymbole);
+ grille[index] = "";
+
+ meilleurScore = maximiser
+ ? Math.max(meilleurScore, score)
+ : Math.min(meilleurScore, score);
+ }
+
+ return meilleurScore;
+}
+
+function coupDifficile() {
+ let meilleurCoup = -1;
+ let meilleurScore = -Infinity;
+
+ for (let index = 0; index < grille.length; index++) {
+ if (!caseDisponible(index)) continue;
+
+ grille[index] = robot;
+ const score = minimax(joueur);
+ grille[index] = "";
+
+ if (score > meilleurScore) {
+ meilleurScore = score;
+ meilleurCoup = index;
+ }
+ }
+
+ return meilleurCoup;
+}
+
+function activerPouvoir() {
+ if (
+ partieTerminee ||
+ pouvoirJoueurUtilise ||
+ !tourJoueur
+ ) return;
+
+ modePouvoir = !modePouvoir;
+
+ message.textContent = modePouvoir
+ ? "Choisis une case libre à bloquer."
+ : "À toi de jouer !";
+
+ infoPouvoir.textContent = modePouvoir
+ ? "Le pouvoir ne consomme pas ton tour."
+ : "Tu peux encore utiliser ton pouvoir.";
+}
+
+function pouvoirSpecialRobot() {
+ if (pouvoirRobotUtilise) return false;
+
+ const index = choisirAuHasard();
+ if (index === -1) return false;
+
+ caseBloqueeRobot = index;
+ pouvoirRobotUtilise = true;
+
+ message.textContent = "L'adversaire bloque une case !";
+ afficherGrille();
+
+ return true;
+}
+
+function jouer(index) {
+ if (
+ partieTerminee ||
+ !tourJoueur ||
+ !caseDisponible(index)
+ ) return;
+
+ if (modePouvoir) {
+ caseBloqueeJoueur = index;
+ modePouvoir = false;
+ pouvoirJoueurUtilise = true;
+
+ boutonPouvoir.disabled = true;
+ infoPouvoir.textContent = "Pouvoir utilisé !";
+ message.textContent = "Case bloquée ! À toi de jouer.";
+
+ afficherGrille();
+ return;
+ }
+
+ grille[index] = joueur;
+ caseBloqueeRobot = -1;
+
+ afficherGrille();
+ if (verifierFin()) return;
+
+ tourJoueur = false;
+ message.textContent = "À l'adversaire de jouer...";
+ afficherGrille();
+
+ setTimeout(tourOrdinateur, 350);
+}
+
+function tourOrdinateur() {
+ if (partieTerminee) return;
+
+ if (!pouvoirRobotUtilise && Math.random() < 0.30) {
+ pouvoirSpecialRobot();
+ }
+
+ let coup;
+
+ if (choixDifficulte.value === "facile") {
+ coup = choisirAuHasard();
+ } else if (choixDifficulte.value === "moyen") {
+ coup = coupMoyen();
+ } else {
+ coup = coupDifficile();
+ }
+
+ if (coup === -1) {
+ caseBloqueeJoueur = -1;
+ caseBloqueeRobot = -1;
+
+ if (!verifierFin()) terminerPartie("nul");
+ return;
+ }
+
+ grille[coup] = robot;
+ caseBloqueeJoueur = -1;
+
+ afficherGrille();
+ if (verifierFin()) return;
+
+ tourJoueur = true;
+ message.textContent = "À toi de jouer !";
+ afficherGrille();
+}
+
+function recommencer() {
+ grille = Array(9).fill("");
+
+ joueur = choixPersonnage.value;
+ robot = joueur === "X" ? "O" : "X";
+
+ partieTerminee = false;
+ modePouvoir = false;
+ pouvoirJoueurUtilise = false;
+ pouvoirRobotUtilise = false;
+
+ caseBloqueeJoueur = -1;
+ caseBloqueeRobot = -1;
+
+ scores = { joueur: 0, robot: 0, nul: 0 };
+
+ document.querySelector("#score-joueur").textContent = 0;
+ document.querySelector("#score-robot").textContent = 0;
+ document.querySelector("#score-nul").textContent = 0;
+
+ boutonPouvoir.disabled = false;
+ infoPouvoir.textContent = "Utilise ton pouvoir une fois par partie.";
+
+ changerTheme();
+
+ tourJoueur = joueur === "X";
+ afficherGrille();
+
+ if (tourJoueur) {
+ message.textContent = "À toi de jouer !";
+ } else {
+ message.textContent = "L'adversaire commence !";
+ setTimeout(tourOrdinateur, 350);
+ }
+}
+
+cases.forEach((bouton, index) => {
+ bouton.addEventListener("click", () => jouer(index));
+});
+
+boutonPouvoir.addEventListener("click", activerPouvoir);
+boutonRejouer.addEventListener("click", recommencer);
+
+choixPersonnage.addEventListener("change", recommencer);
+choixDifficulte.addEventListener("change", recommencer);
+choixTheme.addEventListener("change", changerTheme);
+
+recommencer();
+
+</script></body>

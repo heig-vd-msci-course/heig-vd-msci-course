@@ -1,1 +1,1 @@
-Copie du projet MDN Playground : URL data: donnée dans la feuille des équipes
+Copie du code : URL data: donnée dans la feuille des équipes

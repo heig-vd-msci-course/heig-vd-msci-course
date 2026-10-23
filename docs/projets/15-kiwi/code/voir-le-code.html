@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Code - Kiwi - Ma valise de voyage</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; color: #222; background: #fafafa; }
+  header { padding: 1rem 1.5rem; background: #fff; border-bottom: 1px solid #ddd; display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+  h1 { font-size: 1.3rem; margin: 0 1rem 0 0; color: #ff6b6b; }
+  .onglet, .btn { border: 0; border-radius: 6px; padding: .45rem .9rem; font-size: 1rem; cursor: pointer; background: #e8e8e8; color: #222; text-decoration: none; }
+  .onglet.actif { background: #4ecdc4; color: #fff; }
+  .btn { background: #ff6b6b; color: #fff; margin-left: auto; }
+  .btn.alt { background: #888; margin-left: 0; }
+  pre { margin: 0; }
+  pre code.hljs { padding: 1.5rem; font-size: 15px; line-height: 1.5; min-height: calc(100vh - 80px); }
+  .panneau[hidden] { display: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Kiwi - Ma valise de voyage</h1>
+  <button class="onglet actif" data-cible="html">HTML</button>
+  <button class="onglet" data-cible="css">CSS</button>
+  <button class="onglet" data-cible="js">JavaScript</button>
+  <a class="btn alt" href="index.html" target="_blank">Voir le résultat</a>
+  <form action="https://jsfiddle.net/api/post/library/pure/" method="post" target="_blank" style="margin:0">
+    <input type="hidden" name="title" value="Kiwi - Ma valise de voyage">
+    <textarea name="html" hidden>&lt;section id=&quot;accueil&quot;&gt;
+    &lt;h1&gt;Ma valise de voyage&lt;/h1&gt;
+    &lt;h2&gt;L’essentiel pour partir à l’aventure, l’esprit léger !✈︎&lt;/h2&gt;
+    &lt;p&gt;Partez à la découverte de Paris, Naples et Bruxelles grâce à nos conseils pour préparer votre valise et emporter tous les indispensables adaptés à votre destination !&lt;/p&gt;
+    &lt;button id=&quot;destinations&quot;&gt;Choisir destination ♡&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;!-- PARIS --&gt;
+&lt;section id=&quot;paris&quot; hidden&gt;
+    &lt;header&gt;
+        &lt;h1&gt;🇫🇷 Paris, la ville de l&#x27;amour !&lt;/h1&gt;
+        &lt;p&gt;Découvre la capitale et prépare ton aventure.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section class=&quot;valise&quot;&gt;
+            &lt;h2&gt;🧳 Prépare ta valise&lt;/h2&gt;
+            &lt;p&gt;Quel temps fera-t-il pendant ton voyage ?&lt;/p&gt;
+            &lt;button id=&quot;beau&quot;&gt;☀️ Il fait beau&lt;/button&gt;
+            &lt;button id=&quot;moche&quot;&gt;🌧️ Il fait moche&lt;/button&gt;
+            &lt;p id=&quot;message&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
+            &lt;div id=&quot;liste&quot; class=&quot;grille&quot;&gt;&lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;
+            &lt;div class=&quot;titre-section&quot;&gt;
+                &lt;p class=&quot;surtitre&quot;&gt;NOS INCONTOURNABLES&lt;/p&gt;
+                &lt;h2&gt;📍 5 activités à faire à Paris&lt;/h2&gt;
+                &lt;p&gt;Des monuments célèbres aux jolies balades, il y a plein de choses à découvrir !&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;activites&quot;&gt;
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=700&quot; alt=&quot;La tour Eiffel&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;01 · MONUMENT&lt;/span&gt;
+                        &lt;h3&gt;🗼 La tour Eiffel&lt;/h3&gt;
+                        &lt;p&gt;Admire le monument le plus célèbre de Paris et profite d&#x27;une superbe vue sur la ville.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700&quot; alt=&quot;Le musée du Louvre&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;02 · CULTURE&lt;/span&gt;
+                        &lt;h3&gt;🎨 Le musée du Louvre&lt;/h3&gt;
+                        &lt;p&gt;Explore un musée extraordinaire et découvre des œuvres célèbres comme la Joconde.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700&quot; alt=&quot;Une rue de Paris&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;03 · PROMENADE&lt;/span&gt;
+                        &lt;h3&gt;🚶 Montmartre&lt;/h3&gt;
+                        &lt;p&gt;Promène-toi dans les petites rues, découvre les artistes et visite le Sacré-Cœur.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1503917988258-f87a78e3c995?w=700&quot; alt=&quot;Les bâtiments de Paris&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;04 · DÉTENTE&lt;/span&gt;
+                        &lt;h3&gt;🛥️ Une balade sur la Seine&lt;/h3&gt;
+                        &lt;p&gt;Découvre Paris depuis la Seine et admire les monuments au fil de l&#x27;eau.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1549144511-f099e773c147?w=700&quot; alt=&quot;Les rues et monuments de Paris&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;05 · DÉCOUVERTE&lt;/span&gt;
+                        &lt;h3&gt;🌳 Le jardin des Tuileries&lt;/h3&gt;
+                        &lt;p&gt;Fais une pause dans ce beau jardin et profite du paysage.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section class=&quot;surprise&quot;&gt;
+            &lt;h2&gt;🎲 La destination surprise&lt;/h2&gt;
+            &lt;p&gt;Tu ne sais pas où partir ? Laisse le hasard choisir !&lt;/p&gt;
+            &lt;button id=&quot;bouton-surprise&quot;&gt;Choisir ma destination ♡&lt;/button&gt;
+            &lt;div id=&quot;resultat-surprise&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;div class=&quot;navigation&quot;&gt;
+            &lt;button id=&quot;vers-naples&quot;&gt;Découvrir Naples 🇮🇹&lt;/button&gt;
+            &lt;button id=&quot;vers-bruxelles&quot;&gt;Découvrir Bruxelles 🇧🇪&lt;/button&gt;
+            &lt;button id=&quot;retour-accueil&quot;&gt;Retour à l&#x27;accueil&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;Bon voyage à Paris !&lt;/p&gt;
+        &lt;p class=&quot;petit&quot;&gt;Un voyage, cinq activités et plein de souvenirs.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/section&gt;
+
+&lt;!-- NAPLES --&gt;
+&lt;section id=&quot;naples&quot; hidden&gt;
+    &lt;header&gt;
+        &lt;h1&gt;🇮🇹 Naples, la perle du sud de l&#x27;Italie !&lt;/h1&gt;
+        &lt;p&gt;Découvre Naples et prépare ta valise pour une aventure ensoleillée.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section class=&quot;valise&quot;&gt;
+            &lt;h2&gt;🧳 Prépare ta valise&lt;/h2&gt;
+            &lt;p&gt;Quel temps fera-t-il pendant ton voyage à Naples ?&lt;/p&gt;
+            &lt;button id=&quot;beau-naples&quot;&gt;☀️ Il fait beau&lt;/button&gt;
+            &lt;button id=&quot;moche-naples&quot;&gt;🌧️ Il fait mauvais&lt;/button&gt;
+            &lt;p id=&quot;message-naples&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
+            &lt;div id=&quot;liste-naples&quot; class=&quot;grille&quot;&gt;&lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;
+            &lt;div class=&quot;titre-section&quot;&gt;
+                &lt;p class=&quot;surtitre&quot;&gt;NOS INCONTOURNABLES&lt;/p&gt;
+                &lt;h2&gt;📍 5 activités à faire à Naples&lt;/h2&gt;
+                &lt;p&gt;Entre paysages magnifiques, ruelles animées et spécialités italiennes, Naples a tout pour te séduire !&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;activites&quot;&gt;
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://unsacsurledos.com/wp-content/uploads/2023/07/vesuve-activites.jpg&quot; alt=&quot;Le Vésuve&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;01 · PAYSAGE&lt;/span&gt;
+                        &lt;h3&gt;🌋 Le Vésuve&lt;/h3&gt;
+                        &lt;p&gt;Découvre ce célèbre volcan et admire les paysages de la région.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://images.visititaly.eu/uploads/articoli/paragrafo/202103310214392222.jpg&quot; alt=&quot;Le centre historique de Naples&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;02 · CULTURE&lt;/span&gt;
+                        &lt;h3&gt;🏛️ Le centre historique&lt;/h3&gt;
+                        &lt;p&gt;Découvre les églises, les places et l&#x27;histoire de Naples.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1579751626657-72bc17010498?w=700&quot; alt=&quot;Pizza italienne&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;03 · GASTRONOMIE&lt;/span&gt;
+                        &lt;h3&gt;🍕 La pizza napolitaine&lt;/h3&gt;
+                        &lt;p&gt;Déguste la célèbre pizza napolitaine, une spécialité incontournable.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://www.domaine-de-sitare.fr/wp-content/uploads/2026/02/Matin-de-naples-decouvrir-la-magie-du-reveil-en-bord-de-mer.jpg&quot; alt=&quot;Le bord de mer&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;04 · PROMENADE&lt;/span&gt;
+                        &lt;h3&gt;🌊 Le bord de mer&lt;/h3&gt;
+                        &lt;p&gt;Promène-toi le long de la mer et admire la baie de Naples.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://cdn.audleytravel.com/3915/2797/79/1021409-pompeii-with-vesuvius.jpg&quot; alt=&quot;Pompéi&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;05 · HISTOIRE&lt;/span&gt;
+                        &lt;h3&gt;🏺 Pompéi&lt;/h3&gt;
+                        &lt;p&gt;Explore les vestiges de cette ancienne ville romaine.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;div class=&quot;navigation&quot;&gt;
+            &lt;button id=&quot;retour-paris&quot;&gt;⬅ Retour à Paris&lt;/button&gt;
+            &lt;button id=&quot;vers-bruxelles-naples&quot;&gt;Découvrir Bruxelles 🇧🇪&lt;/button&gt;
+            &lt;button id=&quot;retour-accueil-naples&quot;&gt;Retour à l&#x27;accueil&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;🍋 Bon voyage à Naples !&lt;/p&gt;
+        &lt;p class=&quot;petit&quot;&gt;Du soleil, de la culture et de belles découvertes à mettre dans ta valise.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/section&gt;
+
+&lt;!-- BRUXELLES --&gt;
+&lt;section id=&quot;bruxelles&quot; hidden&gt;
+    &lt;header&gt;
+        &lt;h1&gt;🇧🇪 Bruxelles, la capitale belge !&lt;/h1&gt;
+        &lt;p&gt;Découvre la capitale et ses surprises.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section class=&quot;valise&quot;&gt;
+            &lt;h2&gt;🧳 Prépare ta valise&lt;/h2&gt;
+            &lt;p&gt;Quel temps fera-t-il pendant ton voyage à Bruxelles ?&lt;/p&gt;
+            &lt;button id=&quot;beau-bruxelles&quot;&gt;☀️ Il fait beau&lt;/button&gt;
+            &lt;button id=&quot;moche-bruxelles&quot;&gt;🌧️ Il fait moche&lt;/button&gt;
+            &lt;p id=&quot;message-bruxelles&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
+            &lt;div id=&quot;liste-bruxelles&quot; class=&quot;grille&quot;&gt;&lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;
+            &lt;div class=&quot;titre-section&quot;&gt;
+                &lt;p class=&quot;surtitre&quot;&gt;NOS INCONTOURNABLES&lt;/p&gt;
+                &lt;h2&gt;📍 5 activités à faire à Bruxelles&lt;/h2&gt;
+                &lt;p&gt;Des monuments célèbres aux jolies balades, il y a plein de choses à découvrir !&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;activites&quot;&gt;
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://www.visit.brussels/content/dam/visitbrussels/images/b2c/what-to-do/les-incontournables-de-bruxelles/GRAND_PLACE_4212-%C2%A9_visit.brussels_-_Jean-Michel_Byl.jpg&quot; alt=&quot;La Grand-Place&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;01 · MONUMENT HISTORIQUE&lt;/span&gt;
+                        &lt;h3&gt;🏛️ La Grand-Place&lt;/h3&gt;
+                        &lt;p&gt;Découvre le cœur historique de Bruxelles et ses magnifiques bâtiments.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://agendabrussels2.imgix.net/3a9f1c5cb094ef700c47cab09818e0e2b4b445b5.jpg&quot; alt=&quot;L&#x27;Atomium&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;02 · DÉCOUVERTE&lt;/span&gt;
+                        &lt;h3&gt;⚛️ L&#x27;Atomium&lt;/h3&gt;
+                        &lt;p&gt;Visite ce monument emblématique et profite d&#x27;une vue panoramique sur la ville.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://cdn.prod.website-files.com/65329423a966d94a21420905/68a6f63760b73a7efef1c911_Royal%20Gallery%20of%20Saint%20Hubert_cover.jpg&quot; alt=&quot;Les Galeries Royales Saint-Hubert&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;03 · PROMENADE&lt;/span&gt;
+                        &lt;h3&gt;🛍️ Les Galeries Royales Saint-Hubert&lt;/h3&gt;
+                        &lt;p&gt;Promène-toi dans ces élégantes galeries couvertes et découvre leurs boutiques.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://www.meisterdrucke.fr/kunstwerke/1000px/Jerome%20the%20Elder%20Duquesnoy%20-%20Manneken%20Pis%201619%20bronze%20-%20(MeisterDrucke-356443).jpg&quot; alt=&quot;Le Manneken-Pis&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;04 · MONUMENT&lt;/span&gt;
+                        &lt;h3&gt;💧 Le Manneken-Pis&lt;/h3&gt;
+                        &lt;p&gt;Rencontre la célèbre petite statue, symbole bien connu de Bruxelles.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://ims.easyvoyage.info/shutterstock_1255335097_c1b124f025/shutterstock_1255335097_c1b124f025.jpg&quot; alt=&quot;Le Mont des Arts&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;05 · DÉTENTE&lt;/span&gt;
+                        &lt;h3&gt;🌳 Le Mont des Arts&lt;/h3&gt;
+                        &lt;p&gt;Profite des jardins et admire une belle vue sur le centre-ville.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section class=&quot;surprise&quot;&gt;
+            &lt;h2&gt;🎲 La destination surprise&lt;/h2&gt;
+            &lt;p&gt;Tu ne sais pas où partir ? Laisse le hasard choisir !&lt;/p&gt;
+            &lt;button id=&quot;bouton-surprise-bruxelles&quot;&gt;Choisir ma destination ♡&lt;/button&gt;
+            &lt;div id=&quot;resultat-surprise-bruxelles&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;div class=&quot;navigation&quot;&gt;
+            &lt;button id=&quot;retour-paris-bruxelles&quot;&gt;⬅ Retour à Paris 🇫🇷&lt;/button&gt;
+            &lt;button id=&quot;retour-naples-bruxelles&quot;&gt;Retour à Naples 🇮🇹&lt;/button&gt;
+            &lt;button id=&quot;retour-accueil-bruxelles&quot;&gt;Retour à l&#x27;accueil&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;Bon voyage à Bruxelles ! N&#x27;oublie pas les frites et les gaufres !&lt;/p&gt;
+        &lt;p class=&quot;petit&quot;&gt;Un voyage, cinq activités et plein de souvenirs.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/section&gt;
+
+
+
+
+
+</textarea>
+    <textarea name="css" hidden>* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f7f5f0;
+    color: #243653;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #123875, #2457a4);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+    border-bottom: 6px solid #ed2939;
+}
+
+header h1 {
+    font-size: clamp(32px, 6vw, 52px);
+    margin: 8px 0;
+}
+
+header p {
+    margin: 5px;
+}
+
+.surtitre {
+    color: #ed2939;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+header .surtitre {
+    color: #ffd7dc;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+h2 {
+    line-height: 1.3;
+}
+
+.valise {
+    background: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px #24365312;
+    margin-bottom: 60px;
+}
+
+button {
+    background: #ed2939;
+    color: white;
+    padding: 13px 20px;
+    margin: 8px 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+    background: #123875;
+    transform: translateY(-2px);
+}
+
+#message,
+#message-naples,
+#message-bruxelles {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.grille {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.affaire {
+    background: #f7f5f0;
+    width: 145px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e7e3dc;
+}
+
+.affaire h2 {
+    font-size: 34px;
+    margin: 5px;
+}
+
+.affaire h3 {
+    font-size: 14px;
+    margin: 5px;
+}
+
+.titre-section {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.titre-section h2 {
+    font-size: 30px;
+}
+
+.activites {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.carte {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #24365312;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.carte:hover {
+    transform: none;
+    box-shadow: 0 5px 20px #24365312;
+}
+
+.carte img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.contenu {
+    padding: 20px;
+}
+
+.numero {
+    color: #ed2939;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.carte h3 {
+    margin: 8px 0;
+    font-size: 21px;
+}
+
+.carte p {
+    margin-bottom: 0;
+    color: #58657a;
+}
+
+footer {
+    background: #123875;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    border-top: 5px solid #ed2939;
+}
+
+.petit {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* PAGE D&#x27;ACCUEIL */
+#accueil {
+    background-color: #F7FAFF;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#accueil h1 {
+    color: #4D4D4D;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+#accueil h2 {
+    color: #4D4D4D;
+    font-size: 25px;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+#accueil p {
+    color: black;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto 30px;
+    padding: 20px 25px;
+    border: 1px solid #4D4D4D;
+    border-radius: 15px;
+    background-color: white;
+}
+
+#accueil #destinations {
+    background-color: #4D4D4D;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#accueil #destinations:hover {
+    background-color: #C85D16;
+    transform: scale(1.05);
+}
+
+/* DESTINATION SURPRISE */
+.surprise {
+    background: white;
+    padding: 35px 20px;
+    margin: 40px auto;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 5px 20px #24365312;
+}
+
+.surprise h2 {
+    color: #243653;
+}
+
+.surprise p {
+    color: #58657a;
+}
+
+#resultat-surprise,
+#resultat-surprise-bruxelles {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #243653;
+}
+
+/* NAVIGATION ENTRE LES DESTINATIONS */
+.navigation {
+    text-align: center;
+    margin: 30px auto;
+}
+
+/* CACHER LES PAGES INACTIVES */
+#accueil[hidden],
+#paris[hidden],
+#naples[hidden],
+#bruxelles[hidden] {
+    display: none !important;
+}
+
+/* AFFICHAGE SUR TÉLÉPHONE */
+@media (max-width: 650px) {
+    header {
+        padding: 45px 15px;
+    }
+
+    main {
+        padding: 20px 14px;
+    }
+
+    .activites {
+        grid-template-columns: 1fr;
+    }
+
+    .carte img {
+        height: 200px;
+    }
+
+    .titre-section h2 {
+        font-size: 25px;
+    }
+
+    button {
+        margin: 6px 3px;
+    }
+
+    #accueil h1 {
+        font-size: 34px;
+    }
+
+    #accueil h2 {
+        font-size: 22px;
+    }
+}
+</textarea>
+    <textarea name="js" hidden>function afficherListe(meteo, destination) {
+    let affaires;
+
+    if (meteo === &quot;beau&quot;) {
+        affaires = [
+            [&quot;Lunettes de soleil&quot;, &quot;🕶️&quot;],
+            [&quot;T-shirt&quot;, &quot;👕&quot;],
+            [&quot;Short&quot;, &quot;🩳&quot;],
+            [&quot;Crème solaire&quot;, &quot;🧴&quot;],
+            [&quot;Bouteille d&#x27;eau&quot;, &quot;💧&quot;],
+            [&quot;Chaussures confortables&quot;, &quot;👟&quot;],
+            [&quot;Casquette&quot;, &quot;🧢&quot;]
+        ];
+    } else {
+        affaires = [
+            [&quot;Parapluie&quot;, &quot;☂️&quot;],
+            [&quot;Veste imperméable&quot;, &quot;🧥&quot;],
+            [&quot;Pantalon&quot;, &quot;👖&quot;],
+            [&quot;Pull chaud&quot;, &quot;🧶&quot;],
+            [&quot;Chaussures fermées&quot;, &quot;👟&quot;],
+            [&quot;Écharpe&quot;, &quot;🧣&quot;],
+            [&quot;Chaussettes&quot;, &quot;🧦&quot;]
+        ];
+    }
+
+    const noms = {
+        paris: &quot;Paris&quot;,
+        naples: &quot;Naples&quot;,
+        bruxelles: &quot;Bruxelles&quot;
+    };
+
+    const suffixes = {
+        paris: &quot;&quot;,
+        naples: &quot;-naples&quot;,
+        bruxelles: &quot;-bruxelles&quot;
+    };
+
+    const suffixe = suffixes[destination];
+    const message = document.getElementById(&quot;message&quot; + suffixe);
+    const liste = document.getElementById(&quot;liste&quot; + suffixe);
+
+    if (meteo === &quot;beau&quot;) {
+        message.textContent =
+            &quot;☀️ Beau temps à &quot; + noms[destination] +
+            &quot; ! Voici les affaires à emporter.&quot;;
+    } else {
+        message.textContent =
+            &quot;🌧️ Temps pluvieux à &quot; + noms[destination] +
+            &quot; ! Voici les affaires à emporter.&quot;;
+    }
+
+    liste.innerHTML = &quot;&quot;;
+
+    affaires.forEach(function(item) {
+        liste.innerHTML += `
+            &lt;div class=&quot;affaire&quot;&gt;
+                &lt;h2&gt;${item[1]}&lt;/h2&gt;
+                &lt;h3&gt;${item[0]}&lt;/h3&gt;
+            &lt;/div&gt;
+        `;
+    });
+}
+
+
+document.getElementById(&quot;beau&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherListe(&quot;beau&quot;, &quot;paris&quot;);
+});
+
+document.getElementById(&quot;moche&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherListe(&quot;moche&quot;, &quot;paris&quot;);
+});
+
+
+
+document.getElementById(&quot;beau-naples&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherListe(&quot;beau&quot;, &quot;naples&quot;);
+});
+
+document.getElementById(&quot;moche-naples&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherListe(&quot;moche&quot;, &quot;naples&quot;);
+});
+
+
+document.getElementById(&quot;beau-bruxelles&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherListe(&quot;beau&quot;, &quot;bruxelles&quot;);
+});
+
+document.getElementById(&quot;moche-bruxelles&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherListe(&quot;moche&quot;, &quot;bruxelles&quot;);
+});
+
+
+function afficherDestination(id) {
+    document.getElementById(&quot;accueil&quot;).hidden = true;
+    document.getElementById(&quot;paris&quot;).hidden = true;
+    document.getElementById(&quot;naples&quot;).hidden = true;
+    document.getElementById(&quot;bruxelles&quot;).hidden = true;
+
+    document.getElementById(id).hidden = false;
+
+    window.scrollTo(0, 0);
+}
+
+
+
+document.getElementById(&quot;destinations&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;paris&quot;);
+});
+
+
+
+document.getElementById(&quot;vers-naples&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;naples&quot;);
+});
+
+document.getElementById(&quot;vers-bruxelles&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;bruxelles&quot;);
+});
+
+document.getElementById(&quot;retour-accueil&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;accueil&quot;);
+});
+
+
+document.getElementById(&quot;retour-paris&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;paris&quot;);
+});
+
+document.getElementById(&quot;vers-bruxelles-naples&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;bruxelles&quot;);
+});
+
+document.getElementById(&quot;retour-accueil-naples&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;accueil&quot;);
+});
+
+
+
+document.getElementById(&quot;retour-paris-bruxelles&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;paris&quot;);
+});
+
+document.getElementById(&quot;retour-naples-bruxelles&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;naples&quot;);
+});
+
+document.getElementById(&quot;retour-accueil-bruxelles&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;accueil&quot;);
+});
+
+
+
+document.getElementById(&quot;bouton-surprise&quot;).addEventListener(&quot;click&quot;, function() {
+    const destinations = [
+        &quot;🇫🇷 Paris ! Prépare-toi à découvrir la tour Eiffel !&quot;,
+        &quot;🇮🇹 Naples ! À toi les pizzas et les jolies ruelles !&quot;,
+        &quot;🇧🇪 Bruxelles ! À toi les gaufres et les belles places !&quot;
+    ];
+
+    const hasard = Math.floor(Math.random() * destinations.length);
+
+    document.getElementById(&quot;resultat-surprise&quot;).textContent =
+        &quot;Ta destination est : &quot; + destinations[hasard];
+});
+
+
+document.getElementById(&quot;bouton-surprise-bruxelles&quot;).addEventListener(&quot;click&quot;, function() {
+    const destinations = [
+        &quot;🇫🇷 Paris ! Prépare-toi à découvrir la tour Eiffel !&quot;,
+        &quot;🇮🇹 Naples ! À toi les pizzas et les jolies ruelles !&quot;,
+        &quot;🇧🇪 Bruxelles ! À toi les gaufres et les belles places !&quot;
+    ];
+
+    const hasard = Math.floor(Math.random() * destinations.length);
+
+    document.getElementById(&quot;resultat-surprise-bruxelles&quot;).textContent =
+        &quot;Ta destination est : &quot; + destinations[hasard];
+});
+</textarea>
+    <button class="btn" type="submit">Ouvrir dans JSFiddle</button>
+  </form>
+</header>
+<div class="panneau" id="html"><pre><code class="language-xml">&lt;section id=&quot;accueil&quot;&gt;
+    &lt;h1&gt;Ma valise de voyage&lt;/h1&gt;
+    &lt;h2&gt;L’essentiel pour partir à l’aventure, l’esprit léger !✈︎&lt;/h2&gt;
+    &lt;p&gt;Partez à la découverte de Paris, Naples et Bruxelles grâce à nos conseils pour préparer votre valise et emporter tous les indispensables adaptés à votre destination !&lt;/p&gt;
+    &lt;button id=&quot;destinations&quot;&gt;Choisir destination ♡&lt;/button&gt;
+&lt;/section&gt;
+
+&lt;!-- PARIS --&gt;
+&lt;section id=&quot;paris&quot; hidden&gt;
+    &lt;header&gt;
+        &lt;h1&gt;🇫🇷 Paris, la ville de l&#x27;amour !&lt;/h1&gt;
+        &lt;p&gt;Découvre la capitale et prépare ton aventure.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section class=&quot;valise&quot;&gt;
+            &lt;h2&gt;🧳 Prépare ta valise&lt;/h2&gt;
+            &lt;p&gt;Quel temps fera-t-il pendant ton voyage ?&lt;/p&gt;
+            &lt;button id=&quot;beau&quot;&gt;☀️ Il fait beau&lt;/button&gt;
+            &lt;button id=&quot;moche&quot;&gt;🌧️ Il fait moche&lt;/button&gt;
+            &lt;p id=&quot;message&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
+            &lt;div id=&quot;liste&quot; class=&quot;grille&quot;&gt;&lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;
+            &lt;div class=&quot;titre-section&quot;&gt;
+                &lt;p class=&quot;surtitre&quot;&gt;NOS INCONTOURNABLES&lt;/p&gt;
+                &lt;h2&gt;📍 5 activités à faire à Paris&lt;/h2&gt;
+                &lt;p&gt;Des monuments célèbres aux jolies balades, il y a plein de choses à découvrir !&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;activites&quot;&gt;
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=700&quot; alt=&quot;La tour Eiffel&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;01 · MONUMENT&lt;/span&gt;
+                        &lt;h3&gt;🗼 La tour Eiffel&lt;/h3&gt;
+                        &lt;p&gt;Admire le monument le plus célèbre de Paris et profite d&#x27;une superbe vue sur la ville.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700&quot; alt=&quot;Le musée du Louvre&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;02 · CULTURE&lt;/span&gt;
+                        &lt;h3&gt;🎨 Le musée du Louvre&lt;/h3&gt;
+                        &lt;p&gt;Explore un musée extraordinaire et découvre des œuvres célèbres comme la Joconde.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=700&quot; alt=&quot;Une rue de Paris&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;03 · PROMENADE&lt;/span&gt;
+                        &lt;h3&gt;🚶 Montmartre&lt;/h3&gt;
+                        &lt;p&gt;Promène-toi dans les petites rues, découvre les artistes et visite le Sacré-Cœur.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1503917988258-f87a78e3c995?w=700&quot; alt=&quot;Les bâtiments de Paris&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;04 · DÉTENTE&lt;/span&gt;
+                        &lt;h3&gt;🛥️ Une balade sur la Seine&lt;/h3&gt;
+                        &lt;p&gt;Découvre Paris depuis la Seine et admire les monuments au fil de l&#x27;eau.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1549144511-f099e773c147?w=700&quot; alt=&quot;Les rues et monuments de Paris&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;05 · DÉCOUVERTE&lt;/span&gt;
+                        &lt;h3&gt;🌳 Le jardin des Tuileries&lt;/h3&gt;
+                        &lt;p&gt;Fais une pause dans ce beau jardin et profite du paysage.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section class=&quot;surprise&quot;&gt;
+            &lt;h2&gt;🎲 La destination surprise&lt;/h2&gt;
+            &lt;p&gt;Tu ne sais pas où partir ? Laisse le hasard choisir !&lt;/p&gt;
+            &lt;button id=&quot;bouton-surprise&quot;&gt;Choisir ma destination ♡&lt;/button&gt;
+            &lt;div id=&quot;resultat-surprise&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;div class=&quot;navigation&quot;&gt;
+            &lt;button id=&quot;vers-naples&quot;&gt;Découvrir Naples 🇮🇹&lt;/button&gt;
+            &lt;button id=&quot;vers-bruxelles&quot;&gt;Découvrir Bruxelles 🇧🇪&lt;/button&gt;
+            &lt;button id=&quot;retour-accueil&quot;&gt;Retour à l&#x27;accueil&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;Bon voyage à Paris !&lt;/p&gt;
+        &lt;p class=&quot;petit&quot;&gt;Un voyage, cinq activités et plein de souvenirs.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/section&gt;
+
+&lt;!-- NAPLES --&gt;
+&lt;section id=&quot;naples&quot; hidden&gt;
+    &lt;header&gt;
+        &lt;h1&gt;🇮🇹 Naples, la perle du sud de l&#x27;Italie !&lt;/h1&gt;
+        &lt;p&gt;Découvre Naples et prépare ta valise pour une aventure ensoleillée.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section class=&quot;valise&quot;&gt;
+            &lt;h2&gt;🧳 Prépare ta valise&lt;/h2&gt;
+            &lt;p&gt;Quel temps fera-t-il pendant ton voyage à Naples ?&lt;/p&gt;
+            &lt;button id=&quot;beau-naples&quot;&gt;☀️ Il fait beau&lt;/button&gt;
+            &lt;button id=&quot;moche-naples&quot;&gt;🌧️ Il fait mauvais&lt;/button&gt;
+            &lt;p id=&quot;message-naples&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
+            &lt;div id=&quot;liste-naples&quot; class=&quot;grille&quot;&gt;&lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;
+            &lt;div class=&quot;titre-section&quot;&gt;
+                &lt;p class=&quot;surtitre&quot;&gt;NOS INCONTOURNABLES&lt;/p&gt;
+                &lt;h2&gt;📍 5 activités à faire à Naples&lt;/h2&gt;
+                &lt;p&gt;Entre paysages magnifiques, ruelles animées et spécialités italiennes, Naples a tout pour te séduire !&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;activites&quot;&gt;
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://unsacsurledos.com/wp-content/uploads/2023/07/vesuve-activites.jpg&quot; alt=&quot;Le Vésuve&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;01 · PAYSAGE&lt;/span&gt;
+                        &lt;h3&gt;🌋 Le Vésuve&lt;/h3&gt;
+                        &lt;p&gt;Découvre ce célèbre volcan et admire les paysages de la région.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://images.visititaly.eu/uploads/articoli/paragrafo/202103310214392222.jpg&quot; alt=&quot;Le centre historique de Naples&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;02 · CULTURE&lt;/span&gt;
+                        &lt;h3&gt;🏛️ Le centre historique&lt;/h3&gt;
+                        &lt;p&gt;Découvre les églises, les places et l&#x27;histoire de Naples.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://images.unsplash.com/photo-1579751626657-72bc17010498?w=700&quot; alt=&quot;Pizza italienne&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;03 · GASTRONOMIE&lt;/span&gt;
+                        &lt;h3&gt;🍕 La pizza napolitaine&lt;/h3&gt;
+                        &lt;p&gt;Déguste la célèbre pizza napolitaine, une spécialité incontournable.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://www.domaine-de-sitare.fr/wp-content/uploads/2026/02/Matin-de-naples-decouvrir-la-magie-du-reveil-en-bord-de-mer.jpg&quot; alt=&quot;Le bord de mer&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;04 · PROMENADE&lt;/span&gt;
+                        &lt;h3&gt;🌊 Le bord de mer&lt;/h3&gt;
+                        &lt;p&gt;Promène-toi le long de la mer et admire la baie de Naples.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://cdn.audleytravel.com/3915/2797/79/1021409-pompeii-with-vesuvius.jpg&quot; alt=&quot;Pompéi&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;05 · HISTOIRE&lt;/span&gt;
+                        &lt;h3&gt;🏺 Pompéi&lt;/h3&gt;
+                        &lt;p&gt;Explore les vestiges de cette ancienne ville romaine.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;div class=&quot;navigation&quot;&gt;
+            &lt;button id=&quot;retour-paris&quot;&gt;⬅ Retour à Paris&lt;/button&gt;
+            &lt;button id=&quot;vers-bruxelles-naples&quot;&gt;Découvrir Bruxelles 🇧🇪&lt;/button&gt;
+            &lt;button id=&quot;retour-accueil-naples&quot;&gt;Retour à l&#x27;accueil&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;🍋 Bon voyage à Naples !&lt;/p&gt;
+        &lt;p class=&quot;petit&quot;&gt;Du soleil, de la culture et de belles découvertes à mettre dans ta valise.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/section&gt;
+
+&lt;!-- BRUXELLES --&gt;
+&lt;section id=&quot;bruxelles&quot; hidden&gt;
+    &lt;header&gt;
+        &lt;h1&gt;🇧🇪 Bruxelles, la capitale belge !&lt;/h1&gt;
+        &lt;p&gt;Découvre la capitale et ses surprises.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section class=&quot;valise&quot;&gt;
+            &lt;h2&gt;🧳 Prépare ta valise&lt;/h2&gt;
+            &lt;p&gt;Quel temps fera-t-il pendant ton voyage à Bruxelles ?&lt;/p&gt;
+            &lt;button id=&quot;beau-bruxelles&quot;&gt;☀️ Il fait beau&lt;/button&gt;
+            &lt;button id=&quot;moche-bruxelles&quot;&gt;🌧️ Il fait moche&lt;/button&gt;
+            &lt;p id=&quot;message-bruxelles&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;
+            &lt;div id=&quot;liste-bruxelles&quot; class=&quot;grille&quot;&gt;&lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;
+            &lt;div class=&quot;titre-section&quot;&gt;
+                &lt;p class=&quot;surtitre&quot;&gt;NOS INCONTOURNABLES&lt;/p&gt;
+                &lt;h2&gt;📍 5 activités à faire à Bruxelles&lt;/h2&gt;
+                &lt;p&gt;Des monuments célèbres aux jolies balades, il y a plein de choses à découvrir !&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;activites&quot;&gt;
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://www.visit.brussels/content/dam/visitbrussels/images/b2c/what-to-do/les-incontournables-de-bruxelles/GRAND_PLACE_4212-%C2%A9_visit.brussels_-_Jean-Michel_Byl.jpg&quot; alt=&quot;La Grand-Place&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;01 · MONUMENT HISTORIQUE&lt;/span&gt;
+                        &lt;h3&gt;🏛️ La Grand-Place&lt;/h3&gt;
+                        &lt;p&gt;Découvre le cœur historique de Bruxelles et ses magnifiques bâtiments.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://agendabrussels2.imgix.net/3a9f1c5cb094ef700c47cab09818e0e2b4b445b5.jpg&quot; alt=&quot;L&#x27;Atomium&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;02 · DÉCOUVERTE&lt;/span&gt;
+                        &lt;h3&gt;⚛️ L&#x27;Atomium&lt;/h3&gt;
+                        &lt;p&gt;Visite ce monument emblématique et profite d&#x27;une vue panoramique sur la ville.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://cdn.prod.website-files.com/65329423a966d94a21420905/68a6f63760b73a7efef1c911_Royal%20Gallery%20of%20Saint%20Hubert_cover.jpg&quot; alt=&quot;Les Galeries Royales Saint-Hubert&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;03 · PROMENADE&lt;/span&gt;
+                        &lt;h3&gt;🛍️ Les Galeries Royales Saint-Hubert&lt;/h3&gt;
+                        &lt;p&gt;Promène-toi dans ces élégantes galeries couvertes et découvre leurs boutiques.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://www.meisterdrucke.fr/kunstwerke/1000px/Jerome%20the%20Elder%20Duquesnoy%20-%20Manneken%20Pis%201619%20bronze%20-%20(MeisterDrucke-356443).jpg&quot; alt=&quot;Le Manneken-Pis&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;04 · MONUMENT&lt;/span&gt;
+                        &lt;h3&gt;💧 Le Manneken-Pis&lt;/h3&gt;
+                        &lt;p&gt;Rencontre la célèbre petite statue, symbole bien connu de Bruxelles.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+
+                &lt;article class=&quot;carte&quot;&gt;
+                    &lt;img src=&quot;https://ims.easyvoyage.info/shutterstock_1255335097_c1b124f025/shutterstock_1255335097_c1b124f025.jpg&quot; alt=&quot;Le Mont des Arts&quot;&gt;
+                    &lt;div class=&quot;contenu&quot;&gt;
+                        &lt;span class=&quot;numero&quot;&gt;05 · DÉTENTE&lt;/span&gt;
+                        &lt;h3&gt;🌳 Le Mont des Arts&lt;/h3&gt;
+                        &lt;p&gt;Profite des jardins et admire une belle vue sur le centre-ville.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section class=&quot;surprise&quot;&gt;
+            &lt;h2&gt;🎲 La destination surprise&lt;/h2&gt;
+            &lt;p&gt;Tu ne sais pas où partir ? Laisse le hasard choisir !&lt;/p&gt;
+            &lt;button id=&quot;bouton-surprise-bruxelles&quot;&gt;Choisir ma destination ♡&lt;/button&gt;
+            &lt;div id=&quot;resultat-surprise-bruxelles&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;div class=&quot;navigation&quot;&gt;
+            &lt;button id=&quot;retour-paris-bruxelles&quot;&gt;⬅ Retour à Paris 🇫🇷&lt;/button&gt;
+            &lt;button id=&quot;retour-naples-bruxelles&quot;&gt;Retour à Naples 🇮🇹&lt;/button&gt;
+            &lt;button id=&quot;retour-accueil-bruxelles&quot;&gt;Retour à l&#x27;accueil&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;Bon voyage à Bruxelles ! N&#x27;oublie pas les frites et les gaufres !&lt;/p&gt;
+        &lt;p class=&quot;petit&quot;&gt;Un voyage, cinq activités et plein de souvenirs.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/section&gt;
+
+
+
+
+
+</code></pre></div>
+<div class="panneau" id="css" hidden><pre><code class="language-css">* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f7f5f0;
+    color: #243653;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #123875, #2457a4);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+    border-bottom: 6px solid #ed2939;
+}
+
+header h1 {
+    font-size: clamp(32px, 6vw, 52px);
+    margin: 8px 0;
+}
+
+header p {
+    margin: 5px;
+}
+
+.surtitre {
+    color: #ed2939;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+header .surtitre {
+    color: #ffd7dc;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+h2 {
+    line-height: 1.3;
+}
+
+.valise {
+    background: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px #24365312;
+    margin-bottom: 60px;
+}
+
+button {
+    background: #ed2939;
+    color: white;
+    padding: 13px 20px;
+    margin: 8px 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+    background: #123875;
+    transform: translateY(-2px);
+}
+
+#message,
+#message-naples,
+#message-bruxelles {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.grille {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.affaire {
+    background: #f7f5f0;
+    width: 145px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e7e3dc;
+}
+
+.affaire h2 {
+    font-size: 34px;
+    margin: 5px;
+}
+
+.affaire h3 {
+    font-size: 14px;
+    margin: 5px;
+}
+
+.titre-section {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.titre-section h2 {
+    font-size: 30px;
+}
+
+.activites {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.carte {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #24365312;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.carte:hover {
+    transform: none;
+    box-shadow: 0 5px 20px #24365312;
+}
+
+.carte img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.contenu {
+    padding: 20px;
+}
+
+.numero {
+    color: #ed2939;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.carte h3 {
+    margin: 8px 0;
+    font-size: 21px;
+}
+
+.carte p {
+    margin-bottom: 0;
+    color: #58657a;
+}
+
+footer {
+    background: #123875;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    border-top: 5px solid #ed2939;
+}
+
+.petit {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* PAGE D&#x27;ACCUEIL */
+#accueil {
+    background-color: #F7FAFF;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#accueil h1 {
+    color: #4D4D4D;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+#accueil h2 {
+    color: #4D4D4D;
+    font-size: 25px;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+#accueil p {
+    color: black;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: 0 auto 30px;
+    padding: 20px 25px;
+    border: 1px solid #4D4D4D;
+    border-radius: 15px;
+    background-color: white;
+}
+
+#accueil #destinations {
+    background-color: #4D4D4D;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#accueil #destinations:hover {
+    background-color: #C85D16;
+    transform: scale(1.05);
+}
+
+/* DESTINATION SURPRISE */
+.surprise {
+    background: white;
+    padding: 35px 20px;
+    margin: 40px auto;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 5px 20px #24365312;
+}
+
+.surprise h2 {
+    color: #243653;
+}
+
+.surprise p {
+    color: #58657a;
+}
+
+#resultat-surprise,
+#resultat-surprise-bruxelles {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #243653;
+}
+
+/* NAVIGATION ENTRE LES DESTINATIONS */
+.navigation {
+    text-align: center;
+    margin: 30px auto;
+}
+
+/* CACHER LES PAGES INACTIVES */
+#accueil[hidden],
+#paris[hidden],
+#naples[hidden],
+#bruxelles[hidden] {
+    display: none !important;
+}
+
+/* AFFICHAGE SUR TÉLÉPHONE */
+@media (max-width: 650px) {
+    header {
+        padding: 45px 15px;
+    }
+
+    main {
+        padding: 20px 14px;
+    }
+
+    .activites {
+        grid-template-columns: 1fr;
+    }
+
+    .carte img {
+        height: 200px;
+    }
+
+    .titre-section h2 {
+        font-size: 25px;
+    }
+
+    button {
+        margin: 6px 3px;
+    }
+
+    #accueil h1 {
+        font-size: 34px;
+    }
+
+    #accueil h2 {
+        font-size: 22px;
+    }
+}
+</code></pre></div>
+<div class="panneau" id="js" hidden><pre><code class="language-javascript">function afficherListe(meteo, destination) {
+    let affaires;
+
+    if (meteo === &quot;beau&quot;) {
+        affaires = [
+            [&quot;Lunettes de soleil&quot;, &quot;🕶️&quot;],
+            [&quot;T-shirt&quot;, &quot;👕&quot;],
+            [&quot;Short&quot;, &quot;🩳&quot;],
+            [&quot;Crème solaire&quot;, &quot;🧴&quot;],
+            [&quot;Bouteille d&#x27;eau&quot;, &quot;💧&quot;],
+            [&quot;Chaussures confortables&quot;, &quot;👟&quot;],
+            [&quot;Casquette&quot;, &quot;🧢&quot;]
+        ];
+    } else {
+        affaires = [
+            [&quot;Parapluie&quot;, &quot;☂️&quot;],
+            [&quot;Veste imperméable&quot;, &quot;🧥&quot;],
+            [&quot;Pantalon&quot;, &quot;👖&quot;],
+            [&quot;Pull chaud&quot;, &quot;🧶&quot;],
+            [&quot;Chaussures fermées&quot;, &quot;👟&quot;],
+            [&quot;Écharpe&quot;, &quot;🧣&quot;],
+            [&quot;Chaussettes&quot;, &quot;🧦&quot;]
+        ];
+    }
+
+    const noms = {
+        paris: &quot;Paris&quot;,
+        naples: &quot;Naples&quot;,
+        bruxelles: &quot;Bruxelles&quot;
+    };
+
+    const suffixes = {
+        paris: &quot;&quot;,
+        naples: &quot;-naples&quot;,
+        bruxelles: &quot;-bruxelles&quot;
+    };
+
+    const suffixe = suffixes[destination];
+    const message = document.getElementById(&quot;message&quot; + suffixe);
+    const liste = document.getElementById(&quot;liste&quot; + suffixe);
+
+    if (meteo === &quot;beau&quot;) {
+        message.textContent =
+            &quot;☀️ Beau temps à &quot; + noms[destination] +
+            &quot; ! Voici les affaires à emporter.&quot;;
+    } else {
+        message.textContent =
+            &quot;🌧️ Temps pluvieux à &quot; + noms[destination] +
+            &quot; ! Voici les affaires à emporter.&quot;;
+    }
+
+    liste.innerHTML = &quot;&quot;;
+
+    affaires.forEach(function(item) {
+        liste.innerHTML += `
+            &lt;div class=&quot;affaire&quot;&gt;
+                &lt;h2&gt;${item[1]}&lt;/h2&gt;
+                &lt;h3&gt;${item[0]}&lt;/h3&gt;
+            &lt;/div&gt;
+        `;
+    });
+}
+
+
+document.getElementById(&quot;beau&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherListe(&quot;beau&quot;, &quot;paris&quot;);
+});
+
+document.getElementById(&quot;moche&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherListe(&quot;moche&quot;, &quot;paris&quot;);
+});
+
+
+
+document.getElementById(&quot;beau-naples&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherListe(&quot;beau&quot;, &quot;naples&quot;);
+});
+
+document.getElementById(&quot;moche-naples&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherListe(&quot;moche&quot;, &quot;naples&quot;);
+});
+
+
+document.getElementById(&quot;beau-bruxelles&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherListe(&quot;beau&quot;, &quot;bruxelles&quot;);
+});
+
+document.getElementById(&quot;moche-bruxelles&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherListe(&quot;moche&quot;, &quot;bruxelles&quot;);
+});
+
+
+function afficherDestination(id) {
+    document.getElementById(&quot;accueil&quot;).hidden = true;
+    document.getElementById(&quot;paris&quot;).hidden = true;
+    document.getElementById(&quot;naples&quot;).hidden = true;
+    document.getElementById(&quot;bruxelles&quot;).hidden = true;
+
+    document.getElementById(id).hidden = false;
+
+    window.scrollTo(0, 0);
+}
+
+
+
+document.getElementById(&quot;destinations&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;paris&quot;);
+});
+
+
+
+document.getElementById(&quot;vers-naples&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;naples&quot;);
+});
+
+document.getElementById(&quot;vers-bruxelles&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;bruxelles&quot;);
+});
+
+document.getElementById(&quot;retour-accueil&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;accueil&quot;);
+});
+
+
+document.getElementById(&quot;retour-paris&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;paris&quot;);
+});
+
+document.getElementById(&quot;vers-bruxelles-naples&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;bruxelles&quot;);
+});
+
+document.getElementById(&quot;retour-accueil-naples&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;accueil&quot;);
+});
+
+
+
+document.getElementById(&quot;retour-paris-bruxelles&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;paris&quot;);
+});
+
+document.getElementById(&quot;retour-naples-bruxelles&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;naples&quot;);
+});
+
+document.getElementById(&quot;retour-accueil-bruxelles&quot;).addEventListener(&quot;click&quot;, function() {
+    afficherDestination(&quot;accueil&quot;);
+});
+
+
+
+document.getElementById(&quot;bouton-surprise&quot;).addEventListener(&quot;click&quot;, function() {
+    const destinations = [
+        &quot;🇫🇷 Paris ! Prépare-toi à découvrir la tour Eiffel !&quot;,
+        &quot;🇮🇹 Naples ! À toi les pizzas et les jolies ruelles !&quot;,
+        &quot;🇧🇪 Bruxelles ! À toi les gaufres et les belles places !&quot;
+    ];
+
+    const hasard = Math.floor(Math.random() * destinations.length);
+
+    document.getElementById(&quot;resultat-surprise&quot;).textContent =
+        &quot;Ta destination est : &quot; + destinations[hasard];
+});
+
+
+document.getElementById(&quot;bouton-surprise-bruxelles&quot;).addEventListener(&quot;click&quot;, function() {
+    const destinations = [
+        &quot;🇫🇷 Paris ! Prépare-toi à découvrir la tour Eiffel !&quot;,
+        &quot;🇮🇹 Naples ! À toi les pizzas et les jolies ruelles !&quot;,
+        &quot;🇧🇪 Bruxelles ! À toi les gaufres et les belles places !&quot;
+    ];
+
+    const hasard = Math.floor(Math.random() * destinations.length);
+
+    document.getElementById(&quot;resultat-surprise-bruxelles&quot;).textContent =
+        &quot;Ta destination est : &quot; + destinations[hasard];
+});
+</code></pre></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+  if (window.hljs) hljs.highlightAll();
+  document.querySelectorAll(".onglet").forEach((b) => b.addEventListener("click", () => {
+    document.querySelectorAll(".onglet").forEach((x) => x.classList.toggle("actif", x === b));
+    document.querySelectorAll(".panneau").forEach((p) => p.hidden = p.id !== b.dataset.cible);
+  }));
+</script>
+</body>
+</html>

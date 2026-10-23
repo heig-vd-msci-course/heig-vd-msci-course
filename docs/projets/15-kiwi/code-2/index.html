@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Kiwi - Ma valise de voyage</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="quiz-voyage">
+<p class="surtitre">TESTE TES CONNAISSANCES</p>
+<h2>🎯 Le grand quiz des voyageurs</h2>
+<p>Connais-tu vraiment Paris, Naples et Bruxelles ? Réponds aux questions et découvre ton score !</p>
+
+<div id="quiz-debut">
+<p>🌍 9 questions sur les trois destinations t'attendent.</p>
+<button id="commencer-quiz">Commencer le quiz ♡</button>
+</div>
+
+<div id="quiz-jeu" hidden>
+<p id="quiz-progression"></p>
+<h3 id="quiz-question"></h3>
+<div id="quiz-reponses"></div>
+<p id="quiz-feedback" aria-live="polite"></p>
+<button id="quiz-suivant" hidden>Question suivante ➜</button>
+</div>
+
+<div id="quiz-fin" hidden>
+<h3 id="quiz-score"></h3>
+<p id="quiz-message-final"></p>
+<button id="rejouer-quiz">🔄 Recommencer le quiz</button>
+</div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

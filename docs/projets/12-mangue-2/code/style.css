@@ -1,0 +1,59 @@
+body {
+  background-color: #17251d;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+
+h1 {
+  color: gold;
+}
+
+.table {
+  background-color: #176b43;
+  border: 5px solid #b68b43;
+  border-radius: 25px;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.carte {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  width: 55px;
+  height: 75px;
+  line-height: 75px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 25px;
+}
+
+.cachee {
+  background-color: darkblue;
+  color: white;
+}
+
+hr {
+  border: 1px solid gold;
+}
+
+button {
+  background-color: gold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+}
+
+#message {
+  font-size: 20px;
+  font-weight: bold;
+}

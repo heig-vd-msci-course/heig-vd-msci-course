@@ -1,1 +1,1 @@
-Copie du projet MDN Playground : URL data: envoyée dans le corps du mail
+Copie du code : URL data: envoyée dans le corps du mail

@@ -1,0 +1,706 @@
+<!doctype html><body><style>body {
+ font-family: "Courier New", monospace;
+ background-color: white;
+ max-width: 700px;
+ margin: 0 auto;
+ padding: 16px;
+ text-align: center;
+ color: black;
+}
+
+h1 {
+ color: palevioletred;
+ font-size: 28px;
+ font-weight: bold;
+ margin-bottom: 20px;
+ text-align: center;
+ width: 100%;
+ white-space: nowrap;
+}
+
+h2 {
+ color: black;
+ font-size: 24px;
+}
+
+h3 {
+ color: black;
+ font-size: 25px;
+ font-weight: bold;
+ margin: 26px 0;
+}
+
+.equipe {
+ font-size: 18px;
+}
+
+.sous-titre {
+ color: black;
+ font-size: 17px;
+}
+
+
+.ecran,
+.ecran-jeu {
+ box-sizing: border-box;
+ background-color: white;
+ background-image: radial-gradient(
+ circle,
+ #ffe8ef 1px,
+ transparent 1px
+ );
+ background-size: 30px 30px;
+ border-radius: 20px;
+ padding: 24px 15px;
+}
+
+#accueil {
+ min-height: 500px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 20px;
+}
+
+#choixPrenoms {
+ min-height: 500px;
+ align-content: center;
+}
+
+#interfaceJeu {
+ min-height: 500px;
+}
+
+.motif,
+.decoration {
+ font-size: 24px;
+ margin: 12px;
+}
+
+
+.champs-prenoms {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+ gap: 12px;
+ margin: 24px auto;
+}
+
+input {
+ padding: 12px;
+ border: 2px solid #ffb6c1;
+ border-radius: 12px;
+ font-size: 16px;
+ width: 170px;
+ max-width: 85%;
+ font-family: inherit;
+ text-align: center;
+}
+
+input:focus {
+ outline: none;
+ border-color: #de7097;
+}
+
+
+button {
+ background-color: darkred;
+ color: white;
+ border: none;
+ border-radius: 30px;
+ padding: 12px 22px;
+ font-size: 17px;
+ cursor: pointer;
+ box-shadow: 2px 4px 8px #aaaaaa;
+ transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+ background-color: pink;
+ transform: scale(1.05);
+}
+
+button:disabled {
+ background-color: lightgray;
+ color: white;
+ cursor: not-allowed;
+ opacity: 0.7;
+}
+
+#jouer,
+#commencer,
+#rejouer,
+#nouvellePartie {
+ background-color: #de7097;
+}
+
+#jouer:hover,
+#commencer:hover,
+#rejouer:hover,
+#nouvellePartie:hover {
+ background-color: #c64f7c;
+}
+
+.boutons button {
+ display: block;
+ margin: 10px auto;
+}
+
+#rejouer,
+#nouvellePartie {
+ margin: 25px auto;
+}
+
+#nouvellePartie {
+ display: block;
+}
+
+
+.zone-vies {
+ margin: 20px auto;
+}
+
+#vies1,
+#vies2 {
+ font-size: 19px;
+ margin: 10px;
+}
+
+.coeur-brise {
+ display: inline-block;
+ animation: briserCoeur 0.6s ease forwards;
+}
+
+@keyframes briserCoeur {
+ 0% {
+ transform: scale(1);
+ opacity: 1;
+ }
+ 50% {
+ transform: scale(1.5) rotate(15deg);
+ opacity: 1;
+ }
+ 100% {
+ transform: scale(0);
+ opacity: 0;
+ }
+}
+
+
+#tas {
+ min-height: 90px;
+ margin: 25px auto;
+ text-align: center;
+}
+
+.allumette {
+ display: inline-block;
+ width: 8px;
+ height: 60px;
+ margin: 0 4px;
+ background-color: burlywood;
+ border-top: 14px solid crimson;
+ border-radius: 6px 6px 2px 2px;
+ position: relative;
+ transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.allumette.disparait {
+ background-color: transparent;
+ border-top-color: transparent;
+}
+
+.allumette.disparait::after {
+ content: "✨";
+ position: absolute;
+ top: 10px;
+ left: -8px;
+ font-size: 25px;
+ animation: etincelles 0.4s ease-out forwards;
+}
+
+@keyframes etincelles {
+ 0% {
+ transform: scale(0.5);
+ opacity: 0;
+ }
+ 50% {
+ transform: scale(1.5);
+ opacity: 1;
+ filter: drop-shadow(0 0 10px orange);
+ }
+ 100% {
+ transform: scale(0);
+ opacity: 0;
+ }
+}
+
+.compteur-texte {
+ font-size: 17px;
+}
+
+
+#trophee {
+ display: none;
+ font-size: 70px;
+ text-align: center;
+}
+
+.trophee-anime {
+ animation: apparitionTrophee 1s ease;
+}
+
+@keyframes apparitionTrophee {
+ 0% {
+ transform: scale(0);
+ opacity: 0;
+ }
+ 60% {
+ transform: scale(1.4);
+ opacity: 1;
+ }
+ 100% {
+ transform: scale(1);
+ opacity: 1;
+ }
+}
+
+
+#confettis {
+ position: fixed;
+ inset: 0;
+ pointer-events: none;
+ overflow: hidden;
+ z-index: 100;
+}
+
+.confetti {
+ position: absolute;
+ top: -20px;
+ width: 10px;
+ height: 10px;
+ animation: tomber 3s linear forwards;
+}
+
+@keyframes tomber {
+ from {
+ transform: translateY(0) rotate(0deg);
+ }
+ to {
+ transform: translateY(100vh) rotate(720deg);
+ }
+}
+
+#jouer:hover,
+#commencer:hover {
+ background-color: pink;
+ transform: scale(1.05);
+}</style><div id="accueil" class="ecran">
+
+<h1>🍓 Jeu des allumettes 🍓</h1>
+<p class="equipe">Équipe Fraise</p>
+
+<p class="sous-titre">
+Bienvenue dans notre jeu !
+</p>
+
+ <button id="jouer">Jouer</button>
+
+</div>
+
+<div id="choixPrenoms" class="ecran" style="display: none;">
+
+<h1>🍓 Jeu des allumettes 🍓</h1>
+
+<h2>Choisissez vos prénoms</h2>
+
+<p>Entrez vos prénoms avant de commencer :</p>
+
+<div class="champs-prenoms">
+<input type="text" id="prenom1" placeholder="Joueuse 1">
+<input type="text" id="prenom2" placeholder="Joueuse 2">
+</div>
+
+<button id="commencer">Commencer la partie</button>
+
+</div>
+
+
+
+<div id="interfaceJeu" class="ecran-jeu" style="display: none;">
+
+
+<div class="zone-vies">
+<p id="vies1">Joueuse 1 : ❤️❤️❤️</p>
+<p id="vies2">Joueuse 2 : ❤️❤️❤️</p>
+</div>
+
+<h3 id="message">Au tour de la joueuse 1</h3>
+
+<div id="trophee">🏆</div>
+<div id="confettis"></div>
+
+<div id="tas"></div>
+
+<p class="compteur-texte">
+Il reste <span id="compteur">20</span> allumettes.
+</p>
+
+<div class="boutons">
+<button id="retirer">Retirer 1 allumette</button>
+<button id="retirer2">Retirer 2 allumettes</button>
+<button id="retirer3">Retirer 3 allumettes</button>
+</div>
+
+<button id="rejouer">Rejouer</button>
+
+<button id="nouvellePartie" style="display: none;">
+Nouvelle partie
+</button>
+
+</div><script>let allumettes = 20;
+let joueuse = 1;
+let vies1 = 3;
+let vies2 = 3;
+let animationEnCours = false;
+
+let prenom1 = "Joueuse 1";
+let prenom2 = "Joueuse 2";
+
+
+const accueil = document.querySelector("#accueil");
+const choixPrenoms = document.querySelector("#choixPrenoms");
+const interfaceJeu = document.querySelector("#interfaceJeu");
+
+const jouer = document.querySelector("#jouer");
+const commencer = document.querySelector("#commencer");
+
+
+const affichageVies1 = document.querySelector("#vies1");
+const affichageVies2 = document.querySelector("#vies2");
+const compteur = document.querySelector("#compteur");
+const message = document.querySelector("#message");
+const tas = document.querySelector("#tas");
+
+const retirer = document.querySelector("#retirer");
+const retirer2 = document.querySelector("#retirer2");
+const retirer3 = document.querySelector("#retirer3");
+
+const rejouer = document.querySelector("#rejouer");
+const nouvellePartie = document.querySelector("#nouvellePartie");
+const trophee = document.querySelector("#trophee");
+const confettis = document.querySelector("#confettis");
+
+
+function nomJoueuse(numero) {
+ return numero === 1 ? prenom1 : prenom2;
+}
+
+
+function afficherVies() {
+ affichageVies1.textContent =
+ prenom1 + " : " + "❤️".repeat(vies1);
+
+ affichageVies2.textContent =
+ prenom2 + " : " + "❤️".repeat(vies2);
+}
+
+
+function animerCoeur(numero) {
+ const affichage = document.querySelector("#vies" + numero);
+ const coeur = document.createElement("span");
+
+ coeur.textContent = "💔";
+ coeur.classList.add("coeur-brise");
+ affichage.appendChild(coeur);
+
+ setTimeout(function() {
+ coeur.remove();
+ }, 600);
+}
+
+
+function dessinerAllumettes() {
+ tas.innerHTML = "";
+
+ for (let i = 0; i < allumettes; i++) {
+ tas.innerHTML += '<span class="allumette"></span>';
+ }
+}
+
+
+function verifierBoutons() {
+ const fin = vies1 <= 0 || vies2 <= 0;
+
+ retirer.disabled =
+ animationEnCours || fin || allumettes < 1;
+
+ retirer2.disabled =
+ animationEnCours || fin || allumettes < 2;
+
+ retirer3.disabled =
+ animationEnCours || fin || allumettes < 3;
+}
+
+
+function animerAllumettes(nombre) {
+ const elements = tas.querySelectorAll(".allumette");
+
+ for (let i = 0; i < nombre; i++) {
+ const index = elements.length - 1 - i;
+
+ if (elements[index]) {
+ elements[index].classList.add("disparait");
+ }
+ }
+}
+
+
+function lancerConfettis() {
+ confettis.innerHTML = "";
+
+ const couleurs = [
+ "#FF69B4",
+ "#FFB6C1",
+ "#FF0000",
+ "#FFFFFF"
+ ];
+
+ for (let i = 0; i < 100; i++) {
+ const confetti = document.createElement("div");
+
+ confetti.classList.add("confetti");
+
+ confetti.style.left = Math.random() * 100 + "%";
+
+ confetti.style.backgroundColor =
+ couleurs[Math.floor(Math.random() * couleurs.length)];
+
+ confetti.style.animationDelay =
+ Math.random() * 2 + "s";
+
+ confettis.appendChild(confetti);
+ }
+
+ setTimeout(function() {
+ confettis.innerHTML = "";
+ }, 5000);
+}
+
+
+function musiqueVictoire() {
+ const AudioContextClass =
+ window.AudioContext || window.webkitAudioContext;
+
+ if (!AudioContextClass) {
+ return;
+ }
+
+ const audio = new AudioContextClass();
+ const notes = [523, 659, 784, 1046];
+
+ notes.forEach(function(note, i) {
+ const oscillateur = audio.createOscillator();
+ const volume = audio.createGain();
+
+ oscillateur.connect(volume);
+ volume.connect(audio.destination);
+
+ oscillateur.type = "sine";
+ oscillateur.frequency.value = note;
+
+ const debut = audio.currentTime + i * 0.2;
+
+ volume.gain.setValueAtTime(0.0001, debut);
+ volume.gain.exponentialRampToValueAtTime(
+ 0.15, debut + 0.02
+ );
+ volume.gain.exponentialRampToValueAtTime(
+ 0.0001, debut + 0.18
+ );
+
+ oscillateur.start(debut);
+ oscillateur.stop(debut + 0.2);
+ });
+
+ audio.resume();
+}
+
+
+function retirerAllumettes(nombre) {
+ if (
+ animationEnCours ||
+ vies1 <= 0 ||
+ vies2 <= 0 ||
+ nombre > allumettes
+ ) {
+ return;
+ }
+
+ animationEnCours = true;
+
+ animerAllumettes(nombre);
+ verifierBoutons();
+
+ setTimeout(function() {
+ allumettes -= nombre;
+
+ compteur.textContent = allumettes;
+ dessinerAllumettes();
+
+ if (allumettes === 0) {
+ const perdante = joueuse;
+
+ if (perdante === 1) {
+ vies1--;
+ } else {
+ vies2--;
+ }
+
+ afficherVies();
+ animerCoeur(perdante);
+
+ if (vies1 === 0 || vies2 === 0) {
+ const gagnante = perdante === 1 ? 2 : 1;
+
+ message.textContent =
+ "🏆 Bravo " + nomJoueuse(gagnante) +
+ " ! Tu as gagné ! 🍓";
+
+ trophee.style.display = "block";
+ trophee.classList.remove("trophee-anime");
+
+ void trophee.offsetWidth;
+
+ trophee.classList.add("trophee-anime");
+
+ lancerConfettis();
+ musiqueVictoire();
+
+ rejouer.style.display = "none";
+ nouvellePartie.style.display = "block";
+
+ } else {
+ message.textContent =
+ nomJoueuse(perdante) +
+ " a perdu une manche ! Clique sur Rejouer.";
+ }
+
+ } else {
+ joueuse = joueuse === 1 ? 2 : 1;
+
+ message.textContent =
+ "Au tour de " + nomJoueuse(joueuse);
+ }
+
+ animationEnCours = false;
+ verifierBoutons();
+
+ }, 400);
+}
+
+
+retirer.addEventListener("click", function() {
+ retirerAllumettes(1);
+});
+
+retirer2.addEventListener("click", function() {
+ retirerAllumettes(2);
+});
+
+retirer3.addEventListener("click", function() {
+ retirerAllumettes(3);
+});
+
+
+rejouer.addEventListener("click", function() {
+ if (animationEnCours || vies1 <= 0 || vies2 <= 0) {
+ return;
+ }
+
+ allumettes = 20;
+ joueuse = 1;
+
+ compteur.textContent = allumettes;
+ message.textContent = "Au tour de " + nomJoueuse(joueuse);
+
+ dessinerAllumettes();
+
+ trophee.style.display = "none";
+ confettis.innerHTML = "";
+
+ verifierBoutons();
+});
+
+
+nouvellePartie.addEventListener("click", function() {
+ if (animationEnCours) {
+ return;
+ }
+
+ vies1 = 3;
+ vies2 = 3;
+ allumettes = 20;
+ joueuse = 1;
+
+ afficherVies();
+
+ compteur.textContent = allumettes;
+ message.textContent = "Au tour de " + nomJoueuse(joueuse);
+
+ dessinerAllumettes();
+
+ trophee.style.display = "none";
+ trophee.classList.remove("trophee-anime");
+
+ confettis.innerHTML = "";
+
+ nouvellePartie.style.display = "none";
+ rejouer.style.display = "inline-block";
+
+ verifierBoutons();
+});
+
+/* INTERFACE 1 : ACCUEIL */
+jouer.addEventListener("click", function() {
+ accueil.style.display = "none";
+ choixPrenoms.style.display = "block";
+});
+
+
+commencer.addEventListener("click", function() {
+ prenom1 =
+ document.querySelector("#prenom1").value.trim() ||
+ "Joueuse 1";
+
+ prenom2 =
+ document.querySelector("#prenom2").value.trim() ||
+ "Joueuse 2";
+
+ vies1 = 3;
+ vies2 = 3;
+ allumettes = 20;
+ joueuse = 1;
+
+ afficherVies();
+ dessinerAllumettes();
+
+ compteur.textContent = allumettes;
+ message.textContent = "Au tour de " + prenom1;
+
+ choixPrenoms.style.display = "none";
+ interfaceJeu.style.display = "block";
+
+ verifierBoutons();
+});
+
+
+compteur.textContent = allumettes;
+afficherVies();
+dessinerAllumettes();
+
+trophee.style.display = "none";
+nouvellePartie.style.display = "none";
+
+verifierBoutons();</script></body>
