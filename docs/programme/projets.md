@@ -24,8 +24,8 @@ icon: lucide/trophy
 | 10 | Banane | Blind test | [PDF](../projets/10-banane/presentation.pdf){target="_blank"} | [Ouvrir](https://arcade.makecode.com/S26730-81483-30344-27756){target="_blank"} | — |
 | 11 | Poire | Jeu des allumettes amélioré | [PDF](../projets/11-poire/presentation.pdf){target="_blank"} | [Ouvrir](../projets/11-poire/code/index.html){target="_blank"} | [Code](../projets/11-poire/code/voir-le-code.html){target="_blank"} |
 | 12 | Mangue 2 | Blackjack | [PDF](../projets/12-mangue-2/presentation.pdf){target="_blank"} | [Ouvrir](https://developer.mozilla.org/en-US/play?id=FgiuW5HAZCQyQPzh1vUhHO8SAGeQgkLwN7OG891gIEndd03XpI6VG%2BkzVopueoZOziZIMb9tChPT8996){target="_blank"} | [Code](../projets/12-mangue-2/code/voir-le-code.html){target="_blank"} |
-| 13 | Ananas | Doué le canard en aventure | [PDF](../projets/13-ananas/presentation.pdf){target="_blank"} | [Ouvrir](https://arcade.makecode.com/S88327-64851-95233-60012){target="_blank"} | — |
-| 14 | Citron | Jeu des allumettes amélioré | — | [Ouvrir](https://makecode.com/_YK4daz7E0PHj){target="_blank"} | — |
+| 13 | Ananas | Doué le canard en aventure | [PDF](../projets/13-ananas/presentation.pdf){target="_blank"} | [Projet Arcade](https://arcade.makecode.com/S88327-64851-95233-60012){target="_blank"} · [Projet MakeCode](https://makecode.com/_AtE5xu95tJrK){target="_blank"} | — |
+| 14 | Citron | Jeu des allumettes amélioré | [PDF](../projets/14-citron/presentation.pdf){target="_blank"} | [Ouvrir](https://makecode.com/_YK4daz7E0PHj){target="_blank"} | — |
 | 15 | Kiwi | Ma valise de voyage | [PDF](../projets/15-kiwi/presentation.pdf){target="_blank"} | [Ouvrir](https://developer.mozilla.org/fr/play?id=h5I7D6dClKXuzBf1bFkwjW%2BYki6PQOMRRT%2BlRyo18C7M4s7SlO3TGG4r9W0EwdWU18qsMcyoga0IQizu){target="_blank"} | [Code 1 (site)](../projets/15-kiwi/code/voir-le-code.html){target="_blank"} · [Code 2 (quiz)](../projets/15-kiwi/code-2/voir-le-code.html){target="_blank"} |
 | 16 | Coco | jeu pokémon | [PDF](../projets/16-coco/presentation.pdf){target="_blank"} | [Ouvrir](https://arcade.makecode.com/S94699-25716-07913-15750){target="_blank"} | — |
 

@@ -14,7 +14,7 @@
 | 10 | Banane | Blind test | ✅ | Mail 11h55 | https://arcade.makecode.com/S26730-81483-30344-27756 |  |
 | 11 | Poire | Jeu des allumettes amélioré | ✅ | Google Slides | copie locale (code/index.html) |  |
 | 12 | Mangue 2 | Blackjack | ✅ | Reçu à 15h26 (après relance) | https://developer.mozilla.org/en-US/play?id=FgiuW5HAZCQyQPzh1vUhHO8SAGeQgkLwN7OG891gIEndd03XpI6VG%2BkzVopueoZOziZIMb9tChPT8996 | PDF reçu après la relance du 13h09 |
-| 13 | Ananas | Doué le canard en aventure | ✅ | Mail 11h44 | https://arcade.makecode.com/S88327-64851-95233-60012 | Autre lien : https://makecode.com/_AtE5xu95tJrK |
-| 14 | Citron | Jeu des allumettes amélioré | ✅ | PDF ajouté le 23 octobre | https://makecode.com/_YK4daz7E0PHj |  |
+| 13 | Ananas | Doué le canard en aventure | ✅ | Mail 11h44 | https://arcade.makecode.com/S88327-64851-95233-60012 | Deux liens de projet (Arcade et MakeCode) |
+| 14 | Citron | Jeu des allumettes amélioré | ✅ | PowerPoint reçu à 15h35, converti en PDF | https://makecode.com/_YK4daz7E0PHj | Présentation reçue en PowerPoint et convertie en PDF |
 | 15 | Kiwi | Ma valise de voyage | ✅ | Mail 13h23 (après relance) | https://developer.mozilla.org/fr/play?id=h5I7D6dClKXuzBf1bFkwjW%2BYki6PQOMRRT%2BlRyo18C7M4s7SlO3TGG4r9W0EwdWU18qsMcyoga0IQizu | Deux versions du code : le site (lien MDN, mail de 12h06) et le quiz (mail de 12h07) |
 | 16 | Coco | jeu pokémon | ✅ | Mail 11h33 | https://arcade.makecode.com/S94699-25716-07913-15750 |  |

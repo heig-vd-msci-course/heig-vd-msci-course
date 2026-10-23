@@ -54,7 +54,7 @@ start "" "https://arcade.makecode.com/S88327-64851-95233-60012"
 start "" "https://makecode.com/_AtE5xu95tJrK"
 timeout /t 1 /nobreak > nul
 rem 14 - Citron
-start "" "%~dp014 - Citron - Jeu des allumettes amélioré\Jeu_des_allumettes.pdf"
+start "" "%~dp014 - Citron - Jeu des allumettes amélioré\14 - Citron - Jeu des allumettes amélioré.pdf"
 start "" "https://makecode.com/_YK4daz7E0PHj"
 timeout /t 1 /nobreak > nul
 rem 15 - Kiwi
