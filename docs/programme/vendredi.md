@@ -38,8 +38,9 @@ icon: lucide/rocket
 | Horaire | Activité | Salle |
 |---------|----------|-------|
 | 08h30 - 08h45 | Accueil | R102 |
-| 08h45 - 09h45 | **Évaluation écrite** | R102 |
-| 09h45 - 12h00 | Finalisation des projets | T149 / T151 |
+| 08h45 - 08h50 | Lecture de l'évaluation et questions | R102 |
+| 08h50 - 09h50 | **Évaluation écrite** | R102 |
+| 09h50 - 12h00 | Finalisation des projets | T149 / T151 |
 | **12h00** | **Délai de remise des projets** | — |
 | 12h00 - 13h00 | Repas | — |
 | 13h00 - 16h00 | **Présentations des projets** | R102 |
@@ -73,7 +74,8 @@ La note finale est arrondie au dixième.
 
 ### Format
 
-- **Durée** : 60 minutes, de 08h45 à 09h45
+- **Lecture** : 5 minutes, de 08h45 à 08h50, pour lire toute l'évaluation et poser des questions. Il est interdit de commencer à répondre pendant ces 5 minutes
+- **Durée** : 60 minutes, de 08h50 à 09h50, en plus des 5 minutes de lecture
 - **Sur papier**, sans ordinateur, sans téléphone et sans IA
 - **Types de questions** : choix multiples, vrai ou faux, réponses courtes, lecture de code (prédire ce qui s'affiche), recherche de bug.
 

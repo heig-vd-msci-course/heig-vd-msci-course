@@ -36,8 +36,9 @@ Vous avez jusqu'à vendredi pour vous préparer : profitez-en.
 | Horaire | Activité | Salle |
 |---------|----------|-------|
 | 08h30 | Accueil | R102 |
-| 08h45 - 09h45 | <b class="primary">Évaluation écrite</b> | R102 |
-| 09h45 - 12h00 | Finalisation des projets | T149 / T151 |
+| 08h45 - 08h50 | Lecture de l'évaluation | R102 |
+| 08h50 - 09h50 | <b class="primary">Évaluation écrite</b> | R102 |
+| 09h50 - 12h00 | Finalisation des projets | T149 / T151 |
 | <b class="primary">12h00</b> | <b class="primary">Délai de remise des projets</b> | — |
 | 12h00 - 13h00 | Repas | — |
 | 13h00 - 16h00 | <b class="primary">Présentations des projets</b> | R102 |
@@ -76,14 +77,15 @@ La note finale est arrondie **au dixième**.
 
 # L'évaluation écrite
 
-## Vendredi · 08h45 - 09h45 · Salle R102
+## Vendredi · 08h45 - 09h50 · Salle R102
 
 ---
 
 # L'écrit en pratique
 
-## 60 minutes, sur papier
+## 5 minutes de lecture, puis 60 minutes, sur papier
 
+- **5 minutes de lecture** pour lire l'évaluation et poser des questions, sans commencer à répondre
 - **Sans** ordinateur, **sans** téléphone, **sans** IA
 - Choix multiples, vrai ou faux, réponses courtes
 - **Lire du code** et prédire ce qui s'affiche
@@ -444,7 +446,7 @@ Une vidéo ou une capture de **votre propre projet** dans les slides reste autor
 
 # En résumé
 
-1. **Vendredi 08h45** : écrit de 60 minutes sur les supports de la semaine
+1. **Vendredi 08h45** : 5 minutes de lecture, puis écrit de 60 minutes sur les supports de la semaine
 2. **Mercredi 16h00** : objectifs et améliorations dans la feuille des équipes
 3. **Vendredi 12h00** : lien du projet et lien des slides dans la feuille
 4. **Vendredi 13h00** : présentations, démo obligatoire, toute l'équipe participe
