@@ -51,6 +51,7 @@ timeout /t 1 /nobreak > nul
 rem 13 - Ananas
 start "" "%~dp013 - Ananas - Doué le canard en aventure\13 - Ananas - Doué le canard en aventure.pdf"
 start "" "https://arcade.makecode.com/S88327-64851-95233-60012"
+start "" "https://makecode.com/_AtE5xu95tJrK"
 timeout /t 1 /nobreak > nul
 rem 14 - Citron
 start "" "%~dp014 - Citron - Jeu des allumettes amélioré\Jeu_des_allumettes.pdf"
