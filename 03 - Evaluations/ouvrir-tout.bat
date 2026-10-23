@@ -22,6 +22,7 @@ start "" "https://arcade.makecode.com/S17581-71417-90382-21705"
 timeout /t 1 /nobreak > nul
 rem 06 - Pêche
 start "" "%~dp006 - Pêche - Memory game\06 - Pêche - Memory game.pdf"
+start "" "%~dp006 - Pêche - Memory game\code\index.html"
 timeout /t 1 /nobreak > nul
 rem 07 - Mangue
 start "" "%~dp007 - Mangue - Jeu pong\07 - Mangue - Jeu pong.pdf"
@@ -51,6 +52,9 @@ start "" "https://arcade.makecode.com/S88327-64851-95233-60012"
 timeout /t 1 /nobreak > nul
 rem 14 - Citron
 start "" "https://makecode.com/_YK4daz7E0PHj"
+timeout /t 1 /nobreak > nul
+rem 15 - Kiwi
+start "" "https://developer.mozilla.org/fr/play?id=h5I7D6dClKXuzBf1bFkwjW%%2BYki6PQOMRRT%%2BlRyo18C7M4s7SlO3TGG4r9W0EwdWU18qsMcyoga0IQizu"
 timeout /t 1 /nobreak > nul
 rem 16 - Coco
 start "" "%~dp016 - Coco - jeu pokémon\16 - Coco - jeu pokémon.pdf"
