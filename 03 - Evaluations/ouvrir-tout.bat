@@ -11,6 +11,7 @@ start "" "https://makecode.microbit.org/#editor"
 timeout /t 1 /nobreak > nul
 rem 03 - Cerise
 start "" "%~dp003 - Cerise - Morpion\03 - Cerise - Morpion.pdf"
+start "" "%~dp003 - Cerise - Morpion\code\index.html"
 timeout /t 1 /nobreak > nul
 rem 04 - Myrtille
 start "" "%~dp004 - Myrtille - Jeu des allumettes amélioré\code\index.html"

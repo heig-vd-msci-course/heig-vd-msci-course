@@ -4,7 +4,7 @@
 |---|--------|--------|--------------|--------|----------------|----------|
 | 1 | Raisin | Jeu des allumettes amélioré | ✅ | Mail 11h54 | copie locale (code/index.html) |  |
 | 2 | Pastèque | Code morse avec les microbits | ✅ | Mail 11h34 | https://makecode.microbit.org/#editor | Lien de projet générique (éditeur micro:bit vide) |
-| 3 | Cerise | Morpion | ✅ | Mail 12h03 | absent | Code envoyé dans le corps du mail (12h03), pas de lien dans la feuille |
+| 3 | Cerise | Morpion | ✅ | Mail 12h03 | copie locale (code/index.html) | Code repris du corps du mail (12h03), pas de lien dans la feuille |
 | 4 | Myrtille | Jeu des allumettes amélioré | ❌ | - | copie locale (code/index.html) | Aucune présentation reçue |
 | 5 | Orange | Jeu de survie | ✅ | Mail 11h59 | https://arcade.makecode.com/S17581-71417-90382-21705 | Lien du projet repris du mail (11h59) |
 | 6 | Pêche | Memory game | ✅ | Mail 12h01 | absent |  |
