@@ -35,7 +35,7 @@ Vous avez jusqu'à vendredi pour vous préparer : profitez-en.
 
 | Horaire | Activité | Salle |
 |---------|----------|-------|
-| 08h30 | Accueil | R102 |
+| 08h30 | Accueil | T147 / T151 |
 | 08h45 - 08h50 | Lecture de l'évaluation | T147 / T151 |
 | 08h50 - 09h50 | <b class="primary">Évaluation écrite</b> | T147 / T151 |
 | 09h50 - 12h00 | Finalisation des projets | T147 / T151 |

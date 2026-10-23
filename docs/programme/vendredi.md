@@ -10,7 +10,7 @@ icon: lucide/rocket
 
 !!! info "Rendez-vous"
 
-    **08h30** · Salle **R102**
+    **08h30** · Salles **T147** et **T151**, selon son équipe
 
 !!! info "Salles de l'évaluation et de la pratique"
 
@@ -37,7 +37,7 @@ icon: lucide/rocket
 
 | Horaire | Activité | Salle |
 |---------|----------|-------|
-| 08h30 - 08h45 | Accueil | R102 |
+| 08h30 - 08h45 | Accueil | T147 / T151 |
 | 08h45 - 08h50 | Lecture de l'évaluation et questions | T147 / T151 |
 | 08h50 - 09h50 | **Évaluation écrite** | T147 / T151 |
 | 09h50 - 12h00 | Finalisation des projets | T147 / T151 |
