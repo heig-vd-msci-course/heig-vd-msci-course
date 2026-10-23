@@ -652,7 +652,7 @@ L'idée : faire **vaciller** la dernière allumette (sa LED change de luminosit�
         - depuis **LED** (sous **... plus**), `tracer x y luminosité`, avec les mêmes calculs que dans `dessiner`, mais avec `derniere` à la place de `index`, et pour la luminosité `choisir au hasard de 10 à 255` (**Maths**)
         - `pause (ms) 50` (**Base**)
     - `modifier allumettes de -1`, puis `appel dessiner`
-3. Dans `retirer`, remplacer `définir allumettes à allumettes - nombre` par une boucle `répéter nombre fois`, qui contient `si allumettes > 0 alors appel bruler`
+3. Dans `retirer`, remplacer **uniquement** `définir allumettes à allumettes - nombre` par une boucle `répéter nombre fois`, qui contient `si allumettes > 0 alors appel bruler`. Le bloc `si allumettes ≤ 0` de l'étape 6 reste en place, **après** la boucle
 
 === "Blocs"
 
@@ -674,6 +674,16 @@ L'idée : faire **vaciller** la dernière allumette (sa LED change de luminosit�
             if (allumettes > 0) {
                 bruler()
             }
+        }
+        if (allumettes <= 0) {
+            basic.showString("J" + joueuse + " PERD")
+        } else {
+            if (joueuse == 1) {
+                joueuse = 2
+            } else {
+                joueuse = 1
+            }
+            dessiner()
         }
     }
     ```
@@ -697,6 +707,16 @@ L'idée : faire **vaciller** la dernière allumette (sa LED change de luminosit�
                 bruler()
             }
         }
+        if (allumettes <= 0) {
+            basic.showString("J" + joueuse + " PERD")
+        } else {
+            if (joueuse == 1) {
+                joueuse = 2
+            } else {
+                joueuse = 1
+            }
+            dessiner()
+        }
     }
     ```
 
@@ -718,10 +738,11 @@ Le bloc `en arrière-plan` est important : le son joue **pendant** que la LED va
 
 #### Étape 13 : La musique de fin
 
-Dans la fonction `retirer`, ajouter le test de fin de partie **après** la boucle `répéter`. C'est le `si allumettes ≤ 0` de l'étape 6, enrichi :
+Dans la fonction `retirer`, enrichir le bloc `si allumettes ≤ 0` qui suit la boucle `répéter` :
 
-- dans **si** : `jouer mélodie power up en arrière-plan` (**Musique**, choisir la mélodie dans la liste), `afficher texte` avec la `concaténation` de l'étape 6, puis `montrer l'icône` tête de mort
-- dans **sinon** : le changement de joueuse, puis `appel dessiner`
+- au début du **si** : ajouter `jouer mélodie power up en arrière-plan` (**Musique**, choisir la mélodie dans la liste)
+- à la fin du **si** : ajouter `montrer l'icône` tête de mort, après `afficher texte`
+- le **sinon** ne change pas
 
 ```microbit
 // @hide
