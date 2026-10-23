@@ -26,6 +26,7 @@ start "" "%~dp006 - Pêche - Memory game\code\index.html"
 timeout /t 1 /nobreak > nul
 rem 07 - Mangue
 start "" "%~dp007 - Mangue - Jeu pong\07 - Mangue - Jeu pong.pdf"
+start "" "https://makecode.microbit.org/S32216-69942-98516-12762"
 timeout /t 1 /nobreak > nul
 rem 08 - Fraise
 start "" "%~dp008 - Fraise - Jeu des allumettes amélioré\08 - Fraise - Jeu des allumettes amélioré.pdf"

@@ -8,7 +8,7 @@
 | 4 | Myrtille | Jeu des allumettes amélioré | ❌ | - | copie locale (code/index.html) | Aucune présentation reçue |
 | 5 | Orange | Jeu de survie | ✅ | Mail 11h59 | https://arcade.makecode.com/S17581-71417-90382-21705 | Lien du projet repris du mail (11h59) |
 | 6 | Pêche | Memory game | ✅ | Mail 13h23 (nouvelle version) | copie locale (code/index.html) |  |
-| 7 | Mangue | Jeu pong | ✅ | Mail 12h01 | absent | PDF envoyé depuis l’adresse d’une personne de l’équipe Poire ; projet Pong sur makecode.microbit.org, sans lien |
+| 7 | Mangue | Jeu pong | ✅ | Mail 12h01 | https://makecode.microbit.org/S32216-69942-98516-12762 | PDF et lien MakeCode (micro:bit) envoyés à 12h01 depuis l’adresse d’une personne de l’équipe Poire |
 | 8 | Fraise | Jeu des allumettes amélioré | ✅ | Mail 11h58 | https://developer.mozilla.org/en-US/play | Lien MDN Playground sans identifiant (projet vide) |
 | 9 | Pomme | Jeu des allumettes amélioré | ✅ | Mail 13h06 (après relance) | copie locale (code/index.html) | PDF reçu à 13h06, après relance |
 | 10 | Banane | Blind test | ✅ | Mail 11h55 | https://arcade.makecode.com/S26730-81483-30344-27756 |  |
