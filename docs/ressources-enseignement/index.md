@@ -17,7 +17,7 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
 - [ ] Imprimer la [fiche d'accès](#materiel-a-imprimer) (codes QR et WiFi) et la distribuer dans les classes
 - [ ] Imprimer la [fiche de prêt des ordinateurs](#materiel-a-imprimer) (une par salle)
 - [ ] Prévoir des baguettes ou allumettes (environ 10 par binôme), des feuilles blanches et des crayons
-- [ ] Vérifier les salles (R102, T149 / T151) et l'accès à [arcade.makecode.com](https://arcade.makecode.com){target="_blank"}, à [MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"} et à [makecode.microbit.org](https://makecode.microbit.org){target="_blank"} depuis les ordinateurs
+- [ ] Vérifier les salles (R102, T147 / T151) et l'accès à [arcade.makecode.com](https://arcade.makecode.com){target="_blank"}, à [MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"} et à [makecode.microbit.org](https://makecode.microbit.org){target="_blank"} depuis les ordinateurs
 - [ ] Mercredi : préparer un micro:bit et un câble USB par binôme, et les quatre cartes de la [démo d'accroche](#mercredi-solutions-microbit)
 - [ ] Activer GitHub Pages sur le [dépôt des projets](https://github.com/heig-vd-msci-course/heig-vd-msci-projets){target="_blank"}
 - [ ] Préparer les Wooclap du jour (charte, quiz)
@@ -44,6 +44,7 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
     [:material-download: Liste de présences (PDF)](presences.pdf){ .md-button target="_blank" }
     [:material-download: Fiche d'accès (PDF)](acces.pdf){ .md-button target="_blank" }
     [:material-download: Prêt des ordinateurs (PDF)](prets-ordinateurs.pdf){ .md-button target="_blank" }
+    [:material-download: Affiche porte R102 (PDF)](porte-r102.pdf){ .md-button target="_blank" }
 
 | Document | Contenu | Format |
 |----------|---------|--------|
@@ -52,6 +53,7 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
 | **Liste de présences** | 70 lignes à remplir, une case par demi-journée (lundi, mardi, mercredi, vendredi) pour noter les périodes d'absence, ligne de visa | A4 paysage, 4 pages |
 | **Fiche d'accès** | Codes QR vers le support du lundi après-midi et l'inscription des groupes (Google Sheets), règles de prêt des ordinateurs, instructions de connexion au WiFi public-HEIG-VD pour les ordinateurs personnels | A4 portrait, 1 page |
 | **Prêt des ordinateurs** | 25 lignes : numéro de l'ordinateur, équipe, membres, case « rendu » pour chaque jour, remarques | A4 paysage, 2 pages |
+| **Affiche porte R102** | À coller sur la porte de la R102 le vendredi matin : l'accueil et l'évaluation écrite ont lieu en T147 et T151, avec la répartition des équipes, et les présentations reviennent en R102 à 13h00 | A4 paysage, 1 page |
 
 ??? info "Modifier les documents"
 

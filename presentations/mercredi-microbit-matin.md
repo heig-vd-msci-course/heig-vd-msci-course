@@ -47,8 +47,8 @@ footer: 'ERACOM - Semaine 43'
 |----------|--------------|-------|
 | Accueil | Prise de température, objectifs | R102 |
 | Théorie | Le micro:bit, le chemin d'un programme, démonstration | R102 |
-| Pratique | Premier programme, jeu des allumettes | T149 / T151 |
-| Pratique | Multijoueur par radio, défis | T149 / T151 |
+| Pratique | Premier programme, jeu des allumettes | T147 / T151 |
+| Pratique | Multijoueur par radio, défis | T147 / T151 |
 
 ---
 
@@ -176,4 +176,4 @@ footer: 'ERACOM - Semaine 43'
 2. **Le jeu des allumettes** : variables, événements, conditions, boucles, avec du **feu** et du **son**
 3. **Multijoueur par radio** : deux cartes, avec une autre équipe ou une carte prêtée
 
-<span class="small gray">Salles T149 et T151 : voir la répartition des équipes sur le site.</span>
+<span class="small gray">Salles T147 et T151 : voir la répartition des équipes sur le site.</span>

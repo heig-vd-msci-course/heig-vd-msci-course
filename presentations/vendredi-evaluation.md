@@ -35,13 +35,13 @@ Vous avez jusqu'à vendredi pour vous préparer : profitez-en.
 
 | Horaire | Activité | Salle |
 |---------|----------|-------|
-| 08h30 | Accueil | R102 |
-| 08h45 - 08h50 | Lecture de l'évaluation | R102 |
-| 08h50 - 09h50 | <b class="primary">Évaluation écrite</b> | R102 |
-| 09h50 - 12h00 | Finalisation des projets | T149 / T151 |
+| 08h30 | Accueil | T147 / T151 |
+| 08h45 - 08h50 | Lecture de l'évaluation | T147 / T151 |
+| 08h50 - 09h50 | <b class="primary">Évaluation écrite</b> | T147 / T151 |
+| 09h50 - 12h00 | Finalisation des projets | T147 / T151 |
 | <b class="primary">12h00</b> | <b class="primary">Délai de remise des projets</b> | — |
 | 12h00 - 13h00 | Repas | — |
-| 13h00 - 16h00 | <b class="primary">Présentations des projets</b> | R102 |
+| 13h00 - 16h00 | <b class="primary">Présentations des projets</b> (pause 14h20 - 14h35) | R102 |
 
 ---
 
@@ -77,7 +77,7 @@ La note finale est arrondie **au dixième**.
 
 # L'évaluation écrite
 
-## Vendredi · 08h45 - 09h50 · Salle R102
+## Vendredi · 08h45 - 09h50 · Salles T147 et T151
 
 ---
 
@@ -314,25 +314,27 @@ Chaque membre doit pouvoir expliquer le code de son amélioration.
 | 5 | Orange 🍊 | 13h41 |
 | 6 | Pêche 🍑 | 13h52 |
 | 7 | Mangue 🥭 | 14h01 |
-| 8 | Lime 🍋‍🟩 | 14h10 |
-| 9 | Fraise 🍓 | 14h18 |
+| 8 | Fraise 🍓 | 14h10 |
+| — | **Pause** | **14h20** |
 
 </div>
 <div>
 
 | # | Équipe | Début |
 |---|--------|-------|
-| 10 | Pomme 🍎 | 14h28 |
-| 11 | Banane 🍌 | 14h39 |
-| 12 | Poire 🍐 | 14h49 |
-| 13 | Mangue 2 🥭 | 14h58 |
-| 14 | Ananas 🍍 | 15h07 |
-| 15 | Citron 🍋 | 15h17 |
-| 16 | Kiwi 🥝 | 15h27 |
-| 17 | Coco 🥥 | 15h37 |
+| 9 | Pomme 🍎 | 14h35 |
+| 10 | Banane 🍌 | 14h46 |
+| 11 | Poire 🍐 | 14h56 |
+| 12 | Mangue 2 🥭 | 15h05 |
+| 13 | Ananas 🍍 | 15h14 |
+| 14 | Citron 🍋 | 15h24 |
+| 15 | Kiwi 🥝 | 15h34 |
+| 16 | Coco 🥥 | 15h44 |
 
 </div>
 </div>
+
+<span class="small">Pause de 14h20 à 14h35. <b class="primary">Tout retard sera sanctionné dans la note.</b></span>
 
 <span class="tiny gray">Ordre tiré au sort. Horaires indicatifs.</span>
 

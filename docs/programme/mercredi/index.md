@@ -8,11 +8,11 @@ icon: lucide/cpu
 
 !!! info "Salles de pratique"
 
-    À partir du mercredi 21 octobre, les séances de pratique ont lieu en **T149** et **T151**. Chaque équipe se rend dans la salle qui lui est attribuée.
+    À partir du mercredi 21 octobre, les séances de pratique ont lieu en **T147** et **T151**. Chaque équipe se rend dans la salle qui lui est attribuée.
 
     | Salle | Équipes |
     |-------|---------|
-    | **T149** | Cerise, Kiwi, Lime, Mangue, Mangue 2, Myrtille, Orange, Pastèque, Pêche |
+    | **T147** | Cerise, Kiwi, Lime, Mangue, Mangue 2, Myrtille, Orange, Pastèque, Pêche |
     | **T151** | Ananas, Banane, Citron, Coco, Fraise, Poire, Pomme, Raisin |
 
 ---
@@ -37,10 +37,10 @@ icon: lucide/cpu
 |---------|----------|-------|
 | 08h30 - 08h45 | Prise de température et objectifs | R102 |
 | 08h45 - 09h05 | Le micro:bit : présentation et démonstration | R102 |
-| 09h05 - 10h00 | Premier programme, puis jeu des allumettes : variables et événements | T149 / T151 |
+| 09h05 - 10h00 | Premier programme, puis jeu des allumettes : variables et événements | T147 / T151 |
 | 10h00 - 10h30 | Pause | — |
-| 10h30 - 11h15 | Jeu des allumettes : conditions, boucles, feu et sons | T149 / T151 |
-| 11h15 - 12h00 | Multijoueur par radio et défis | T149 / T151 |
+| 10h30 - 11h15 | Jeu des allumettes : conditions, boucles, feu et sons | T147 / T151 |
+| 11h15 - 12h00 | Multijoueur par radio et défis | T147 / T151 |
 
 → [Voir le détail du matin](matin.md){target="_blank"}
 
@@ -48,13 +48,13 @@ icon: lucide/cpu
 
 | Horaire | Activité | Salle |
 |---------|----------|-------|
-| 13h00 - 13h30 | L'IA dans votre quotidien | T149 / T151 |
-| 13h30 - 14h10 | Vidéo : "La Fabrique à Idiots" (Micode) | T149 / T151 |
-| 14h10 - 14h25 | Discussion | T149 / T151 |
+| 13h00 - 13h30 | L'IA dans votre quotidien | T147 / T151 |
+| 13h30 - 14h10 | Vidéo : "La Fabrique à Idiots" (Micode) | T147 / T151 |
+| 14h10 - 14h25 | Discussion | T147 / T151 |
 | 14h25 - 14h40 | Pause | — |
-| 14h40 - 15h00 | Règles d'usage de l'IA | T149 / T151 |
-| 15h00 - 15h30 | Atelier : Générer du code avec une IA | T149 / T151 |
-| 15h30 - 16h15 | Définition du mini-projet | T149 / T151 |
+| 14h40 - 15h00 | Règles d'usage de l'IA | T147 / T151 |
+| 15h00 - 15h30 | Atelier : Générer du code avec une IA | T147 / T151 |
+| 15h30 - 16h15 | Définition du mini-projet | T147 / T151 |
 
 → [Voir le détail de l'après-midi](apres-midi.md){target="_blank"}
 

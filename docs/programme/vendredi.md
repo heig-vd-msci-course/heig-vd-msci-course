@@ -10,15 +10,15 @@ icon: lucide/rocket
 
 !!! info "Rendez-vous"
 
-    **08h30** · Salle **R102**
+    **08h30** · Salles **T147** et **T151**, selon son équipe
 
-!!! info "Salles de pratique"
+!!! info "Salles de l'évaluation et de la pratique"
 
-    Les séances de pratique du matin ont lieu en **T149** et **T151**. Chaque équipe se rend dans la salle qui lui est attribuée.
+    L'évaluation écrite et les séances de pratique du matin ont lieu en **T147** et **T151**. Chaque équipe se rend dans la salle qui lui est attribuée. Pendant l'évaluation, chaque personne s'installe **seule à une table**.
 
     | Salle | Équipes |
     |-------|---------|
-    | **T149** | Cerise, Kiwi, Lime, Mangue, Mangue 2, Myrtille, Orange, Pastèque, Pêche |
+    | **T147** | Cerise, Kiwi, Lime, Mangue, Mangue 2, Myrtille, Orange, Pastèque, Pêche |
     | **T151** | Ananas, Banane, Citron, Coco, Fraise, Poire, Pomme, Raisin |
 
 ---
@@ -37,13 +37,13 @@ icon: lucide/rocket
 
 | Horaire | Activité | Salle |
 |---------|----------|-------|
-| 08h30 - 08h45 | Accueil | R102 |
-| 08h45 - 08h50 | Lecture de l'évaluation et questions | R102 |
-| 08h50 - 09h50 | **Évaluation écrite** | R102 |
-| 09h50 - 12h00 | Finalisation des projets | T149 / T151 |
+| 08h30 - 08h45 | Accueil | T147 / T151 |
+| 08h45 - 08h50 | Lecture de l'évaluation et questions | T147 / T151 |
+| 08h50 - 09h50 | **Évaluation écrite** | T147 / T151 |
+| 09h50 - 12h00 | Finalisation des projets | T147 / T151 |
 | **12h00** | **Délai de remise des projets** | — |
 | 12h00 - 13h00 | Repas | — |
-| 13h00 - 16h00 | **Présentations des projets** | R102 |
+| 13h00 - 16h00 | **Présentations des projets** (pause de 14h20 à 14h35) | R102 |
 
 ---
 
@@ -196,6 +196,10 @@ La durée maximale de la présentation est de **4 minutes + 1 minute par membre 
 
 L'ordre a été tiré au sort. Les horaires sont indicatifs.
 
+!!! warning "Ponctualité"
+
+    Une pause de 15 minutes a lieu au milieu des présentations, de 14h20 à 14h35. Toutes les personnes doivent être présentes à 13h00 et de retour à 14h35 : **tout retard sera sanctionné dans la note**.
+
 | # | Équipe | Membres | Présentation (maximum) | Début |
 |---|--------|---------|--------------|-------|
 | 1 | Raisin 🍇 | 3 | 7 min | 13h00 |
@@ -205,16 +209,16 @@ L'ordre a été tiré au sort. Les horaires sont indicatifs.
 | 5 | Orange 🍊 | 4 | 8 min | 13h41 |
 | 6 | Pêche 🍑 | 2 | 6 min | 13h52 |
 | 7 | Mangue 🥭 | 2 | 6 min | 14h01 |
-| 8 | Lime 🍋‍🟩 | 1 | 5 min | 14h10 |
-| 9 | Fraise 🍓 | 3 | 7 min | 14h18 |
-| 10 | Pomme 🍎 | 4 | 8 min | 14h28 |
-| 11 | Banane 🍌 | 3 | 7 min | 14h39 |
-| 12 | Poire 🍐 | 2 | 6 min | 14h49 |
-| 13 | Mangue 2 🥭 | 2 | 6 min | 14h58 |
-| 14 | Ananas 🍍 | 3 | 7 min | 15h07 |
-| 15 | Citron 🍋 | 3 | 7 min | 15h17 |
-| 16 | Kiwi 🥝 | 3 | 7 min | 15h27 |
-| 17 | Coco 🥥 | 3 | 7 min | 15h37 |
+| 8 | Fraise 🍓 | 3 | 7 min | 14h10 |
+| — | **Pause** | — | 15 min | **14h20** |
+| 9 | Pomme 🍎 | 4 | 8 min | 14h35 |
+| 10 | Banane 🍌 | 3 | 7 min | 14h46 |
+| 11 | Poire 🍐 | 2 | 6 min | 14h56 |
+| 12 | Mangue 2 🥭 | 2 | 6 min | 15h05 |
+| 13 | Ananas 🍍 | 3 | 7 min | 15h14 |
+| 14 | Citron 🍋 | 3 | 7 min | 15h24 |
+| 15 | Kiwi 🥝 | 3 | 7 min | 15h34 |
+| 16 | Coco 🥥 | 3 | 7 min | 15h44 |
 
 ---
 

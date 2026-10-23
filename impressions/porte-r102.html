@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>MSCI - Affiche porte R102</title>
+<style>
+  @page { size: A4 landscape; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #222; }
+  .sign { width: 297mm; height: 210mm; padding: 14mm 18mm; display: flex; flex-direction: column; align-items: center; justify-content: space-between; }
+  .title { font-size: 96pt; font-weight: 900; letter-spacing: 6mm; line-height: 1; }
+  .intro { font-size: 30pt; font-weight: bold; text-align: center; }
+  .intro .when { color: #ff6b6b; }
+  .rooms { display: flex; gap: 14mm; width: 100%; }
+  .room { flex: 1; border: 3mm solid #222; border-radius: 6mm; padding: 6mm 8mm; text-align: center; }
+  .room-name { font-size: 80pt; font-weight: 900; line-height: 1; }
+  .teams { margin-top: 4mm; font-size: 20pt; line-height: 1.4; white-space: nowrap; }
+  .note { font-size: 20pt; text-align: center; }
+  .note strong { color: #ff6b6b; }
+</style>
+</head>
+<body>
+<section class="sign">
+  <div class="title">MSCI</div>
+  <div class="intro">
+    <span class="when">Vendredi matin</span> : l'accueil et l'évaluation écrite<br>
+    ont lieu en <strong>T147</strong> et en <strong>T151</strong>
+  </div>
+  <div class="rooms">
+    <div class="room">
+      <div class="room-name">T147</div>
+      <div class="teams">Cerise · Kiwi · Lime<br>Mangue · Mangue 2 · Myrtille<br>Orange · Pastèque · Pêche</div>
+    </div>
+    <div class="room">
+      <div class="room-name">T151</div>
+      <div class="teams">Ananas · Banane · Citron<br>Coco · Fraise · Poire<br>Pomme · Raisin</div>
+    </div>
+  </div>
+  <div class="note">Les présentations des projets ont lieu ici, en R102, à <strong>13h00</strong>.</div>
+</section>
+</body>
+</html>
