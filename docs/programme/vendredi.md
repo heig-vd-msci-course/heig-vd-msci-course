@@ -12,13 +12,13 @@ icon: lucide/rocket
 
     **08h30** · Salle **R102**
 
-!!! info "Salles de pratique"
+!!! info "Salles de l'évaluation et de la pratique"
 
-    Les séances de pratique du matin ont lieu en **T149** et **T151**. Chaque équipe se rend dans la salle qui lui est attribuée.
+    L'évaluation écrite et les séances de pratique du matin ont lieu en **T147** et **T151**. Chaque équipe se rend dans la salle qui lui est attribuée. Pendant l'évaluation, chaque personne s'installe **seule à une table**.
 
     | Salle | Équipes |
     |-------|---------|
-    | **T149** | Cerise, Kiwi, Lime, Mangue, Mangue 2, Myrtille, Orange, Pastèque, Pêche |
+    | **T147** | Cerise, Kiwi, Lime, Mangue, Mangue 2, Myrtille, Orange, Pastèque, Pêche |
     | **T151** | Ananas, Banane, Citron, Coco, Fraise, Poire, Pomme, Raisin |
 
 ---
@@ -38,9 +38,9 @@ icon: lucide/rocket
 | Horaire | Activité | Salle |
 |---------|----------|-------|
 | 08h30 - 08h45 | Accueil | R102 |
-| 08h45 - 08h50 | Lecture de l'évaluation et questions | R102 |
-| 08h50 - 09h50 | **Évaluation écrite** | R102 |
-| 09h50 - 12h00 | Finalisation des projets | T149 / T151 |
+| 08h45 - 08h50 | Lecture de l'évaluation et questions | T147 / T151 |
+| 08h50 - 09h50 | **Évaluation écrite** | T147 / T151 |
+| 09h50 - 12h00 | Finalisation des projets | T147 / T151 |
 | **12h00** | **Délai de remise des projets** | — |
 | 12h00 - 13h00 | Repas | — |
 | 13h00 - 16h00 | **Présentations des projets** | R102 |

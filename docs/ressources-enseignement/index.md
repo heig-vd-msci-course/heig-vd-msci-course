@@ -17,7 +17,7 @@ Cette page regroupe tout ce qui sert à **préparer et donner** le cours : maté
 - [ ] Imprimer la [fiche d'accès](#materiel-a-imprimer) (codes QR et WiFi) et la distribuer dans les classes
 - [ ] Imprimer la [fiche de prêt des ordinateurs](#materiel-a-imprimer) (une par salle)
 - [ ] Prévoir des baguettes ou allumettes (environ 10 par binôme), des feuilles blanches et des crayons
-- [ ] Vérifier les salles (R102, T149 / T151) et l'accès à [arcade.makecode.com](https://arcade.makecode.com){target="_blank"}, à [MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"} et à [makecode.microbit.org](https://makecode.microbit.org){target="_blank"} depuis les ordinateurs
+- [ ] Vérifier les salles (R102, T147 / T151) et l'accès à [arcade.makecode.com](https://arcade.makecode.com){target="_blank"}, à [MDN Playground](https://developer.mozilla.org/fr/play){target="_blank"} et à [makecode.microbit.org](https://makecode.microbit.org){target="_blank"} depuis les ordinateurs
 - [ ] Mercredi : préparer un micro:bit et un câble USB par binôme, et les quatre cartes de la [démo d'accroche](#mercredi-solutions-microbit)
 - [ ] Activer GitHub Pages sur le [dépôt des projets](https://github.com/heig-vd-msci-course/heig-vd-msci-projets){target="_blank"}
 - [ ] Préparer les Wooclap du jour (charte, quiz)

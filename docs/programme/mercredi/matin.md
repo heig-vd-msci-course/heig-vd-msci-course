@@ -16,11 +16,11 @@ Les trois chapitres de la matinée se suivent :
 
 !!! info "Salles de pratique"
 
-    Les séances de pratique ont lieu en **T149** et **T151**. Chaque équipe se rend dans la salle qui lui est attribuée.
+    Les séances de pratique ont lieu en **T147** et **T151**. Chaque équipe se rend dans la salle qui lui est attribuée.
 
     | Salle | Équipes |
     |-------|---------|
-    | **T149** | Cerise, Kiwi, Lime, Mangue, Mangue 2, Myrtille, Orange, Pastèque, Pêche |
+    | **T147** | Cerise, Kiwi, Lime, Mangue, Mangue 2, Myrtille, Orange, Pastèque, Pêche |
     | **T151** | Ananas, Banane, Citron, Coco, Fraise, Poire, Pomme, Raisin |
 
 !!! tip "Une carte par binôme"
@@ -35,10 +35,10 @@ Les trois chapitres de la matinée se suivent :
 |---------|----------|-------|
 | 08h30 - 08h45 | Prise de température et objectifs | R102 |
 | 08h45 - 09h05 | Le micro:bit : présentation et démonstration | R102 |
-| 09h05 - 10h00 | Premier programme, puis jeu des allumettes : variables et événements | T149 / T151 |
+| 09h05 - 10h00 | Premier programme, puis jeu des allumettes : variables et événements | T147 / T151 |
 | 10h00 - 10h30 | Pause | — |
-| 10h30 - 11h15 | Jeu des allumettes : conditions, boucles, feu et sons | T149 / T151 |
-| 11h15 - 12h00 | Multijoueur par radio et défis | T149 / T151 |
+| 10h30 - 11h15 | Jeu des allumettes : conditions, boucles, feu et sons | T147 / T151 |
+| 11h15 - 12h00 | Multijoueur par radio et défis | T147 / T151 |
 
 ---
 
