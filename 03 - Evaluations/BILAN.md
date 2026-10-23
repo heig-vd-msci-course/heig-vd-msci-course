@@ -7,7 +7,7 @@
 | 3 | Cerise | Morpion | ✅ | Mail 12h03 | copie locale (code/index.html) | Code repris du corps du mail (12h03), pas de lien dans la feuille |
 | 4 | Myrtille | Jeu des allumettes amélioré | ❌ | - | copie locale (code/index.html) | Aucune présentation reçue |
 | 5 | Orange | Jeu de survie | ✅ | Mail 11h59 | https://arcade.makecode.com/S17581-71417-90382-21705 | Lien du projet repris du mail (11h59) |
-| 6 | Pêche | Memory game | ✅ | Mail 12h01 | copie locale (code/index.html) |  |
+| 6 | Pêche | Memory game | ✅ | Mail 13h23 (nouvelle version) | copie locale (code/index.html) |  |
 | 7 | Mangue | Jeu pong | ✅ | Mail 12h01 | absent | PDF envoyé depuis l’adresse d’une personne de l’équipe Poire ; projet Pong sur makecode.microbit.org, sans lien |
 | 8 | Fraise | Jeu des allumettes amélioré | ✅ | Mail 11h58 | https://developer.mozilla.org/en-US/play | Lien MDN Playground sans identifiant (projet vide) |
 | 9 | Pomme | Jeu des allumettes amélioré | ✅ | Mail 13h06 (après relance) | copie locale (code/index.html) | PDF reçu à 13h06, après relance |
@@ -16,5 +16,5 @@
 | 12 | Mangue 2 | Blackjack | ❌ | - | https://developer.mozilla.org/en-US/play?id=FgiuW5HAZCQyQPzh1vUhHO8SAGeQgkLwN7OG891gIEndd03XpI6VG%2BkzVopueoZOziZIMb9tChPT8996 | Aucun PDF reçu : demandé par mail à 13h09 |
 | 13 | Ananas | Doué le canard en aventure | ✅ | Mail 11h44 | https://arcade.makecode.com/S88327-64851-95233-60012 | Autre lien : https://makecode.com/_AtE5xu95tJrK |
 | 14 | Citron | Jeu des allumettes amélioré | ❌ | - | https://makecode.com/_YK4daz7E0PHj | Aucune présentation reçue |
-| 15 | Kiwi | Ma valise de voyage | ❌ | - | https://developer.mozilla.org/fr/play?id=h5I7D6dClKXuzBf1bFkwjW%2BYki6PQOMRRT%2BlRyo18C7M4s7SlO3TGG4r9W0EwdWU18qsMcyoga0IQizu | Code : lien MDN du mail de 12h06 + quiz (4e fonctionnalité) du mail de 12h07, ajouté en bas de page |
+| 15 | Kiwi | Ma valise de voyage | ✅ | Mail 13h23 (après relance) | https://developer.mozilla.org/fr/play?id=h5I7D6dClKXuzBf1bFkwjW%2BYki6PQOMRRT%2BlRyo18C7M4s7SlO3TGG4r9W0EwdWU18qsMcyoga0IQizu | Code : lien MDN du mail de 12h06 + quiz (4e fonctionnalité) du mail de 12h07, ajouté en bas de page |
 | 16 | Coco | jeu pokémon | ✅ | Mail 11h33 | https://arcade.makecode.com/S94699-25716-07913-15750 |  |
