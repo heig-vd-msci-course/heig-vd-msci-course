@@ -30,6 +30,7 @@ start "" "%~dp008 - Fraise - Jeu des allumettes amélioré\08 - Fraise - Jeu des
 start "" "https://developer.mozilla.org/en-US/play"
 timeout /t 1 /nobreak > nul
 rem 09 - Pomme
+start "" "%~dp009 - Pomme - Jeu des allumettes amélioré\09 - Pomme - Jeu des allumettes amélioré.pdf"
 start "" "%~dp009 - Pomme - Jeu des allumettes amélioré\code\index.html"
 timeout /t 1 /nobreak > nul
 rem 10 - Banane

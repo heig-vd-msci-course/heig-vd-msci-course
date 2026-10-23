@@ -10,11 +10,11 @@
 | 6 | Pêche | Memory game | ✅ | Mail 12h01 | absent |  |
 | 7 | Mangue | Jeu pong | ✅ | Mail 12h01 | absent | PDF envoyé depuis l’adresse d’une personne de l’équipe Poire ; projet Pong sur makecode.microbit.org, sans lien |
 | 8 | Fraise | Jeu des allumettes amélioré | ✅ | Mail 11h58 | https://developer.mozilla.org/en-US/play | Lien MDN Playground sans identifiant (projet vide) |
-| 9 | Pomme | Jeu des allumettes amélioré | ❌ | - | copie locale (code/index.html) | Feuille : « jeu-des-allumettes-presentation.pptx », aucun mail reçu : PDF à demander |
+| 9 | Pomme | Jeu des allumettes amélioré | ✅ | Mail 13h06 (après relance) | copie locale (code/index.html) | PDF reçu à 13h06, après relance |
 | 10 | Banane | Blind test | ✅ | Mail 11h55 | https://arcade.makecode.com/S26730-81483-30344-27756 |  |
 | 11 | Poire | Jeu des allumettes amélioré | ✅ | Google Slides | copie locale (code/index.html) |  |
-| 12 | Mangue 2 | Blackjack | ❌ | - | https://developer.mozilla.org/en-US/play?id=FgiuW5HAZCQyQPzh1vUhHO8SAGeQgkLwN7OG891gIEndd03XpI6VG%2BkzVopueoZOziZIMb9tChPT8996 | Feuille : « Blackjack_Stephane_Nils_6_slides.pptx », aucun mail reçu : PDF à demander |
+| 12 | Mangue 2 | Blackjack | ❌ | - | https://developer.mozilla.org/en-US/play?id=FgiuW5HAZCQyQPzh1vUhHO8SAGeQgkLwN7OG891gIEndd03XpI6VG%2BkzVopueoZOziZIMb9tChPT8996 | Aucun PDF reçu : demandé par mail à 13h09 |
 | 13 | Ananas | Doué le canard en aventure | ✅ | Mail 11h44 | https://arcade.makecode.com/S88327-64851-95233-60012 | Autre lien : https://makecode.com/_AtE5xu95tJrK |
 | 14 | Citron | Jeu des allumettes amélioré | ❌ | - | https://makecode.com/_YK4daz7E0PHj | Aucune présentation reçue |
-| 15 | Kiwi | site web | ❌ | - | absent | PowerPoint partagé sur SharePoint (12h10), pas de PDF : PDF à demander. Code envoyé dans le corps des mails (12h06, 12h07) |
+| 15 | Kiwi | site web | ❌ | - | absent | PowerPoint partagé sur SharePoint (12h10), pas de PDF : PDF demandé par mail à 13h10. Code envoyé dans le corps des mails (12h06, 12h07) |
 | 16 | Coco | jeu pokémon | ✅ | Mail 11h33 | https://arcade.makecode.com/S94699-25716-07913-15750 |  |
