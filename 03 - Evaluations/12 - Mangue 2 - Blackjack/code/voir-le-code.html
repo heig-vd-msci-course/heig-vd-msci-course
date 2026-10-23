@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Code - Mangue 2 - Blackjack</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; color: #222; background: #fafafa; }
+  header { padding: 1rem 1.5rem; background: #fff; border-bottom: 1px solid #ddd; display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+  h1 { font-size: 1.3rem; margin: 0 1rem 0 0; color: #ff6b6b; }
+  .onglet, .btn { border: 0; border-radius: 6px; padding: .45rem .9rem; font-size: 1rem; cursor: pointer; background: #e8e8e8; color: #222; text-decoration: none; }
+  .onglet.actif { background: #4ecdc4; color: #fff; }
+  .btn { background: #ff6b6b; color: #fff; margin-left: auto; }
+  .btn.alt { background: #888; margin-left: 0; }
+  pre { margin: 0; }
+  pre code.hljs { padding: 1.5rem; font-size: 15px; line-height: 1.5; min-height: calc(100vh - 80px); }
+  .panneau[hidden] { display: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Mangue 2 - Blackjack</h1>
+  <button class="onglet actif" data-cible="html">HTML</button>
+  <button class="onglet" data-cible="css">CSS</button>
+  <button class="onglet" data-cible="js">JavaScript</button>
+  <a class="btn alt" href="index.html" target="_blank">Voir le résultat</a>
+  <form action="https://jsfiddle.net/api/post/library/pure/" method="post" target="_blank" style="margin:0">
+    <input type="hidden" name="title" value="Mangue 2 - Blackjack">
+    <textarea name="html" hidden>&lt;h1&gt;♠ BLACKJACK ♥&lt;/h1&gt;
+
+&lt;p id=&quot;argent&quot;&gt;Argent : 100 CHF&lt;/p&gt;
+
+&lt;label for&quot;mise&quot;&gt;Ta mise :&lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;mise&quot; value=&quot;10&quot; min=&quot;1&quot;
+
+&lt;div class=&quot;table&quot;&gt;
+  &lt;h2&gt;Croupier&lt;/h2&gt;
+  &lt;div id=&quot;cartesCroupier&quot;&gt;&lt;/div&gt;
+  &lt;p id=&quot;scoreCroupier&quot;&gt;Points : ?&lt;/p&gt;
+
+  &lt;hr&gt;
+
+  &lt;h2&gt;Joueur&lt;/h2&gt;
+  &lt;div id=&quot;cartesJoueur&quot;&gt;&lt;/div&gt;
+  &lt;p id=&quot;scoreJoueur&quot;&gt;Points : 0&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p id=&quot;message&quot;&gt;Bienvenue au Blackjack !&lt;/p&gt;
+
+&lt;button id=&quot;tirer&quot; onclick=&quot;tirerCarte()&quot;&gt;Tirer&lt;/button&gt;
+&lt;button id=&quot;rester&quot; onclick=&quot;rester()&quot;&gt;Rester&lt;/button&gt;
+&lt;button id=&quot;rejouer&quot; onclick=&quot;nouvellePartie()&quot;&gt;Rejouer&lt;/button&gt;</textarea>
+    <textarea name="css" hidden>body {
+  background-color: #17251d;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+
+h1 {
+  color: gold;
+}
+
+.table {
+  background-color: #176b43;
+  border: 5px solid #b68b43;
+  border-radius: 25px;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.carte {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  width: 55px;
+  height: 75px;
+  line-height: 75px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 25px;
+}
+
+.cachee {
+  background-color: darkblue;
+  color: white;
+}
+
+hr {
+  border: 1px solid gold;
+}
+
+button {
+  background-color: gold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+}
+
+#message {
+  font-size: 20px;
+  font-weight: bold;
+}
+</textarea>
+    <textarea name="js" hidden>let joueur = [];
+let croupier = [];
+let partieFinie = true;
+
+let argent = 100;
+let mise = 0;
+
+
+function carteAleatoire() {
+  return Math.floor(Math.random() * 10) + 1;
+}
+
+
+function calculerPoints(cartes) {
+  let total = 0;
+
+  for (let carte of cartes) {
+    total = total + carte;
+  }
+
+  return total;
+}
+
+
+function afficher() {
+  let texteJoueur = &quot;&quot;;
+  let texteCroupier = &quot;&quot;;
+
+  for (let carte of joueur) {
+    texteJoueur +=
+      &#x27;&lt;span class=&quot;carte&quot;&gt;&#x27; + carte + &#x27;&lt;/span&gt;&#x27;;
+  }
+
+  for (let i = 0; i &lt; croupier.length; i++) {
+    if (i === 1 &amp;&amp; !partieFinie) {
+      texteCroupier +=
+        &#x27;&lt;span class=&quot;carte cachee&quot;&gt;?&lt;/span&gt;&#x27;;
+    } else {
+      texteCroupier +=
+        &#x27;&lt;span class=&quot;carte&quot;&gt;&#x27; + croupier[i] + &#x27;&lt;/span&gt;&#x27;;
+    }
+  }
+
+  document.getElementById(&quot;cartesJoueur&quot;).innerHTML =
+    texteJoueur;
+
+  document.getElementById(&quot;cartesCroupier&quot;).innerHTML =
+    texteCroupier;
+
+  document.getElementById(&quot;scoreJoueur&quot;).textContent =
+    &quot;Points : &quot; + calculerPoints(joueur);
+
+  if (partieFinie) {
+    document.getElementById(&quot;scoreCroupier&quot;).textContent =
+      &quot;Points : &quot; + calculerPoints(croupier);
+  } else {
+    document.getElementById(&quot;scoreCroupier&quot;).textContent =
+      &quot;Points : ?&quot;;
+  }
+
+  document.getElementById(&quot;argent&quot;).textContent =
+    &quot;Argent : &quot; + argent + &quot; CHF&quot;;
+
+  document.getElementById(&quot;tirer&quot;).disabled = partieFinie;
+  document.getElementById(&quot;rester&quot;).disabled = partieFinie;
+
+  document.getElementById(&quot;rejouer&quot;).disabled = !partieFinie;
+
+  document.getElementById(&quot;mise&quot;).disabled = !partieFinie;
+}
+
+
+function nouvellePartie() {
+
+  if (!partieFinie) {
+    return;
+  }
+
+  let montant = Number(
+    document.getElementById(&quot;mise&quot;).value
+  );
+
+  if (
+    !Number.isInteger(montant) ||
+    montant &lt;= 0 ||
+    montant &gt; argent
+  ) {
+    document.getElementById(&quot;message&quot;).textContent =
+      &quot;Mise invalide ou argent insuffisant !&quot;;
+    return;
+  }
+
+  mise = montant;
+  argent = argent - mise;
+
+  joueur = [carteAleatoire(), carteAleatoire()];
+  croupier = [carteAleatoire(), carteAleatoire()];
+
+  partieFinie = false;
+
+  document.getElementById(&quot;message&quot;).textContent =
+    &quot;Tu as misé &quot; + mise + &quot; CHF. À toi de jouer !&quot;;
+
+  afficher();
+}
+
+
+function tirerCarte() {
+
+  if (partieFinie) {
+    return;
+  }
+
+  joueur.push(carteAleatoire());
+
+  afficher();
+
+  if (calculerPoints(joueur) &gt; 21) {
+    terminerPartie();
+  }
+}
+
+
+function rester() {
+
+  if (partieFinie) {
+    return;
+  }
+
+  while (calculerPoints(croupier) &lt; 17) {
+    croupier.push(carteAleatoire());
+  }
+
+  terminerPartie();
+}
+
+
+function terminerPartie() {
+
+  if (partieFinie) {
+    return;
+  }
+
+  partieFinie = true;
+
+  let pointsJoueur = calculerPoints(joueur);
+  let pointsCroupier = calculerPoints(croupier);
+
+  let message = &quot;&quot;;
+
+  if (pointsJoueur &gt; 21) {
+    message = &quot;Tu as dépassé 21. Perdu !&quot;;
+
+  } else if (pointsCroupier &gt; 21) {
+    argent = argent + mise * 2;
+    message = &quot;Le croupier dépasse 21. Gagné !&quot;;
+
+  } else if (pointsJoueur &gt; pointsCroupier) {
+    argent = argent + mise * 2;
+    message = &quot;Bravo, tu as gagné !&quot;;
+
+  } else if (pointsJoueur === pointsCroupier) {
+    argent = argent + mise;
+    message = &quot;Égalité ! Mise remboursée.&quot;;
+
+  } else {
+    message = &quot;Le croupier a gagné !&quot;;
+  }
+
+  if (argent === 0) {
+    message += &quot; Tu n&#x27;as plus d&#x27;argent !&quot;;
+  }
+
+  document.getElementById(&quot;message&quot;).textContent =
+    message;
+
+
+  afficher();
+}
+
+
+afficher();</textarea>
+    <button class="btn" type="submit">Ouvrir dans JSFiddle</button>
+  </form>
+</header>
+<div class="panneau" id="html"><pre><code class="language-xml">&lt;h1&gt;♠ BLACKJACK ♥&lt;/h1&gt;
+
+&lt;p id=&quot;argent&quot;&gt;Argent : 100 CHF&lt;/p&gt;
+
+&lt;label for&quot;mise&quot;&gt;Ta mise :&lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;mise&quot; value=&quot;10&quot; min=&quot;1&quot;
+
+&lt;div class=&quot;table&quot;&gt;
+  &lt;h2&gt;Croupier&lt;/h2&gt;
+  &lt;div id=&quot;cartesCroupier&quot;&gt;&lt;/div&gt;
+  &lt;p id=&quot;scoreCroupier&quot;&gt;Points : ?&lt;/p&gt;
+
+  &lt;hr&gt;
+
+  &lt;h2&gt;Joueur&lt;/h2&gt;
+  &lt;div id=&quot;cartesJoueur&quot;&gt;&lt;/div&gt;
+  &lt;p id=&quot;scoreJoueur&quot;&gt;Points : 0&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p id=&quot;message&quot;&gt;Bienvenue au Blackjack !&lt;/p&gt;
+
+&lt;button id=&quot;tirer&quot; onclick=&quot;tirerCarte()&quot;&gt;Tirer&lt;/button&gt;
+&lt;button id=&quot;rester&quot; onclick=&quot;rester()&quot;&gt;Rester&lt;/button&gt;
+&lt;button id=&quot;rejouer&quot; onclick=&quot;nouvellePartie()&quot;&gt;Rejouer&lt;/button&gt;</code></pre></div>
+<div class="panneau" id="css" hidden><pre><code class="language-css">body {
+  background-color: #17251d;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+
+h1 {
+  color: gold;
+}
+
+.table {
+  background-color: #176b43;
+  border: 5px solid #b68b43;
+  border-radius: 25px;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.carte {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  width: 55px;
+  height: 75px;
+  line-height: 75px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 25px;
+}
+
+.cachee {
+  background-color: darkblue;
+  color: white;
+}
+
+hr {
+  border: 1px solid gold;
+}
+
+button {
+  background-color: gold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+}
+
+#message {
+  font-size: 20px;
+  font-weight: bold;
+}
+</code></pre></div>
+<div class="panneau" id="js" hidden><pre><code class="language-javascript">let joueur = [];
+let croupier = [];
+let partieFinie = true;
+
+let argent = 100;
+let mise = 0;
+
+
+function carteAleatoire() {
+  return Math.floor(Math.random() * 10) + 1;
+}
+
+
+function calculerPoints(cartes) {
+  let total = 0;
+
+  for (let carte of cartes) {
+    total = total + carte;
+  }
+
+  return total;
+}
+
+
+function afficher() {
+  let texteJoueur = &quot;&quot;;
+  let texteCroupier = &quot;&quot;;
+
+  for (let carte of joueur) {
+    texteJoueur +=
+      &#x27;&lt;span class=&quot;carte&quot;&gt;&#x27; + carte + &#x27;&lt;/span&gt;&#x27;;
+  }
+
+  for (let i = 0; i &lt; croupier.length; i++) {
+    if (i === 1 &amp;&amp; !partieFinie) {
+      texteCroupier +=
+        &#x27;&lt;span class=&quot;carte cachee&quot;&gt;?&lt;/span&gt;&#x27;;
+    } else {
+      texteCroupier +=
+        &#x27;&lt;span class=&quot;carte&quot;&gt;&#x27; + croupier[i] + &#x27;&lt;/span&gt;&#x27;;
+    }
+  }
+
+  document.getElementById(&quot;cartesJoueur&quot;).innerHTML =
+    texteJoueur;
+
+  document.getElementById(&quot;cartesCroupier&quot;).innerHTML =
+    texteCroupier;
+
+  document.getElementById(&quot;scoreJoueur&quot;).textContent =
+    &quot;Points : &quot; + calculerPoints(joueur);
+
+  if (partieFinie) {
+    document.getElementById(&quot;scoreCroupier&quot;).textContent =
+      &quot;Points : &quot; + calculerPoints(croupier);
+  } else {
+    document.getElementById(&quot;scoreCroupier&quot;).textContent =
+      &quot;Points : ?&quot;;
+  }
+
+  document.getElementById(&quot;argent&quot;).textContent =
+    &quot;Argent : &quot; + argent + &quot; CHF&quot;;
+
+  document.getElementById(&quot;tirer&quot;).disabled = partieFinie;
+  document.getElementById(&quot;rester&quot;).disabled = partieFinie;
+
+  document.getElementById(&quot;rejouer&quot;).disabled = !partieFinie;
+
+  document.getElementById(&quot;mise&quot;).disabled = !partieFinie;
+}
+
+
+function nouvellePartie() {
+
+  if (!partieFinie) {
+    return;
+  }
+
+  let montant = Number(
+    document.getElementById(&quot;mise&quot;).value
+  );
+
+  if (
+    !Number.isInteger(montant) ||
+    montant &lt;= 0 ||
+    montant &gt; argent
+  ) {
+    document.getElementById(&quot;message&quot;).textContent =
+      &quot;Mise invalide ou argent insuffisant !&quot;;
+    return;
+  }
+
+  mise = montant;
+  argent = argent - mise;
+
+  joueur = [carteAleatoire(), carteAleatoire()];
+  croupier = [carteAleatoire(), carteAleatoire()];
+
+  partieFinie = false;
+
+  document.getElementById(&quot;message&quot;).textContent =
+    &quot;Tu as misé &quot; + mise + &quot; CHF. À toi de jouer !&quot;;
+
+  afficher();
+}
+
+
+function tirerCarte() {
+
+  if (partieFinie) {
+    return;
+  }
+
+  joueur.push(carteAleatoire());
+
+  afficher();
+
+  if (calculerPoints(joueur) &gt; 21) {
+    terminerPartie();
+  }
+}
+
+
+function rester() {
+
+  if (partieFinie) {
+    return;
+  }
+
+  while (calculerPoints(croupier) &lt; 17) {
+    croupier.push(carteAleatoire());
+  }
+
+  terminerPartie();
+}
+
+
+function terminerPartie() {
+
+  if (partieFinie) {
+    return;
+  }
+
+  partieFinie = true;
+
+  let pointsJoueur = calculerPoints(joueur);
+  let pointsCroupier = calculerPoints(croupier);
+
+  let message = &quot;&quot;;
+
+  if (pointsJoueur &gt; 21) {
+    message = &quot;Tu as dépassé 21. Perdu !&quot;;
+
+  } else if (pointsCroupier &gt; 21) {
+    argent = argent + mise * 2;
+    message = &quot;Le croupier dépasse 21. Gagné !&quot;;
+
+  } else if (pointsJoueur &gt; pointsCroupier) {
+    argent = argent + mise * 2;
+    message = &quot;Bravo, tu as gagné !&quot;;
+
+  } else if (pointsJoueur === pointsCroupier) {
+    argent = argent + mise;
+    message = &quot;Égalité ! Mise remboursée.&quot;;
+
+  } else {
+    message = &quot;Le croupier a gagné !&quot;;
+  }
+
+  if (argent === 0) {
+    message += &quot; Tu n&#x27;as plus d&#x27;argent !&quot;;
+  }
+
+  document.getElementById(&quot;message&quot;).textContent =
+    message;
+
+
+  afficher();
+}
+
+
+afficher();</code></pre></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+  if (window.hljs) hljs.highlightAll();
+  document.querySelectorAll(".onglet").forEach((b) => b.addEventListener("click", () => {
+    document.querySelectorAll(".onglet").forEach((x) => x.classList.toggle("actif", x === b));
+    document.querySelectorAll(".panneau").forEach((p) => p.hidden = p.id !== b.dataset.cible);
+  }));
+</script>
+</body>
+</html>

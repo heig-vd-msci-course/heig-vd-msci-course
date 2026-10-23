@@ -14,7 +14,9 @@
 Si Windows affiche « Windows a protégé votre ordinateur » pour un `.bat`, cliquer sur
 **Informations complémentaires > Exécuter quand même**.
 
-Le dossier `code/` d'une équipe contient une copie de son projet MDN Playground :
+Le bouton **Code** affiche le HTML, le CSS et le JavaScript d'une équipe avec
+coloration syntaxique (connexion Internet nécessaire), avec un bouton pour ouvrir
+le code dans JSFiddle. Le dossier `code/` contient aussi une copie du projet :
 ouvrir `code/index.html` si le lien en ligne ne fonctionne pas.
 
 Le récapitulatif des rendus se trouve dans `BILAN.md`.

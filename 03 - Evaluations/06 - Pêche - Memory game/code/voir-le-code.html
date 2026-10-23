@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Code - Pêche - Memory game</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; color: #222; background: #fafafa; }
+  header { padding: 1rem 1.5rem; background: #fff; border-bottom: 1px solid #ddd; display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+  h1 { font-size: 1.3rem; margin: 0 1rem 0 0; color: #ff6b6b; }
+  .onglet, .btn { border: 0; border-radius: 6px; padding: .45rem .9rem; font-size: 1rem; cursor: pointer; background: #e8e8e8; color: #222; text-decoration: none; }
+  .onglet.actif { background: #4ecdc4; color: #fff; }
+  .btn { background: #ff6b6b; color: #fff; margin-left: auto; }
+  .btn.alt { background: #888; margin-left: 0; }
+  pre { margin: 0; }
+  pre code.hljs { padding: 1.5rem; font-size: 15px; line-height: 1.5; min-height: calc(100vh - 80px); }
+  .panneau[hidden] { display: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Pêche - Memory game</h1>
+  <button class="onglet actif" data-cible="html">HTML</button>
+  <button class="onglet" data-cible="css">CSS</button>
+  <button class="onglet" data-cible="js">JavaScript</button>
+  <a class="btn alt" href="index.html" target="_blank">Voir le résultat</a>
+  <form action="https://jsfiddle.net/api/post/library/pure/" method="post" target="_blank" style="margin:0">
+    <input type="hidden" name="title" value="Pêche - Memory game">
+    <textarea name="html" hidden>&lt;h1&gt;Memory Game &lt;/h1&gt;
+&lt;p&gt;Retrouve les 4 paires de cartes !&lt;/p&gt;
+&lt;p id=&quot;compteur&quot;&gt;Nombre de coups : 0&lt;/p&gt;
+
+&lt;p id=&quot;chronometre&quot;&gt;Temps : 0 seconde&lt;/p&gt;
+
+&lt;div class=&quot;jeu&quot;&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;button id=&quot;recommencer&quot;&gt;Recommencer ⏎&lt;/button&gt;
+</textarea>
+    <textarea name="css" hidden>body {
+background-color: #FFF4F0;
+font-family: Snell Roundhand, cursive;
+text-align: center;
+color: #A65D68;
+}
+
+h1 {
+margin-top: 40px;
+font-size: 45px;
+}
+
+p {
+font-size: 18px;
+margin-bottom: 30px;
+}
+
+.jeu {
+display: grid;
+grid-template-columns: repeat(4, 100px);
+gap: 15px;
+justify-content: center;
+}
+
+.carte {
+width: 100px;
+height: 130px;
+background-color: #F5B7A5;
+border-radius: 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 35px;
+cursor: pointer;
+}
+
+.carte:hover {
+background-color: #E89B87;
+}
+
+#recommencer {
+margin-top: 30px;
+padding: 12px 25px;
+background-color: #E68C78;
+color: white;
+border: none;
+border-radius: 20px;
+font-size: 16px;
+cursor: pointer;
+}
+
+#recommencer:hover {
+background-color: #D97563;
+}
+#chronometre {
+font-size: 20px;
+color: #A65D68;
+}
+#compteur {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 25px;
+}
+</textarea>
+    <textarea name="js" hidden>const cartes = document.querySelectorAll(&quot;.carte&quot;);
+const boutonRecommencer = document.getElementById(&quot;recommencer&quot;);
+const compteur = document.getElementById(&quot;compteur&quot;);
+const chronometre = document.getElementById(&quot;chronometre&quot;);
+
+let images = [&quot;🍑&quot;, &quot;🌸&quot;, &quot;🦋&quot;, &quot;💗&quot;,
+&quot;🍑&quot;, &quot;🌸&quot;, &quot;🦋&quot;, &quot;💗&quot;];
+
+let premiereCarte = -1;
+let bloque = false;
+let partie = 0;
+let coups = 0;
+
+let secondes = 0;
+let temps = null;
+
+let trouvees = [false, false, false, false,
+false, false, false, false];
+
+function melanger() {
+for (let i = 7; i &gt; 0; i--) {
+let hasard = Math.floor(Math.random() * (i + 1));
+
+let temporaire = images[i];
+images[i] = images[hasard];
+images[hasard] = temporaire;
+}
+}
+
+melanger();
+
+for (let i = 0; i &lt; 8; i++) {
+cartes[i].addEventListener(&quot;click&quot;, function() {
+
+if (bloque == true || i == premiereCarte ||
+trouvees[i] == true) {
+return;
+}
+
+if (temps == null) {
+temps = setInterval(function() {
+secondes = secondes + 1;
+chronometre.textContent = &quot;Temps : &quot; + secondes + &quot; secondes&quot;;
+}, 1000);
+}
+
+cartes[i].textContent = images[i];
+
+if (premiereCarte == -1) {
+premiereCarte = i;
+} else {
+bloque = true;
+
+coups = coups + 1;
+compteur.textContent = &quot;Nombre de coups : &quot; + coups;
+
+if (images[premiereCarte] == images[i]) {
+trouvees[premiereCarte] = true;
+trouvees[i] = true;
+
+premiereCarte = -1;
+bloque = false;
+
+let victoire = true;
+
+for (let j = 0; j &lt; 8; j++) {
+if (trouvees[j] == false) {
+victoire = false;
+}
+}
+
+if (victoire == true) {
+clearInterval(temps);
+temps = null;
+bloque = true;
+}
+
+} else {
+let partieActuelle = partie;
+
+setTimeout(function() {
+if (partieActuelle != partie) {
+return;
+}
+
+cartes[premiereCarte].textContent = &quot;&quot;;
+cartes[i].textContent = &quot;&quot;;
+
+premiereCarte = -1;
+bloque = false;
+}, 1000);
+}
+}
+});
+}
+
+boutonRecommencer.addEventListener(&quot;click&quot;, function() {
+partie = partie + 1;
+
+clearInterval(temps);
+temps = null;
+secondes = 0;
+chronometre.textContent = &quot;Temps : 0 seconde&quot;;
+
+for (let i = 0; i &lt; 8; i++) {
+cartes[i].textContent = &quot;&quot;;
+trouvees[i] = false;
+}
+
+premiereCarte = -1;
+bloque = false;
+
+coups = 0;
+compteur.textContent = &quot;Nombre de coups : 0&quot;;
+
+melanger();
+});
+</textarea>
+    <button class="btn" type="submit">Ouvrir dans JSFiddle</button>
+  </form>
+</header>
+<div class="panneau" id="html"><pre><code class="language-xml">&lt;h1&gt;Memory Game &lt;/h1&gt;
+&lt;p&gt;Retrouve les 4 paires de cartes !&lt;/p&gt;
+&lt;p id=&quot;compteur&quot;&gt;Nombre de coups : 0&lt;/p&gt;
+
+&lt;p id=&quot;chronometre&quot;&gt;Temps : 0 seconde&lt;/p&gt;
+
+&lt;div class=&quot;jeu&quot;&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;carte&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;button id=&quot;recommencer&quot;&gt;Recommencer ⏎&lt;/button&gt;
+</code></pre></div>
+<div class="panneau" id="css" hidden><pre><code class="language-css">body {
+background-color: #FFF4F0;
+font-family: Snell Roundhand, cursive;
+text-align: center;
+color: #A65D68;
+}
+
+h1 {
+margin-top: 40px;
+font-size: 45px;
+}
+
+p {
+font-size: 18px;
+margin-bottom: 30px;
+}
+
+.jeu {
+display: grid;
+grid-template-columns: repeat(4, 100px);
+gap: 15px;
+justify-content: center;
+}
+
+.carte {
+width: 100px;
+height: 130px;
+background-color: #F5B7A5;
+border-radius: 15px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 35px;
+cursor: pointer;
+}
+
+.carte:hover {
+background-color: #E89B87;
+}
+
+#recommencer {
+margin-top: 30px;
+padding: 12px 25px;
+background-color: #E68C78;
+color: white;
+border: none;
+border-radius: 20px;
+font-size: 16px;
+cursor: pointer;
+}
+
+#recommencer:hover {
+background-color: #D97563;
+}
+#chronometre {
+font-size: 20px;
+color: #A65D68;
+}
+#compteur {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 25px;
+}
+</code></pre></div>
+<div class="panneau" id="js" hidden><pre><code class="language-javascript">const cartes = document.querySelectorAll(&quot;.carte&quot;);
+const boutonRecommencer = document.getElementById(&quot;recommencer&quot;);
+const compteur = document.getElementById(&quot;compteur&quot;);
+const chronometre = document.getElementById(&quot;chronometre&quot;);
+
+let images = [&quot;🍑&quot;, &quot;🌸&quot;, &quot;🦋&quot;, &quot;💗&quot;,
+&quot;🍑&quot;, &quot;🌸&quot;, &quot;🦋&quot;, &quot;💗&quot;];
+
+let premiereCarte = -1;
+let bloque = false;
+let partie = 0;
+let coups = 0;
+
+let secondes = 0;
+let temps = null;
+
+let trouvees = [false, false, false, false,
+false, false, false, false];
+
+function melanger() {
+for (let i = 7; i &gt; 0; i--) {
+let hasard = Math.floor(Math.random() * (i + 1));
+
+let temporaire = images[i];
+images[i] = images[hasard];
+images[hasard] = temporaire;
+}
+}
+
+melanger();
+
+for (let i = 0; i &lt; 8; i++) {
+cartes[i].addEventListener(&quot;click&quot;, function() {
+
+if (bloque == true || i == premiereCarte ||
+trouvees[i] == true) {
+return;
+}
+
+if (temps == null) {
+temps = setInterval(function() {
+secondes = secondes + 1;
+chronometre.textContent = &quot;Temps : &quot; + secondes + &quot; secondes&quot;;
+}, 1000);
+}
+
+cartes[i].textContent = images[i];
+
+if (premiereCarte == -1) {
+premiereCarte = i;
+} else {
+bloque = true;
+
+coups = coups + 1;
+compteur.textContent = &quot;Nombre de coups : &quot; + coups;
+
+if (images[premiereCarte] == images[i]) {
+trouvees[premiereCarte] = true;
+trouvees[i] = true;
+
+premiereCarte = -1;
+bloque = false;
+
+let victoire = true;
+
+for (let j = 0; j &lt; 8; j++) {
+if (trouvees[j] == false) {
+victoire = false;
+}
+}
+
+if (victoire == true) {
+clearInterval(temps);
+temps = null;
+bloque = true;
+}
+
+} else {
+let partieActuelle = partie;
+
+setTimeout(function() {
+if (partieActuelle != partie) {
+return;
+}
+
+cartes[premiereCarte].textContent = &quot;&quot;;
+cartes[i].textContent = &quot;&quot;;
+
+premiereCarte = -1;
+bloque = false;
+}, 1000);
+}
+}
+});
+}
+
+boutonRecommencer.addEventListener(&quot;click&quot;, function() {
+partie = partie + 1;
+
+clearInterval(temps);
+temps = null;
+secondes = 0;
+chronometre.textContent = &quot;Temps : 0 seconde&quot;;
+
+for (let i = 0; i &lt; 8; i++) {
+cartes[i].textContent = &quot;&quot;;
+trouvees[i] = false;
+}
+
+premiereCarte = -1;
+bloque = false;
+
+coups = 0;
+compteur.textContent = &quot;Nombre de coups : 0&quot;;
+
+melanger();
+});
+</code></pre></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+  if (window.hljs) hljs.highlightAll();
+  document.querySelectorAll(".onglet").forEach((b) => b.addEventListener("click", () => {
+    document.querySelectorAll(".onglet").forEach((x) => x.classList.toggle("actif", x === b));
+    document.querySelectorAll(".panneau").forEach((p) => p.hidden = p.id !== b.dataset.cible);
+  }));
+</script>
+</body>
+</html>

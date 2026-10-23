@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Code - Cerise - Morpion</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+<style>
+  body { font-family: system-ui, sans-serif; margin: 0; color: #222; background: #fafafa; }
+  header { padding: 1rem 1.5rem; background: #fff; border-bottom: 1px solid #ddd; display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+  h1 { font-size: 1.3rem; margin: 0 1rem 0 0; color: #ff6b6b; }
+  .onglet, .btn { border: 0; border-radius: 6px; padding: .45rem .9rem; font-size: 1rem; cursor: pointer; background: #e8e8e8; color: #222; text-decoration: none; }
+  .onglet.actif { background: #4ecdc4; color: #fff; }
+  .btn { background: #ff6b6b; color: #fff; margin-left: auto; }
+  .btn.alt { background: #888; margin-left: 0; }
+  pre { margin: 0; }
+  pre code.hljs { padding: 1.5rem; font-size: 15px; line-height: 1.5; min-height: calc(100vh - 80px); }
+  .panneau[hidden] { display: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Cerise - Morpion</h1>
+  <button class="onglet actif" data-cible="html">HTML</button>
+  <button class="onglet" data-cible="css">CSS</button>
+  <button class="onglet" data-cible="js">JavaScript</button>
+  <a class="btn alt" href="index.html" target="_blank">Voir le résultat</a>
+  <form action="https://jsfiddle.net/api/post/library/pure/" method="post" target="_blank" style="margin:0">
+    <input type="hidden" name="title" value="Cerise - Morpion">
+    <textarea name="html" hidden>&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+ &lt;meta charset=&quot;UTF-8&quot;&gt;
+ &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+ &lt;title&gt;Morpion Challenge&lt;/title&gt;
+
+ &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+ &lt;script src=&quot;script.js&quot; defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+
+ &lt;main class=&quot;game&quot;&gt;
+
+ &lt;header&gt;
+ &lt;h1&gt;⚔️ Morpion Challenge&lt;/h1&gt;
+ &lt;p class=&quot;subtitle&quot;&gt;À toi de gagner !&lt;/p&gt;
+ &lt;/header&gt;
+
+ &lt;section class=&quot;settings&quot;&gt;
+ &lt;label for=&quot;personnage&quot;&gt;Ton symbole&lt;/label&gt;
+ &lt;select id=&quot;personnage&quot;&gt;
+ &lt;option value=&quot;X&quot;&gt;❌ Croix (X)&lt;/option&gt;
+ &lt;option value=&quot;O&quot;&gt;⭕ Cercle (O)&lt;/option&gt;
+ &lt;/select&gt;
+
+ &lt;label for=&quot;difficulte&quot;&gt;Difficulté&lt;/label&gt;
+ &lt;select id=&quot;difficulte&quot;&gt;
+ &lt;option value=&quot;facile&quot;&gt;Facile&lt;/option&gt;
+ &lt;option value=&quot;moyen&quot;&gt;Moyen&lt;/option&gt;
+ &lt;option value=&quot;difficile&quot;&gt;Difficile&lt;/option&gt;
+ &lt;/select&gt;
+
+ &lt;label for=&quot;theme&quot;&gt;Thème&lt;/label&gt;
+ &lt;select id=&quot;theme&quot;&gt;
+ &lt;option value=&quot;classique&quot;&gt;Classique&lt;/option&gt;
+ &lt;option value=&quot;neon&quot;&gt;Néon futuriste&lt;/option&gt;
+ &lt;option value=&quot;nature&quot;&gt;Nature&lt;/option&gt;
+ &lt;/select&gt;
+ &lt;/section&gt;
+
+ &lt;p id=&quot;message&quot; aria-live=&quot;polite&quot;&gt;À toi de jouer !&lt;/p&gt;
+
+ &lt;section id=&quot;grille&quot; class=&quot;grille&quot; aria-label=&quot;Grille de jeu&quot;&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;0&quot; aria-label=&quot;Case 1&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;1&quot; aria-label=&quot;Case 2&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;2&quot; aria-label=&quot;Case 3&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;3&quot; aria-label=&quot;Case 4&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;4&quot; aria-label=&quot;Case 5&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;5&quot; aria-label=&quot;Case 6&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;6&quot; aria-label=&quot;Case 7&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;7&quot; aria-label=&quot;Case 8&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;8&quot; aria-label=&quot;Case 9&quot;&gt;&lt;/button&gt;
+ &lt;/section&gt;
+
+ &lt;section class=&quot;powers&quot;&gt;
+ &lt;button id=&quot;pouvoir&quot;&gt;🛡️ Bloquer une case&lt;/button&gt;
+ &lt;p id=&quot;info-pouvoir&quot;&gt;Utilisable une fois par partie.&lt;/p&gt;
+ &lt;/section&gt;
+
+ &lt;section class=&quot;scores&quot;&gt;
+ &lt;div&gt;Toi : &lt;strong id=&quot;score-joueur&quot;&gt;0&lt;/strong&gt;&lt;/div&gt;
+ &lt;div&gt;Adversaire : &lt;strong id=&quot;score-robot&quot;&gt;0&lt;/strong&gt;&lt;/div&gt;
+ &lt;div&gt;Matchs nuls : &lt;strong id=&quot;score-nul&quot;&gt;0&lt;/strong&gt;&lt;/div&gt;
+ &lt;/section&gt;
+
+ &lt;button id=&quot;rejouer&quot; class=&quot;rejouer&quot;&gt;
+ 🔄 Recommencer à zéro
+ &lt;/button&gt;
+
+ &lt;/main&gt;
+
+&lt;/html&gt;</textarea>
+    <textarea name="css" hidden>body.theme-classique {
+ --fond: #f0f3f8;
+ --carte: #ffffff;
+ --texte: #20283a;
+ --case: #e8edf5;
+ --accent: #3568d4;
+ --symbole: #3568d4;
+}
+
+body.theme-neon {
+ --fond: #100d20;
+ --carte: #211633;
+ --texte: #f8eaff;
+ --case: #302047;
+ --accent: #ff42d0;
+ --symbole: #55f5ff;
+}
+
+body.theme-nature {
+ --fond: #e1edda;
+ --carte: #f8f5e8;
+ --texte: #28452c;
+ --case: #d4e5c7;
+ --accent: #477c43;
+ --symbole: #477c43;
+}
+
+* {
+ box-sizing: border-box;
+}
+
+body {
+ margin: 0;
+ min-height: 100vh;
+ padding: 24px 12px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-family: Arial, sans-serif;
+ color: var(--texte);
+ background-color: var(--fond);
+ background-image: url(&quot;WhatsApp Image 2026-10-21 at 15.18.52.jpeg&quot;);
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ transition: background-color 0.3s, color 0.3s;
+}
+
+.game {
+ width: 100%;
+ max-width: 460px;
+ padding: 24px;
+ text-align: center;
+ background: color-mix(in srgb, var(--carte) 70%, transparent);
+ backdrop-filter: blur(4px);
+ border-radius: 20px;
+ box-shadow: 0 8px 28px #00000018;
+}
+
+h1 {
+ margin: 0 0 8px;
+ font-size: 28px;
+}
+
+.subtitle {
+ margin-top: 0;
+ opacity: 0.75;
+}
+
+.settings {
+ display: grid;
+ gap: 8px;
+ margin: 22px 0;
+ text-align: left;
+}
+
+.settings label {
+ font-size: 14px;
+ font-weight: bold;
+}
+
+select {
+ width: 100%;
+ padding: 11px;
+ border: 1px solid #9996;
+ border-radius: 8px;
+ background: color-mix(in srgb, var(--case) 65%, transparent);
+ color: var(--texte);
+ font-size: 15px;
+}
+
+#message {
+ min-height: 24px;
+ font-weight: bold;
+}
+
+.grille {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 8px;
+ margin: 18px 0;
+}
+
+.case {
+ min-width: 0;
+ aspect-ratio: 1;
+ border: none;
+ border-radius: 12px;
+ background: color-mix(in srgb, var(--case) 45%, transparent);
+ color: var(--symbole);
+ font-size: clamp(35px, 10vw, 58px);
+ font-weight: bold;
+ cursor: pointer;
+ transition: transform 0.15s, background 0.2s;
+}
+
+.case:not(:disabled):hover {
+ transform: scale(1.04);
+}
+
+.case:disabled {
+ opacity: 1;
+ cursor: default;
+}
+
+.case.bloquee {
+ background: #9996;
+ color: var(--texte);
+ font-size: 26px;
+}
+
+.case.gagnante {
+ outline: 4px solid var(--accent);
+}
+
+button {
+ font-family: inherit;
+}
+
+.powers {
+ margin: 16px 0;
+}
+
+#pouvoir,
+.rejouer {
+ width: 100%;
+ padding: 13px;
+ border: none;
+ border-radius: 9px;
+ font-size: 15px;
+ font-weight: bold;
+ cursor: pointer;
+}
+
+#pouvoir {
+ background: rgba(50, 100, 200, 0.75);
+ color: white;
+}
+
+#pouvoir:disabled {
+ opacity: 0.45;
+ cursor: not-allowed;
+}
+
+#info-pouvoir {
+ font-size: 13px;
+ opacity: 0.8;
+}
+
+.rejouer {
+ background: rgba(255, 255, 255, 0.35);
+ color: var(--texte);
+ border: 1px solid #9995;
+}
+
+.scores {
+ display: flex;
+ justify-content: space-around;
+ gap: 8px;
+ margin: 22px 0;
+ font-size: 14px;
+}
+
+button:focus-visible,
+select:focus-visible {
+ outline: 3px solid var(--accent);
+ outline-offset: 3px;
+}
+
+@media (max-width: 380px) {
+ .game {
+ padding: 16px;
+ }
+
+ .scores {
+ font-size: 12px;
+ }
+}</textarea>
+    <textarea name="js" hidden>const cases = document.querySelectorAll(&quot;.case&quot;);
+const message = document.querySelector(&quot;#message&quot;);
+const choixPersonnage = document.querySelector(&quot;#personnage&quot;);
+const choixDifficulte = document.querySelector(&quot;#difficulte&quot;);
+const choixTheme = document.querySelector(&quot;#theme&quot;);
+const boutonPouvoir = document.querySelector(&quot;#pouvoir&quot;);
+const infoPouvoir = document.querySelector(&quot;#info-pouvoir&quot;);
+const boutonRejouer = document.querySelector(&quot;#rejouer&quot;);
+
+const combinaisonsGagnantes = [
+ [0, 1, 2], [3, 4, 5], [6, 7, 8],
+ [0, 3, 6], [1, 4, 7], [2, 5, 8],
+ [0, 4, 8], [2, 4, 6]
+];
+
+let grille = Array(9).fill(&quot;&quot;);
+let joueur;
+let robot;
+let partieTerminee = false;
+let tourJoueur = true;
+
+let modePouvoir = false;
+let pouvoirJoueurUtilise = false;
+let pouvoirRobotUtilise = false;
+
+let caseBloqueeJoueur = -1;
+let caseBloqueeRobot = -1;
+
+let scores = { joueur: 0, robot: 0, nul: 0 };
+
+function changerTheme() {
+ document.body.className = &quot;theme-&quot; + choixTheme.value;
+}
+
+function trouverCombinaison(symbole) {
+ return combinaisonsGagnantes.find(combinaison =&gt;
+ combinaison.every(index =&gt; grille[index] === symbole)
+ ) || null;
+}
+
+function caseDisponible(index) {
+ return (
+ grille[index] === &quot;&quot; &amp;&amp;
+ index !== caseBloqueeJoueur &amp;&amp;
+ index !== caseBloqueeRobot
+ );
+}
+
+function choisirAuHasard() {
+ const libres = grille
+ .map((valeur, index) =&gt; caseDisponible(index) ? index : -1)
+ .filter(index =&gt; index !== -1);
+
+ if (libres.length === 0) return -1;
+
+ return libres[Math.floor(Math.random() * libres.length)];
+}
+
+function afficherGrille() {
+ cases.forEach((bouton, index) =&gt; {
+ bouton.classList.remove(&quot;bloquee&quot;, &quot;gagnante&quot;);
+
+ const bloquee =
+ index === caseBloqueeJoueur ||
+ index === caseBloqueeRobot ||
+ grille[index] === &quot;#&quot;;
+
+ bouton.textContent = bloquee ? &quot;🔒&quot; : grille[index];
+ bouton.classList.toggle(&quot;bloquee&quot;, bloquee);
+
+ bouton.disabled =
+ partieTerminee ||
+ !tourJoueur ||
+ grille[index] !== &quot;&quot; ||
+ bloquee;
+
+ bouton.setAttribute(
+ &quot;aria-label&quot;,
+ `Case ${index + 1}${bloquee ? &quot; bloquée&quot; :
+ grille[index] ? &quot; : &quot; + grille[index] : &quot; libre&quot;}`
+ );
+ });
+
+ if (partieTerminee) {
+ const combinaison =
+ trouverCombinaison(joueur) ||
+ trouverCombinaison(robot);
+
+ if (combinaison) {
+ combinaison.forEach(index =&gt;
+ cases[index].classList.add(&quot;gagnante&quot;)
+ );
+ }
+ }
+}
+
+function verifierFin() {
+ if (trouverCombinaison(joueur)) {
+ terminerPartie(&quot;joueur&quot;);
+ return true;
+ }
+
+ if (trouverCombinaison(robot)) {
+ terminerPartie(&quot;robot&quot;);
+ return true;
+ }
+
+ if (grille.every((valeur, index) =&gt;
+ valeur !== &quot;&quot; ||
+ index === caseBloqueeJoueur ||
+ index === caseBloqueeRobot
+ )) {
+ terminerPartie(&quot;nul&quot;);
+ return true;
+ }
+
+ return false;
+}
+
+function terminerPartie(resultat) {
+ partieTerminee = true;
+ tourJoueur = false;
+ modePouvoir = false;
+
+ caseBloqueeJoueur = -1;
+ caseBloqueeRobot = -1;
+
+ if (resultat === &quot;joueur&quot;) {
+ message.textContent = &quot;🎉 Bravo, tu as gagné !&quot;;
+ scores.joueur++;
+ } else if (resultat === &quot;robot&quot;) {
+ message.textContent = &quot;L&#x27;adversaire a gagné !&quot;;
+ scores.robot++;
+ } else {
+ message.textContent = &quot;🤝 Match nul !&quot;;
+ scores.nul++;
+ }
+
+ document.querySelector(&quot;#score-joueur&quot;).textContent = scores.joueur;
+ document.querySelector(&quot;#score-robot&quot;).textContent = scores.robot;
+ document.querySelector(&quot;#score-nul&quot;).textContent = scores.nul;
+
+ boutonPouvoir.disabled = true;
+ afficherGrille();
+}
+
+// Coups stratégiques
+function trouverCoupStrategique(symbole) {
+ for (let index = 0; index &lt; grille.length; index++) {
+ if (!caseDisponible(index)) continue;
+
+ grille[index] = symbole;
+ const gagne = trouverCombinaison(symbole) !== null;
+ grille[index] = &quot;&quot;;
+
+ if (gagne) return index;
+ }
+
+ return -1;
+}
+
+function coupMoyen() {
+ const attaque = trouverCoupStrategique(robot);
+ if (attaque !== -1) return attaque;
+
+ const defense = trouverCoupStrategique(joueur);
+ if (defense !== -1) return defense;
+
+ return choisirAuHasard();
+}
+
+function minimax(symboleQuiJoue) {
+ if (trouverCombinaison(robot)) return 10;
+ if (trouverCombinaison(joueur)) return -10;
+
+ if (!grille.includes(&quot;&quot;)) return 0;
+
+ const maximiser = symboleQuiJoue === robot;
+ let meilleurScore = maximiser ? -Infinity : Infinity;
+
+ for (let index = 0; index &lt; grille.length; index++) {
+ if (!caseDisponible(index)) continue;
+
+ grille[index] = symboleQuiJoue;
+
+ const prochainSymbole =
+ symboleQuiJoue === robot ? joueur : robot;
+
+ const score = minimax(prochainSymbole);
+ grille[index] = &quot;&quot;;
+
+ meilleurScore = maximiser
+ ? Math.max(meilleurScore, score)
+ : Math.min(meilleurScore, score);
+ }
+
+ return meilleurScore;
+}
+
+function coupDifficile() {
+ let meilleurCoup = -1;
+ let meilleurScore = -Infinity;
+
+ for (let index = 0; index &lt; grille.length; index++) {
+ if (!caseDisponible(index)) continue;
+
+ grille[index] = robot;
+ const score = minimax(joueur);
+ grille[index] = &quot;&quot;;
+
+ if (score &gt; meilleurScore) {
+ meilleurScore = score;
+ meilleurCoup = index;
+ }
+ }
+
+ return meilleurCoup;
+}
+
+function activerPouvoir() {
+ if (
+ partieTerminee ||
+ pouvoirJoueurUtilise ||
+ !tourJoueur
+ ) return;
+
+ modePouvoir = !modePouvoir;
+
+ message.textContent = modePouvoir
+ ? &quot;Choisis une case libre à bloquer.&quot;
+ : &quot;À toi de jouer !&quot;;
+
+ infoPouvoir.textContent = modePouvoir
+ ? &quot;Le pouvoir ne consomme pas ton tour.&quot;
+ : &quot;Tu peux encore utiliser ton pouvoir.&quot;;
+}
+
+function pouvoirSpecialRobot() {
+ if (pouvoirRobotUtilise) return false;
+
+ const index = choisirAuHasard();
+ if (index === -1) return false;
+
+ caseBloqueeRobot = index;
+ pouvoirRobotUtilise = true;
+
+ message.textContent = &quot;L&#x27;adversaire bloque une case !&quot;;
+ afficherGrille();
+
+ return true;
+}
+
+function jouer(index) {
+ if (
+ partieTerminee ||
+ !tourJoueur ||
+ !caseDisponible(index)
+ ) return;
+
+ if (modePouvoir) {
+ caseBloqueeJoueur = index;
+ modePouvoir = false;
+ pouvoirJoueurUtilise = true;
+
+ boutonPouvoir.disabled = true;
+ infoPouvoir.textContent = &quot;Pouvoir utilisé !&quot;;
+ message.textContent = &quot;Case bloquée ! À toi de jouer.&quot;;
+
+ afficherGrille();
+ return;
+ }
+
+ grille[index] = joueur;
+ caseBloqueeRobot = -1;
+
+ afficherGrille();
+ if (verifierFin()) return;
+
+ tourJoueur = false;
+ message.textContent = &quot;À l&#x27;adversaire de jouer...&quot;;
+ afficherGrille();
+
+ setTimeout(tourOrdinateur, 350);
+}
+
+function tourOrdinateur() {
+ if (partieTerminee) return;
+
+ if (!pouvoirRobotUtilise &amp;&amp; Math.random() &lt; 0.30) {
+ pouvoirSpecialRobot();
+ }
+
+ let coup;
+
+ if (choixDifficulte.value === &quot;facile&quot;) {
+ coup = choisirAuHasard();
+ } else if (choixDifficulte.value === &quot;moyen&quot;) {
+ coup = coupMoyen();
+ } else {
+ coup = coupDifficile();
+ }
+
+ if (coup === -1) {
+ caseBloqueeJoueur = -1;
+ caseBloqueeRobot = -1;
+
+ if (!verifierFin()) terminerPartie(&quot;nul&quot;);
+ return;
+ }
+
+ grille[coup] = robot;
+ caseBloqueeJoueur = -1;
+
+ afficherGrille();
+ if (verifierFin()) return;
+
+ tourJoueur = true;
+ message.textContent = &quot;À toi de jouer !&quot;;
+ afficherGrille();
+}
+
+function recommencer() {
+ grille = Array(9).fill(&quot;&quot;);
+
+ joueur = choixPersonnage.value;
+ robot = joueur === &quot;X&quot; ? &quot;O&quot; : &quot;X&quot;;
+
+ partieTerminee = false;
+ modePouvoir = false;
+ pouvoirJoueurUtilise = false;
+ pouvoirRobotUtilise = false;
+
+ caseBloqueeJoueur = -1;
+ caseBloqueeRobot = -1;
+
+ scores = { joueur: 0, robot: 0, nul: 0 };
+
+ document.querySelector(&quot;#score-joueur&quot;).textContent = 0;
+ document.querySelector(&quot;#score-robot&quot;).textContent = 0;
+ document.querySelector(&quot;#score-nul&quot;).textContent = 0;
+
+ boutonPouvoir.disabled = false;
+ infoPouvoir.textContent = &quot;Utilise ton pouvoir une fois par partie.&quot;;
+
+ changerTheme();
+
+ tourJoueur = joueur === &quot;X&quot;;
+ afficherGrille();
+
+ if (tourJoueur) {
+ message.textContent = &quot;À toi de jouer !&quot;;
+ } else {
+ message.textContent = &quot;L&#x27;adversaire commence !&quot;;
+ setTimeout(tourOrdinateur, 350);
+ }
+}
+
+cases.forEach((bouton, index) =&gt; {
+ bouton.addEventListener(&quot;click&quot;, () =&gt; jouer(index));
+});
+
+boutonPouvoir.addEventListener(&quot;click&quot;, activerPouvoir);
+boutonRejouer.addEventListener(&quot;click&quot;, recommencer);
+
+choixPersonnage.addEventListener(&quot;change&quot;, recommencer);
+choixDifficulte.addEventListener(&quot;change&quot;, recommencer);
+choixTheme.addEventListener(&quot;change&quot;, changerTheme);
+
+recommencer();</textarea>
+    <button class="btn" type="submit">Ouvrir dans JSFiddle</button>
+  </form>
+</header>
+<div class="panneau" id="html"><pre><code class="language-xml">&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+ &lt;meta charset=&quot;UTF-8&quot;&gt;
+ &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+ &lt;title&gt;Morpion Challenge&lt;/title&gt;
+
+ &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+ &lt;script src=&quot;script.js&quot; defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+
+ &lt;main class=&quot;game&quot;&gt;
+
+ &lt;header&gt;
+ &lt;h1&gt;⚔️ Morpion Challenge&lt;/h1&gt;
+ &lt;p class=&quot;subtitle&quot;&gt;À toi de gagner !&lt;/p&gt;
+ &lt;/header&gt;
+
+ &lt;section class=&quot;settings&quot;&gt;
+ &lt;label for=&quot;personnage&quot;&gt;Ton symbole&lt;/label&gt;
+ &lt;select id=&quot;personnage&quot;&gt;
+ &lt;option value=&quot;X&quot;&gt;❌ Croix (X)&lt;/option&gt;
+ &lt;option value=&quot;O&quot;&gt;⭕ Cercle (O)&lt;/option&gt;
+ &lt;/select&gt;
+
+ &lt;label for=&quot;difficulte&quot;&gt;Difficulté&lt;/label&gt;
+ &lt;select id=&quot;difficulte&quot;&gt;
+ &lt;option value=&quot;facile&quot;&gt;Facile&lt;/option&gt;
+ &lt;option value=&quot;moyen&quot;&gt;Moyen&lt;/option&gt;
+ &lt;option value=&quot;difficile&quot;&gt;Difficile&lt;/option&gt;
+ &lt;/select&gt;
+
+ &lt;label for=&quot;theme&quot;&gt;Thème&lt;/label&gt;
+ &lt;select id=&quot;theme&quot;&gt;
+ &lt;option value=&quot;classique&quot;&gt;Classique&lt;/option&gt;
+ &lt;option value=&quot;neon&quot;&gt;Néon futuriste&lt;/option&gt;
+ &lt;option value=&quot;nature&quot;&gt;Nature&lt;/option&gt;
+ &lt;/select&gt;
+ &lt;/section&gt;
+
+ &lt;p id=&quot;message&quot; aria-live=&quot;polite&quot;&gt;À toi de jouer !&lt;/p&gt;
+
+ &lt;section id=&quot;grille&quot; class=&quot;grille&quot; aria-label=&quot;Grille de jeu&quot;&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;0&quot; aria-label=&quot;Case 1&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;1&quot; aria-label=&quot;Case 2&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;2&quot; aria-label=&quot;Case 3&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;3&quot; aria-label=&quot;Case 4&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;4&quot; aria-label=&quot;Case 5&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;5&quot; aria-label=&quot;Case 6&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;6&quot; aria-label=&quot;Case 7&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;7&quot; aria-label=&quot;Case 8&quot;&gt;&lt;/button&gt;
+ &lt;button class=&quot;case&quot; data-index=&quot;8&quot; aria-label=&quot;Case 9&quot;&gt;&lt;/button&gt;
+ &lt;/section&gt;
+
+ &lt;section class=&quot;powers&quot;&gt;
+ &lt;button id=&quot;pouvoir&quot;&gt;🛡️ Bloquer une case&lt;/button&gt;
+ &lt;p id=&quot;info-pouvoir&quot;&gt;Utilisable une fois par partie.&lt;/p&gt;
+ &lt;/section&gt;
+
+ &lt;section class=&quot;scores&quot;&gt;
+ &lt;div&gt;Toi : &lt;strong id=&quot;score-joueur&quot;&gt;0&lt;/strong&gt;&lt;/div&gt;
+ &lt;div&gt;Adversaire : &lt;strong id=&quot;score-robot&quot;&gt;0&lt;/strong&gt;&lt;/div&gt;
+ &lt;div&gt;Matchs nuls : &lt;strong id=&quot;score-nul&quot;&gt;0&lt;/strong&gt;&lt;/div&gt;
+ &lt;/section&gt;
+
+ &lt;button id=&quot;rejouer&quot; class=&quot;rejouer&quot;&gt;
+ 🔄 Recommencer à zéro
+ &lt;/button&gt;
+
+ &lt;/main&gt;
+
+&lt;/html&gt;</code></pre></div>
+<div class="panneau" id="css" hidden><pre><code class="language-css">body.theme-classique {
+ --fond: #f0f3f8;
+ --carte: #ffffff;
+ --texte: #20283a;
+ --case: #e8edf5;
+ --accent: #3568d4;
+ --symbole: #3568d4;
+}
+
+body.theme-neon {
+ --fond: #100d20;
+ --carte: #211633;
+ --texte: #f8eaff;
+ --case: #302047;
+ --accent: #ff42d0;
+ --symbole: #55f5ff;
+}
+
+body.theme-nature {
+ --fond: #e1edda;
+ --carte: #f8f5e8;
+ --texte: #28452c;
+ --case: #d4e5c7;
+ --accent: #477c43;
+ --symbole: #477c43;
+}
+
+* {
+ box-sizing: border-box;
+}
+
+body {
+ margin: 0;
+ min-height: 100vh;
+ padding: 24px 12px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-family: Arial, sans-serif;
+ color: var(--texte);
+ background-color: var(--fond);
+ background-image: url(&quot;WhatsApp Image 2026-10-21 at 15.18.52.jpeg&quot;);
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-attachment: fixed;
+ transition: background-color 0.3s, color 0.3s;
+}
+
+.game {
+ width: 100%;
+ max-width: 460px;
+ padding: 24px;
+ text-align: center;
+ background: color-mix(in srgb, var(--carte) 70%, transparent);
+ backdrop-filter: blur(4px);
+ border-radius: 20px;
+ box-shadow: 0 8px 28px #00000018;
+}
+
+h1 {
+ margin: 0 0 8px;
+ font-size: 28px;
+}
+
+.subtitle {
+ margin-top: 0;
+ opacity: 0.75;
+}
+
+.settings {
+ display: grid;
+ gap: 8px;
+ margin: 22px 0;
+ text-align: left;
+}
+
+.settings label {
+ font-size: 14px;
+ font-weight: bold;
+}
+
+select {
+ width: 100%;
+ padding: 11px;
+ border: 1px solid #9996;
+ border-radius: 8px;
+ background: color-mix(in srgb, var(--case) 65%, transparent);
+ color: var(--texte);
+ font-size: 15px;
+}
+
+#message {
+ min-height: 24px;
+ font-weight: bold;
+}
+
+.grille {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 8px;
+ margin: 18px 0;
+}
+
+.case {
+ min-width: 0;
+ aspect-ratio: 1;
+ border: none;
+ border-radius: 12px;
+ background: color-mix(in srgb, var(--case) 45%, transparent);
+ color: var(--symbole);
+ font-size: clamp(35px, 10vw, 58px);
+ font-weight: bold;
+ cursor: pointer;
+ transition: transform 0.15s, background 0.2s;
+}
+
+.case:not(:disabled):hover {
+ transform: scale(1.04);
+}
+
+.case:disabled {
+ opacity: 1;
+ cursor: default;
+}
+
+.case.bloquee {
+ background: #9996;
+ color: var(--texte);
+ font-size: 26px;
+}
+
+.case.gagnante {
+ outline: 4px solid var(--accent);
+}
+
+button {
+ font-family: inherit;
+}
+
+.powers {
+ margin: 16px 0;
+}
+
+#pouvoir,
+.rejouer {
+ width: 100%;
+ padding: 13px;
+ border: none;
+ border-radius: 9px;
+ font-size: 15px;
+ font-weight: bold;
+ cursor: pointer;
+}
+
+#pouvoir {
+ background: rgba(50, 100, 200, 0.75);
+ color: white;
+}
+
+#pouvoir:disabled {
+ opacity: 0.45;
+ cursor: not-allowed;
+}
+
+#info-pouvoir {
+ font-size: 13px;
+ opacity: 0.8;
+}
+
+.rejouer {
+ background: rgba(255, 255, 255, 0.35);
+ color: var(--texte);
+ border: 1px solid #9995;
+}
+
+.scores {
+ display: flex;
+ justify-content: space-around;
+ gap: 8px;
+ margin: 22px 0;
+ font-size: 14px;
+}
+
+button:focus-visible,
+select:focus-visible {
+ outline: 3px solid var(--accent);
+ outline-offset: 3px;
+}
+
+@media (max-width: 380px) {
+ .game {
+ padding: 16px;
+ }
+
+ .scores {
+ font-size: 12px;
+ }
+}</code></pre></div>
+<div class="panneau" id="js" hidden><pre><code class="language-javascript">const cases = document.querySelectorAll(&quot;.case&quot;);
+const message = document.querySelector(&quot;#message&quot;);
+const choixPersonnage = document.querySelector(&quot;#personnage&quot;);
+const choixDifficulte = document.querySelector(&quot;#difficulte&quot;);
+const choixTheme = document.querySelector(&quot;#theme&quot;);
+const boutonPouvoir = document.querySelector(&quot;#pouvoir&quot;);
+const infoPouvoir = document.querySelector(&quot;#info-pouvoir&quot;);
+const boutonRejouer = document.querySelector(&quot;#rejouer&quot;);
+
+const combinaisonsGagnantes = [
+ [0, 1, 2], [3, 4, 5], [6, 7, 8],
+ [0, 3, 6], [1, 4, 7], [2, 5, 8],
+ [0, 4, 8], [2, 4, 6]
+];
+
+let grille = Array(9).fill(&quot;&quot;);
+let joueur;
+let robot;
+let partieTerminee = false;
+let tourJoueur = true;
+
+let modePouvoir = false;
+let pouvoirJoueurUtilise = false;
+let pouvoirRobotUtilise = false;
+
+let caseBloqueeJoueur = -1;
+let caseBloqueeRobot = -1;
+
+let scores = { joueur: 0, robot: 0, nul: 0 };
+
+function changerTheme() {
+ document.body.className = &quot;theme-&quot; + choixTheme.value;
+}
+
+function trouverCombinaison(symbole) {
+ return combinaisonsGagnantes.find(combinaison =&gt;
+ combinaison.every(index =&gt; grille[index] === symbole)
+ ) || null;
+}
+
+function caseDisponible(index) {
+ return (
+ grille[index] === &quot;&quot; &amp;&amp;
+ index !== caseBloqueeJoueur &amp;&amp;
+ index !== caseBloqueeRobot
+ );
+}
+
+function choisirAuHasard() {
+ const libres = grille
+ .map((valeur, index) =&gt; caseDisponible(index) ? index : -1)
+ .filter(index =&gt; index !== -1);
+
+ if (libres.length === 0) return -1;
+
+ return libres[Math.floor(Math.random() * libres.length)];
+}
+
+function afficherGrille() {
+ cases.forEach((bouton, index) =&gt; {
+ bouton.classList.remove(&quot;bloquee&quot;, &quot;gagnante&quot;);
+
+ const bloquee =
+ index === caseBloqueeJoueur ||
+ index === caseBloqueeRobot ||
+ grille[index] === &quot;#&quot;;
+
+ bouton.textContent = bloquee ? &quot;🔒&quot; : grille[index];
+ bouton.classList.toggle(&quot;bloquee&quot;, bloquee);
+
+ bouton.disabled =
+ partieTerminee ||
+ !tourJoueur ||
+ grille[index] !== &quot;&quot; ||
+ bloquee;
+
+ bouton.setAttribute(
+ &quot;aria-label&quot;,
+ `Case ${index + 1}${bloquee ? &quot; bloquée&quot; :
+ grille[index] ? &quot; : &quot; + grille[index] : &quot; libre&quot;}`
+ );
+ });
+
+ if (partieTerminee) {
+ const combinaison =
+ trouverCombinaison(joueur) ||
+ trouverCombinaison(robot);
+
+ if (combinaison) {
+ combinaison.forEach(index =&gt;
+ cases[index].classList.add(&quot;gagnante&quot;)
+ );
+ }
+ }
+}
+
+function verifierFin() {
+ if (trouverCombinaison(joueur)) {
+ terminerPartie(&quot;joueur&quot;);
+ return true;
+ }
+
+ if (trouverCombinaison(robot)) {
+ terminerPartie(&quot;robot&quot;);
+ return true;
+ }
+
+ if (grille.every((valeur, index) =&gt;
+ valeur !== &quot;&quot; ||
+ index === caseBloqueeJoueur ||
+ index === caseBloqueeRobot
+ )) {
+ terminerPartie(&quot;nul&quot;);
+ return true;
+ }
+
+ return false;
+}
+
+function terminerPartie(resultat) {
+ partieTerminee = true;
+ tourJoueur = false;
+ modePouvoir = false;
+
+ caseBloqueeJoueur = -1;
+ caseBloqueeRobot = -1;
+
+ if (resultat === &quot;joueur&quot;) {
+ message.textContent = &quot;🎉 Bravo, tu as gagné !&quot;;
+ scores.joueur++;
+ } else if (resultat === &quot;robot&quot;) {
+ message.textContent = &quot;L&#x27;adversaire a gagné !&quot;;
+ scores.robot++;
+ } else {
+ message.textContent = &quot;🤝 Match nul !&quot;;
+ scores.nul++;
+ }
+
+ document.querySelector(&quot;#score-joueur&quot;).textContent = scores.joueur;
+ document.querySelector(&quot;#score-robot&quot;).textContent = scores.robot;
+ document.querySelector(&quot;#score-nul&quot;).textContent = scores.nul;
+
+ boutonPouvoir.disabled = true;
+ afficherGrille();
+}
+
+// Coups stratégiques
+function trouverCoupStrategique(symbole) {
+ for (let index = 0; index &lt; grille.length; index++) {
+ if (!caseDisponible(index)) continue;
+
+ grille[index] = symbole;
+ const gagne = trouverCombinaison(symbole) !== null;
+ grille[index] = &quot;&quot;;
+
+ if (gagne) return index;
+ }
+
+ return -1;
+}
+
+function coupMoyen() {
+ const attaque = trouverCoupStrategique(robot);
+ if (attaque !== -1) return attaque;
+
+ const defense = trouverCoupStrategique(joueur);
+ if (defense !== -1) return defense;
+
+ return choisirAuHasard();
+}
+
+function minimax(symboleQuiJoue) {
+ if (trouverCombinaison(robot)) return 10;
+ if (trouverCombinaison(joueur)) return -10;
+
+ if (!grille.includes(&quot;&quot;)) return 0;
+
+ const maximiser = symboleQuiJoue === robot;
+ let meilleurScore = maximiser ? -Infinity : Infinity;
+
+ for (let index = 0; index &lt; grille.length; index++) {
+ if (!caseDisponible(index)) continue;
+
+ grille[index] = symboleQuiJoue;
+
+ const prochainSymbole =
+ symboleQuiJoue === robot ? joueur : robot;
+
+ const score = minimax(prochainSymbole);
+ grille[index] = &quot;&quot;;
+
+ meilleurScore = maximiser
+ ? Math.max(meilleurScore, score)
+ : Math.min(meilleurScore, score);
+ }
+
+ return meilleurScore;
+}
+
+function coupDifficile() {
+ let meilleurCoup = -1;
+ let meilleurScore = -Infinity;
+
+ for (let index = 0; index &lt; grille.length; index++) {
+ if (!caseDisponible(index)) continue;
+
+ grille[index] = robot;
+ const score = minimax(joueur);
+ grille[index] = &quot;&quot;;
+
+ if (score &gt; meilleurScore) {
+ meilleurScore = score;
+ meilleurCoup = index;
+ }
+ }
+
+ return meilleurCoup;
+}
+
+function activerPouvoir() {
+ if (
+ partieTerminee ||
+ pouvoirJoueurUtilise ||
+ !tourJoueur
+ ) return;
+
+ modePouvoir = !modePouvoir;
+
+ message.textContent = modePouvoir
+ ? &quot;Choisis une case libre à bloquer.&quot;
+ : &quot;À toi de jouer !&quot;;
+
+ infoPouvoir.textContent = modePouvoir
+ ? &quot;Le pouvoir ne consomme pas ton tour.&quot;
+ : &quot;Tu peux encore utiliser ton pouvoir.&quot;;
+}
+
+function pouvoirSpecialRobot() {
+ if (pouvoirRobotUtilise) return false;
+
+ const index = choisirAuHasard();
+ if (index === -1) return false;
+
+ caseBloqueeRobot = index;
+ pouvoirRobotUtilise = true;
+
+ message.textContent = &quot;L&#x27;adversaire bloque une case !&quot;;
+ afficherGrille();
+
+ return true;
+}
+
+function jouer(index) {
+ if (
+ partieTerminee ||
+ !tourJoueur ||
+ !caseDisponible(index)
+ ) return;
+
+ if (modePouvoir) {
+ caseBloqueeJoueur = index;
+ modePouvoir = false;
+ pouvoirJoueurUtilise = true;
+
+ boutonPouvoir.disabled = true;
+ infoPouvoir.textContent = &quot;Pouvoir utilisé !&quot;;
+ message.textContent = &quot;Case bloquée ! À toi de jouer.&quot;;
+
+ afficherGrille();
+ return;
+ }
+
+ grille[index] = joueur;
+ caseBloqueeRobot = -1;
+
+ afficherGrille();
+ if (verifierFin()) return;
+
+ tourJoueur = false;
+ message.textContent = &quot;À l&#x27;adversaire de jouer...&quot;;
+ afficherGrille();
+
+ setTimeout(tourOrdinateur, 350);
+}
+
+function tourOrdinateur() {
+ if (partieTerminee) return;
+
+ if (!pouvoirRobotUtilise &amp;&amp; Math.random() &lt; 0.30) {
+ pouvoirSpecialRobot();
+ }
+
+ let coup;
+
+ if (choixDifficulte.value === &quot;facile&quot;) {
+ coup = choisirAuHasard();
+ } else if (choixDifficulte.value === &quot;moyen&quot;) {
+ coup = coupMoyen();
+ } else {
+ coup = coupDifficile();
+ }
+
+ if (coup === -1) {
+ caseBloqueeJoueur = -1;
+ caseBloqueeRobot = -1;
+
+ if (!verifierFin()) terminerPartie(&quot;nul&quot;);
+ return;
+ }
+
+ grille[coup] = robot;
+ caseBloqueeJoueur = -1;
+
+ afficherGrille();
+ if (verifierFin()) return;
+
+ tourJoueur = true;
+ message.textContent = &quot;À toi de jouer !&quot;;
+ afficherGrille();
+}
+
+function recommencer() {
+ grille = Array(9).fill(&quot;&quot;);
+
+ joueur = choixPersonnage.value;
+ robot = joueur === &quot;X&quot; ? &quot;O&quot; : &quot;X&quot;;
+
+ partieTerminee = false;
+ modePouvoir = false;
+ pouvoirJoueurUtilise = false;
+ pouvoirRobotUtilise = false;
+
+ caseBloqueeJoueur = -1;
+ caseBloqueeRobot = -1;
+
+ scores = { joueur: 0, robot: 0, nul: 0 };
+
+ document.querySelector(&quot;#score-joueur&quot;).textContent = 0;
+ document.querySelector(&quot;#score-robot&quot;).textContent = 0;
+ document.querySelector(&quot;#score-nul&quot;).textContent = 0;
+
+ boutonPouvoir.disabled = false;
+ infoPouvoir.textContent = &quot;Utilise ton pouvoir une fois par partie.&quot;;
+
+ changerTheme();
+
+ tourJoueur = joueur === &quot;X&quot;;
+ afficherGrille();
+
+ if (tourJoueur) {
+ message.textContent = &quot;À toi de jouer !&quot;;
+ } else {
+ message.textContent = &quot;L&#x27;adversaire commence !&quot;;
+ setTimeout(tourOrdinateur, 350);
+ }
+}
+
+cases.forEach((bouton, index) =&gt; {
+ bouton.addEventListener(&quot;click&quot;, () =&gt; jouer(index));
+});
+
+boutonPouvoir.addEventListener(&quot;click&quot;, activerPouvoir);
+boutonRejouer.addEventListener(&quot;click&quot;, recommencer);
+
+choixPersonnage.addEventListener(&quot;change&quot;, recommencer);
+choixDifficulte.addEventListener(&quot;change&quot;, recommencer);
+choixTheme.addEventListener(&quot;change&quot;, changerTheme);
+
+recommencer();</code></pre></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>
+  if (window.hljs) hljs.highlightAll();
+  document.querySelectorAll(".onglet").forEach((b) => b.addEventListener("click", () => {
+    document.querySelectorAll(".onglet").forEach((x) => x.classList.toggle("actif", x === b));
+    document.querySelectorAll(".panneau").forEach((p) => p.hidden = p.id !== b.dataset.cible);
+  }));
+</script>
+</body>
+</html>
