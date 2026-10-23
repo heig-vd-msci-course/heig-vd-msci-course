@@ -45,6 +45,7 @@ start "" "%~dp011 - Poire - Jeu des allumettes amélioré\11 - Poire - Jeu des a
 start "" "%~dp011 - Poire - Jeu des allumettes amélioré\code\index.html"
 timeout /t 1 /nobreak > nul
 rem 12 - Mangue 2
+start "" "%~dp012 - Mangue 2 - Blackjack\12 - Mangue 2 - Blackjack.pdf"
 start "" "https://developer.mozilla.org/en-US/play?id=FgiuW5HAZCQyQPzh1vUhHO8SAGeQgkLwN7OG891gIEndd03XpI6VG%%2BkzVopueoZOziZIMb9tChPT8996"
 timeout /t 1 /nobreak > nul
 rem 13 - Ananas
